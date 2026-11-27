@@ -399,12 +399,11 @@ function pintarSelectorNivel() {
   const niveles = nivelesDificultad(datos.config);
   const actual = nivelActual()?.id;
   $('niveles').replaceChildren(
-    ...niveles.map((n, i) => {
+    ...niveles.map((n) => {
       const op = document.createElement('label');
       op.className = 'nivel';
       op.innerHTML = `<input type="radio" name="nivel" value="${n.id}"${n.id === actual ? ' checked' : ''}>
-        <span class="nivel-nombre">${escapar(n.nombre)}</span>
-        <span class="nivel-marcas" aria-hidden="true">${'<i></i>'.repeat(i + 1)}${'<i class="vacia"></i>'.repeat(niveles.length - i - 1)}</span>`;
+        <span class="casilla" aria-hidden="true"></span><span class="nivel-nombre">${escapar(n.nombre)}</span>`;
       op.querySelector('input').addEventListener('change', () => {
         guardarNivel(n.id);
         reproducirEfecto('boton');
