@@ -45,7 +45,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "dinero": -15
@@ -363,7 +363,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.35,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "cordura": -10
@@ -395,7 +395,7 @@
         },
         "hito_biografico": "Acudió a una cena de antiguos alumnos movido únicamente por el morbo.",
         "sorpresa": {
-          "probabilidad": 0.35,
+          "probabilidad": 0.25,
           "efectos": {
             "cordura": -15,
             "dinero": -10
@@ -619,7 +619,7 @@
           "salud": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "salud": -5
@@ -727,7 +727,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "cordura": -15,
             "salud": 5
@@ -798,7 +798,7 @@
           "salud": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "salud": -10

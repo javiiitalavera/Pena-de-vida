@@ -69,7 +69,7 @@
           "criptobro"
         ],
         "sorpresa": {
-          "probabilidad": 0.15,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": 20,
             "cordura": -10
@@ -136,7 +136,7 @@
         },
         "hito_biografico": "Fingió una enfermedad infecciosa para ahorrarse 250€.",
         "sorpresa": {
-          "probabilidad": 0.35,
+          "probabilidad": 0.25,
           "efectos": {
             "vinculos": -15,
             "cordura": -10
@@ -167,7 +167,7 @@
           "cordura": -15
         },
         "sorpresa": {
-          "probabilidad": 0.2,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": 15,
             "cordura": 10
@@ -232,7 +232,7 @@
           "cordura": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "cordura": -10
@@ -566,7 +566,7 @@
         },
         "hito_biografico": "Pagó dos veces la misma reforma para poder volver a cocinar.",
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "cordura": -15
@@ -667,7 +667,7 @@
           "vinculos": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -15,
             "cordura": -5
@@ -715,7 +715,7 @@
         },
         "hito_biografico": "Dijo lo que pensaba al director general en la cena de Navidad.",
         "sorpresa": {
-          "probabilidad": 0.2,
+          "probabilidad": 0.25,
           "efectos": {
             "cordura": 15,
             "dinero": 15
@@ -854,7 +854,7 @@
           "vinculos": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "cordura": -15,
             "vinculos": -5
@@ -957,7 +957,7 @@
         },
         "hito_biografico": "Fingió un latigazo cervical por un toque a cinco por hora.",
         "sorpresa": {
-          "probabilidad": 0.2,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "cordura": -10
@@ -1168,7 +1168,7 @@
           "vinculos": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -10,
             "vinculos": -15

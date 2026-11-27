@@ -75,7 +75,7 @@
             "dinero": -10,
             "vinculos": -10
           },
-          "mensaje": "Tus hijos venden el coche al día siguiente y se reparten el dinero."
+          "mensaje": "Tus sobrinos venden el coche al día siguiente y se reparten el dinero."
         }
       },
       "lote": 2
@@ -94,7 +94,7 @@
           "dinero": -10
         },
         "sorpresa": {
-          "probabilidad": 0.2,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "cordura": -10
@@ -132,12 +132,12 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "vinculos": -15,
             "cordura": -10
           },
-          "mensaje": "Era tu hija de verdad, con el móvil roto."
+          "mensaje": "Era tu sobrina de verdad, con el móvil roto."
         }
       },
       "lote": 2
@@ -163,7 +163,7 @@
           "vinculos": -10
         },
         "sorpresa": {
-          "probabilidad": 0.2,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "cordura": 10
@@ -329,12 +329,12 @@
           "cordura": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -15,
             "cordura": -10
           },
-          "mensaje": "Tus hijos llevan el colchón al punto limpio «porque ya tocaba»."
+          "mensaje": "Tu sobrino lleva el colchón al punto limpio «porque ya tocaba»."
         }
       },
       "lote": 11
@@ -454,7 +454,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "vinculos": -10
@@ -602,7 +602,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -15,
             "cordura": -5

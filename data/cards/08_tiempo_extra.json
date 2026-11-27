@@ -22,7 +22,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -15,
             "cordura": -5
@@ -100,7 +100,7 @@
           "vinculos": -10
         },
         "sorpresa": {
-          "probabilidad": 0.35,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -10,
             "vinculos": -10
@@ -125,12 +125,12 @@
         },
         "hito_biografico": "Recuperó su dentadura de una sopera delante de toda su familia.",
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "vinculos": -15,
             "cordura": -5
           },
-          "mensaje": "Sale con un mejillón enganchado. Tu bisnieto lo graba."
+          "mensaje": "Sale con un mejillón enganchado. El camarero lo graba."
         }
       },
       "derecha": {

@@ -70,7 +70,7 @@
           "cordura": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "vinculos": -10,
             "cordura": -10
@@ -125,7 +125,7 @@
           "salud": 5
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -15,
             "vinculos": -5
@@ -172,7 +172,7 @@
           "cordura": -10
         },
         "sorpresa": {
-          "probabilidad": 0.2,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "cordura": -10

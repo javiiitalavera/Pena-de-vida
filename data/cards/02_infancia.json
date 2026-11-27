@@ -41,7 +41,7 @@
           "cordura": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -10,
             "cordura": -10
@@ -80,7 +80,7 @@
           "vinculos": -15
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "vinculos": -15,
             "cordura": -10
@@ -159,7 +159,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "cordura": -15,
             "salud": -5
@@ -261,7 +261,7 @@
           "dinero": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "dinero": -10,
             "vinculos": -10
@@ -331,7 +331,7 @@
           "vinculos": -10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "vinculos": -10
@@ -415,7 +415,7 @@
           "cordura": 10
         },
         "sorpresa": {
-          "probabilidad": 0.3,
+          "probabilidad": 0.25,
           "efectos": {
             "salud": -10,
             "vinculos": -10

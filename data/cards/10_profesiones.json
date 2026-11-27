@@ -674,7 +674,7 @@
           "cordura": -10
         },
         "sorpresa": {
-          "probabilidad": 0.35,
+          "probabilidad": 0.25,
           "efectos": {
             "vinculos": 5,
             "cordura": -20
