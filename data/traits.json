@@ -33,7 +33,7 @@
       ]
     },
     {
-      "id": "genetica_cucaracha",
+      "id": "genetica_de_cucaracha",
       "nombre": "Genética de Cucaracha",
       "ventaja": "Las pérdidas de Salud se reducen a la mitad.",
       "contrapartida": "Las subidas de Salud también se reducen a la mitad.",
@@ -43,15 +43,15 @@
       ]
     },
     {
-      "id": "sindrome_impostor",
+      "id": "sindrome_del_impostor",
       "nombre": "Síndrome del Impostor",
       "ventaja": "Ganas un 50% más de Dinero y Vínculos.",
-      "contrapartida": "Cada 5 años pierdes 10 de Cordura.",
+      "contrapartida": "Cada 5 años pierdes 5 de Cordura.",
       "desbloqueo": { "tipo": "muerte", "pilar": "cordura", "extremo": 100, "texto": "Morir por Cordura a 100" },
       "reglas": [
         { "tipo": "multiplicador", "pilar": "dinero", "signo": "positivo", "mult": 1.5 },
         { "tipo": "multiplicador", "pilar": "vinculos", "signo": "positivo", "mult": 1.5 },
-        { "tipo": "periodico", "cada_anios": 5, "efectos": { "cordura": -10 }, "mensaje": "Síndrome del Impostor" }
+        { "tipo": "periodico", "cada_anios": 5, "efectos": { "cordura": -5 }, "mensaje": "Síndrome del Impostor" }
       ]
     }
   ]

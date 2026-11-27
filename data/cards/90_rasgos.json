@@ -58,6 +58,461 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "colegio_privado",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Colegio Privado",
+      "personaje": "padre",
+      "texto": "Has suspendido cinco asignaturas, pero tu padre ha quedado a comer con el director para hablar de 'una donación para el nuevo polideportivo'.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "hijo_de_papa"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aprobar todo con notable sin abrir un libro",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que quieres repetir por dignidad",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "ano_sabatico",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Año Sabático",
+      "personaje": "madre",
+      "texto": "Tienes 22 años y todavía no sabes qué hacer con tu vida, así que decides irte seis meses a Australia 'a encontrarte' con la tarjeta de tu madre.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "hijo_de_papa"
+        ]
+      },
+      "izquierda": {
+        "texto": "Volver con rastas y un discurso sobre el capitalismo",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se encontró a sí mismo en Australia con la Visa de su madre."
+      },
+      "derecha": {
+        "texto": "Entrar directamente de vicepresidente en la empresa familiar",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "multa_trafico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Multa de Tráfico",
+      "personaje": "guardia_civil",
+      "texto": "Te para la Guardia Civil a 190 km/h. Tu primer instinto es preguntar al agente si sabe quién es tu padre.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "hijo_de_papa"
+        ]
+      },
+      "izquierda": {
+        "texto": "Soltar la frase y ver cómo te cae el doble de multa",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Preguntó a la Guardia Civil si sabían quién era su padre."
+      },
+      "derecha": {
+        "texto": "Pagar los 600€ en el acto con una sonrisa",
+        "efectos": {
+          "cordura": 5,
+          "dinero": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "impuesto_sucesiones",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Impuesto de Sucesiones",
+      "personaje": "hacienda",
+      "texto": "Heredas tres pisos en el centro y una finca, pero te toca pagar impuestos. Te indignas tanto que das una entrevista en la tele diciendo que 'en este país no se puede vivir'.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "hijo_de_papa"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mover el dinero a una sociedad en Luxemburgo",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar llorando en tu Porsche",
+        "efectos": {
+          "dinero": -15,
+          "cordura": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "mascota_clase",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Mascota de la Clase",
+      "personaje": "hamster",
+      "texto": "El hámster del aula ha aparecido tieso. Todos los niños están llorando y la profesora busca consuelo, pero a ti te parece un tema puramente logístico.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "psicopata_funcional"
+        ]
+      },
+      "izquierda": {
+        "texto": "Preguntar si ya lo podéis tirar a la orgánica",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir dos lágrimas mirando cómo lloran los demás",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "ruptura",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Ruptura",
+      "personaje": "pareja",
+      "texto": "Tu pareja te deja llorando desconsoladamente y te dice que 'necesita tiempo'. Tú solo estás pensando en que ahora te cabe la bici en el salón.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "psicopata_funcional"
+        ]
+      },
+      "izquierda": {
+        "texto": "Preguntarle si se lleva las llaves hoy o mañana",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Recitar una frase de tristeza sacada de una serie",
+        "efectos": {
+          "vinculos": 5,
+          "cordura": 5
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "accidente_oficina",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Accidente en la Oficina",
+      "personaje": "companero_trabajo",
+      "texto": "Un compañero se ha caído por las escaleras y se ha roto la clavícula. Todos corren a ayudarle; tú ves la oportunidad de quedarte con su despacho con ventana.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "psicopata_funcional"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedirle el despacho a Recursos Humanos esa misma tarde",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -15
+        },
+        "hito_biografico": "Solicitó el despacho de un compañero mientras este iba en ambulancia."
+      },
+      "derecha": {
+        "texto": "Llevarle bombones al hospital para ganarte al jefe",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "testamento",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Testamento",
+      "personaje": "familia_herederos",
+      "texto": "Tus familiares se deshacen en halagos porque creen que te queda poco. Te hace mucha gracia verlos competir por tu afecto.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "psicopata_funcional"
+        ]
+      },
+      "izquierda": {
+        "texto": "Dejarlo todo en secreto a una protectora de palomas",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Desheredó a toda su familia por pura diversión."
+      },
+      "derecha": {
+        "texto": "Prometer la casa a tres personas distintas a la vez",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": 5
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "yogur_caducado",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Yogur Caducado",
+      "personaje": "yogur",
+      "texto": "Encuentras un yogur en el fondo de la nevera que caducó en 2021. Tiene una capa verde encima que parece musgo.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "genetica_de_cucaracha"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quitarle lo verde con la cuchara y comértelo",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        },
+        "hito_biografico": "Sobrevivió a un lácteo con ecosistema propio."
+      },
+      "derecha": {
+        "texto": "Tirarlo a la basura como un cobarde",
+        "efectos": {
+          "dinero": -5,
+          "salud": 5
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "resaca_imposible",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Resaca Imposible",
+      "personaje": "kebab",
+      "texto": "Anoche mezclaste ginebra de garrafón, tequila y un kebab de dudosa procedencia. Tus amigos están vomitando en urgencias; tú te levantas a las 8 con hambre.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "genetica_de_cucaracha"
+        ]
+      },
+      "izquierda": {
+        "texto": "Irte a correr 10 kilómetros para humillarles",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Desayunar las sobras del kebab frío",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "accidente_domestico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Accidente Doméstico",
+      "personaje": "escalera",
+      "texto": "Te caes de una escalera arreglando una bombilla y te das un golpe seco en la cabeza contra la encimera de granito. La encimera se ha rajado.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "genetica_de_cucaracha"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ponerte hielo y seguir con tu día",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Ir a urgencias para que te digan que tienes el cráneo de hormigón",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "pandemia",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Pandemia",
+      "personaje": "vecinos_gripe",
+      "texto": "Todo el edificio ha caído con una gripe brutal. Tú has compartido vaso con medio vecindario y lo único que tienes es un ligero picor de nariz.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "genetica_de_cucaracha"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ofrecer tu sangre a la ciencia a cambio de dinero",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": 10
+        },
+        "hito_biografico": "Su sistema inmune fue estudiado sin éxito por epidemiólogos."
+      },
+      "derecha": {
+        "texto": "Fingir síntomas para librarte de ir a trabajar una semana",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "sobresaliente",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "El Sobresaliente",
+      "personaje": "profesor_fisica",
+      "texto": "Has sacado la mejor nota de la clase en Física. Estás convencido de que el profesor se ha equivocado al sumar o ha confundido tu examen con el de otro.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "sindrome_del_impostor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ir a revisión a pedirle que compruebe si de verdad mereces esa nota",
+        "efectos": {
+          "cordura": -10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Callarte y vivir con el pánico a que te descubran",
+        "efectos": {
+          "dinero": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "reunion_directivos",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Reunión de Directivos",
+      "personaje": "directivos",
+      "texto": "Te ascienden y te meten en una reunión donde todo el mundo dice palabras en inglés como 'synergy' y 'KPI'. Sientes que en cualquier momento entrará seguridad a sacarte.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "sindrome_del_impostor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Asentir con cara seria y soltar 'hay que darle una vuelta'",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Reconocer que no tienes ni idea de qué están hablando",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "elogio",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Elogio",
+      "personaje": "cliente",
+      "texto": "Un cliente te felicita delante de toda la empresa por tu trabajo. Te entra sudor frío porque sabes que lo hiciste improvisando diez minutos antes.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "sindrome_del_impostor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Decir 'no es para tanto, fue suerte' y quitarte todo el mérito",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Aceptar el cumplido y trabajar el doble este mes por culpa",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "lote": 5
+    },
+    {
+      "id": "premio_trayectoria",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Premio a la Trayectoria",
+      "personaje": "placa_premio",
+      "texto": "Te dan una placa conmemorativa por tus 30 años de carrera. Sigues pensando que has engañado a todo el mundo durante tres décadas.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "sindrome_del_impostor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Subir al escenario y confesar que improvisaste desde 1998",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Confesó ser un fraude al recoger un premio a su trayectoria."
+      },
+      "derecha": {
+        "texto": "Recoger la placa con una sonrisa tensa",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 5
     }
   ]
 }
