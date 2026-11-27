@@ -1,8 +1,12 @@
 // Música y efectos. Se usa Web Audio porque en iOS el volumen de <audio> no se puede cambiar:
 // solo así funcionan los controles de volumen (y el 0) en el iPhone.
 const CLAVE = 'pena-de-vida.audio.v1';
+const PISTAS = ['vals-de-papel', 'domingo-por-la-tarde', 'tramite-pendiente'];
 const ARCHIVOS = {
-  musica: 'assets/audio/vals-de-papel.mp3',
+  ...Object.fromEntries(PISTAS.map((nombre) => [nombre, 'assets/audio/' + nombre + '.mp3'])),
+  boton: 'assets/audio/boton.mp3',
+  abrirAjustes: 'assets/audio/abrir-ajustes.mp3',
+  cerrarAjustes: 'assets/audio/cerrar-ajustes.mp3',
   carta: 'assets/audio/carta.mp3',
   comodin: 'assets/audio/comodin.mp3',
   cierre: 'assets/audio/cierre.mp3',
@@ -13,6 +17,7 @@ let ctx = null;
 const ganancia = {};
 const sonidos = new Map(); // nombre -> promesa del buffer decodificado
 let fuenteMusica = null;
+let pistaActual = 0;
 let arrancando = false;
 
 function cargarNiveles() {
@@ -68,14 +73,23 @@ async function arrancarMusica() {
   if (!ctx || fuenteMusica || arrancando || !niveles.musica || document.hidden) return;
   arrancando = true;
   try {
-    const buffer = await cargar('musica');
-    if (!fuenteMusica && niveles.musica) {
+    const buffer = await cargar(PISTAS[pistaActual]).catch(async () => {
+      pistaActual = 0;
+      return cargar(PISTAS[pistaActual]);
+    });
+    if (!fuenteMusica && niveles.musica && !document.hidden) {
       const fuente = ctx.createBufferSource();
       fuente.buffer = buffer;
-      fuente.loop = true;
       fuente.connect(ganancia.musica);
+      fuente.onended = () => {
+        if (fuenteMusica !== fuente) return;
+        fuenteMusica = null;
+        pistaActual = (pistaActual + 1) % PISTAS.length;
+        arrancarMusica();
+      };
       fuente.start();
       fuenteMusica = fuente;
+      cargar(PISTAS[(pistaActual + 1) % PISTAS.length]).catch(() => {});
     }
   } catch {
     /* si el archivo no carga, se juega sin música */
@@ -98,6 +112,7 @@ export function reproducirEfecto(nombre) {
   if (!ctx || !niveles.efectos || document.hidden) return;
   cargar(nombre)
     .then((buffer) => {
+      if (!niveles.efectos || document.hidden) return;
       const fuente = ctx.createBufferSource();
       fuente.buffer = buffer;
       fuente.connect(ganancia.efectos);
@@ -115,14 +130,14 @@ export function prepararAudio() {
     if (!ctx) return;
     if (ctx.state !== 'running') ctx.resume().catch(() => {});
     arrancarMusica();
-    for (const n of ['carta', 'comodin', 'cierre']) cargar(n).catch(() => {});
+    for (const n of ['carta', 'comodin', 'cierre', 'boton', 'abrirAjustes', 'cerrarAjustes']) cargar(n).catch(() => {});
   };
   for (const ev of ['pointerup', 'touchend', 'click', 'keydown']) document.addEventListener(ev, desbloquear, true);
 
   document.addEventListener('visibilitychange', () => {
     if (!ctx) return;
     if (document.hidden) ctx.suspend().catch(() => {});
-    else ctx.resume().catch(() => {});
+    else ctx.resume().then(arrancarMusica).catch(() => {});
   });
 
   for (const canal of Object.keys(niveles)) {
@@ -141,5 +156,17 @@ export function prepararAudio() {
   }
 
   const dialogo = document.getElementById('ajustes');
-  for (const boton of document.querySelectorAll('[data-ajustes]')) boton.addEventListener('click', () => dialogo.showModal());
+  for (const boton of document.querySelectorAll('[data-ajustes]')) {
+    boton.addEventListener('click', () => {
+      reproducirEfecto('abrirAjustes');
+      dialogo.showModal();
+    });
+  }
+  dialogo.addEventListener('close', () => reproducirEfecto('cerrarAjustes'));
+  document.addEventListener('click', (e) => {
+    const boton = e.target.closest('button');
+    if (boton?.matches('#btn-nueva, #btn-continuar, #btn-otra, [data-sexo], .lista-elecciones button')) {
+      reproducirEfecto('boton');
+    }
+  }, true);
 }
