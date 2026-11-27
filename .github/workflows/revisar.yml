@@ -10,3 +10,4 @@ jobs:
           node-version: 22
       - run: node tools/revisar.mjs
       - run: node tools/test-motor.mjs
+      - run: python3 tools/sellar_version.py --comprobar

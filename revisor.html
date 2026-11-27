@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Revisor de cartas</title>
-  <link rel="stylesheet" href="css/revisor.css">
+  <link rel="stylesheet" href="css/revisor.css?v=af8a833f">
 </head>
 <body>
   <header class="cab">
@@ -41,6 +41,24 @@
     </section>
     <section id="tab-imagenes" class="tab"></section>
   </main>
-  <script type="module" src="js/revisor.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "./js/audio.js": "./js/audio.js?v=af8a833f",
+      "./js/data.js": "./js/data.js?v=af8a833f",
+      "./js/engine.js": "./js/engine.js?v=af8a833f",
+      "./js/iconos.js": "./js/iconos.js?v=af8a833f",
+      "./js/images.js": "./js/images.js?v=af8a833f",
+      "./js/main.js": "./js/main.js?v=af8a833f",
+      "./js/revisor.js": "./js/revisor.js?v=af8a833f",
+      "./js/simulate.js": "./js/simulate.js?v=af8a833f",
+      "./js/storage.js": "./js/storage.js?v=af8a833f",
+      "./js/swipe.js": "./js/swipe.js?v=af8a833f",
+      "./js/text.js": "./js/text.js?v=af8a833f",
+      "./js/validate.js": "./js/validate.js?v=af8a833f"
+    }
+  }
+  </script>
+  <script type="module" src="js/revisor.js?v=af8a833f"></script>
 </body>
 </html>
