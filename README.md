@@ -1,4 +1,4 @@
-# Muerte súbita
+# Pena de vida
 
 Juego de cartas narrativo para móvil y ordenador. Vives del año 0 al 100 equilibrando cuatro barras (Salud, Dinero, Cordura, Vínculos). Si una llega a 0 o a 100, mueres y recibes tu necrológica.
 
