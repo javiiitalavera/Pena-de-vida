@@ -123,6 +123,12 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .pilar.peligro .etiqueta { color: var(--peligro); }
 .pilar.congelado .etiqueta { color: #7fa7c9; }
 .pilar { cursor: help; -webkit-tap-highlight-color: transparent; }
+.nombre-pilar {
+  position: absolute; top: -6px; left: 50%; transform: translate(-50%, 3px);
+  font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+  color: var(--tinta-suave); opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s;
+}
+.pilar.nombrando .nombre-pilar { opacity: 1; transform: translate(-50%, 0); }
 .pilar:focus-visible { outline: 1px solid var(--tinta-suave); outline-offset: 4px; border-radius: 6px; }
 /* Modo dios: no se ve el nivel de las barras ni si están en peligro. */
 .barras.ocultas .relleno { display: none; }
@@ -135,7 +141,7 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .linea-anio .separador { color: var(--tinta-suave); margin: 0 0.4em; }
 #carta-nombre:empty, #carta-nombre:empty ~ .separador { display: none; }
 .linea-anio:has(#carta-nombre:empty) .separador { display: none; }
-.edad-etapa { margin: 4px 0 0; color: var(--tinta-suave); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; }
+.edad-etapa { text-align: center; margin: 10px 0 6px; color: var(--tinta-suave); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; }
 
 .carta-texto {
   font-family: var(--serif);
@@ -234,23 +240,6 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   z-index: 5; pointer-events: none; animation: aviso-entra 0.25s ease-out;
 }
 @keyframes aviso-entra { from { opacity: 0; transform: translate(-50%, -6px); } }
-
-.globo-pilar {
-  position: absolute; left: 50%; transform: translateX(-50%); z-index: 6;
-  width: min(86%, 320px);
-  background: var(--papel); color: var(--papel-tinta);
-  border: 1px solid var(--papel-tinta); border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  padding: 10px 14px; text-align: center; font-size: 0.88rem; line-height: 1.35;
-  animation: aviso-entra 0.2s ease-out;
-}
-.globo-pilar strong { display: block; font-family: var(--serif); font-size: 1.05rem; margin-bottom: 2px; }
-.globo-pilar::before {
-  content: ''; position: absolute; top: -6px; width: 10px; height: 10px;
-  left: calc(var(--flecha, 50%) - 5px);
-  background: var(--papel); border-left: 1px solid var(--papel-tinta); border-top: 1px solid var(--papel-tinta);
-  transform: rotate(45deg);
-}
 
 .icono-btn.comodin { position: relative; }
 .icono-btn .usos {

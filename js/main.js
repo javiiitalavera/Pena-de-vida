@@ -161,8 +161,8 @@ function montarJuego() {
       d.title = p.nombre;
       d.setAttribute('aria-label', p.nombre);
       d.tabIndex = 0;
-      d.addEventListener('click', () => mostrarGlobo(d, p));
-      d.innerHTML = `<span class="punto"></span><div class="tubo"><div class="relleno"></div></div><span class="etiqueta">${icono(p.icono || p.id)}</span>`;
+      d.addEventListener('click', () => mostrarNombrePilar(d));
+      d.innerHTML = `<span class="nombre-pilar" aria-hidden="true">${escapar(p.nombre)}</span><span class="punto"></span><div class="tubo"><div class="relleno"></div></div><span class="etiqueta">${icono(p.icono || p.id)}</span>`;
       return d;
     }),
   );
@@ -172,26 +172,12 @@ function montarJuego() {
   pintarBarras();
 }
 
-// Al tocar una barra: qué es y qué pasa en sus extremos.
-let temporizadorGlobo;
-function mostrarGlobo(el, pilar) {
-  const globo = $('globo-pilar');
-  if (!globo.hidden && globo.dataset.pilar === pilar.id) return ocultarGlobo();
-  globo.dataset.pilar = pilar.id;
-  globo.innerHTML = `<strong>${escapar(pilar.nombre)}</strong>${pilar.descripcion ? `<span>${escapar(pilar.descripcion)}</span>` : ''}`;
-  const caja = el.getBoundingClientRect();
-  const pantalla = $('pantalla-juego').getBoundingClientRect();
-  globo.style.top = `${caja.bottom - pantalla.top + 6}px`;
-  globo.hidden = false;
-  // La flechita apunta al centro de la barra tocada.
-  globo.style.setProperty('--flecha', `${caja.left + caja.width / 2 - globo.getBoundingClientRect().left}px`);
-  clearTimeout(temporizadorGlobo);
-  temporizadorGlobo = setTimeout(ocultarGlobo, 4000);
-}
-
-function ocultarGlobo() {
-  clearTimeout(temporizadorGlobo);
-  $('globo-pilar').hidden = true;
+// Al tocar una barra aparece su nombre encima, un momento.
+function mostrarNombrePilar(el) {
+  for (const otro of $('barras').children) if (otro !== el) otro.classList.remove('nombrando');
+  el.classList.add('nombrando');
+  clearTimeout(el._temporizador);
+  el._temporizador = setTimeout(() => el.classList.remove('nombrando'), 1500);
 }
 
 function guardar() {
@@ -429,9 +415,6 @@ function conectarEventos() {
   for (const b of document.querySelectorAll('.icono-btn.ajustes')) b.innerHTML = icono('ajustes');
   pintarSelectorNivel();
   for (const b of document.querySelectorAll('[data-ajustes]')) b.addEventListener('click', describirNivel);
-  document.addEventListener('pointerdown', (e) => {
-    if (!e.target.closest('.pilar, .globo-pilar')) ocultarGlobo();
-  });
   prepararAudio();
   $('btn-nueva').addEventListener('click', () => mostrar('pantalla-sexo'));
   $('btn-continuar').addEventListener('click', continuar);
