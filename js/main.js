@@ -403,7 +403,6 @@ function pintarSelectorNivel() {
 
 function describirNivel() {
   const n = nivelActual();
-  $('nivel-desc').textContent = n?.descripcion || '';
   // Una partida en curso conserva su nivel; el cambio vale para la siguiente.
   const enCurso = partida && !partida.fin && partida.nivel !== n?.id && $('pantalla-juego').classList.contains('activa');
   $('nivel-nota').hidden = !enCurso;
