@@ -10,12 +10,14 @@
     "casero_humedades",
     "comedor_colegio",
     "comunion",
+    "coronilla",
     "cumple_parque_bolas",
     "dentista_aparato",
     "dormir_ocho_horas",
     "el_parecido",
     "enchufe",
     "entrevista_trabajo",
+    "entrevista_trabajo_f",
     "erasmus",
     "excursion_autobus",
     "extraescolares",
@@ -32,6 +34,7 @@
     "pediatra_vacunas",
     "perro_familia",
     "piojos",
+    "piso_compartido",
     "pizarra_ereccion",
     "primer_amor",
     "primera_palabra",
@@ -44,7 +47,9 @@
     "siesta_obligatoria",
     "sopa_abuela",
     "sujetador_aros",
+    "test_embarazo",
     "tio_cubata",
-    "vestuario"
+    "vestuario",
+    "vuelta_a_casa"
   ]
 }
