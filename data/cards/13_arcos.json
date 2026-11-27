@@ -1,0 +1,276 @@
+{
+  "_nota": "Arcos de personajes recurrentes: una decisión temprana activa un flag que, años después, hace salir otra carta.",
+  "cartas": [
+    {
+      "id": "fianza_piso",
+      "tipo": "etapa",
+      "etapa": "25-32",
+      "nombre": "La Fianza del Piso",
+      "personaje": "madre",
+      "texto": "Te faltan 1.500€ para la fianza del alquiler y le pides a tu madre el sobre de tu Comunión. Ella recuerda perfectamente el traje de almirante, pero del dinero no le suena nada.",
+      "condiciones": {
+        "requiere_flags": [
+          "sobre_comunion"
+        ],
+        "prioridad": "alta"
+      },
+      "izquierda": {
+        "texto": "Reclamarle los intereses",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "remove_flags": [
+          "sobre_comunion"
+        ],
+        "add_flags": [
+          "deuda_materna"
+        ]
+      },
+      "derecha": {
+        "texto": "Dejarlo correr",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        },
+        "remove_flags": [
+          "sobre_comunion"
+        ]
+      },
+      "lote": 16
+    },
+    {
+      "id": "herencia_mama",
+      "tipo": "etapa",
+      "etapa": "55-69",
+      "nombre": "La Herencia de Mamá",
+      "personaje": "madre",
+      "texto": "Tu madre reparte sus cosas en vida. A ti te deja un juego de café descascarillado y una nota: 'Para que no digas que no te guardo las cosas'.",
+      "condiciones": {
+        "requiere_flags": [
+          "deuda_materna"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aceptar el juego de café",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Heredó un juego de café en lugar del dinero de su comunión."
+      },
+      "derecha": {
+        "texto": "Venderlo en su cara",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "pacto_descampado",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "El Pacto del Descampado",
+      "personaje": "santi",
+      "texto": "Santi, tu mejor amigo, ha robado dos latas de cerveza caliente del garaje de su padre y te propone beberlas detrás del instituto.",
+      "izquierda": {
+        "texto": "Beber a medias",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        },
+        "add_flags": [
+          "amigo_santi"
+        ]
+      },
+      "derecha": {
+        "texto": "Chivarte a su padre",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        },
+        "add_flags": [
+          "enemigo_santi"
+        ]
+      },
+      "lote": 16
+    },
+    {
+      "id": "negocio_santi",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Negocio de Santi",
+      "personaje": "santi",
+      "texto": "Santi reaparece tras diez años sin llamarte. Lleva un polo con el cuello levantado y te pide 3.000€ para montar 'una franquicia de empanadas gourmet'.",
+      "condiciones": {
+        "requiere_flags": [
+          "amigo_santi"
+        ]
+      },
+      "izquierda": {
+        "texto": "Prestarle el dinero",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        },
+        "add_flags": [
+          "santi_moroso"
+        ]
+      },
+      "derecha": {
+        "texto": "Hacerte {el muerto/la muerta}",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "inspector_santi",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Inspector de Hacienda",
+      "personaje": "santi",
+      "texto": "Te cae una inspección rutinaria. Cuando levantas la vista, el técnico que te pide las facturas de hace cuatro años es Santi, el del descampado. Sonríe.",
+      "condiciones": {
+        "requiere_flags": [
+          "enemigo_santi"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedir perdón por el 98",
+        "efectos": {
+          "dinero": 5,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar en silencio",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Pagó una inspección fiscal por una traición de instituto."
+      },
+      "lote": 16
+    },
+    {
+      "id": "empanada_oro",
+      "tipo": "etapa",
+      "etapa": "60-79",
+      "nombre": "La Empanada de Oro",
+      "personaje": "santi",
+      "texto": "Te cruzas con Santi por la calle. Conduce un Mercedes nuevo, te abraza y dice que 'un día de estos' te devuelve los 3.000€.",
+      "condiciones": {
+        "requiere_flags": [
+          "santi_moroso"
+        ]
+      },
+      "izquierda": {
+        "texto": "Rayarle el coche al irse",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se cobró una vieja deuda en la pintura de un Mercedes."
+      },
+      "derecha": {
+        "texto": "Pedirle que invite a café",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "primer_jefe",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Primer Jefe",
+      "personaje": "don_ernesto",
+      "texto": "Don Ernesto te da una palmada en la espalda y dice que 'aquí somos una familia', justo antes de pedirte que te quedes sin cobrar hasta las diez.",
+      "izquierda": {
+        "texto": "Quedarte y sonreír",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "add_flags": [
+          "ernesto_sumiso"
+        ]
+      },
+      "derecha": {
+        "texto": "Irte a tu hora",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        },
+        "add_flags": [
+          "ernesto_rebelde"
+        ]
+      },
+      "lote": 16
+    },
+    {
+      "id": "jubilacion_ernesto",
+      "tipo": "etapa",
+      "etapa": "45-60",
+      "nombre": "La Jubilación de Ernesto",
+      "personaje": "don_ernesto",
+      "texto": "Tu primer jefe se retira y te invita a su fiesta. Te entrega un bolígrafo con el logo de la empresa por 'tus años de lealtad'.",
+      "condiciones": {
+        "requiere_flags": [
+          "ernesto_sumiso"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aplaudir con rabia",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tirarlo al urinario",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "curriculum_ernesto",
+      "tipo": "etapa",
+      "etapa": "45-60",
+      "nombre": "El Currículum",
+      "personaje": "don_ernesto",
+      "texto": "Ahora eres tú quien entrevista. Entra un señor mayor, nervioso, con el currículum arrugado. Es Don Ernesto, tu primer jefe.",
+      "condiciones": {
+        "requiere_flags": [
+          "ernesto_rebelde"
+        ]
+      },
+      "izquierda": {
+        "texto": "Contratarle de becario",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Contrató a su primer jefe como becario veinte años después."
+      },
+      "derecha": {
+        "texto": "«Ya le llamaremos»",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 16
+    }
+  ]
+}

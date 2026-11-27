@@ -104,6 +104,8 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 | `fin` | En la carta del año 100: `"fin": "centenario"` termina la partida. |
 | `fin_texto` | Junto a `fin`: texto propio para la causa de la necrológica en esa opción. |
 | `variantes_texto` | Lista de textos alternativos de la carta con condiciones (`requiere_flags`, `excluye_flags`, `requiere_sexo`…): sale el primero que encaje. Sirve para que una carta recuerde decisiones pasadas. |
+| `grupo` | En anclas: de todas las del mismo grupo sale solo una por partida, al azar (p. ej. las tres cartas posibles del año 0). |
+| `fin_anio` | Junto a `fin`: edad final distinta (la prórroga termina a los 101). |
 | `lote` | Número de lote en el que llegó la carta (para seguimiento). |
 
 **Género**: `{o/a}` se convierte según el sexo del personaje: `maj{o/a}` → majo / maja, `{el/la}`, `señor{/a}`.
@@ -114,7 +116,7 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 
 ## Guardado
 
-La partida en curso se guarda en el navegador después de cada carta. Si el móvil recarga la página, en la pantalla de inicio aparece «Continuar partida». Al morir se borra.
+La partida en curso se guarda en el navegador después de cada carta. Si el móvil recarga la página, en la pantalla de inicio aparece «Continuar vida». Al morir se borra.
 
 ## Cómo funciona el tiempo
 

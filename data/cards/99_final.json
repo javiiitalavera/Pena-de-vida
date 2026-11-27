@@ -7,7 +7,7 @@
       "anio": 100,
       "nombre": "El Centenario",
       "personaje": "alcalde",
-      "texto": "Has llegado a los 100 años. El alcalde viene a entregarte una placa de metacrilato, en el portal nadie sabe cómo te llamas y la Seguridad Social lleva dos décadas deseando tu muerte.",
+      "texto": "Has llegado a los 100 años. El alcalde viene a entregarte una placa de metacrilato, los celadores se rifan quién se queda con tu reloj y la Seguridad Social lleva dos décadas deseando tu muerte.",
       "variantes_texto": [
         {
           "requiere_flags": [
@@ -20,14 +20,16 @@
         "texto": "Soplar la vela",
         "efectos": {},
         "fin": "centenario",
-        "hito_biografico": "Apagó la vela de los 100 y el chiringuito a la vez."
+        "hito_biografico": "Apagó la vela de los 100 y el chiringuito a la vez.",
+        "fin_texto": "Cerraste el chiringuito a los 100 con elegancia. La Seguridad Social ha descorchado champán."
       },
       "derecha": {
         "texto": "Prórroga, por maldad",
         "efectos": {},
         "fin": "centenario",
-        "hito_biografico": "Pidió prórroga hasta los 101 por pura maldad.",
-        "fin_texto": "Pediste prórroga hasta los 101 por pura maldad. Te la denegaron por silencio administrativo: morir también requiere cita previa."
+        "hito_biografico": "Pidió prórroga hasta los 101 por pura maldad, y se la dieron.",
+        "fin_texto": "Aguantaste hasta los 101 solo para cobrar otra paga extra. Mueres sonriendo.",
+        "fin_anio": 101
       },
       "lote": 6
     }

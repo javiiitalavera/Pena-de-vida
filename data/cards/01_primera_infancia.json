@@ -21,7 +21,8 @@
           "vinculos": 10
         }
       },
-      "lote": 1
+      "lote": 1,
+      "grupo": "nacimiento"
     },
     {
       "id": "pediatra_vacunas",
@@ -44,7 +45,8 @@
           "vinculos": 5
         }
       },
-      "lote": 2
+      "lote": 2,
+      "grupo": "primer_anio"
     },
     {
       "id": "enchufe",
@@ -185,6 +187,103 @@
         }
       },
       "lote": 14
+    },
+    {
+      "id": "parto_festivo",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "Parto en Festivo",
+      "personaje": "obstetra",
+      "texto": "Naces un domingo de agosto a las cuatro de la tarde. El obstetra se está perdiendo la paella y tiene prisa por acabar contigo.",
+      "izquierda": {
+        "texto": "Llorar a pleno pulmón",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Salir en silencio",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "el_parecido",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "El Parecido",
+      "personaje": "abuela",
+      "texto": "Toda la familia se agolpa en la cuna. Tu abuela paterna frunce el ceño y dice en voz alta que 'no te pareces en nada a tu padre'.",
+      "izquierda": {
+        "texto": "Hacerte caca encima",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Sonreír al abuelo",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "primera_palabra",
+      "tipo": "ancla",
+      "anio": 1,
+      "grupo": "primer_anio",
+      "nombre": "La Primera Palabra",
+      "personaje": "padres",
+      "texto": "Tus padres llevan meses repitiendo 'mamá' y 'papá' como loros. Tú miras la tele y sueltas tu primera palabra clara.",
+      "izquierda": {
+        "texto": "Decir «cerveza»",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Su primera palabra fue 'cerveza'."
+      },
+      "derecha": {
+        "texto": "Decir «mamá»",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "parque_bolas",
+      "tipo": "ancla",
+      "anio": 1,
+      "grupo": "primer_anio",
+      "nombre": "El Parque de Bolas",
+      "personaje": "bebe_rival",
+      "texto": "Te sueltan en una piscina de bolas que no se limpia desde 1998. Otro bebé te quita el chupete con total impunidad.",
+      "izquierda": {
+        "texto": "Morderle la mano",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Chupar una bola",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 16
     }
   ]
 }

@@ -31,7 +31,8 @@ function pintarInicio() {
   const p = progreso;
   const guardada = cargarPartida();
   $('btn-continuar').hidden = !guardada;
-  if (guardada) $('btn-continuar').textContent = `Continuar partida · Año ${Math.floor(guardada.edad)}`;
+  $('btn-nueva').classList.toggle('primario', !guardada);
+  if (guardada) $('btn-continuar').textContent = `Continuar vida · Año ${Math.floor(guardada.edad)}`;
   $('stats-inicio').textContent = p.partidas
     ? `${p.partidas} ${p.partidas === 1 ? 'vida' : 'vidas'} · récord: ${p.record} años${p.centenarios ? ` · ${p.centenarios} centenari${p.centenarios === 1 ? 'o' : 'os'}` : ''}`
     : '';

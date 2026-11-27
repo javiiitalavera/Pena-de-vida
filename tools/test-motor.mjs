@@ -13,7 +13,7 @@ const assert=(c,m)=>{ if(!c){console.log('FALLO',m); process.exitCode=1;} else c
 function jugar(sexo, rasgo, seed){ const p=new Partida(datos,{sexo,rasgoId:rasgo,rng:rngSemilla(seed)}); const vistas=[]; 
  while(!p.fin){ const c=p.siguienteCarta(); if(!c) break; vistas.push([c.id,p.anio]); for(const k in p.pilares)p.pilares[k]=50; p.elegir('izquierda'); }
  return {p,vistas}; }
-let uroF=0, reglaM=0, anclaMal=0, coche=0; const anclas=Object.fromEntries(datos.cartas.filter(c=>c.tipo==='ancla'&&!c.condiciones).map(c=>[c.id,c.anio]));
+let uroF=0, reglaM=0, anclaMal=0, coche=0; const anclas=Object.fromEntries(datos.cartas.filter(c=>c.tipo==='ancla'&&!c.condiciones&&!c.grupo).map(c=>[c.id,c.anio]));
 for(let i=0;i<300;i++){ for(const s of ['M','F']){ const {p,vistas}=jugar(s,'ciudadano_estandar',i+1);
   for(const [id,a] of vistas){ if(id==='urologo'&&s==='F')uroF++; if(id==='regla_educacion_fisica'&&s==='M')reglaM++; if(id in anclas && anclas[id]!==a) anclaMal++; if(id==='coche_18')coche++; }
 }}
@@ -27,7 +27,7 @@ p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); e=p.calcularEfect
 e=p.calcularEfectos({vinculos:10}); assert(e.vinculos===8,'psicópata sube vínculos x0.75 (7.5→8)');
 p=new Partida(datos,{sexo:'M',rasgoId:'sindrome_del_impostor'}); p.avanzarHasta(11); assert(p.pilares.cordura===40,'impostor −5 a los 5 y 10: '+p.pilares.cordura);
 // comodines
-p=new Partida(datos,{sexo:'M',comodinId:'segunda_opinion'}); p.siguienteCarta(); p.usarComodin(); assert(JSON.stringify(p.vistaPrevia('izquierda'))==='{"salud":-10,"cordura":10}','segunda opinión invierte');
+p=new Partida(datos,{sexo:'M',comodinId:'segunda_opinion'}); p.carta=p.porId.get('obstetra'); p.usarComodin(); assert(JSON.stringify(p.vistaPrevia('izquierda'))==='{"salud":-10,"cordura":10}','segunda opinión invierte');
 p=new Partida(datos,{sexo:'M',comodinId:'orfidal'}); p.siguienteCarta(); p.pilares.cordura=20; p.usarComodin(); p.elegir('izquierda'); assert(p.pilares.cordura===50,'orfidal congela'); p.avanzarHasta(6); assert(!p.congelado,'orfidal caduca');
 p=new Partida(datos,{sexo:'M',comodinId:'bomba_humo'}); const c1=p.siguienteCarta(); p.usarComodin(); assert(p.pilares.salud===50 && p.siguienteCarta().id!==c1.id,'bomba de humo descarta');
 p=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); p.siguienteCarta(); p.usarComodin(); assert(p.pilares.dinero===75&&p.pilares.vinculos===25,'contacto +25/−25');
@@ -74,4 +74,8 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 { const c=datos.cartas.find(x=>x.id==='centenario'); const a=new Partida(datos,{sexo:'M'}); const b=new Partida(datos,{sexo:'M'}); b.flags.add('con_hijos');
   assert(!a.textoDe(c).includes('biznietos') && b.textoDe(c).includes('biznietos'),'biznietos solo con hijos'); }
 { const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const n=construirNecrologia(a);
-  assert(n.texto.includes('silencio administrativo') && n.hitos.some(h=>h.texto.includes('101')),'la prórroga tiene su propio final'); }
+  assert(n.texto.includes('paga extra') && n.edad===101 && n.rango==='0 – 101 años','la prórroga llega a los 101 con su propio final'); }
+// anclas alternativas y arcos
+{ const vistos={}; for(let s=1;s<=300;s++){ const p=new Partida(datos,{sexo:'M',rng:rngSemilla(s)}); const c0=p.siguienteCarta(); p.elegir('izquierda'); const c1=p.siguienteCarta(); vistos[c0.id]=(vistos[c0.id]||0)+1; vistos[c1.id]=(vistos[c1.id]||0)+1; if(c0.anio!==0||c1.anio!==1) vistos.mal=(vistos.mal||0)+1; }
+  assert(!vistos.mal && ['obstetra','parto_festivo','el_parecido','pediatra_vacunas','primera_palabra','parque_bolas'].every(id=>vistos[id]>50),'años 0 y 1: una carta al azar de cada grupo '+JSON.stringify(vistos)); }
+{ const p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('comunion'); p.elegir('derecha'); assert(p.flags.has('sobre_comunion'),'la Comunión activa el arco del sobre'); }

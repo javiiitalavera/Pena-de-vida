@@ -32,8 +32,8 @@ export function validar(datos) {
     if (c.tipo === 'ancla') {
       if (!Number.isInteger(c.anio) || c.anio < 0 || c.anio > config.edad_final) err(c, 'ancla sin "anio" válido');
       const k = `${c.anio}|${JSON.stringify(c.condiciones || {})}`;
-      if (anclasPorAnio.has(k)) av(c, `misma ancla/año/condiciones que "${anclasPorAnio.get(k)}": saldrán las dos el mismo año`);
-      anclasPorAnio.set(k, c.id);
+      if (anclasPorAnio.has(k) && !c.grupo) av(c, `misma ancla/año/condiciones que "${anclasPorAnio.get(k)}": saldrán las dos el mismo año`);
+      if (!c.grupo) anclasPorAnio.set(k, c.id);
     }
     if (c.tipo === 'etapa') {
       // "etapa" puede ser una etapa de config ("18-29") o un rango que abarque varias ("18-49").

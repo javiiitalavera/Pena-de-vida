@@ -19,7 +19,10 @@
         "efectos": {
           "dinero": -5,
           "vinculos": 10
-        }
+        },
+        "add_flags": [
+          "sobre_comunion"
+        ]
       },
       "lote": 2
     },

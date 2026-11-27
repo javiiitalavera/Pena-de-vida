@@ -86,6 +86,13 @@ export class Partida {
     this.eventos = [];
     this.porId = new Map(datos.cartas.map((c) => [c.id, c]));
     this.tiradas = new Map(); // id -> resultado de "probabilidad", tirado una vez por partida
+    // Anclas alternativas: de cada "grupo" sale solo una, elegida al azar al empezar.
+    const grupos = new Map();
+    for (const c of datos.cartas) if (c.tipo === 'ancla' && c.grupo) grupos.set(c.grupo, [...(grupos.get(c.grupo) || []), c]);
+    for (const lista of grupos.values()) {
+      const elegida = lista[Math.floor(this.rng() * lista.length)];
+      for (const c of lista) if (c !== elegida) this.anclasDescartadas.add(c.id);
+    }
   }
 
   // Condiciones + probabilidad. La probabilidad se tira la primera vez que la carta podría salir.
@@ -430,7 +437,10 @@ export class Partida {
     this.invertida = false;
 
     this.comprobarMuerte();
-    if (!this.fin && op.fin) this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto });
+    if (!this.fin && op.fin) {
+      this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto });
+      if (Number.isFinite(op.fin_anio)) this.fin.anio = op.fin_anio;
+    }
     if (!this.fin) this.avanzar();
     return { deltas };
   }
