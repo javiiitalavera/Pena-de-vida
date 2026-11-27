@@ -108,7 +108,7 @@
         "hito_biografico": "Se encontró a sí mismo en Australia con la Visa de su madre."
       },
       "derecha": {
-        "texto": "Vicepresidencia familiar",
+        "texto": "Aceptar una vicepresidencia en la empresa familiar",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -271,7 +271,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Todo a las palomas",
+        "texto": "Dejárselo todo a las palomas",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
@@ -279,7 +279,7 @@
         "hito_biografico": "Desheredó a toda su familia por pura diversión."
       },
       "derecha": {
-        "texto": "La casa, a tres a la vez",
+        "texto": "Prometerles la casa a tres a la vez",
         "efectos": {
           "vinculos": 10,
           "cordura": 5

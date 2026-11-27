@@ -169,7 +169,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Discurso corporativo",
+        "texto": "Dar la respuesta de manual",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -179,7 +179,7 @@
         ]
       },
       "derecha": {
-        "texto": "Decir la verdad",
+        "texto": "Decir que te ves debajo de un puente",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -274,7 +274,7 @@
         }
       },
       "derecha": {
-        "texto": "Préstamo y a Turquía",
+        "texto": "Pedir un préstamo para operarte en Turquía",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -294,14 +294,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Llaves entre los nudillos",
+        "texto": "Seguir a pie con las llaves en la mano",
         "efectos": {
           "cordura": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Taxi de cinco minutos",
+        "texto": "Parar un taxi, aunque sean cinco minutos",
         "efectos": {
           "dinero": -10,
           "salud": 10
@@ -368,7 +368,7 @@
         ]
       },
       "derecha": {
-        "texto": "Al paro, a esperar señales",
+        "texto": "Seguir en paro hasta encontrar tu vocación",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -387,7 +387,7 @@
       "personaje": "nino_rico",
       "texto": "Los padres de un niño rico te pagan 25€ la hora en negro por darle clases de Matemáticas de 2º de la ESO. No te acuerdas de hacer una ecuación de segundo grado.",
       "izquierda": {
-        "texto": "Tutoriales en el baño",
+        "texto": "Aceptar y repasar mates en el baño",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -480,7 +480,7 @@
       "personaje": "rodaje",
       "texto": "Buscan extras para rodar un anuncio de una aseguradora a las cinco de la mañana bajo la lluvia artificial. Pagan 120€ y un bocadillo de chóped.",
       "izquierda": {
-        "texto": "Doce horas calad{o/a}",
+        "texto": "Aceptar y pasar doce horas bajo la lluvia",
         "efectos": {
           "dinero": 10,
           "salud": -10

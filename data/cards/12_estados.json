@@ -45,14 +45,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Uno con el café",
+        "texto": "Fumarte uno con el café",
         "efectos": {
           "salud": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Vapeador de fresa",
+        "texto": "Pasarte al vapeador de fresa",
         "efectos": {
           "vinculos": -5,
           "dinero": -10
@@ -198,7 +198,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Una caña, por desesperación",
+        "texto": "Quedar a tomar una caña por desesperación",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -206,7 +206,7 @@
         "hito_biografico": "Sobrevivió a una cita de Tinder tras su divorcio."
       },
       "derecha": {
-        "texto": "Borrar la app; un gato",
+        "texto": "Borrar la app y adoptar un gato",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -327,14 +327,14 @@
         ]
       },
       "izquierda": {
-        "texto": "50 € para el finde",
+        "texto": "Darle 50 € para el finde",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Maleta al portal",
+        "texto": "Ponerle la maleta en el portal",
         "efectos": {
           "dinero": 10,
           "vinculos": -15
@@ -636,7 +636,7 @@
         ]
       },
       "derecha": {
-        "texto": "Lumbago preventivo",
+        "texto": "Fingir lumbago antes de la mudanza",
         "efectos": {
           "salud": 5,
           "vinculos": -10

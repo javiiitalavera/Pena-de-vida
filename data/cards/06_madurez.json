@@ -15,7 +15,7 @@
         }
       },
       "derecha": {
-        "texto": "Máster de Historia del Arte",
+        "texto": "Matricularte en Historia del Arte",
         "efectos": {
           "vinculos": 10,
           "dinero": -10
@@ -32,7 +32,7 @@
       "personaje": "medico_cabecera",
       "texto": "Te han salido los análisis mal. Te recomienda dejar el alcohol, el azúcar, la sal, la carne roja y el estrés.",
       "izquierda": {
-        "texto": "Pechuga hervida de por vida",
+        "texto": "Vivir a base de pechuga hervida",
         "efectos": {
           "salud": 15,
           "cordura": -10
@@ -127,7 +127,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Indemnización y un bar",
+        "texto": "Cobrar la indemnización y montar un bar",
         "efectos": {
           "dinero": -15,
           "salud": -10
@@ -164,7 +164,7 @@
         }
       },
       "derecha": {
-        "texto": "Cena por la ventana",
+        "texto": "Tirar la cena por la ventana",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
@@ -184,14 +184,14 @@
       "personaje": "coordinador_imserso",
       "texto": "Te toca Benidorm en noviembre. El autobús huele a Reflex y el coordinador intenta animaros cantando canciones de Manolo Escobar.",
       "izquierda": {
-        "texto": "Pasodobles hasta las tres",
+        "texto": "Bailar pasodobles hasta las tres",
         "efectos": {
           "vinculos": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Documentales de la guerra",
+        "texto": "Quedarte viendo documentales de la guerra",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -372,7 +372,7 @@
         }
       },
       "derecha": {
-        "texto": "Jamón y viajes",
+        "texto": "Gastarte los ahorros en jamón y viajes",
         "efectos": {
           "dinero": -15,
           "cordura": 15
@@ -651,7 +651,7 @@
         }
       },
       "derecha": {
-        "texto": "A casa antes del reguetón",
+        "texto": "Irte antes de que pongan reguetón",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -667,7 +667,7 @@
       "personaje": "simulador_pension",
       "texto": "Entras en el simulador de la Seguridad Social para ver cuánto te quedará al jubilarte. La cifra que sale en pantalla te da escalofríos.",
       "izquierda": {
-        "texto": "Ahorro obsesivo",
+        "texto": "Ponerte a ahorrar hasta el último céntimo",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -831,7 +831,7 @@
         "hito_biografico": "Alquiló un trastero con ventana a precio de chalet."
       },
       "derecha": {
-        "texto": "Alquiler justo",
+        "texto": "Alquilarlo a un precio razonable",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -900,7 +900,7 @@
         }
       },
       "derecha": {
-        "texto": "Eso roza la prevaricación",
+        "texto": "Rechazar el encargo y llamarlo chanchullo",
         "efectos": {
           "cordura": 10,
           "dinero": -5

@@ -220,14 +220,14 @@
       "personaje": "vecino_residencia",
       "texto": "El señor del 204 te ha retado a una carrera hasta el comedor antes de que se acaben las croquetas.",
       "izquierda": {
-        "texto": "Quitar el freno",
+        "texto": "Quitar el freno y salir a por las croquetas",
         "efectos": {
           "salud": -15,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Merluza hervida",
+        "texto": "Ir despacio y conformarte con la merluza",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -273,7 +273,7 @@
         }
       },
       "derecha": {
-        "texto": "Más pastillas para dormir",
+        "texto": "Pedirle algo más fuerte para dormir",
         "efectos": {
           "salud": 10,
           "dinero": -10

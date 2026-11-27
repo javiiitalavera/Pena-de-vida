@@ -39,7 +39,7 @@
         }
       },
       "derecha": {
-        "texto": "Pataleo nivel exorcista",
+        "texto": "Patalear como en un exorcismo",
         "efectos": {
           "salud": -10,
           "vinculos": 5
@@ -143,14 +143,14 @@
       "personaje": "nino_mocos",
       "texto": "Un niño con mocos verdes hasta la barbilla te ofrece un trozo de plastilina mordida.",
       "izquierda": {
-        "texto": "Comértela, por inmunidad",
+        "texto": "Comértela para curtir tus defensas",
         "efectos": {
           "salud": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Empujarle a las colchonetas",
+        "texto": "Empujarlo contra las colchonetas",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -204,7 +204,7 @@
         }
       },
       "derecha": {
-        "texto": "Rotulador permanente en la pared",
+        "texto": "Pintar la pared con rotulador permanente",
         "efectos": {
           "cordura": 10,
           "dinero": -5

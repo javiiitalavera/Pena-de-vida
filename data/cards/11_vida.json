@@ -98,7 +98,7 @@
         "prioridad": "alta"
       },
       "izquierda": {
-        "texto": "Dosis de caballo",
+        "texto": "Pedir la epidural ya",
         "efectos": {
           "salud": 10,
           "cordura": 5,
@@ -112,7 +112,7 @@
         ]
       },
       "derecha": {
-        "texto": "Al natural, maldiciendo",
+        "texto": "Parir sin anestesia, maldiciendo",
         "efectos": {
           "salud": -10,
           "cordura": -10,

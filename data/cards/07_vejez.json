@@ -315,7 +315,7 @@
       "personaje": "empleado_banco",
       "texto": "Han cerrado tu oficina de toda la vida y un chico con corbata te dice que 'para sacar efectivo tienes que usar la app y el código QR'.",
       "izquierda": {
-        "texto": "Sentada en el banco",
+        "texto": "Hacer una sentada en la oficina",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -323,7 +323,7 @@
         "hito_biografico": "Protagonizó una sentada en un cajero automático contra la digitalización."
       },
       "derecha": {
-        "texto": "Ahorros al colchón",
+        "texto": "Guardar los ahorros bajo el colchón",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -385,7 +385,7 @@
         }
       },
       "derecha": {
-        "texto": "Al contenedor gris",
+        "texto": "Cancelar el seguro",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -549,7 +549,7 @@
       "personaje": "pareja_baile",
       "texto": "El centro de mayores parece una discoteca de Ibiza pero con olor a Vicks VapoRub. Alguien muy insistente te saca a bailar un bolero.",
       "izquierda": {
-        "texto": "Amor geriátrico",
+        "texto": "Aceptar el bolero y dejarte querer",
         "efectos": {
           "vinculos": 10,
           "salud": -10
@@ -634,7 +634,7 @@
         }
       },
       "derecha": {
-        "texto": "5 € y un sermón",
+        "texto": "Darle cinco euros y un sermón",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
@@ -920,7 +920,7 @@
         }
       },
       "derecha": {
-        "texto": "Mejor en un sobre",
+        "texto": "Pedir el dinero del banquete en un sobre",
         "efectos": {
           "dinero": 10,
           "vinculos": -10

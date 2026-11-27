@@ -8,7 +8,7 @@
       "personaje": "tio_pueblo",
       "texto": "Llevas un traje de almirante que pica como el demonio, pero tu tío el del pueblo te acaba de dar un sobre muy gordo.",
       "izquierda": {
-        "texto": "Sobre al calcetín",
+        "texto": "Esconder el sobre en el calcetín",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -50,7 +50,7 @@
         }
       },
       "derecha": {
-        "texto": "Escándalo existencial",
+        "texto": "Pedirle explicaciones por la moneda",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -184,7 +184,7 @@
         }
       },
       "derecha": {
-        "texto": "Sonrisa británica",
+        "texto": "Quedarte con los dientes tal cual",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -200,7 +200,7 @@
       "personaje": "monitora_comedor",
       "texto": "Hoy toca pescado hervido con espinas y espinacas. La monitora te avisa de que no te levantas de la mesa hasta que dejes el plato limpio.",
       "izquierda": {
-        "texto": "Pescado al váter",
+        "texto": "Tirar el pescado al váter",
         "efectos": {
           "cordura": 10,
           "salud": -5
@@ -333,7 +333,7 @@
       "personaje": "madre",
       "texto": "Tu madre te ha comprado un casco gigante con dibujos de delfines y rodilleras. Los demás niños del parque ya se están riendo desde el tobogán.",
       "izquierda": {
-        "texto": "Casco de astronauta",
+        "texto": "Ponerte el casco de astronauta",
         "efectos": {
           "salud": 15,
           "vinculos": -10
@@ -348,7 +348,7 @@
         }
       },
       "derecha": {
-        "texto": "Al seto con el casco",
+        "texto": "Tirar el casco al seto",
         "efectos": {
           "salud": -5,
           "vinculos": 10
@@ -364,7 +364,7 @@
       "personaje": "piscina",
       "texto": "Tus padres quieren que seas {un niño/una niña} 'complet{o/a}' y te han apuntado a natación a las siete de la tarde en invierno. El agua de la piscina está helada.",
       "izquierda": {
-        "texto": "Cuarenta largos de cloro",
+        "texto": "Nadar cuarenta largos en agua helada",
         "efectos": {
           "salud": 15,
           "cordura": -10
@@ -545,7 +545,7 @@
       "nombre": "La Paga Clandestina",
       "texto": "Tu abuela te mete dos euros en el bolsillo y te susurra «para que te compres algo, pero no se lo digas a tu madre».",
       "izquierda": {
-        "texto": "Todo en chuches",
+        "texto": "Gastarlo todo en chuches",
         "efectos": {
           "salud": -10,
           "cordura": 10

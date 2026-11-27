@@ -24,7 +24,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Sacar plaza",
+        "texto": "Preparar el MIR",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -39,7 +39,7 @@
         ]
       },
       "derecha": {
-        "texto": "Bótox en Marbella",
+        "texto": "Dedicarte al bótox en Marbella",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -103,7 +103,7 @@
         }
       },
       "derecha": {
-        "texto": "Veinte minutos de gases",
+        "texto": "Explicarle durante veinte minutos que son gases",
         "efectos": {
           "cordura": -10,
           "salud": 5
@@ -167,7 +167,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Tres años y la plaza",
+        "texto": "Ponerte a estudiar para la plaza",
         "efectos": {
           "dinero": 10,
           "cordura": -15
@@ -414,14 +414,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Baja por nódulos",
+        "texto": "Pedir la baja por los nódulos",
         "efectos": {
           "salud": 10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Micro de Britney",
+        "texto": "Dar clase con micro de diadema",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
@@ -643,7 +643,7 @@
         "hito_biografico": "Tumbó los servidores de la empresa un viernes a las seis."
       },
       "derecha": {
-        "texto": "Tu religión lo prohíbe",
+        "texto": "Decir que tu religión prohíbe desplegar en viernes",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -736,7 +736,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Buffet y su pastilla",
+        "texto": "Ir al bufé y recetar su pastilla",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -744,7 +744,7 @@
         "hito_biografico": "Asistió a un congreso médico en Tenerife sin pisar una sola ponencia."
       },
       "derecha": {
-        "texto": "Ética y consulta",
+        "texto": "Rechazar el viaje y pasar consulta",
         "efectos": {
           "cordura": 10,
           "salud": -5
@@ -934,14 +934,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Cartel en mayúsculas",
+        "texto": "Colgar un cartel en mayúsculas",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Termo propio y silencio",
+        "texto": "Llevar tu propio termo y no decir nada",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -1138,7 +1138,7 @@
         }
       },
       "derecha": {
-        "texto": "Parche con celo",
+        "texto": "Ponerle un parche y cruzar los dedos",
         "efectos": {
           "salud": 10,
           "cordura": -10
