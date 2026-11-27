@@ -280,8 +280,9 @@ async function decidir(lado) {
   reproducirEfecto('carta');
   await lanzar($('carta'), lado);
   const resultado = partida.elegir(lado);
-  if (resultado?.sorpresa) avisar(resultado.sorpresa, 2800);
   pintarBarras();
+  // La sorpresa ocupa el sitio de la carta y la siguiente espera a que se lea.
+  if (resultado?.sorpresa) await mostrarSorpresa(resultado.sorpresa);
   procesarEventos();
   if (partida.fin) return setTimeout(acabar, 350);
   siguiente();
@@ -302,13 +303,46 @@ function nombrePilar(id) {
   return datos.config.pilares.find((p) => p.id === id)?.nombre || id;
 }
 
-let temporizadorAviso;
+// Avisos en cola: uno detrás de otro, sin pisarse.
+const colaAvisos = [];
+let avisoEnCurso = false;
 function avisar(texto, ms = 2400) {
+  colaAvisos.push({ texto, ms });
+  if (!avisoEnCurso) siguienteAviso();
+}
+
+function siguienteAviso() {
   const el = $('aviso');
+  const aviso = colaAvisos.shift();
+  avisoEnCurso = !!aviso;
+  if (!aviso) return (el.hidden = true);
+  el.hidden = true;
+  void el.offsetWidth; // reinicia la animación de entrada
+  el.textContent = aviso.texto;
+  el.hidden = false;
+  setTimeout(siguienteAviso, aviso.ms);
+}
+
+// Se cierra al tocar la pantalla o pulsar una tecla, o sola a los 3,5 s.
+function mostrarSorpresa(texto) {
+  const el = $('sorpresa');
   el.textContent = texto;
   el.hidden = false;
-  clearTimeout(temporizadorAviso);
-  temporizadorAviso = setTimeout(() => (el.hidden = true), ms);
+  return new Promise((resolver) => {
+    const cerrar = () => {
+      clearTimeout(t);
+      document.removeEventListener('pointerdown', cerrar, true);
+      document.removeEventListener('keydown', cerrar, true);
+      el.hidden = true;
+      resolver();
+    };
+    const t = setTimeout(cerrar, 3500);
+    // Un instante de gracia para que el mismo gesto del swipe no la cierre.
+    setTimeout(() => {
+      document.addEventListener('pointerdown', cerrar, true);
+      document.addEventListener('keydown', cerrar, true);
+    }, 300);
+  });
 }
 
 // ---------- comodín ----------

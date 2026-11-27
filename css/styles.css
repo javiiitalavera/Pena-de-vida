@@ -153,7 +153,16 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   display: flex; align-items: center; justify-content: center;
 }
 
-.mesa { display: flex; justify-content: center; perspective: 900px; }
+.mesa { position: relative; display: flex; justify-content: center; perspective: 900px; }
+.sorpresa {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-1.5deg);
+  width: calc(var(--carta) * 0.86); padding: 22px 20px;
+  background: var(--papel); color: var(--papel-tinta);
+  border: 1px solid var(--papel-tinta); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.4; text-align: center;
+  z-index: 4; cursor: pointer; animation: sorpresa-entra 0.3s ease-out;
+}
+@keyframes sorpresa-entra { from { opacity: 0; transform: translate(-50%, -46%) rotate(-4deg); } }
 .carta {
   width: var(--carta); height: var(--carta);
   background: var(--papel);
