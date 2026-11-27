@@ -352,6 +352,491 @@
         }
       },
       "lote": 3
+    },
+    {
+      "id": "mesa_solteros",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Mesa de los Solteros",
+      "personaje": "coleccionista_cuchillos",
+      "texto": "En la boda de tu prima te han sentado en la mesa de los descartes junto a un tío divorciado de 52 años, dos adolescentes y un señor que colecciona cuchillos.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Emborracharte con el de los cuchillos y pasártelo mejor que nadie",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        },
+        "hito_biografico": "Hizo amistad con un coleccionista de armas blancas en una boda."
+      },
+      "derecha": {
+        "texto": "Fingir una migraña e irte antes del baile",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "alquiler_solitario",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Alquiler en Solitario",
+      "personaje": "estudio",
+      "texto": "Pagas 1.100 euros al mes por un estudio donde puedes remover la paella desde la cama. Te planteas buscarte pareja solo para dividir gastos.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aguantar sol{o/a} y comer pasta con atún el día 20",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Volver a compartir piso con tres universitarios",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "cena_parejas",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Cena con Parejas",
+      "personaje": "amigos_parejas",
+      "texto": "Quedas con tus amigos de toda la vida. Llevan dos horas hablando de tipos de interés, colegios concertados y marcas de robots aspiradores.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar tu parte y desaparecer del grupo durante seis meses",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir interés y preguntar qué modelo de Roomba recomiendan",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "armario_ikea",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Mudanza sin Pareja",
+      "personaje": "armario_ikea",
+      "texto": "Tienes que montar un armario de IKEA de dos metros tú sol{o/a}. En las instrucciones salen dos muñequitos sonriendo; tú estás sudando y a punto de llorar.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Montarlo a base de fuerza bruta y que sobren cuatro tornillos",
+        "efectos": {
+          "salud": -10,
+          "dinero": 5
+        }
+      },
+      "derecha": {
+        "texto": "Pagar a un montador profesional y recuperar tu dignidad",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "lesion_nocturna",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Lesión Nocturna",
+      "personaje": "fisio",
+      "texto": "Te despiertas con una contractura brutal en el cuello. No has hecho deporte extremo; simplemente has dormido en una postura ligeramente rara.",
+      "izquierda": {
+        "texto": "Ir al fisio para que te cobre 50 euros por hacerte daño",
+        "efectos": {
+          "dinero": -10,
+          "salud": 10
+        }
+      },
+      "derecha": {
+        "texto": "Empastillarte con relajantes musculares e ir a trabajar zombi",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "grupo_amigos",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Grupo de Amigos",
+      "personaje": "grupo_whatsapp",
+      "texto": "Lleváis cuatro meses intentando cuadrar una cena por WhatsApp. Alguien acaba de mandar una encuesta de Doodle para noviembre del año que viene.",
+      "izquierda": {
+        "texto": "Proponer quedar hoy mismo y ver cómo nadie contesta",
+        "efectos": {
+          "cordura": 5,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Votar fechas sabiendo que luego todos cancelarán",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "reforma_cocina",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Reforma de la Cocina",
+      "personaje": "albanil",
+      "texto": "El albañil te dijo que tardaría diez días. Llevas seis semanas fregando los platos en la bañera y el tío ya no te coge el teléfono.",
+      "izquierda": {
+        "texto": "Amenazarle con denunciarle y que te deje las tuberías al aire",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Contratar a otro el doble de caro para terminar la pesadilla",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Pagó dos veces la misma reforma para poder volver a cocinar."
+      },
+      "lote": 10
+    },
+    {
+      "id": "festival_musica",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Festival de Música",
+      "personaje": "festival",
+      "texto": "Has comprado entradas para un festival pensando que sigues teniendo 22 años. Son las diez de la noche, te duelen las lumbares y el cabeza de cartel sale a la una.",
+      "izquierda": {
+        "texto": "Aguantar bebiendo cerveza caliente de 9 euros el vaso",
+        "efectos": {
+          "salud": -10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Irte a dormir al hotel y escuchar el disco en Spotify",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "cafetera_especialidad",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Cafetera de Especialidad",
+      "personaje": "cafetera",
+      "texto": "Un amigo te ha metido en el mundo del café de filtro. Te ves a ti mism{o/a} pesando granos en una báscula de precisión a las siete de la mañana.",
+      "izquierda": {
+        "texto": "Gastarte 600 euros en un molinillo alemán",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Se convirtió en un{/a} esnob insoportable del café de especialidad."
+      },
+      "derecha": {
+        "texto": "Volver al café soluble de supermercado sin mirar atrás",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -5
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "declaracion_renta",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Declaración de la Renta",
+      "personaje": "hacienda",
+      "texto": "Abres el borrador de Hacienda con ilusión y descubres que te sale a pagar 1.400 euros por haber tenido dos pagadores.",
+      "izquierda": {
+        "texto": "Fraccionar el pago y maldecir el sistema fiscal",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar a un gestor para que te rasque 80 euros",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "crossfit",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El CrossFit",
+      "personaje": "companero_trabajo",
+      "texto": "Un compañero de trabajo no para de hablar de su 'box' de CrossFit y te invita a una clase de prueba gratuita.",
+      "izquierda": {
+        "texto": "Ir, levantar un neumático de tractor y lesionarte el manguito rotador",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Decirle que prefieres conservar tus articulaciones intactas",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "amigo_rural",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Amigo Rural",
+      "personaje": "amigo_rural",
+      "texto": "Un conocido se ha ido a vivir a un pueblo de 40 habitantes y te da la chapa sobre que 'en la ciudad vivimos como ratas' mientras teletrabaja con fibra óptica.",
+      "izquierda": {
+        "texto": "Darle la razón por educación y volver a tu atasco diario",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Preguntarle a cuántos kilómetros tiene el hospital más cercano",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "comida_empresa",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Comida de Empresa",
+      "personaje": "director_general",
+      "texto": "Es Navidad, hay barra libre y llevas cuatro gin-tonics. El director general se acerca a hablar contigo y te apetece decirle exactamente qué opinas de su gestión.",
+      "izquierda": {
+        "texto": "Soltarle las verdades a la cara y quedarte en la gloria",
+        "efectos": {
+          "cordura": 15,
+          "dinero": -10
+        },
+        "hito_biografico": "Dijo lo que pensaba al director general en la cena de Navidad."
+      },
+      "derecha": {
+        "texto": "Reírle un chiste malísimo sobre los lunes",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "seguro_coche",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Seguro del Coche",
+      "personaje": "agente_seguros",
+      "texto": "Llevas diez años sin dar un solo parte, pero tu aseguradora te sube la póliza 120 euros 'por la inflación'. Al llamar para darte de baja, te ofrecen bajarlo 15 euros.",
+      "izquierda": {
+        "texto": "Pasarte tres tardes comparando pólizas por internet",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tragar con la subida porque no tienes energía vital",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 5
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "psicologo",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Psicólogo",
+      "personaje": "psicologo",
+      "texto": "Decides ir a terapia para arreglar tu cabeza. A los veinte minutos te das cuenta de que el problema principal no es tu infancia, sino que eres pobre y duermes mal.",
+      "izquierda": {
+        "texto": "Seguir yendo a 70 euros la sesión para desahogarte",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 15
+        }
+      },
+      "derecha": {
+        "texto": "Dejarlo y comprarte una freidora de aire",
+        "efectos": {
+          "dinero": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "coche_nuevo",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Coche Nuevo",
+      "personaje": "concesionario",
+      "texto": "Tu coche viejo ha muerto. El concesionario te intenta vender un SUV gigante financiado a ocho años con un TAE del 11%.",
+      "izquierda": {
+        "texto": "Firmar la financiación y vivir para pagar el coche",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Comprarte un utilitario de segunda mano color beige",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "alergia_repentina",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Alergia Repentina",
+      "personaje": "polen",
+      "texto": "Nunca has sido alérgic{o/a} a nada, pero esta primavera te levantas con los ojos como tomates y estornudando veinte veces seguidas.",
+      "izquierda": {
+        "texto": "Tomar antihistamínicos que te dejan en coma en la oficina",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Aguantar a pelo gastando tres paquetes de pañuelos al día",
+        "efectos": {
+          "salud": -10,
+          "dinero": 5
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "vecino_musico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Vecino Músico",
+      "personaje": "vecino_bateria",
+      "texto": "El hijo del 3ºA ha decidido aprender a tocar la batería a las tres de la tarde, justo cuando intentas trabajar o echarte la siesta.",
+      "izquierda": {
+        "texto": "Subir a hablar con sus padres con una sonrisa pasivo-agresiva",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Comprarte unos auriculares con cancelación de ruido de 350 euros",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "cumple_38",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "edad_sugerida": 38,
+      "nombre": "El Cumpleaños de los 38",
+      "personaje": "tarta",
+      "texto": "No te apetece celebrar nada, pero te da pena pasar el día como un ermitaño. Si montas cena, te tocará pagar la ronda de copas.",
+      "izquierda": {
+        "texto": "Apagar el móvil, pedir sushi y ver una película sol{o/a}",
+        "efectos": {
+          "dinero": 5,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Montar una cena y fingir alegría hasta medianoche",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 10
+    },
+    {
+      "id": "boda_destino",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Boda de Destino",
+      "personaje": "isla_griega",
+      "texto": "Un conocido al que no ves desde 2016 te invita a su boda en una isla griega. El vuelo, el hotel y el regalo te salen por 1.800 euros.",
+      "izquierda": {
+        "texto": "Ir por no quedar mal y comerte un arroz seco frente al mar",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que tienes un compromiso ineludible y bloquearle",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 10
     }
   ]
 }
