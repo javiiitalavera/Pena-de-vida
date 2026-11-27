@@ -316,6 +316,166 @@
         }
       },
       "lote": 16
+    },
+    {
+      "id": "pure_verduras",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Puré de Verduras",
+      "texto": "Tu madre hace el ruido de un avión con la cuchara. Tú sabes perfectamente que es brócoli hervido.",
+      "izquierda": {
+        "texto": "Escupirlo a la pared",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Decoró la cocina familiar con brócoli a presión."
+      },
+      "derecha": {
+        "texto": "Tragar sin masticar",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": -10,
+            "vinculos": -10
+          },
+          "mensaje": "Te da una arcada y lo devuelves sobre el mantel bueno."
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "bautizo",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Bautizo",
+      "texto": "El cura te echa agua helada en la frente mientras un fotógrafo te ciega con el flash. Tu tía abuela llora de emoción.",
+      "izquierda": {
+        "texto": "Llorar hasta ahogarte",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Mearle la sotana",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Bautizó al cura antes de que el cura le bautizara.",
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 15,
+            "cordura": 10
+          },
+          "mensaje": "A tu abuelo le hace gracia y mete un billete de 50 € en tu sobre."
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "guarderia",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "La Guardería",
+      "texto": "Te dejan en una sala con veinte desconocidos que tosen sin taparse la boca. Una monitora sonríe demasiado.",
+      "izquierda": {
+        "texto": "Chupar un bloque de plástico",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Agarrarte a tu madre",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "carrito_sin_freno",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Carrito sin Freno",
+      "texto": "Tu padre aparca el carrito frente a la tele para ver el fútbol y se olvida de echar el freno.",
+      "izquierda": {
+        "texto": "Bajar la cuesta del salón",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        },
+        "hito_biografico": "Hizo su primer descenso en carrito sin freno antes de saber andar."
+      },
+      "derecha": {
+        "texto": "Tirar el chupete al suelo",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "foto_estudio",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "La Foto de Estudio",
+      "texto": "Te visten de marinero y te sientan en un taburete de terciopelo. Quieren que sonrías a un peluche sucio.",
+      "izquierda": {
+        "texto": "Poner cara de asesin{o/a}",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Su foto de bebé presidió el salón de sus abuelos con cara de asesin{o/a}."
+      },
+      "derecha": {
+        "texto": "Sonreír por inercia",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "tambor_abuelo",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Regalo del Abuelo",
+      "texto": "Tu abuelo te regala un tambor de lata el día de Reyes. Tus padres le miran con odio silencioso.",
+      "izquierda": {
+        "texto": "Tocarlo a las siete",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -5
+          },
+          "mensaje": "Tu padre lo «pierde» en el contenedor al día siguiente."
+        }
+      },
+      "derecha": {
+        "texto": "Jugar sol{o/a} con la caja",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -5
+        }
+      },
+      "lote": 17
     }
   ]
 }

@@ -221,23 +221,31 @@
       "etapa": "4-11",
       "nombre": "Los Piojos",
       "personaje": "madre",
-      "texto": "Llega una circular del colegio avisando de un brote. Te pica la cabeza como si tuvieras una colonia de hormigas y tu madre saca la lendrera metálica y vinagre.",
+      "texto": "Llega una circular del colegio avisando de un brote. Te pica la nuca desde que has leído el título.",
       "izquierda": {
-        "texto": "Lendrera y vinagre",
+        "texto": "Decirlo en casa",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "«No me pica nada»",
+        "texto": "Rascarte en secreto",
         "efectos": {
           "salud": -10,
-          "vinculos": -10
+          "vinculos": 10
         },
-        "hito_biografico": "Fue {el/la} paciente cero de un brote de piojos en 3º de Primaria."
+        "hito_biografico": "Fue {el/la} paciente cero de un brote de piojos en 3º de Primaria.",
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -10
+          },
+          "mensaje": "Contagias a toda la casa y te rapan al uno."
+        }
       },
-      "lote": 12
+      "lote": 17
     },
     {
       "id": "bici_ruedines",
@@ -424,6 +432,194 @@
         }
       },
       "lote": 14
+    },
+    {
+      "id": "flauta_dulce",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Flauta Dulce",
+      "texto": "En clase de música toca ensayar el Himno de la Alegría. Nadie afina y la profesora ha perdido la fe en la humanidad.",
+      "izquierda": {
+        "texto": "Soplar con toda tu alma",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Hacer como que tocas",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -10
+          },
+          "mensaje": "Te saca a tocar sol{o/a} delante de toda la clase."
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "equipos_patio",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "Los Equipos del Patio",
+      "texto": "Los dos capitanes eligen equipo para el fútbol. Quedáis tú y el niño que lleva las gafas sujetas con esparadrapo.",
+      "izquierda": {
+        "texto": "Ofrecerte de porter{o/a}",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Irte a leer a un banco",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "nota_agenda",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Nota en la Agenda",
+      "texto": "Has suspendido matemáticas y la profesora escribe una nota en bolígrafo rojo para que la firmen tus padres.",
+      "izquierda": {
+        "texto": "Falsificar la firma",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -5
+        },
+        "hito_biografico": "Falsificó su primera firma a los nueve años.",
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -10
+          },
+          "mensaje": "Tu padre no firma a lápiz ni con faltas de ortografía. Castigad{o/a} un mes."
+        }
+      },
+      "derecha": {
+        "texto": "Entregarla antes de cenar",
+        "efectos": {
+          "cordura": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "cumple_ajeno",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Cumpleaños Ajeno",
+      "texto": "Un compañero celebra su cumpleaños en la hamburguesería con corona de cartón. No te han invitado, pero te los cruzas por la calle.",
+      "izquierda": {
+        "texto": "Saludar muy fuerte",
+        "efectos": {
+          "cordura": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Cruzar de acera",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "paga_clandestina",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Paga Clandestina",
+      "texto": "Tu abuela te mete dos euros en el bolsillo y te susurra «para que te compres algo, pero no se lo digas a tu madre».",
+      "izquierda": {
+        "texto": "Todo en chuches",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Meterlo en la hucha",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "corte_pelo",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Corte de Pelo",
+      "texto": "Tu madre decide que la peluquería es muy cara y saca las tijeras de cortar el pollo.",
+      "izquierda": {
+        "texto": "Quedarte quiet{o/a}",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Lució un corte de pelo casero en todas las fotos de Primaria."
+      },
+      "derecha": {
+        "texto": "Mover la cabeza",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": -10,
+            "cordura": 15
+          },
+          "mensaje": "Le da tanto miedo el estropicio que te lleva a una peluquería de verdad."
+        }
+      },
+      "lote": 17
+    },
+    {
+      "id": "granja_escuela",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Granja Escuela",
+      "texto": "En la excursión del colegio te obligan a ordeñar una vaca que claramente preferiría estar en otro sitio.",
+      "izquierda": {
+        "texto": "Tirar con decisión",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -5
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": -10,
+            "vinculos": -15
+          },
+          "mensaje": "La vaca te da un coletazo en la cara. Hueles a estiércol todo el bus de vuelta."
+        }
+      },
+      "derecha": {
+        "texto": "Mirar desde la valla",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 17
     }
   ]
 }
