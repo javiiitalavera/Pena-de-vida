@@ -295,6 +295,49 @@
         "hito_biografico": "Dio una clase de derecho laboral en una entrevista que no superó."
       },
       "lote": 3
+    },
+    {
+      "id": "mercado_laboral",
+      "tipo": "ancla",
+      "anio": 23,
+      "nombre": "El Mercado Laboral",
+      "personaje": "consultora",
+      "texto": "Ya tienes edad de cotizar. Una consultora gris te ofrece un cubículo sin ventanas con contrato indefinido; la alternativa es seguir buscando 'tu vocación'.",
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico",
+          "autonomo",
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Firmar y vender tu alma a Excel",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        },
+        "add_flags": [
+          "oficinista"
+        ],
+        "remove_flags": [
+          "desempleado"
+        ]
+      },
+      "derecha": {
+        "texto": "Apuntarte al paro y esperar una señal del universo",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "add_flags": [
+          "desempleado"
+        ]
+      },
+      "lote": 14
     }
   ]
 }

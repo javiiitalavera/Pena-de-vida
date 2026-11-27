@@ -13,7 +13,7 @@ const assert=(c,m)=>{ if(!c){console.log('FALLO',m); process.exitCode=1;} else c
 function jugar(sexo, rasgo, seed){ const p=new Partida(datos,{sexo,rasgoId:rasgo,rng:rngSemilla(seed)}); const vistas=[]; 
  while(!p.fin){ const c=p.siguienteCarta(); if(!c) break; vistas.push([c.id,p.anio]); for(const k in p.pilares)p.pilares[k]=50; p.elegir('izquierda'); }
  return {p,vistas}; }
-let uroF=0, reglaM=0, anclaMal=0, coche=0; const anclas=Object.fromEntries(datos.cartas.filter(c=>c.tipo==='ancla').map(c=>[c.id,c.anio]));
+let uroF=0, reglaM=0, anclaMal=0, coche=0; const anclas=Object.fromEntries(datos.cartas.filter(c=>c.tipo==='ancla'&&!c.condiciones).map(c=>[c.id,c.anio]));
 for(let i=0;i<300;i++){ for(const s of ['M','F']){ const {p,vistas}=jugar(s,'ciudadano_estandar',i+1);
   for(const [id,a] of vistas){ if(id==='urologo'&&s==='F')uroF++; if(id==='regla_educacion_fisica'&&s==='M')reglaM++; if(id in anclas && anclas[id]!==a) anclaMal++; if(id==='coche_18')coche++; }
 }}

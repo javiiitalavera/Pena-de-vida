@@ -281,6 +281,98 @@
         }
       },
       "lote": 12
+    },
+    {
+      "id": "casco_bici",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Casco de la Bici",
+      "personaje": "madre",
+      "texto": "Tu madre te ha comprado un casco gigante con dibujos de delfines y rodilleras. Los demás niños del parque ya se están riendo desde el tobogán.",
+      "izquierda": {
+        "texto": "Llevarlo puesto como un{/a} astronauta ridícul{o/a}",
+        "efectos": {
+          "salud": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Esconderlo en un seto en cuanto doblan la esquina",
+        "efectos": {
+          "salud": -5,
+          "vinculos": 10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "extraescolares",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "Las Extraescolares",
+      "personaje": "piscina",
+      "texto": "Tus padres quieren que seas {un niño/una niña} 'complet{o/a}' y te han apuntado a natación a las siete de la tarde en invierno. El agua de la piscina está helada.",
+      "izquierda": {
+        "texto": "Nadar cuarenta largos tragando cloro",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir dolor de oído todos los martes",
+        "efectos": {
+          "salud": -5,
+          "cordura": 10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "rebeca",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Rebeca",
+      "personaje": "madre",
+      "texto": "Hace 22 grados al sol, pero tu madre insiste en que 'por la sombra refresca' y te obliga a llevar una chaqueta de punto que pica.",
+      "izquierda": {
+        "texto": "Aguantar sudando como un pollo",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quitártela y coger un catarro monumental",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "jarabe_fresa",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Jarabe de Fresa",
+      "personaje": "jarabe",
+      "texto": "Tienes tos y te toca tomar un jarabe rosa fosforescente que sabe a gasolina con azúcar.",
+      "izquierda": {
+        "texto": "Tragártelo de golpe tapándote la nariz",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Escupirlo detrás del sofá cuando no miran",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 14
     }
   ]
 }

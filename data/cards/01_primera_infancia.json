@@ -139,6 +139,52 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "sopa_abuela",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "La Sopa de la Abuela",
+      "personaje": "abuela",
+      "texto": "Tu abuela ha preparado un caldo con tanta sustancia que podría resucitar a un caballo. Huele a puerro hervido y amenaza con darte el avión con la cuchara.",
+      "izquierda": {
+        "texto": "Comértelo todo sin rechistar",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Volcar el plato encima del gato",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "siesta_obligatoria",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "La Siesta Obligatoria",
+      "personaje": "cuna",
+      "texto": "Son las tres de la tarde, hace calor y te han metido en la cuna con las persianas bajadas aunque tienes energía para derribar un tabique.",
+      "izquierda": {
+        "texto": "Rendirte y dormir tres horas seguidas",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pintar la pared con un rotulador permanente",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 14
     }
   ]
 }

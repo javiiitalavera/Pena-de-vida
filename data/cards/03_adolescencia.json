@@ -248,6 +248,52 @@
         "hito_biografico": "Recibió su primera sanción administrativa por beber vino de un euro."
       },
       "lote": 12
+    },
+    {
+      "id": "bocadillo_pavo",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "El Bocadillo de Pavo",
+      "personaje": "padre",
+      "texto": "En el recreo todos comen bollos industriales y patatas fritas. Tú sacas un tupper con pechuga de pavo y una manzana que te ha preparado tu padre.",
+      "izquierda": {
+        "texto": "Comerte tu menú de hospital con dignidad",
+        "efectos": {
+          "salud": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cambiarlo por un bollo caducado y un refresco energético",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "dormir_ocho_horas",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "Dormir Ocho Horas",
+      "personaje": "consola",
+      "texto": "Son las once de la noche y mañana tienes examen de Filosofía. Tus amigos están conectados jugando online y te invitan a una partida.",
+      "izquierda": {
+        "texto": "Apagar todo y dormir como un{/a} jubilad{o/a}",
+        "efectos": {
+          "salud": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte hasta las cuatro de la mañana insultando a desconocidos",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 14
     }
   ]
 }

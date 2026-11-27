@@ -709,6 +709,429 @@
         }
       },
       "lote": 4
+    },
+    {
+      "id": "visitador_medico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Visitador Médico",
+      "personaje": "visitador",
+      "texto": "Un comercial de una farmacéutica te invita a un 'congreso científico' de tres días en un hotel de cinco estrellas en Tenerife con todo pagado.",
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ir al buffet libre y recetar su pastilla el resto del año",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Asistió a un congreso médico en Tenerife sin pisar una sola ponencia."
+      },
+      "derecha": {
+        "texto": "Rechazarlo por ética profesional y quedarte pasando consulta",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "letra_medico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Letra de Médico",
+      "personaje": "farmaceutico",
+      "texto": "Te llama el farmacéutico porque nadie en el edificio consigue descifrar qué antibiótico has escrito en la receta. Tú tampoco lo entiendes.",
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Inventarte una dosis sobre la marcha para no quedar mal",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Admitir que escribes como un niño de cinco años y repetirla",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "consulta_postres",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Consulta en los Postres",
+      "personaje": "prima",
+      "texto": "En mitad de la comida de Navidad, tu prima se levanta la camiseta para enseñarte un bulto raro en la espalda y preguntarte si es malo.",
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mirárselo entre el turrón y el café",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decirle que pida cita en tu consulta privada a 120 euros",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "sello_goma",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Sello de Goma",
+      "personaje": "cola_ventanilla",
+      "texto": "Un ciudadano lleva dos horas haciendo cola. Cuando llega a tu mesa ves que trae el formulario azul en vez del verde, aunque los datos son los mismos.",
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mandarle a casa a pedir cita para el mes que viene",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Hacer la vista gorda y tramitarlo igual",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "puente_diciembre",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Puente de Diciembre",
+      "personaje": "calendario",
+      "texto": "Si juntas dos días de asuntos propios con el festivo local y el puente, consigues librar once días seguidos mientras el país se paraliza.",
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedirlo el primero antes de que se entere tu jefe",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte de guardia abriendo el correo vacío",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "digitalizacion",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Digitalización",
+      "personaje": "ordenador_oficina",
+      "texto": "El Ministerio implanta un programa nuevo para eliminar el papel. Nadie sabe usarlo y tú llevas treinta años con carpetas de cartón.",
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Boicotear el sistema y seguir imprimiendo todo por triplicado",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Frenó la transformación digital de su ministerio durante una década."
+      },
+      "derecha": {
+        "texto": "Hacer el cursillo online de 40 horas sin llorar",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "viaje_fin_curso",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Viaje de Fin de Curso",
+      "personaje": "alumnos_salou",
+      "texto": "Te toca acompañar a cuarenta adolescentes de 16 años a un hotel en Salou. A las dos de la madrugada ya han vaciado tres minibares.",
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Patrullar el pasillo en zapatillas hasta el amanecer",
+        "efectos": {
+          "salud": -10,
+          "dinero": 10
+        }
+      },
+      "derecha": {
+        "texto": "Ponerte tapones en los oídos y que resuelva la policía local",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "sala_profesores",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Sala de Profesores",
+      "personaje": "nevera_comun",
+      "texto": "Hay una guerra civil silenciosa porque alguien se está bebiendo la leche de avena de la nevera común y dejando las tazas sucias.",
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Poner un cartel pasivo-agresivo en mayúsculas",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Comprarte un termo personal y no hablar con nadie en el recreo",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "reforma_educativa",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Reforma Educativa",
+      "personaje": "ministerio",
+      "texto": "El Gobierno vuelve a cambiar la ley de educación y ahora tienes que redactar 80 páginas de 'competencias transversales' que nadie va a leer.",
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pasarte el fin de semana rellenando burocracia",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Copiar y pegar el documento de 2011 cambiando el título",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "mesa_2355",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Mesa de las 23:55",
+      "personaje": "turistas_paella",
+      "texto": "Faltan cinco minutos para cerrar la cocina y ya has limpiado la plancha. Entran seis turistas pidiendo paella y sangría.",
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Encender todo otra vez y servirles con una sonrisa falsa",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decirles que la cocina está cerrada y aguantar su mala cara",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "influencer_gastronomico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Influencer Gastronómico",
+      "personaje": "influencer",
+      "texto": "Un chaval con 600 seguidores en Instagram te dice que si le invitas a cenar a él y a su novia, te sube una historia 'para darte visibilidad'.",
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Cobrarle hasta el pan y el hielo",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se negó a aceptar 'visibilidad' como moneda de curso legal."
+      },
+      "derecha": {
+        "texto": "Invitarle a unas croquetas congeladas para que se vaya pronto",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "doble_turno_festivo",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Doble Turno en Festivo",
+      "personaje": "barra_bar",
+      "texto": "Es el día de Reyes, el bar está hasta los topes y tu compañero te escribe a las diez de la mañana diciendo que 'se ha levantado regulín'.",
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Hacer dieciséis horas seguidas a base de café y odio",
+        "efectos": {
+          "dinero": 15,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cerrar la terraza y perder la caja del día",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "reunion_diaria",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Reunión Diaria",
+      "personaje": "jefe_producto",
+      "texto": "Lleváis una hora y media en una 'Daily' de quince minutos escuchando al jefe de proyecto dibujar flechas en una pizarra virtual.",
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Asentir con la cámara encendida mientras te mueres por dentro",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Apagar la cámara y adelantar trabajo real",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "silla_ergonomica",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Silla Ergonómica",
+      "personaje": "silla_oficina",
+      "texto": "Pasas diez horas al día sentad{o/a} y tu espalda tiene forma de signo de interrogación. Te recomiendan una silla de oficina de 1.100 euros.",
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comprarla y sentirte como {el capitán/la capitana} de una nave espacial",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        }
+      },
+      "derecha": {
+        "texto": "Poner un cojín del sofá en tu silla de plástico de 40 euros",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "lote": 14
+    },
+    {
+      "id": "codigo_heredado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Código Heredado",
+      "personaje": "jubilado_cobol",
+      "texto": "El único programador que entendía el sistema de facturación se acaba de jubilar sin dejar una sola línea de documentación.",
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Reescribirlo entero durante tres meses sin dormir",
+        "efectos": {
+          "dinero": 15,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Poner un parche con celo digital y rezar para que aguante",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 14
     }
   ]
 }
