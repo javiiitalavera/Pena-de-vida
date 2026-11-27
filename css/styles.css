@@ -215,7 +215,7 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .necro-seccion h4 { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; margin: 0 0 8px; font-weight: normal; }
 .necro-causa { font-size: 1rem; line-height: 1.45; margin: 0; }
 .necro-hitos { list-style: none; padding: 0; margin: 0; text-align: left; font-size: 0.92rem; line-height: 1.4; }
-.necro-hitos li { display: grid; grid-template-columns: 3.4em 1fr; gap: 6px; margin-bottom: 6px; }
+.necro-hitos li { display: grid; grid-template-columns: 4.3em 1fr; gap: 6px; margin-bottom: 6px; }
 .necro-hitos b { font-weight: normal; font-variant-numeric: tabular-nums; opacity: 0.7; }
 .necro-vacio { font-style: italic; opacity: 0.7; margin: 0; }
 .necro-remate { font-style: italic; font-size: 0.95rem; line-height: 1.4; margin: 0 0 8px; }

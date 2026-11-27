@@ -102,10 +102,9 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 | `add_flags_por_sexo` | Flags extra según el sexo: `{ "F": ["embarazada"] }`. |
 | `add_flags` / `remove_flags` | Cambian el estado vital (casado, oficinista, con_hijos…). Los flags de un mismo grupo de `config.json → grupos_flags` se excluyen entre sí: al hacerte funcionario dejas de ser oficinista sin tener que escribirlo. |
 | `fin` | En la carta del año 100: `"fin": "centenario"` termina la partida. |
-| `fin_texto` | Junto a `fin`: texto propio para la causa de la necrológica en esa opción. |
+| `fin_texto`, `fin_titulo`, `fin_rango` | Junto a `fin`: texto, título y línea de edad propios en la pantalla final. Llegar a 100 no mata: la pantalla pasa de «Necrológica» a «Fe de vida». |
 | `variantes_texto` | Lista de textos alternativos de la carta con condiciones (`requiere_flags`, `excluye_flags`, `requiere_sexo`…): sale el primero que encaje. Sirve para que una carta recuerde decisiones pasadas. |
 | `grupo` | En anclas: de todas las del mismo grupo sale solo una por partida, al azar (p. ej. las tres cartas posibles del año 0). |
-| `fin_anio` | Junto a `fin`: edad final distinta (la prórroga termina a los 101). |
 | `lote` | Número de lote en el que llegó la carta (para seguimiento). |
 
 **Género**: `{o/a}` se convierte según el sexo del personaje: `maj{o/a}` → majo / maja, `{el/la}`, `señor{/a}`.

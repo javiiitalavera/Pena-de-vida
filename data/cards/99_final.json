@@ -1,5 +1,5 @@
 {
-  "_nota": "Carta del año 100. Cualquiera de sus opciones termina la partida (fin: centenario). 'fin_texto' sustituye la causa de la necrológica; 'variantes_texto' cambia el texto según flags.",
+  "_nota": "Carta del año 100. Sus opciones terminan la partida sin morir (fin: centenario): la necrológica se convierte en 'Fe de vida'. fin_titulo / fin_texto / fin_rango personalizan esa pantalla.",
   "cartas": [
     {
       "id": "centenario",
@@ -20,16 +20,18 @@
         "texto": "Soplar la vela",
         "efectos": {},
         "fin": "centenario",
-        "hito_biografico": "Apagó la vela de los 100 y el chiringuito a la vez.",
-        "fin_texto": "Cerraste el chiringuito a los 100 con elegancia. La Seguridad Social ha descorchado champán."
+        "hito_biografico": "Intentó irse a los 100 y le encendieron el fluorescente.",
+        "fin_texto": "Cierras los ojos esperando descansar por fin. Ves una luz blanca cegadora… y es la auxiliar encendiendo el fluorescente a las siete de la mañana: toca ducha y puré de calabacín. Te quedan otros diez años buenos.",
+        "fin_titulo": "Condena prorrogada"
       },
       "derecha": {
         "texto": "Prórroga, por maldad",
         "efectos": {},
         "fin": "centenario",
-        "hito_biografico": "Pidió prórroga hasta los 101 por pura maldad, y se la dieron.",
-        "fin_texto": "Aguantaste hasta los 101 solo para cobrar otra paga extra. Mueres sonriendo.",
-        "fin_anio": 101
+        "hito_biografico": "Pidió prórroga y la Seguridad Social le devolvió a la guardería.",
+        "fin_texto": "El programa de la Seguridad Social, de 1984, solo admite edades de dos cifras. Al cumplir 100 pasas a tener 00 años: te cancelan la pensión y te llega una carta certificada con tu plaza en una guardería pública.",
+        "fin_titulo": "Error del sistema",
+        "fin_rango": "Edad oficial: 00 años"
       },
       "lote": 6
     }

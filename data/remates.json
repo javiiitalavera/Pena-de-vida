@@ -1,5 +1,5 @@
 {
-  "_nota": "La necrológica muestra todos los 'condicionales' que encajen (en este orden) y uno 'aleatorio'. Condiciones opcionales: pilar + min/max (incluidos), edad_min/edad_max, causa (muerte | centenario).",
+  "_nota": "La necrológica muestra todos los 'condicionales' que encajen (en este orden) y uno 'aleatorio'. Condiciones opcionales: pilar + min/max (incluidos), edad_min/edad_max, causa (muerte | centenario). Los aleatorios pueden ser texto o { texto, causa }.",
   "condicionales": [
     {
       "pilar": "dinero",
@@ -20,12 +20,14 @@
     {
       "pilar": "vinculos",
       "max": 20,
-      "texto": "Asistencia al funeral: El cura, el enterrador y un señor que se equivocó de sala."
+      "texto": "Asistencia al funeral: El cura, el enterrador y un señor que se equivocó de sala.",
+      "causa": "muerte"
     },
     {
       "pilar": "vinculos",
       "min": 80,
-      "texto": "Asistencia al funeral: Lleno absoluto. La mitad fue solo por el catering."
+      "texto": "Asistencia al funeral: Lleno absoluto. La mitad fue solo por el catering.",
+      "causa": "muerte"
     },
     {
       "edad_max": 17,
@@ -37,9 +39,21 @@
     }
   ],
   "aleatorios": [
-    "Epitafio elegido por la familia: 'Al menos ya no pasa frío' (era el más barato).",
-    "Última voluntad: Que borren tu historial de navegación. Nadie lo hizo.",
-    "Legado material: Tres bolsas de plástico llenas de bolsas de plástico debajo del fregadero.",
-    "Nota del forense: Sorprendente que aguantara tanto con este estilo de vida."
+    {
+      "texto": "Epitafio elegido por la familia: 'Al menos ya no pasa frío' (era el más barato).",
+      "causa": "muerte"
+    },
+    {
+      "texto": "Última voluntad: Que borren tu historial de navegación. Nadie lo hizo.",
+      "causa": "muerte"
+    },
+    {
+      "texto": "Legado material: Tres bolsas de plástico llenas de bolsas de plástico debajo del fregadero.",
+      "causa": "muerte"
+    },
+    {
+      "texto": "Nota del forense: Sorprendente que aguantara tanto con este estilo de vida.",
+      "causa": "muerte"
+    }
   ]
 }

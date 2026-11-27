@@ -35,7 +35,7 @@ assert(aplicarGenero('maj{o/a} {el/la} señor{/a}','F')==='maja la señora','gé
 // muerte y necrológica
 p=new Partida(datos,{sexo:'F'}); p.siguienteCarta(); p.pilares.salud=5; p.elegir('derecha'); assert(p.fin?.causa.pilar==='salud','muerte por salud 0');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); p.siguienteCarta(); p.elegir('izquierda'); assert(p.fin?.causa.tipo==='centenario','centenario');
-assert(construirNecrologia(p).titulo==='Centenaria','título centenaria con género');
+assert(construirNecrologia(p).titulo==='Condena prorrogada' && construirNecrologia(p).cabecera==='Fe de vida','fluorescente: condena prorrogada');
 // profesiones excluyentes y cartas que abarcan dos etapas
 p=new Partida(datos,{sexo:'M'}); p.flags.add('oficinista'); p.carta=p.porId.get('examen_mir'); p.elegir('izquierda');
 assert(p.flags.has('medico')&&!p.flags.has('oficinista'),'MIR activa médico y quita oficinista');
@@ -52,7 +52,7 @@ function require_ok(p){ for(let k=0;k<4;k++){ const c=p.siguienteCarta(); if(c?.
 p=new Partida(datos,{sexo:'M'}); p.carta=p.porId.get('boda'); p.elegir('izquierda'); assert(p.flags.has('casado')&&!p.flags.has('soltero'),'boda: casado');
 p.carta=p.porId.get('divorcio'); p.elegir('izquierda'); assert(p.flags.has('divorciado')&&!p.flags.has('casado'),'divorcio: divorciado');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?.id==='centenario','carta del año 100'); p.elegir('derecha'); assert(p.fin?.causa.tipo==='centenario','la carta final termina la partida');
-const nec=construirNecrologia(p); assert(nec.remates.length===3 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario: '+nec.remates.length);
+const nec=construirNecrologia(p); assert(nec.remates.length===2 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario sin funeral: '+nec.remates.length);
 p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfectos({salud:-10}); const e2=p.calcularEfectos({salud:10}); assert(e.salud===-7&&e2.salud===7,'cucaracha pérdidas x0.65 (−6.5→−7), ganancias x0.7');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilares.dinero=105; p.comprobarMuerte(); assert(construirNecrologia(p).texto.includes('atragantada'),'muerte infantil por dinero 100, en femenino');
 // desbloqueo por cualquier extremo
@@ -74,7 +74,7 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 { const c=datos.cartas.find(x=>x.id==='centenario'); const a=new Partida(datos,{sexo:'M'}); const b=new Partida(datos,{sexo:'M'}); b.flags.add('con_hijos');
   assert(!a.textoDe(c).includes('biznietos') && b.textoDe(c).includes('biznietos'),'biznietos solo con hijos'); }
 { const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const n=construirNecrologia(a);
-  assert(n.texto.includes('paga extra') && n.edad===101 && n.rango==='0 – 101 años','la prórroga llega a los 101 con su propio final'); }
+  assert(n.texto.includes('guardería') && n.rango==='Edad oficial: 00 años' && n.cabecera==='Fe de vida' && !n.remates.some(r=>/funeral|Epitafio|forense/.test(r)),'la prórroga: fe de vida, edad 00 y sin remates de funeral'); }
 // anclas alternativas y arcos
 { const vistos={}; for(let s=1;s<=300;s++){ const p=new Partida(datos,{sexo:'M',rng:rngSemilla(s)}); const c0=p.siguienteCarta(); p.elegir('izquierda'); const c1=p.siguienteCarta(); vistos[c0.id]=(vistos[c0.id]||0)+1; vistos[c1.id]=(vistos[c1.id]||0)+1; if(c0.anio!==0||c1.anio!==1) vistos.mal=(vistos.mal||0)+1; }
   assert(!vistos.mal && ['obstetra','parto_festivo','el_parecido','pediatra_vacunas','primera_palabra','parque_bolas'].every(id=>vistos[id]>50),'años 0 y 1: una carta al azar de cada grupo '+JSON.stringify(vistos)); }

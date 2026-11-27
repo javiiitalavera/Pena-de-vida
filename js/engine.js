@@ -438,7 +438,7 @@ export class Partida {
 
     this.comprobarMuerte();
     if (!this.fin && op.fin) {
-      this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto });
+      this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto, titulo: op.fin_titulo, rango: op.fin_rango });
       if (Number.isFinite(op.fin_anio)) this.fin.anio = op.fin_anio;
     }
     if (!this.fin) this.avanzar();
@@ -520,16 +520,21 @@ export function construirNecrologia(partida) {
     }
     return anio >= (r.edad_min ?? -Infinity) && anio <= (r.edad_max ?? Infinity);
   });
-  const azar = R.aleatorios?.length ? [R.aleatorios[Math.floor(partida.rng() * R.aleatorios.length)]] : [];
+  // Aleatorios: textos sueltos o { texto, causa } para limitarlos a un tipo de final.
+  const posibles = (R.aleatorios || []).filter((r) => typeof r === 'string' || !r.causa || r.causa === causa.tipo);
+  const azar = posibles.length ? [posibles[Math.floor(partida.rng() * posibles.length)]] : [];
   const remates = [...encajan.map((r) => r.texto), ...azar.map((r) => (typeof r === 'string' ? r : r.texto))];
 
   return {
     edad: anio,
-    rango: `0 – ${anio} años`,
+    rango: causa.rango ? aplicarGenero(causa.rango, sexo) : `0 – ${anio} años`,
+    // Si llegas a los 100 no hay necrológica: hay fe de vida.
+    cabecera: causa.tipo === 'centenario' ? 'Fe de vida' : 'Necrológica',
+    tituloInforme: causa.tipo === 'centenario' ? 'Informe de la Seguridad Social' : 'Informe forense',
     sexo,
     centenario: causa.tipo === 'centenario',
     causa,
-    titulo: aplicarGenero(entrada.titulo || '', sexo),
+    titulo: aplicarGenero(causa.titulo || entrada.titulo || '', sexo),
     texto: aplicarGenero(textoCausa || '', sexo),
     hitos: seleccionarHitos(partida.hitos, datos.config.hitos_max ?? 6),
     remates: remates.map((t) => aplicarGenero(t, sexo)),

@@ -296,13 +296,13 @@ function acabar() {
     ? `<ul class="necro-hitos">${n.hitos.map((h) => `<li><b>Año ${h.anio}</b><span>${escapar(h.texto)}</span></li>`).join('')}</ul>`
     : '<p class="necro-vacio">Una vida sin nada digno de mención.</p>';
   art.innerHTML = `
-    <p class="necro-cabecera">Necrológica</p>
+    <p class="necro-cabecera">${escapar(n.cabecera)}</p>
     <p class="necro-cruz">${n.centenario ? '✶' : '†'}</p>
     <p class="necro-rango">${n.rango}</p>
     <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}</p>
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>
-    ${n.remates.length ? `<section class="necro-seccion"><h4>Informe forense</h4>${n.remates.map((r) => `<p class="necro-remate">${escapar(r)}</p>`).join('')}</section>` : ''}`;
+    ${n.remates.length ? `<section class="necro-seccion"><h4>${escapar(n.tituloInforme)}</h4>${n.remates.map((r) => `<p class="necro-remate">${escapar(r)}</p>`).join('')}</section>` : ''}`;
   const nombres = (clase) => nuevos.filter((x) => x._clase === clase).map((x) => aplicarGenero(x.nombre, partida.sexo)).join(', ');
   $('desbloqueos').textContent = [
     nombres('rasgo') && `Nuevo rasgo desbloqueado: ${nombres('rasgo')}`,
