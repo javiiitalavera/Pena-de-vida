@@ -134,7 +134,15 @@
           "dinero": 5,
           "vinculos": -15
         },
-        "hito_biografico": "Fingió una enfermedad infecciosa para ahorrarse 250€."
+        "hito_biografico": "Fingió una enfermedad infecciosa para ahorrarse 250€.",
+        "sorpresa": {
+          "probabilidad": 0.35,
+          "efectos": {
+            "vinculos": -15,
+            "cordura": -10
+          },
+          "mensaje": "Sales de fondo en un story del novio: estás en el Mercadona."
+        }
       },
       "lote": 2
     },
@@ -556,7 +564,15 @@
           "dinero": -15,
           "cordura": 10
         },
-        "hito_biografico": "Pagó dos veces la misma reforma para poder volver a cocinar."
+        "hito_biografico": "Pagó dos veces la misma reforma para poder volver a cocinar.",
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -15
+          },
+          "mensaje": "El segundo albañil es primo del primero. Tampoco vuelve."
+        }
       },
       "lote": 10
     },
@@ -649,6 +665,14 @@
         "efectos": {
           "salud": 5,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -15,
+            "cordura": -5
+          },
+          "mensaje": "Te resbalas en la ducha de casa. Esguince sin épica y sin medalla."
         }
       },
       "lote": 10
@@ -781,6 +805,14 @@
         "efectos": {
           "dinero": 10,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 15,
+            "cordura": 10
+          },
+          "mensaje": "Es tan soso que ningún ladrón lo quiere. El seguro te baja la póliza a la mitad."
         }
       },
       "lote": 10
@@ -820,6 +852,14 @@
         "efectos": {
           "cordura": 10,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -5
+          },
+          "mensaje": "Lo interpreta como apoyo. Ahora ensaya con su grupo en tu rellano."
         }
       },
       "derecha": {

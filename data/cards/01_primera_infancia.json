@@ -68,6 +68,14 @@
         "efectos": {
           "salud": 5,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "vinculos": -10,
+            "cordura": -10
+          },
+          "mensaje": "Dejan de discutir de fútbol y empiezan a discutir de quién te ha hecho llorar."
         }
       },
       "lote": 1
@@ -115,6 +123,14 @@
         "efectos": {
           "vinculos": 10,
           "salud": 5
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -15,
+            "vinculos": -5
+          },
+          "mensaje": "Se come la galleta y, de postre, tu dedo."
         }
       },
       "lote": 2
@@ -192,6 +208,14 @@
         "efectos": {
           "cordura": 10,
           "dinero": -5
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 10,
+            "vinculos": 10
+          },
+          "mensaje": "Una amiga de tu madre ve un Miró en la pared. Os compra el tabique."
         }
       },
       "lote": 14

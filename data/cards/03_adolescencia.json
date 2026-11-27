@@ -44,6 +44,14 @@
         "efectos": {
           "dinero": 10,
           "cordura": -15
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -10,
+            "cordura": -15
+          },
+          "mensaje": "La carrera que paga desaparece el año que terminas. La sustituye una app."
         }
       },
       "lote": 1
@@ -214,6 +222,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.35,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -5
+          },
+          "mensaje": "La cicatriz sale en la orla. La orla, en el pasillo de tu abuela treinta años."
         }
       },
       "derecha": {
@@ -245,7 +261,15 @@
           "dinero": -15,
           "salud": 5
         },
-        "hito_biografico": "Recibió su primera sanción administrativa por beber vino de un euro."
+        "hito_biografico": "Recibió su primera sanción administrativa por beber vino de un euro.",
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 5,
+            "vinculos": 10
+          },
+          "mensaje": "El policía es tu primo. Te lleva a casa y te paga el kebab."
+        }
       },
       "lote": 12
     },
@@ -284,6 +308,14 @@
         "efectos": {
           "salud": 15,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": 10,
+            "cordura": -15
+          },
+          "mensaje": "Sueñas con el examen y lo suspendes. Luego lo suspendes despiert{o/a}."
         }
       },
       "derecha": {

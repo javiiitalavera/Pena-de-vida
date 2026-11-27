@@ -130,6 +130,14 @@
         "efectos": {
           "dinero": 5,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "vinculos": -15,
+            "cordura": -10
+          },
+          "mensaje": "Era tu hija de verdad, con el móvil roto."
         }
       },
       "lote": 2
@@ -319,6 +327,14 @@
         "efectos": {
           "dinero": 10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "Tus hijos llevan el colchón al punto limpio «porque ya tocaba»."
         }
       },
       "lote": 11
@@ -358,6 +374,14 @@
         "efectos": {
           "dinero": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 20,
+            "cordura": 5
+          },
+          "mensaje": "La aseguradora quiebra y te devuelve cuarenta años de cuotas. Sigues viv{o/a}, de momento."
         }
       },
       "derecha": {
@@ -576,6 +600,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -15,
+            "cordura": -5
+          },
+          "mensaje": "Al llegar al cuarto oyes el ascensor. Lo arreglaron mientras subías."
         }
       },
       "derecha": {
@@ -622,6 +654,14 @@
         "efectos": {
           "dinero": 5,
           "salud": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": 10,
+            "vinculos": 10
+          },
+          "mensaje": "El otro jubilado se ríe, te invita a un carajillo y os hacéis inseparables."
         }
       },
       "derecha": {

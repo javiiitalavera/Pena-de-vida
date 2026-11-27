@@ -43,6 +43,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -10,
+            "dinero": -15
+          },
+          "mensaje": "El médico majo es de pago. Te receta lo mismo, pero sonriendo."
         }
       },
       "lote": 1
@@ -94,6 +102,14 @@
         "efectos": {
           "cordura": 10,
           "dinero": 5
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "vinculos": 10,
+            "cordura": 10
+          },
+          "mensaje": "Resulta que es médico en su país. Te diagnostica por teléfono y te manda postales."
         }
       },
       "lote": 1
@@ -377,7 +393,15 @@
           "cordura": 10,
           "dinero": -10
         },
-        "hito_biografico": "Acudió a una cena de antiguos alumnos movido únicamente por el morbo."
+        "hito_biografico": "Acudió a una cena de antiguos alumnos movido únicamente por el morbo.",
+        "sorpresa": {
+          "probabilidad": 0.35,
+          "efectos": {
+            "cordura": -15,
+            "dinero": -10
+          },
+          "mensaje": "Eres tú. Te lo confirman tres compañeros y el camarero."
+        }
       },
       "derecha": {
         "texto": "Salir del grupo",
@@ -701,6 +725,14 @@
         "efectos": {
           "dinero": 5,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "cordura": -15,
+            "salud": 5
+          },
+          "mensaje": "En el metro te ceden el asiento por primera vez. Lo aceptas. Algo se rompe."
         }
       },
       "lote": 9

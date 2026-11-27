@@ -45,6 +45,14 @@
         "efectos": {
           "dinero": 10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.35,
+          "efectos": {
+            "dinero": -5,
+            "cordura": -15
+          },
+          "mensaje": "La fruta de los martes es una manzana para toda la planta."
         }
       },
       "derecha": {
@@ -92,6 +100,14 @@
         "efectos": {
           "salud": -15,
           "vinculos": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "Te llega la factura del móvil: 1.400 € de roaming polaco."
         }
       },
       "derecha": {
@@ -116,6 +132,14 @@
         "efectos": {
           "dinero": -15,
           "vinculos": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 20,
+            "vinculos": 10
+          },
+          "mensaje": "Google compra la app de las iguanas. Nadie sabe por qué. Tú tampoco."
         }
       },
       "derecha": {
@@ -185,6 +209,14 @@
         "efectos": {
           "dinero": -10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "Descubres por qué la luz sale tan cara: minan bitcoins en tu enchufe."
         }
       },
       "lote": 2
@@ -459,6 +491,14 @@
         "efectos": {
           "salud": 5,
           "dinero": -5
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "cordura": -10,
+            "vinculos": -10
+          },
+          "mensaje": "El anuncio se hace viral. Sale todo tu grupo de amigos menos tú."
         }
       },
       "lote": 15

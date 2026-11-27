@@ -20,6 +20,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -15,
+            "cordura": -5
+          },
+          "mensaje": "Lo apunta en una libreta. Vuelve mañana con la contraseña."
         }
       },
       "lote": 1
@@ -90,6 +98,14 @@
         "efectos": {
           "cordura": 10,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.35,
+          "efectos": {
+            "dinero": -10,
+            "vinculos": -10
+          },
+          "mensaje": "Mandan una ambulancia, un cura y a tu sobrina con una cinta métrica."
         }
       },
       "lote": 7
@@ -107,7 +123,15 @@
           "salud": 10,
           "vinculos": -10
         },
-        "hito_biografico": "Recuperó su dentadura de una sopera delante de toda su familia."
+        "hito_biografico": "Recuperó su dentadura de una sopera delante de toda su familia.",
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "vinculos": -15,
+            "cordura": -5
+          },
+          "mensaje": "Sale con un mejillón enganchado. Tu bisnieto lo graba."
+        }
       },
       "derecha": {
         "texto": "Fingir que no es tuya",

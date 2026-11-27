@@ -39,6 +39,14 @@
         "efectos": {
           "dinero": 10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -10,
+            "cordura": -10
+          },
+          "mensaje": "Tu padre negocia a la baja y te descuenta el IVA del diente."
         }
       },
       "derecha": {
@@ -70,6 +78,14 @@
         "efectos": {
           "cordura": 10,
           "vinculos": -15
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "vinculos": -15,
+            "cordura": -10
+          },
+          "mensaje": "Tu madre no te cree. Tu tío te llama «chivat{o/a}» todas las Navidades hasta 2040."
         }
       },
       "lote": 1
@@ -141,6 +157,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "cordura": -15,
+            "salud": -5
+          },
+          "mensaje": "Dice que así sabe mejor y te nombra su proveedor oficial."
         }
       },
       "lote": 2
@@ -235,6 +259,14 @@
         "efectos": {
           "salud": 5,
           "dinero": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -10,
+            "vinculos": -10
+          },
+          "mensaje": "Las suelas se derriten. Tu madre lo cuenta en cada comida familiar."
         }
       },
       "lote": 12
@@ -297,6 +329,14 @@
         "efectos": {
           "salud": 15,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -10,
+            "vinculos": -10
+          },
+          "mensaje": "Con el casco no ves nada. Te abres la barbilla con un bordillo."
         }
       },
       "derecha": {
@@ -373,6 +413,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -10,
+            "vinculos": -10
+          },
+          "mensaje": "El perro lo lame. Tú sigues tosiendo y el perro pasa a ser el favorito."
         }
       },
       "lote": 14
