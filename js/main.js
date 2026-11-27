@@ -1,7 +1,7 @@
 // Interfaz: pantallas, carta, barras y necrológica. La lógica está en engine.js.
 import { cargarDatos } from './data.js';
 import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad } from './engine.js';
-import { cargarProgreso, guardarProgreso, registrarPartida } from './storage.js';
+import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida } from './storage.js';
 import { montarImagen } from './images.js';
 import { aplicarGenero } from './text.js';
 import { activarSwipe, lanzar, entrar, volver } from './swipe.js';
@@ -29,6 +29,9 @@ function escapar(t = '') {
 
 function pintarInicio() {
   const p = progreso;
+  const guardada = cargarPartida();
+  $('btn-continuar').hidden = !guardada;
+  if (guardada) $('btn-continuar').textContent = `Continuar partida · Año ${Math.floor(guardada.edad)}`;
   $('stats-inicio').textContent = p.partidas
     ? `${p.partidas} ${p.partidas === 1 ? 'vida' : 'vidas'} · récord: ${p.record} años${p.centenarios ? ` · ${p.centenarios} centenari${p.centenarios === 1 ? 'o' : 'os'}` : ''}`
     : '';
@@ -98,6 +101,22 @@ function tarjetaEleccion(titulo, lineas, alElegir) {
 
 function empezar() {
   partida = new Partida(datos, eleccion);
+  montarJuego();
+  siguiente();
+}
+
+function continuar() {
+  partida = Partida.restaurar(datos, cargarPartida());
+  if (!partida) {
+    borrarPartida();
+    return pintarInicio();
+  }
+  montarJuego();
+  if (partida.carta) mostrarCarta(partida.carta);
+  else siguiente();
+}
+
+function montarJuego() {
   $('barras').replaceChildren(
     ...datos.config.pilares.map((p) => {
       const d = document.createElement('div');
@@ -109,7 +128,10 @@ function empezar() {
   );
   mostrar('pantalla-juego');
   pintarBarras();
-  siguiente();
+}
+
+function guardar() {
+  if (partida && !partida.fin) guardarPartida(partida.exportar());
 }
 
 function pintarBarras() {
@@ -143,12 +165,17 @@ function siguiente() {
   const carta = partida.siguienteCarta();
   procesarEventos();
   if (!carta) return acabar();
+  mostrarCarta(carta);
+}
+
+function mostrarCarta(carta) {
+  guardar();
   const t = (x) => partida.texto(x);
-  $('carta-texto').textContent = t(carta.texto);
+  $('carta-texto').textContent = partida.textoDe(carta);
   $('carta-nombre').textContent = t(carta.nombre);
   // Pista del gesto solo en las primeras cartas de la primera partida.
   $('pista').hidden = !(progreso.partidas === 0 && partida.historial.length < 3);
-  $('carta-sello').hidden = true;
+  $('carta-sello').hidden = !partida.invertida;
   montarImagen($('carta-imagen'), datos.config, carta);
   limpiarVista();
   entrar($('carta'));
@@ -243,6 +270,7 @@ async function usarComodin() {
     procesarEventos();
     return siguiente();
   }
+  guardar();
   if (r.accion === 'invertir') {
     $('carta-sello').hidden = false;
     vistaPrevia(marcado);
@@ -255,6 +283,7 @@ async function usarComodin() {
 // ---------- final ----------
 
 function acabar() {
+  borrarPartida();
   const n = construirNecrologia(partida);
   const nuevos = evaluarDesbloqueos(datos, partida.fin, progreso.desbloqueados);
   progreso = registrarPartida(progreso, partida.fin, nuevos);
@@ -286,6 +315,7 @@ function acabar() {
 
 function conectarEventos() {
   $('btn-nueva').addEventListener('click', () => mostrar('pantalla-sexo'));
+  $('btn-continuar').addEventListener('click', continuar);
   for (const b of document.querySelectorAll('[data-sexo]')) b.addEventListener('click', () => elegirSexo(b.dataset.sexo));
   $('btn-otra').addEventListener('click', pintarInicio);
   $('btn-comodin').addEventListener('click', abrirComodin);

@@ -122,6 +122,7 @@ function pintarCartas() {
           <header><h3>${g(c.nombre)}</h3><span class="meta"><code>${esc(c.id)}</code> · ${esc(c._archivo)}${c.personaje ? ` · personaje <code>${esc(c.personaje)}</code>` : ''}</span></header>
           <div>${chips.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div>
           <p class="texto">${g(c.texto)}</p>
+          ${(c.variantes_texto || []).map((v) => `<p class="texto"><span class="chip">si ${esc([...(v.requiere_flags || []).map((f) => '+' + f), ...(v.excluye_flags || []).map((f) => '−' + f)].join(' '))}</span> ${g(v.texto)}</p>`).join('')}
           <div class="ops">${ops}</div>
           ${avs ? `<div class="avisos-carta">${avs}</div>` : ''}
         </article>`;

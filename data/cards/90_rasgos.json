@@ -364,7 +364,7 @@
         }
       },
       "derecha": {
-        "texto": "Urgencias: cráneo de hormigón",
+        "texto": "Ir a urgencias",
         "efectos": {
           "salud": 10,
           "dinero": -10

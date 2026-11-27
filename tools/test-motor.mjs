@@ -67,3 +67,11 @@ p=new Partida(datos,{sexo:'M',rasgoId:'viejo_rencoroso'}); assert(p.pilares.salu
 p.carta={tags:[]}; e=p.calcularEfectos({vinculos:-10,dinero:5}); assert(e.salud===5,'bajar vínculos da +5 salud');
 p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); p.carta={tags:[]}; e=p.calcularEfectos({dinero:10}); assert(e.dinero===12,'psicópata gana un 20% más de dinero');
 assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM desde los 18');
+// guardar/restaurar, variantes de texto, final con texto propio
+{ const p1=new Partida(datos,{sexo:'F',rasgoId:'hijo_de_papa',comodinId:'orfidal',rng:rngSemilla(4)}); for(let k=0;k<30;k++){ p1.siguienteCarta(); for(const x in p1.pilares)p1.pilares[x]=50; p1.elegir('izquierda'); } p1.siguienteCarta();
+  const p2=Partida.restaurar(datos, JSON.parse(JSON.stringify(p1.exportar())));
+  assert(p2 && p2.carta.id===p1.carta.id && p2.anio===p1.anio && JSON.stringify(p2.pilares)===JSON.stringify(p1.pilares) && [...p2.flags].join()===[...p1.flags].join() && p2.rasgo.id==='hijo_de_papa','restaurar partida guardada (año '+p1.anio+')'); }
+{ const c=datos.cartas.find(x=>x.id==='centenario'); const a=new Partida(datos,{sexo:'M'}); const b=new Partida(datos,{sexo:'M'}); b.flags.add('con_hijos');
+  assert(!a.textoDe(c).includes('biznietos') && b.textoDe(c).includes('biznietos'),'biznietos solo con hijos'); }
+{ const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const n=construirNecrologia(a);
+  assert(n.texto.includes('silencio administrativo') && n.hitos.some(h=>h.texto.includes('101')),'la prórroga tiene su propio final'); }

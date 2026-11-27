@@ -28,3 +28,30 @@ export function registrarPartida(progreso, fin, nuevos) {
   p.desbloqueados = [...new Set([...p.desbloqueados, ...nuevos.map((r) => r.id)])];
   return p;
 }
+
+// Partida en curso: se guarda tras cada carta para poder continuar si el navegador recarga.
+const CLAVE_PARTIDA = 'muerte-subita:partida';
+
+export function guardarPartida(estado) {
+  try {
+    localStorage.setItem(CLAVE_PARTIDA, JSON.stringify(estado));
+  } catch {
+    /* sin almacenamiento: no se puede continuar luego */
+  }
+}
+
+export function cargarPartida() {
+  try {
+    return JSON.parse(localStorage.getItem(CLAVE_PARTIDA) || 'null');
+  } catch {
+    return null;
+  }
+}
+
+export function borrarPartida() {
+  try {
+    localStorage.removeItem(CLAVE_PARTIDA);
+  } catch {
+    /* nada */
+  }
+}

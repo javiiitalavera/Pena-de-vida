@@ -187,7 +187,7 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Desangrarte en silencio",
+        "texto": "Aguantar en silencio",
         "efectos": {
           "salud": -10,
           "cordura": 5
@@ -240,7 +240,7 @@
         }
       },
       "derecha": {
-        "texto": "Comerte la multa",
+        "texto": "Quedarte quiet{o/a}",
         "efectos": {
           "dinero": -15,
           "salud": 5

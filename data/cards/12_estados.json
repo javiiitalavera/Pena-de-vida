@@ -626,7 +626,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Cargar el sofá: «clac»",
+        "texto": "Cargar el sofá",
         "efectos": {
           "salud": -10,
           "vinculos": 10

@@ -102,6 +102,8 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 | `add_flags_por_sexo` | Flags extra según el sexo: `{ "F": ["embarazada"] }`. |
 | `add_flags` / `remove_flags` | Cambian el estado vital (casado, oficinista, con_hijos…). Los flags de un mismo grupo de `config.json → grupos_flags` se excluyen entre sí: al hacerte funcionario dejas de ser oficinista sin tener que escribirlo. |
 | `fin` | En la carta del año 100: `"fin": "centenario"` termina la partida. |
+| `fin_texto` | Junto a `fin`: texto propio para la causa de la necrológica en esa opción. |
+| `variantes_texto` | Lista de textos alternativos de la carta con condiciones (`requiere_flags`, `excluye_flags`, `requiere_sexo`…): sale el primero que encaje. Sirve para que una carta recuerde decisiones pasadas. |
 | `lote` | Número de lote en el que llegó la carta (para seguimiento). |
 
 **Género**: `{o/a}` se convierte según el sexo del personaje: `maj{o/a}` → majo / maja, `{el/la}`, `señor{/a}`.
@@ -109,6 +111,10 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 **Respuestas**: cortas, de 2 a 4 palabras (máximo unos 30 caracteres): se leen sobre la carta mientras se arrastra. El revisor avisa si pasan de 32.
 
 **Valores**: ±10 por defecto; ±15 para decisiones fuertes; ±5 para efectos secundarios.
+
+## Guardado
+
+La partida en curso se guarda en el navegador después de cada carta. Si el móvil recarga la página, en la pantalla de inicio aparece «Continuar partida». Al morir se borra.
 
 ## Cómo funciona el tiempo
 

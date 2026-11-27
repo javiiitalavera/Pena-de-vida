@@ -1,5 +1,5 @@
 {
-  "_nota": "Carta del año 100. Cualquiera de sus opciones termina la partida (fin: centenario).",
+  "_nota": "Carta del año 100. Cualquiera de sus opciones termina la partida (fin: centenario). 'fin_texto' sustituye la causa de la necrológica; 'variantes_texto' cambia el texto según flags.",
   "cartas": [
     {
       "id": "centenario",
@@ -7,16 +7,27 @@
       "anio": 100,
       "nombre": "El Centenario",
       "personaje": "alcalde",
-      "texto": "Has llegado a los 100 años. El alcalde viene a entregarte una placa de metacrilato, tus biznietos no saben cómo te llamas y la Seguridad Social lleva dos décadas deseando tu muerte.",
+      "texto": "Has llegado a los 100 años. El alcalde viene a entregarte una placa de metacrilato, en el portal nadie sabe cómo te llamas y la Seguridad Social lleva dos décadas deseando tu muerte.",
+      "variantes_texto": [
+        {
+          "requiere_flags": [
+            "con_hijos"
+          ],
+          "texto": "Has llegado a los 100 años. El alcalde viene a entregarte una placa de metacrilato, tus biznietos no saben cómo te llamas y la Seguridad Social lleva dos décadas deseando tu muerte."
+        }
+      ],
       "izquierda": {
         "texto": "Soplar la vela",
         "efectos": {},
-        "fin": "centenario"
+        "fin": "centenario",
+        "hito_biografico": "Apagó la vela de los 100 y el chiringuito a la vez."
       },
       "derecha": {
         "texto": "Prórroga, por maldad",
         "efectos": {},
-        "fin": "centenario"
+        "fin": "centenario",
+        "hito_biografico": "Pidió prórroga hasta los 101 por pura maldad.",
+        "fin_texto": "Pediste prórroga hasta los 101 por pura maldad. Te la denegaron por silencio administrativo: morir también requiere cita previa."
       },
       "lote": 6
     }

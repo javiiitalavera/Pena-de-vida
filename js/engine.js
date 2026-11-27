@@ -113,6 +113,58 @@ export class Partida {
     return aplicarGenero(t, this.sexo);
   }
 
+  // Texto de la carta: la primera variante cuyas condiciones se cumplan, o el texto normal.
+  textoDe(carta) {
+    const v = (carta.variantes_texto || []).find((x) => cumpleCondiciones({ condiciones: x }, this.ctx()));
+    return this.texto(v?.texto ?? carta.texto);
+  }
+
+  // ---------- guardar y restaurar ----------
+
+  exportar() {
+    return {
+      v: 1,
+      sexo: this.sexo,
+      rasgoId: this.rasgo?.id ?? null,
+      comodinId: this.comodin?.id ?? null,
+      comodinUsado: this.comodinUsado,
+      edad: this.edad,
+      pilares: { ...this.pilares },
+      flags: [...this.flags],
+      usadas: [...this.usadas],
+      anclasDescartadas: [...this.anclasDescartadas],
+      cola: this.cola.map((c) => ({ ...c })),
+      hitos: this.hitos.map((h) => ({ ...h })),
+      historial: this.historial,
+      cartaId: this.carta?.id ?? null,
+      invertida: this.invertida,
+      congelado: this.congelado ? { ...this.congelado } : null,
+      tiradas: [...this.tiradas],
+    };
+  }
+
+  static restaurar(datos, e, rng = Math.random) {
+    if (!e || e.v !== 1) return null;
+    const p = new Partida(datos, { sexo: e.sexo, rasgoId: e.rasgoId, comodinId: e.comodinId, rng });
+    if (e.cartaId && !p.porId.has(e.cartaId)) return null; // el mazo ha cambiado: no se puede continuar
+    Object.assign(p, {
+      comodinUsado: e.comodinUsado,
+      edad: e.edad,
+      pilares: { ...e.pilares },
+      flags: new Set(e.flags),
+      usadas: new Set(e.usadas),
+      anclasDescartadas: new Set(e.anclasDescartadas),
+      cola: e.cola,
+      hitos: e.hitos,
+      historial: e.historial,
+      carta: e.cartaId ? p.porId.get(e.cartaId) : null,
+      invertida: e.invertida,
+      congelado: e.congelado,
+      tiradas: new Map(e.tiradas),
+    });
+    return p;
+  }
+
   sacarEventos() {
     const e = this.eventos;
     this.eventos = [];
@@ -378,7 +430,7 @@ export class Partida {
     this.invertida = false;
 
     this.comprobarMuerte();
-    if (!this.fin && op.fin) this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin });
+    if (!this.fin && op.fin) this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto });
     if (!this.fin) this.avanzar();
     return { deltas };
   }
@@ -446,7 +498,7 @@ export function construirNecrologia(partida) {
   else entrada = datos.muertes[causa.tipo];
   entrada = entrada || { titulo: 'Causa desconocida', texto: '' };
   const variante = (entrada.variantes || []).find((v) => anio <= (v.edad_max ?? Infinity) && anio >= (v.edad_min ?? 0));
-  const textoCausa = variante?.texto ?? entrada.texto;
+  const textoCausa = causa.texto ?? variante?.texto ?? entrada.texto;
 
   // Remates: todos los condicionales que encajen (en el orden del archivo) + uno aleatorio.
   const R = datos.remates || {};

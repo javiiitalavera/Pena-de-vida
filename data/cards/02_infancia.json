@@ -80,7 +80,7 @@
       "personaje": "profesor_gimnasia",
       "texto": "Te obliga a saltar el potro delante de toda la clase. Lleva un chándal de 1994 y huele a tabaco.",
       "izquierda": {
-        "texto": "Saltar y partirte la muñeca",
+        "texto": "Saltar el potro",
         "efectos": {
           "salud": -15,
           "vinculos": 10
@@ -203,7 +203,7 @@
         }
       },
       "derecha": {
-        "texto": "Contagiar a media clase",
+        "texto": "«No me pica nada»",
         "efectos": {
           "salud": -10,
           "vinculos": -10
@@ -220,7 +220,7 @@
       "personaje": "padre",
       "texto": "Tu padre te quita los ruedines en lo alto de una cuesta y te grita '¡tú pedalea que yo te sujeto!' justo antes de soltarte por completo.",
       "izquierda": {
-        "texto": "Contra el contenedor",
+        "texto": "Pedalear cuesta abajo",
         "efectos": {
           "salud": -15,
           "cordura": 10
@@ -274,7 +274,7 @@
         }
       },
       "derecha": {
-        "texto": "Comerte el poste",
+        "texto": "Tirarte a por el balón",
         "efectos": {
           "salud": -10,
           "vinculos": 10
@@ -343,7 +343,7 @@
         }
       },
       "derecha": {
-        "texto": "Quitártela y resfriarte",
+        "texto": "Quitártela",
         "efectos": {
           "salud": -10,
           "vinculos": 10

@@ -63,7 +63,7 @@ export function validar(datos) {
     if (cond.prioridad && !(cond.prioridad in (config.pesos_prioridad || {}))) err(c, `prioridad "${cond.prioridad}" no definida en config`);
     if (cond.probabilidad != null && !(cond.probabilidad > 0 && cond.probabilidad <= 1)) err(c, 'probabilidad debe estar entre 0 y 1');
 
-    for (const t of [c.texto, c.hito_biografico]) if (generoMalFormado(t)) err(c, 'marca de género mal escrita (usa {o/a})');
+    for (const t of [c.texto, c.hito_biografico, ...(c.variantes_texto || []).map((v) => v.texto)]) if (generoMalFormado(t)) err(c, 'marca de género mal escrita (usa {o/a})');
 
     const efectosLado = {};
     for (const lado of LADOS) {

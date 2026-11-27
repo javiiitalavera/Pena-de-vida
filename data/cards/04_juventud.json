@@ -80,7 +80,7 @@
       "personaje": "erasmus",
       "texto": "Llevas seis meses en Polonia. No has pisado la facultad, pero hablas polaco fluido solo para pedir cerveza y kebab.",
       "izquierda": {
-        "texto": "Volver con el hígado roto",
+        "texto": "Volver a España",
         "efectos": {
           "salud": -15,
           "vinculos": 10

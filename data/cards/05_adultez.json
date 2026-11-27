@@ -235,7 +235,7 @@
         }
       },
       "derecha": {
-        "texto": "Urgencias: eran gases",
+        "texto": "Ir a urgencias",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -451,7 +451,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Fuerza bruta, sobran tornillos",
+        "texto": "A fuerza bruta",
         "efectos": {
           "salud": -10,
           "dinero": 5
@@ -614,7 +614,7 @@
       "personaje": "companero_trabajo",
       "texto": "Un compañero de trabajo no para de hablar de su 'box' de CrossFit y te invita a una clase de prueba gratuita.",
       "izquierda": {
-        "texto": "Levantar un neumático",
+        "texto": "Ir a la clase de prueba",
         "efectos": {
           "salud": -15,
           "vinculos": 10
@@ -753,7 +753,7 @@
       "personaje": "polen",
       "texto": "Nunca has sido alérgic{o/a} a nada, pero esta primavera te levantas con los ojos como tomates y estornudando veinte veces seguidas.",
       "izquierda": {
-        "texto": "Antihistamínicos, en coma",
+        "texto": "Antihistamínicos",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -823,7 +823,7 @@
       "personaje": "isla_griega",
       "texto": "Un conocido al que no ves desde 2016 te invita a su boda en una isla griega. El vuelo, el hotel y el regalo te salen por 1.800 euros.",
       "izquierda": {
-        "texto": "Arroz seco frente al mar",
+        "texto": "Ir por no quedar mal",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
