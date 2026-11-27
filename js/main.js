@@ -29,7 +29,31 @@ function escapar(t = '') {
 
 // ---------- inicio y preparación ----------
 
+// Portada: una ilustración de carta al azar (de las que existen según assets/cards/indice.json).
+let ilustraciones = [];
+async function cargarIlustraciones() {
+  try {
+    const r = await fetch('assets/cards/indice.json', { cache: 'no-cache' });
+    if (r.ok) ilustraciones = (await r.json()).ilustraciones || [];
+  } catch {
+    /* sin índice: portada sin ilustración */
+  }
+}
+
+function pintarPortada() {
+  const marco = $('portada-arte');
+  if (!ilustraciones.length) { marco.replaceChildren(); return; }
+  const id = ilustraciones[Math.floor(Math.random() * ilustraciones.length)];
+  const img = new Image();
+  img.alt = '';
+  img.decoding = 'async';
+  img.onload = () => requestAnimationFrame(() => img.classList.add('lista'));
+  img.src = datos.config.imagenes.cartas.replace('{id}', id);
+  marco.replaceChildren(img);
+}
+
 function pintarInicio() {
+  pintarPortada();
   const p = progreso;
   const guardada = cargarPartida();
   $('btn-continuar').hidden = !guardada;
@@ -375,6 +399,7 @@ async function arrancar() {
     return;
   }
   conectarEventos();
+  await cargarIlustraciones();
   pintarInicio();
 }
 

@@ -61,6 +61,7 @@ tools/revisar.mjs     validación + simulación por terminal
 1. Se reciben en PNG cuadrado, a la resolución original (1024 px o más), con el `id` de la carta como nombre: `enchufe.png`. Para la imagen de un personaje reutilizable: `personaje_abuela.png`.
 2. Se dejan en `assets/originales/` y se ejecuta `python3 tools/importar_imagenes.py`.
 3. El script comprueba que el nombre corresponde a una carta o personaje y guarda un WebP de 1024×1024 (unos 80 KB) en `assets/cards/` o `assets/characters/`.
+4. También actualiza `assets/cards/indice.json`, la lista de cartas ilustradas: la portada elige una al azar cada vez que se abre el juego.
 
 En el móvil la carta se dibuja a unos 290-360 px, que en pantallas de alta densidad son unos 900-1.000 píxeles reales: 1024 px se ve nítido y el WebP pesa la décima parte que un PNG.
 

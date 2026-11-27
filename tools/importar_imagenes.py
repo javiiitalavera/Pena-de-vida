@@ -50,5 +50,9 @@ for ruta in sorted(origen.iterdir()) if origen.exists() else []:
     print(f'  ✓ {ruta.name} → {destino.relative_to(RAIZ)} ({os.path.getsize(destino) // 1024} KB)')
     hechas += 1
 
+# Índice de ilustraciones de carta disponibles (lo usa la portada para elegir una al azar).
+disponibles = sorted(f.stem for f in (RAIZ / 'assets' / 'cards').glob('*.webp') if f.stem in ids)
+(RAIZ / 'assets' / 'cards' / 'indice.json').write_text(json.dumps({'ilustraciones': disponibles}, ensure_ascii=False, indent=2) + '\n')
 print(f'{hechas} imágenes importadas, {errores} con errores.')
+print(f'Índice: {len(disponibles)} ilustraciones de carta.')
 sys.exit(1 if errores else 0)
