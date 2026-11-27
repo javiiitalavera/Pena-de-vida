@@ -1,9 +1,8 @@
 // Música y efectos. Se usa Web Audio porque en iOS el volumen de <audio> no se puede cambiar:
 // solo así funcionan los controles de volumen (y el 0) en el iPhone.
 const CLAVE = 'pena-de-vida.audio.v1';
-const PISTAS = ['vals-de-papel', 'domingo-por-la-tarde', 'tramite-pendiente'];
 const ARCHIVOS = {
-  ...Object.fromEntries(PISTAS.map((nombre) => [nombre, 'assets/audio/' + nombre + '.mp3'])),
+  musica: 'assets/audio/vals-de-papel.mp3',
   boton: 'assets/audio/boton.mp3',
   abrirAjustes: 'assets/audio/abrir-ajustes.mp3',
   cerrarAjustes: 'assets/audio/cerrar-ajustes.mp3',
@@ -17,7 +16,6 @@ let ctx = null;
 const ganancia = {};
 const sonidos = new Map(); // nombre -> promesa del buffer decodificado
 let fuenteMusica = null;
-let pistaActual = 0;
 let arrancando = false;
 
 function cargarNiveles() {
@@ -73,23 +71,14 @@ async function arrancarMusica() {
   if (!ctx || fuenteMusica || arrancando || !niveles.musica || document.hidden) return;
   arrancando = true;
   try {
-    const buffer = await cargar(PISTAS[pistaActual]).catch(async () => {
-      pistaActual = 0;
-      return cargar(PISTAS[pistaActual]);
-    });
+    const buffer = await cargar('musica');
     if (!fuenteMusica && niveles.musica && !document.hidden) {
       const fuente = ctx.createBufferSource();
       fuente.buffer = buffer;
       fuente.connect(ganancia.musica);
-      fuente.onended = () => {
-        if (fuenteMusica !== fuente) return;
-        fuenteMusica = null;
-        pistaActual = (pistaActual + 1) % PISTAS.length;
-        arrancarMusica();
-      };
+      fuente.loop = true;
       fuente.start();
       fuenteMusica = fuente;
-      cargar(PISTAS[(pistaActual + 1) % PISTAS.length]).catch(() => {});
     }
   } catch {
     /* si el archivo no carga, se juega sin música */
