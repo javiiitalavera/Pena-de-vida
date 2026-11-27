@@ -837,6 +837,355 @@
         }
       },
       "lote": 10
+    },
+    {
+      "id": "wallapop_familiar",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Wallapop Familiar",
+      "personaje": "coleccionista",
+      "texto": "Encuentras en el trastero la cubertería de plata y las figuras de porcelana de tu abuela. Un coleccionista te ofrece 1.200€ en mano hoy mismo.",
+      "izquierda": {
+        "texto": "Venderlo todo antes de que se entere tu madre",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Liquidó el patrimonio sentimental de su familia en Wallapop."
+      },
+      "derecha": {
+        "texto": "Guardarlas en otra caja para los próximos veinte años",
+        "efectos": {
+          "dinero": -5,
+          "vinculos": 10
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "latigazo_cervical",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Latigazo Cervical",
+      "personaje": "conductor_nervioso",
+      "texto": "Te dan un golpe por detrás en un semáforo a 5 km/h. No tienes nada, pero el conductor del otro coche te mira nervioso y sabes cómo funcionan los seguros.",
+      "izquierda": {
+        "texto": "Ponerte un collarín tres semanas y cobrar 2.500€ de indemnización",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        },
+        "hito_biografico": "Fingió un latigazo cervical por un toque a cinco por hora."
+      },
+      "derecha": {
+        "texto": "Hacer un parte amistoso honesto y seguir con tu vida",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "horas_extra_sobre",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Horas Extra en Sobre",
+      "personaje": "jefe",
+      "texto": "Tu jefe te propone trabajar todos los sábados de este trimestre. Te los paga en metálico, sin declarar y sin cotizar.",
+      "izquierda": {
+        "texto": "Coger el sobre marrón y despedirte de tu espalda",
+        "efectos": {
+          "dinero": 15,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que los sábados son sagrados",
+        "efectos": {
+          "salud": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "habitacion_libre",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Habitación Libre",
+      "personaje": "inquilino_insectos",
+      "texto": "Tienes un cuarto vacío lleno de trastos. Un tipo muy silencioso que colecciona insectos disecados te paga 500€ al mes en negro por alquilarlo.",
+      "izquierda": {
+        "texto": "Meterle en casa y cerrar tu puerta con pestillo por la noche",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Renunciar al dinero y conservar tu paz mental",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "ensayo_clinico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Ensayo Clínico",
+      "personaje": "farmaceutica_ensayo",
+      "texto": "Una farmacéutica paga 900€ por probar durante una semana un medicamento experimental contra la migraña. El consentimiento informado tiene 40 páginas.",
+      "izquierda": {
+        "texto": "Firmar sin leer y tragar la pastilla azul",
+        "efectos": {
+          "dinero": 15,
+          "salud": -10
+        },
+        "hito_biografico": "Alquiló su hígado a la industria farmacéutica para llegar a fin de mes."
+      },
+      "derecha": {
+        "texto": "Romper el folleto y buscar dinero de forma aburrida",
+        "efectos": {
+          "salud": 5,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "parte_seguro_tele",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Parte del Seguro",
+      "personaje": "perito",
+      "texto": "Tu televisor de 2014 ha muerto de viejo. Un amigo te sugiere decirle al seguro del hogar que fue una subida de tensión tras la tormenta de ayer.",
+      "izquierda": {
+        "texto": "Colársela al perito y estrenar tele nueva",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar una nueva de tu bolsillo como un{/a} ciudadan{o/a} ejemplar",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "tio_soltero",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Tío Soltero",
+      "personaje": "notario",
+      "texto": "Ha muerto un tío lejano que no caía bien a nadie. Nadie de tu familia quiere ir al entierro en el pueblo, pero tiene una cartilla de ahorros sin repartir.",
+      "izquierda": {
+        "texto": "Ir en primera fila, llorar a moco tendido y caerle bien al notario",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en casa por coherencia moral",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "anuncio_instagram",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Anuncio de Instagram",
+      "personaje": "agencia_marketing",
+      "texto": "Una agencia de marketing te ofrece 1.500€ por grabar un vídeo de 30 segundos fingiendo que te hiciste ric{o/a} con un curso de criptomonedas.",
+      "izquierda": {
+        "texto": "Grabarlo con gafas de sol y cobrar al contado",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Prestó su cara para anunciar una estafa financiera en redes."
+      },
+      "derecha": {
+        "texto": "Mandarles a la mierda",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "demanda_laboral",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Demanda Laboral",
+      "personaje": "rrhh",
+      "texto": "Descubres que tu empresa lleva cuatro años pagándote mal un complemento salarial. Si denuncias te caen 4.000€, pero pasarás a ser {el enemigo público/la enemiga pública} en la oficina.",
+      "izquierda": {
+        "texto": "Denunciar y mirar a Recursos Humanos a los ojos cada mañana",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tragar saliva y evitar conflictos",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "airbnb_clandestino",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Airbnb Clandestino",
+      "personaje": "turistas_britanicos",
+      "texto": "Te vas de puente cuatro días. Puedes alquilar tu piso a unos turistas británicos sin licencia y sacarte medio sueldo.",
+      "izquierda": {
+        "texto": "Alquilarlo y rezar para que no tiren el sofá por el balcón",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dejar la casa vacía y tranquila",
+        "efectos": {
+          "salud": 5,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "dietas_viaje",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Las Dietas de Viaje",
+      "personaje": "camarero",
+      "texto": "Viajas por trabajo y la empresa te cubre hasta 65€ diarios en comidas. El camarero del bar te ofrece hacerte un ticket inflado si le dejas 5€ de propina.",
+      "izquierda": {
+        "texto": "Cenar un bocadillo de 4€ y embolsarte la diferencia",
+        "efectos": {
+          "dinero": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Cenar bien y pasar el ticket real",
+        "efectos": {
+          "salud": 5,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "donacion_plasma",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Donación de Plasma",
+      "personaje": "centro_plasma",
+      "texto": "Un centro privado te compensa económicamente por donar plasma dos veces por semana. Sales un poco maread{o/a}, pero paga la compra del súper.",
+      "izquierda": {
+        "texto": "Poner el brazo cada martes y jueves",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte con tus fluidos corporales intactos",
+        "efectos": {
+          "salud": 5,
+          "dinero": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "baja_prolongada",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Baja Prolongada",
+      "personaje": "medico_cabecera",
+      "texto": "Te haces un esguince leve. Ya estás bien, pero el médico te ofrece alargar la baja un mes más mientras puedes hacer chapuzas en negro desde casa.",
+      "izquierda": {
+        "texto": "Alargar la baja y facturar por debajo de la mesa",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir el alta voluntaria y volver a tu silla",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -5
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "tarjeta_gasolina",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Tarjeta de Gasolina",
+      "personaje": "gasolinera",
+      "texto": "Tienes tarjeta de combustible de empresa para desplazamientos laborales, pero nadie revisa los kilómetros en agosto.",
+      "izquierda": {
+        "texto": "Cruzar España de vacaciones a cuenta de la compañía",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar tu propia gasolina como un{/a} pringad{o/a}",
+        "efectos": {
+          "dinero": -5,
+          "vinculos": 10
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "coche_despiece",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Coche para Despiece",
+      "personaje": "tipo_poligono",
+      "texto": "Tu coche viejo no pasa la ITV. Un tipo en un polígono te ofrece 1.800€ en billetes de 50 sin cambiarlo de nombre 'porque es para exportación'.",
+      "izquierda": {
+        "texto": "Coger el dinero y confiar en que no atraquen un banco con tu matrícula",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Llevarlo al desguace legal por 150€",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 13
     }
   ]
 }

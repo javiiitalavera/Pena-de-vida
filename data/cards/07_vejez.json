@@ -177,7 +177,7 @@
       "condiciones": {
         "requiere_sexo": "M",
         "requiere_flags": [
-          "casado"
+          "viudo"
         ]
       },
       "izquierda": {
@@ -206,7 +206,7 @@
       "condiciones": {
         "requiere_sexo": "F",
         "requiere_flags": [
-          "casado"
+          "viudo"
         ]
       },
       "izquierda": {
@@ -716,6 +716,89 @@
         }
       },
       "lote": 11
+    },
+    {
+      "id": "tos_pareja",
+      "tipo": "etapa",
+      "etapa": "70-74",
+      "nombre": "La Tos de tu Pareja",
+      "personaje": "pareja",
+      "texto": "Tu pareja lleva dos meses con una tos seca muy fea, pero dice que 'son cosas de la edad' y se niega en redondo a pisar el médico.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ],
+        "prioridad": "alta"
+      },
+      "izquierda": {
+        "texto": "Arrastrarle a urgencias aunque te monte un escándalo",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Respetar su cabezonería y dejarle en paz",
+        "efectos": {
+          "dinero": 10,
+          "cordura": 10
+        },
+        "hito_biografico": "Respetó la cabezonería médica de su pareja hasta las últimas consecuencias.",
+        "remove_flags": [
+          "casado"
+        ],
+        "add_flags": [
+          "viudo"
+        ]
+      },
+      "lote": 13
+    },
+    {
+      "id": "cumple_75",
+      "tipo": "ancla",
+      "anio": 75,
+      "nombre": "El 75 Cumpleaños",
+      "personaje": "tarta",
+      "texto": "Cumples 75 años. Acabas de darte cuenta de que cuando en el telediario hablan de 'proteger a las personas mayores durante la ola de calor', se refieren a ti.",
+      "izquierda": {
+        "texto": "Salir a pasear a las tres de la tarde para demostrar que no eres de cristal",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Encerrarte con el aire acondicionado a 22 grados y ver concursos",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 13
+    },
+    {
+      "id": "cumple_85",
+      "tipo": "ancla",
+      "anio": 85,
+      "nombre": "El 85 Cumpleaños",
+      "personaje": "batamanta",
+      "texto": "Cumples 85. Tus familiares te regalan una batamanta y unas zapatillas antideslizantes porque ya no saben qué comprarle a alguien que no sale de casa.",
+      "izquierda": {
+        "texto": "Agradecerlo con una sonrisa resignada",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir el ticket regalo y cambiarlo por una botella de buen whisky",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Cambió unas zapatillas antideslizantes por whisky a los 85 años."
+      },
+      "lote": 13
     }
   ]
 }

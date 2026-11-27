@@ -38,7 +38,8 @@
     "estado_civil": [
       "soltero",
       "casado",
-      "divorciado"
+      "divorciado",
+      "viudo"
     ]
   },
   "pesos_prioridad": {
