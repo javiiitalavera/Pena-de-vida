@@ -49,10 +49,20 @@ data/traits.json      rasgos pasivos
 data/jokers.json      comodines
 data/deaths.json      textos de muerte por barra
 data/remates.json     informe forense de la necrológica: todos los condicionales que encajen + uno aleatorio
-assets/cards/         imagen propia de una carta: {id}.png
-assets/characters/    imagen de un personaje (se reutiliza): {personaje}.png
+assets/cards/         imagen propia de una carta: {id}.webp
+assets/characters/    imagen de un personaje (se reutiliza): {personaje}.webp
+assets/originales/    aquí se dejan las ilustraciones recibidas antes de importarlas (no se suben)
+tools/importar_imagenes.py  convierte las ilustraciones a WebP 1024×1024
 tools/revisar.mjs     validación + simulación por terminal
 ```
+
+## Ilustraciones
+
+1. Se reciben en PNG cuadrado, a la resolución original (1024 px o más), con el `id` de la carta como nombre: `enchufe.png`. Para la imagen de un personaje reutilizable: `personaje_abuela.png`.
+2. Se dejan en `assets/originales/` y se ejecuta `python3 tools/importar_imagenes.py`.
+3. El script comprueba que el nombre corresponde a una carta o personaje y guarda un WebP de 1024×1024 (unos 80 KB) en `assets/cards/` o `assets/characters/`.
+
+En el móvil la carta se dibuja a unos 290-360 px, que en pantallas de alta densidad son unos 900-1.000 píxeles reales: 1024 px se ve nítido y el WebP pesa la décima parte que un PNG.
 
 ## Formato de una carta
 

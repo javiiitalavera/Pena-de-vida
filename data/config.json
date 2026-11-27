@@ -114,7 +114,7 @@
     "99_final.json"
   ],
   "imagenes": {
-    "cartas": "assets/cards/{id}.png",
-    "personajes": "assets/characters/{personaje}.png"
+    "cartas": "assets/cards/{id}.webp",
+    "personajes": "assets/characters/{personaje}.webp"
   }
 }
