@@ -251,6 +251,471 @@
         }
       },
       "lote": 3
+    },
+    {
+      "id": "cola_farmacia",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Cola de la Farmacia",
+      "personaje": "farmaceutica",
+      "texto": "Son las 9:02 de la mañana y ya estás haciendo cola en la farmacia, aunque no necesitas nada hasta el jueves. Es tu red social.",
+      "izquierda": {
+        "texto": "Contarle al de atrás tu operación de cataratas con todo detalle",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Colarte disimuladamente aprovechando tu edad",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "sucursal_bancaria",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Sucursal Bancaria",
+      "personaje": "empleado_banco",
+      "texto": "Han cerrado tu oficina de toda la vida y un chico con corbata te dice que 'para sacar efectivo tienes que usar la app y el código QR'.",
+      "izquierda": {
+        "texto": "Pedir la hoja de reclamaciones y sentarte en el suelo",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Protagonizó una sentada en un cajero automático contra la digitalización."
+      },
+      "derecha": {
+        "texto": "Sacar todos tus ahorros y meterlos debajo del colchón",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "obra_barrio",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Obra del Barrio",
+      "personaje": "jubilados_obra",
+      "texto": "Están levantando la acera de tu calle. Hay tres jubilados con las manos a la espalda supervisando la excavadora y te hacen sitio.",
+      "izquierda": {
+        "texto": "Unirte y opinar que ese cemento está mal echado",
+        "efectos": {
+          "vinculos": 5,
+          "cordura": 5
+        }
+      },
+      "derecha": {
+        "texto": "Seguir caminando y aceptar que no eres arquitect{o/a}",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "seguro_decesos",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Seguro de Decesos",
+      "personaje": "agente_seguros",
+      "texto": "Haces cuentas y descubres que llevas cuarenta años pagando el seguro de los muertos. Con ese dinero ya podrías haberte comprado una pirámide en Egipto.",
+      "izquierda": {
+        "texto": "Seguir pagando por si acaso te mueres el martes",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Darlo de baja y decirle a tus hijos que te tiren al contenedor gris",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Canceló su seguro de decesos para fastidiar a sus herederos."
+      },
+      "lote": 11
+    },
+    {
+      "id": "movil_nuevo",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Móvil Nuevo",
+      "personaje": "smartphone",
+      "texto": "Tus hijos te han regalado un smartphone. Sin querer has reenviado una foto borrosa de tu pie al grupo de WhatsApp de la comunidad.",
+      "izquierda": {
+        "texto": "Borrar el grupo entero y apagar el teléfono tres días",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Mandar un audio de seis minutos intentando explicarlo",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "subida_pension",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Subida de la Pensión",
+      "personaje": "ministerio",
+      "texto": "Te llega una carta del Ministerio anunciando con orgullo que tu pensión sube 11 euros al mes. El aceite de oliva acaba de subir 4 euros la botella.",
+      "izquierda": {
+        "texto": "Comer pan con tomate el resto del mes",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Comprar el aceite bueno y que pague el Estado",
+        "efectos": {
+          "dinero": -10,
+          "salud": 10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "chorizo_clandestino",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Chorizo Clandestino",
+      "personaje": "chorizo",
+      "texto": "Tienes el colesterol por las nubes y te han prohibido el embutido, pero hay un trozo de chorizo ibérico en la despensa mirándote fijamente.",
+      "izquierda": {
+        "texto": "Comértelo a escondidas en el baño como un{/a} delincuente",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Cenar yogur desnatado y llorar en silencio",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "crucero_jubilados",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Crucero de Jubilados",
+      "personaje": "senora_albacete",
+      "texto": "En el buffet libre del barco hay langostinos, pero una señora de Albacete con codos de acero acaba de bloquear la bandeja.",
+      "izquierda": {
+        "texto": "Empujarla con la bandeja y llevarte medio kilo",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        },
+        "hito_biografico": "Inició una reyerta en un buffet libre por unos langostinos."
+      },
+      "derecha": {
+        "texto": "Conformarte con la ensalada de pasta tibia",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "piso_grande",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Piso Grande",
+      "personaje": "hijos",
+      "texto": "Tus hijos te sugieren con mucha delicadeza que 'esta casa es demasiado grande para ti' y que estarías mejor en un estudio de 30 metros sin ascensor.",
+      "izquierda": {
+        "texto": "Decirles que de aquí solo sales con los pies por delante",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Venderlo y repartirles la entrada de sus pisos",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 15
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "siesta_cuatro",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Siesta de las Cuatro",
+      "personaje": "sofa",
+      "texto": "Te tumbas a ver la etapa del Tour de Francia y te despiertas a las ocho de la tarde completamente desorientad{o/a}, pensando que llegas tarde al colegio.",
+      "izquierda": {
+        "texto": "Desayunar café con galletas a las nueve de la noche",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Llamar a un familiar en pánico preguntando qué día es",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "baile_centro_civico",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Baile del Centro Cívico",
+      "personaje": "pareja_baile",
+      "texto": "El centro de mayores parece una discoteca de Ibiza pero con olor a Vicks VapoRub. Alguien muy insistente te saca a bailar un bolero.",
+      "izquierda": {
+        "texto": "Darle una oportunidad al amor geriátrico",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Tuvo un romance tempestuoso en el centro de mayores."
+      },
+      "derecha": {
+        "texto": "Fingir un tirón en el gemelo y escapar",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "bulo_whatsapp",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Bulo de WhatsApp",
+      "personaje": "cadena_whatsapp",
+      "texto": "Te llega una cadena que dice que si no la reenvías a diez contactos, WhatsApp te cobrará 50 euros al mes y te quitarán la pensión.",
+      "izquierda": {
+        "texto": "Reenviarla a toda tu agenda a las seis de la mañana",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Ignorarla y vivir al límite",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "ascensor_estropeado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Ascensor Estropeado",
+      "personaje": "ascensor",
+      "texto": "Vives en un cuarto piso, vienes cargad{o/a} con la compra y el ascensor tiene un cartel que pone 'Fuera de servicio hasta el lunes'.",
+      "izquierda": {
+        "texto": "Subir las escaleras como un escalador del Everest",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Dejar las bolsas en el portal e irte a dormir a un hotel",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "paga_nieto",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Paga al Nieto",
+      "personaje": "nieto",
+      "texto": "Tu nieto viene a comer. En el pasillo le pasas un billete de 50 euros doblado en la mano como si estuvieras traficando con droga.",
+      "izquierda": {
+        "texto": "Decirle 'no le digas nada a tus padres'",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Darle un billete de 5 euros y un sermón sobre el ahorro",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "mercadillo_jueves",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Mercadillo del Jueves",
+      "personaje": "jubilado_rival",
+      "texto": "Encuentras unas zapatillas ortopédicas por 8 euros, pero otro jubilado las agarra al mismo tiempo que tú. Os miráis a los ojos.",
+      "izquierda": {
+        "texto": "Tirar con toda tu fuerza hasta que ceda",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Soltarlas y maldecirle en voz baja",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "batallitas",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "Las Batallitas",
+      "personaje": "familia_navidad",
+      "texto": "En la comida de Navidad empiezas a contar por cuadragésima vez cómo era el invierno de 1978. Nadie te está escuchando; todos miran el móvil.",
+      "izquierda": {
+        "texto": "Subir el volumen de voz hasta acallarlos a todos",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Callarte y servirte otra copa de vino",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "vecino_ruidoso",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Vecino Ruidoso",
+      "personaje": "estudiante_reggaeton",
+      "texto": "El estudiante del piso de arriba pone reguetón a las once de la noche. Tienes una escoba y mucha rabia acumulada.",
+      "izquierda": {
+        "texto": "Aporrear el techo con el palo de la escoba",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Poner la radio de misa a todo volumen a las siete de la mañana",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Libró una guerra acústica contra un estudiante universitario."
+      },
+      "lote": 11
+    },
+    {
+      "id": "memoria_selectiva",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Memoria Selectiva",
+      "personaje": "nevera",
+      "texto": "Entras en la cocina con un objetivo clarísimo, te quedas mirando la nevera abierta durante dos minutos y no tienes ni idea de qué venías a buscar.",
+      "izquierda": {
+        "texto": "Coger un trozo de queso para disimular",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Volver al salón y fingir que solo estabas paseando",
+        "efectos": {
+          "cordura": 5,
+          "salud": -5
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "urgencias_domingo",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Urgencias del Domingo",
+      "personaje": "sala_espera",
+      "texto": "Te duele un poco la espalda desde el martes, pero decides ir a urgencias hoy domingo a las cinco de la tarde porque en la tele no echan nada.",
+      "izquierda": {
+        "texto": "Pasarte seis horas en la sala de espera haciendo amigos",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en casa con una manta eléctrica",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 11
+    },
+    {
+      "id": "testamento_vital",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Testamento Vital",
+      "personaje": "medico_cabecera",
+      "texto": "El médico te pregunta si quieres dejar por escrito qué hacer en caso de que te quedes enchufad{o/a} a una máquina.",
+      "izquierda": {
+        "texto": "Firmar 'desenchúfenme en cuanto deje de poder comer jamón'",
+        "efectos": {
+          "cordura": 10,
+          "dinero": 5
+        }
+      },
+      "derecha": {
+        "texto": "Decir que te mantengan viv{o/a} aunque sea con una batería de coche",
+        "efectos": {
+          "dinero": -10,
+          "salud": -10
+        }
+      },
+      "lote": 11
     }
   ]
 }
