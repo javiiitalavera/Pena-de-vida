@@ -1,37 +1,130 @@
-const clave = 'pena-de-vida.audio.v1';
-const musica = new Audio('assets/audio/vals-de-papel.mp3');
-musica.loop = true;
-musica.preload = 'none';
-const efectos = Object.fromEntries(['carta', 'comodin', 'cierre'].map(nombre => {
-  const sonido = new Audio();
-  sonido.preload = 'none';
-  sonido.src = 'assets/audio/' + nombre + '.mp3';
-  return [nombre, sonido];
-}));
+// Música y efectos. Se usa Web Audio porque en iOS el volumen de <audio> no se puede cambiar:
+// solo así funcionan los controles de volumen (y el 0) en el iPhone.
+const CLAVE = 'pena-de-vida.audio.v1';
+const ARCHIVOS = {
+  musica: 'assets/audio/vals-de-papel.mp3',
+  carta: 'assets/audio/carta.mp3',
+  comodin: 'assets/audio/comodin.mp3',
+  cierre: 'assets/audio/cierre.mp3',
+};
+const niveles = { musica: 30, efectos: 55 };
+
+let ctx = null;
+const ganancia = {};
+const sonidos = new Map(); // nombre -> promesa del buffer decodificado
+let fuenteMusica = null;
+let arrancando = false;
+
+function cargarNiveles() {
+  try {
+    const g = JSON.parse(localStorage.getItem(CLAVE));
+    for (const c of Object.keys(niveles)) {
+      const v = g?.[c];
+      if (Number.isInteger(v) && v >= 0 && v <= 100) niveles[c] = v;
+    }
+  } catch {
+    /* sin almacenamiento: valores por defecto */
+  }
+}
+
+function guardarNiveles() {
+  try {
+    localStorage.setItem(CLAVE, JSON.stringify(niveles));
+  } catch {
+    /* nada */
+  }
+}
+
+function crearContexto() {
+  if (ctx) return;
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return;
+  ctx = new AC();
+  for (const c of Object.keys(niveles)) {
+    ganancia[c] = ctx.createGain();
+    ganancia[c].connect(ctx.destination);
+  }
+  aplicarVolumen();
+}
+
+function aplicarVolumen() {
+  if (!ctx) return;
+  for (const c of Object.keys(niveles)) ganancia[c].gain.value = niveles[c] / 100;
+}
+
+function cargar(nombre) {
+  if (!sonidos.has(nombre)) {
+    sonidos.set(
+      nombre,
+      fetch(ARCHIVOS[nombre])
+        .then((r) => r.arrayBuffer())
+        .then((b) => new Promise((ok, ko) => ctx.decodeAudioData(b, ok, ko))),
+    );
+  }
+  return sonidos.get(nombre);
+}
+
+async function arrancarMusica() {
+  if (!ctx || fuenteMusica || arrancando || !niveles.musica || document.hidden) return;
+  arrancando = true;
+  try {
+    const buffer = await cargar('musica');
+    if (!fuenteMusica && niveles.musica) {
+      const fuente = ctx.createBufferSource();
+      fuente.buffer = buffer;
+      fuente.loop = true;
+      fuente.connect(ganancia.musica);
+      fuente.start();
+      fuenteMusica = fuente;
+    }
+  } catch {
+    /* si el archivo no carga, se juega sin música */
+  } finally {
+    arrancando = false;
+  }
+}
+
+function pararMusica() {
+  if (!fuenteMusica) return;
+  try {
+    fuenteMusica.stop();
+  } catch {
+    /* ya parada */
+  }
+  fuenteMusica = null;
+}
 
 export function reproducirEfecto(nombre) {
-  const sonido = efectos[nombre];
-  if (document.hidden || !sonido.volume) return;
-  sonido.currentTime = 0;
-  sonido.play().catch(() => {});
+  if (!ctx || !niveles.efectos || document.hidden) return;
+  cargar(nombre)
+    .then((buffer) => {
+      const fuente = ctx.createBufferSource();
+      fuente.buffer = buffer;
+      fuente.connect(ganancia.efectos);
+      fuente.start();
+    })
+    .catch(() => {});
 }
 
 export function prepararAudio() {
-  const niveles = { musica: 30, efectos: 55 };
-  try {
-    const guardados = JSON.parse(localStorage.getItem(clave));
-    for (const canal of Object.keys(niveles)) {
-      const valor = guardados?.[canal];
-      if (Number.isInteger(valor) && valor >= 0 && valor <= 100) niveles[canal] = valor;
-    }
-  } catch {}
-  let iniciado = false;
-  function actualizar() {
-    musica.volume = niveles.musica / 100;
-    for (const sonido of Object.values(efectos)) sonido.volume = niveles.efectos / 100;
-    if (document.hidden || !niveles.musica) musica.pause();
-    else if (iniciado && musica.paused) musica.play().catch(() => {});
-  }
+  cargarNiveles();
+
+  // El navegador solo deja sonar audio tras un gesto del usuario.
+  const desbloquear = () => {
+    crearContexto();
+    if (!ctx) return;
+    if (ctx.state !== 'running') ctx.resume().catch(() => {});
+    arrancarMusica();
+    for (const n of ['carta', 'comodin', 'cierre']) cargar(n).catch(() => {});
+  };
+  for (const ev of ['pointerup', 'touchend', 'click', 'keydown']) document.addEventListener(ev, desbloquear, true);
+
+  document.addEventListener('visibilitychange', () => {
+    if (!ctx) return;
+    if (document.hidden) ctx.suspend().catch(() => {});
+    else ctx.resume().catch(() => {});
+  });
+
   for (const canal of Object.keys(niveles)) {
     const control = document.getElementById('vol-' + canal);
     const salida = document.getElementById('nivel-' + canal);
@@ -40,19 +133,13 @@ export function prepararAudio() {
     control.addEventListener('input', () => {
       niveles[canal] = Number(control.value);
       salida.value = control.value + '%';
-      actualizar();
-      try { localStorage.setItem(clave, JSON.stringify(niveles)); } catch {}
+      aplicarVolumen();
+      if (canal === 'musica') niveles.musica ? arrancarMusica() : pararMusica();
+      guardarNiveles();
     });
     if (canal === 'efectos') control.addEventListener('change', () => reproducirEfecto('carta'));
   }
-  actualizar();
-  document.addEventListener('click', () => { iniciado = true; actualizar(); }, true);
-  document.addEventListener('visibilitychange', () => {
-    actualizar();
-    if (document.hidden) for (const sonido of Object.values(efectos)) sonido.pause();
-  });
+
   const dialogo = document.getElementById('ajustes');
-  for (const boton of document.querySelectorAll('[data-ajustes]')) {
-    boton.addEventListener('click', () => dialogo.showModal());
-  }
+  for (const boton of document.querySelectorAll('[data-ajustes]')) boton.addEventListener('click', () => dialogo.showModal());
 }

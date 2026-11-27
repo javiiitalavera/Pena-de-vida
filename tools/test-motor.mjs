@@ -33,7 +33,7 @@ p=new Partida(datos,{sexo:'M',comodinId:'bomba_humo'}); const c1=p.siguienteCart
 p=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); p.siguienteCarta(); p.usarComodin(); assert(p.pilares.dinero===75&&p.pilares.vinculos===25,'contacto +25/−25');
 assert(aplicarGenero('maj{o/a} {el/la} señor{/a}','F')==='maja la señora','género F'); assert(aplicarGenero('maj{o/a}','M')==='majo','género M');
 // muerte y necrológica
-p=new Partida(datos,{sexo:'F'}); p.siguienteCarta(); p.pilares.salud=5; p.elegir('derecha'); assert(p.fin?.causa.pilar==='salud','muerte por salud 0');
+p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('obstetra'); p.pilares.salud=5; p.elegir('derecha'); assert(p.fin?.causa.pilar==='salud','muerte por salud 0');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); p.siguienteCarta(); p.elegir('izquierda'); assert(p.fin?.causa.tipo==='centenario','centenario');
 assert(construirNecrologia(p).titulo==='Condena prorrogada' && construirNecrologia(p).cabecera==='Fe de vida','fluorescente: condena prorrogada');
 // profesiones excluyentes y cartas que abarcan dos etapas

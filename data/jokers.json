@@ -8,7 +8,8 @@
       "accion": "descartar",
       "desbloqueo": {
         "tipo": "inicial"
-      }
+      },
+      "icono": "humo"
     },
     {
       "id": "orfidal",
@@ -24,7 +25,8 @@
         "tipo": "edad",
         "min": 41,
         "texto": "Superar los 40 años"
-      }
+      },
+      "icono": "pastilla"
     },
     {
       "id": "llamar_contacto",
@@ -41,7 +43,8 @@
         "tipo": "edad",
         "min": 66,
         "texto": "Superar los 65 años"
-      }
+      },
+      "icono": "telefono"
     },
     {
       "id": "segunda_opinion",
@@ -52,7 +55,8 @@
         "tipo": "muerte",
         "extremo": 100,
         "texto": "Morir por cualquier barra al 100"
-      }
+      },
+      "icono": "invertir"
     }
   ]
 }

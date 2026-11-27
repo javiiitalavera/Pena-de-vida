@@ -1,10 +1,11 @@
-import { prepararAudio, reproducirEfecto } from './audio.js';
 // Interfaz: pantallas, carta, barras y necrológica. La lógica está en engine.js.
+import { prepararAudio, reproducirEfecto } from './audio.js';
 import { cargarDatos } from './data.js';
 import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad } from './engine.js';
 import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida } from './storage.js';
 import { montarImagen } from './images.js';
 import { aplicarGenero } from './text.js';
+import { icono } from './iconos.js';
 import { activarSwipe, lanzar, entrar, volver } from './swipe.js';
 
 const $ = (id) => document.getElementById(id);
@@ -82,16 +83,16 @@ function pintarComodines() {
       tarjetaEleccion(c.nombre, [c.descripcion], () => {
         eleccion.comodinId = c.id;
         empezar();
-      }),
+      }, icono(c.icono)),
     ),
   );
   mostrar('pantalla-comodin');
 }
 
-function tarjetaEleccion(titulo, lineas, alElegir) {
+function tarjetaEleccion(titulo, lineas, alElegir, iconoHtml = '') {
   const b = document.createElement('button');
   b.className = 'eleccion';
-  b.innerHTML = `<strong>${escapar(titulo)}</strong>${lineas
+  b.innerHTML = `<strong>${iconoHtml}${escapar(titulo)}</strong>${lineas
     .filter(Boolean)
     .map((l) => `<span>${l.startsWith('<em') ? l : escapar(l)}</span>`)
     .join('')}`;
@@ -159,7 +160,11 @@ function pintarComodinBoton() {
   const b = $('btn-comodin');
   if (!partida.comodin) { b.hidden = true; return; }
   b.hidden = false;
-  b.textContent = partida.comodinUsado ? `${partida.comodin.nombre} (usado)` : `Comodín: ${partida.comodin.nombre}`;
+  b.innerHTML = icono(partida.comodin.icono);
+  const nombre = partida.comodinUsado ? `${partida.comodin.nombre} (usado)` : `Comodín: ${partida.comodin.nombre}`;
+  b.setAttribute('aria-label', nombre);
+  b.title = nombre;
+  b.classList.toggle('usado', partida.comodinUsado);
   b.disabled = !partida.puedeUsarComodin() || ocupado;
 }
 
@@ -253,6 +258,7 @@ function avisar(texto) {
 
 function abrirComodin() {
   if (!partida.puedeUsarComodin() || ocupado) return;
+  $('dlg-icono').innerHTML = icono(partida.comodin.icono);
   $('dlg-nombre').textContent = partida.comodin.nombre;
   $('dlg-desc').textContent = partida.comodin.descripcion;
   $('dialogo-comodin').showModal();
@@ -319,6 +325,7 @@ function acabar() {
 // ---------- arranque ----------
 
 function conectarEventos() {
+  for (const b of document.querySelectorAll('.icono-btn.ajustes')) b.innerHTML = icono('ajustes');
   prepararAudio();
   $('btn-nueva').addEventListener('click', () => mostrar('pantalla-sexo'));
   $('btn-continuar').addEventListener('click', continuar);

@@ -32,7 +32,8 @@ button { font: inherit; color: inherit; }
   display: none;
   height: 100%;
   flex-direction: column;
-  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  /* En iPhone la franja del reloj se difumina: se deja margen generoso arriba. */
+  padding: calc(env(safe-area-inset-top) + 28px) 16px max(16px, env(safe-area-inset-bottom));
   overflow-y: auto;
 }
 .pantalla.activa { display: flex; }
@@ -172,8 +173,25 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .pista { text-align: center; color: var(--tinta-suave); font-size: 0.8rem; letter-spacing: 0.05em; margin: 0; animation: latido 2s ease-in-out infinite; }
 @keyframes latido { 50% { opacity: 0.45; } }
 
-.pie-juego { margin-top: auto; padding-top: 10px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.btn.comodin { font-size: 0.85rem; padding: 10px 18px; }
+.escena { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+.pie-juego { padding-top: 10px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.icono-btn {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--fondo-2); border: 1px solid var(--linea); color: var(--tinta);
+  cursor: pointer; padding: 0;
+}
+.icono-btn:hover { border-color: var(--tinta-suave); }
+.icono-btn:disabled { opacity: 0.28; cursor: default; }
+.icono-btn .icono { width: 26px; height: 26px; }
+.icono-btn.ajustes { justify-self: end; width: 44px; height: 44px; background: transparent; border-color: transparent; color: var(--tinta-suave); }
+.icono-btn.ajustes .icono { width: 22px; height: 22px; }
+.icono-btn.comodin.usado { position: relative; }
+.icono-btn.comodin.usado::after { content: ''; position: absolute; width: 34px; height: 1.5px; background: currentColor; transform: rotate(-45deg); }
+.pie-juego .debug { grid-column: 1 / -1; }
+.dlg-icono { display: flex; justify-content: center; margin-bottom: 6px; }
+.dlg-icono .icono { width: 40px; height: 40px; }
+.eleccion .icono { width: 22px; height: 22px; vertical-align: -4px; margin-right: 8px; }
 .debug { font-size: 0.7rem; color: var(--tinta-suave); font-family: ui-monospace, monospace; text-align: center; }
 
 .aviso-flotante {
@@ -239,7 +257,6 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   .carta.entrando { animation: none; }
 }
 
-.acciones-juego { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px; }
 #ajustes form { display: grid; width: min(64vw, 260px); gap: 12px; }
 #ajustes label { display: flex; justify-content: space-between; }
 #ajustes output { font-variant-numeric: tabular-nums; color: var(--tinta-suave); }

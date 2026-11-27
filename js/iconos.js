@@ -1,0 +1,14 @@
+// Iconos de línea (24×24, trazo con el color del texto). Se usan en comodines y ajustes.
+const TRAZOS = {
+  humo: '<path d="M6.5 19h10.5a4 4 0 0 0 .4-7.98A6 6 0 0 0 5.8 10.4 4.3 4.3 0 0 0 6.5 19z"/><circle cx="5" cy="5" r="1.6"/><circle cx="9.5" cy="3.6" r="1"/>',
+  pastilla: '<g transform="rotate(-45 12 12)"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5"/><line x1="12" y1="8.5" x2="12" y2="15.5"/></g>',
+  telefono: '<path d="M5 3.5h3.2l1.8 4.6-2.4 1.6a11.5 11.5 0 0 0 6.7 6.7l1.6-2.4 4.6 1.8V19a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/>',
+  invertir: '<path d="M4 8h15l-3.5-3.5M20 16H5l3.5 3.5"/>',
+  ajustes: '<path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/>',
+  comodin: '<rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M12 8.5l1.3 2.6 2.7.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.7-.4z"/>',
+};
+
+export function icono(nombre) {
+  const trazo = TRAZOS[nombre] || TRAZOS.comodin;
+  return `<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${trazo}</svg>`;
+}

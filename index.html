@@ -51,6 +51,7 @@
 
     <section id="pantalla-juego" class="pantalla">
       <header class="barras" id="barras"></header>
+      <div class="escena">
       <div class="edad">
         <span id="edad-anio">Año 0</span>
         <span class="edad-etapa" id="edad-etapa"></span>
@@ -65,8 +66,11 @@
       </div>
       <p class="carta-nombre" id="carta-nombre"></p>
       <p class="pista" id="pista" hidden>← Desliza la carta para decidir →</p>
+      </div>
       <footer class="pie-juego">
-        <div class="acciones-juego"><button class="btn comodin" id="btn-comodin"></button><button class="btn secundario" data-ajustes>Ajustes</button></div>
+        <span></span>
+        <button class="icono-btn comodin" id="btn-comodin"></button>
+        <button class="icono-btn ajustes" data-ajustes aria-label="Ajustes" title="Ajustes"></button>
         <span class="debug" id="debug" hidden></span>
       </footer>
       <div class="aviso-flotante" id="aviso" hidden></div>
@@ -90,6 +94,7 @@
     </dialog>
 
     <dialog id="dialogo-comodin" class="dialogo">
+      <div class="dlg-icono" id="dlg-icono"></div>
       <h3 id="dlg-nombre"></h3>
       <p id="dlg-desc"></p>
       <div class="fila-botones">

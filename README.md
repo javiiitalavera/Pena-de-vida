@@ -127,6 +127,10 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 
 La partida en curso se guarda en el navegador después de cada carta. Si el móvil recarga la página, en la pantalla de inicio aparece «Continuar vida». Al morir se borra.
 
+## Sonido
+
+Música («Vals de papel») y tres efectos (carta, comodín y final) en `assets/audio/`. El volumen de cada uno se ajusta en Ajustes y se recuerda en el navegador. Se usa Web Audio porque en iPhone el volumen de un elemento `<audio>` no se puede cambiar. El sonido empieza tras el primer toque y se pausa al cambiar de aplicación.
+
 ## Cómo funciona el tiempo
 
 - Cada carta hace avanzar la edad. Si una etapa tiene suficientes cartas, salen unas 1,5 por año (`cartas_por_anio` en `config.json`). Si tiene pocas, el juego salta años para no repetir cartas.
