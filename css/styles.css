@@ -39,8 +39,63 @@ button { font: inherit; color: inherit; }
 .pantalla.activa { display: flex; }
 .centro { margin: auto 0; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
 
-.titulo { font-family: var(--serif); font-size: clamp(2.4rem, 11vw, 3.6rem); margin: 0; letter-spacing: -0.02em; }
-.subtitulo { margin: -8px 0 16px; color: var(--tinta-suave); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.8rem; }
+/* ---------- portada ---------- */
+
+#pantalla-inicio {
+  padding-inline: clamp(16px, 5vw, 30px);
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+}
+.portada {
+  width: min(100%, 420px, max(275px, 56dvh));
+  margin: auto;
+  text-align: center;
+}
+.portada-cubierta {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 16px 16px 6px 6px;
+  color: #292218;
+  background: #f3d9a9;
+  box-shadow: 0 14px 30px #0005;
+}
+.portada-ilustracion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.portada-titulos { padding: clamp(12px, 4vw, 22px) 8px 0; }
+.portada-titulo {
+  font: 700 clamp(2rem, min(11.4vw, 6.4dvh), 3.45rem)/1 var(--serif);
+  letter-spacing: -0.055em;
+  margin: 4px 0 0;
+}
+.portada-subtitulo {
+  margin: 0;
+  font-size: 0.625rem;
+  font-weight: 650;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.portada-acciones { display: grid; gap: 8px; margin-top: 14px; }
+.portada-acciones .btn { width: 100%; min-width: 0; border-radius: 8px; }
+.portada-acciones .primario { background: #f3d9a9; border-color: #f3d9a9; }
+.portada-ajustes {
+  justify-self: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  background: transparent;
+  color: var(--tinta);
+  cursor: pointer;
+}
+.portada .stats:empty { display: none; }
+.portada .enlace-discreto { display: inline-block; margin-top: 8px; padding: 6px; }
+
 h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 0; }
 .ayuda, .stats { color: var(--tinta-suave); font-size: 0.9rem; margin: 0; }
 .enlace-discreto { color: var(--tinta-suave); font-size: 0.8rem; text-align: center; opacity: 0.6; }

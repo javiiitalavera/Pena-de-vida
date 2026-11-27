@@ -3,7 +3,7 @@ import { prepararAudio, reproducirEfecto } from './audio.js';
 import { cargarDatos } from './data.js';
 import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad } from './engine.js';
 import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida } from './storage.js';
-import { montarImagen } from './images.js';
+import { montarImagen, rutasImagen } from './images.js';
 import { aplicarGenero } from './text.js';
 import { icono } from './iconos.js';
 import { activarSwipe, lanzar, entrar, volver } from './swipe.js';
@@ -29,6 +29,34 @@ function escapar(t = '') {
 
 // ---------- inicio y preparación ----------
 
+// Estas cartas tienen el primer cuarto despejado para el título de la portada.
+const CARTAS_PORTADA = [
+  'enchufe', 'perro_familia', 'siesta_obligatoria', 'parque_bolas',
+  'raton_perez', 'bici_ruedines', 'extraescolares', 'casero_humedades',
+];
+let ultimaPortada;
+
+async function rotarPortada() {
+  const opciones = CARTAS_PORTADA.filter((id) => id !== ultimaPortada);
+  while (opciones.length) {
+    const [id] = opciones.splice(Math.floor(Math.random() * opciones.length), 1);
+    const [ruta] = rutasImagen(datos.config, { id });
+    if (!ruta) return;
+    const imagen = new Image();
+    imagen.src = ruta;
+    try {
+      await imagen.decode();
+    } catch {
+      continue;
+    }
+    if ($('pantalla-inicio').classList.contains('activa')) {
+      $('portada-ilustracion').src = ruta;
+      ultimaPortada = id;
+    }
+    return;
+  }
+}
+
 function pintarInicio() {
   const p = progreso;
   const guardada = cargarPartida();
@@ -39,6 +67,7 @@ function pintarInicio() {
     ? `${p.partidas} ${p.partidas === 1 ? 'vida' : 'vidas'} · récord: ${p.record} años${p.centenarios ? ` · ${p.centenarios} centenari${p.centenarios === 1 ? 'o' : 'os'}` : ''}`
     : '';
   mostrar('pantalla-inicio');
+  rotarPortada();
 }
 
 function elegirSexo(valor) {
