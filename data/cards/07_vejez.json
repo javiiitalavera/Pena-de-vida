@@ -175,7 +175,10 @@
       "personaje": "lavadora",
       "texto": "Te has quedado solo en casa y descubres con horror que no tienes ni idea de cómo funciona la lavadora ni dónde se compra el detergente.",
       "condiciones": {
-        "requiere_sexo": "M"
+        "requiere_sexo": "M",
+        "requiere_flags": [
+          "casado"
+        ]
       },
       "izquierda": {
         "texto": "Lavar todo junto a 90 grados y encoger tu ropa a talla infantil",
@@ -201,7 +204,10 @@
       "personaje": "baile_salon",
       "texto": "Tu marido falleció hace dos años. Tus hijos esperan que lleves luto riguroso, pero acabas de descubrir que sin nadie roncando al lado vives en la gloria.",
       "condiciones": {
-        "requiere_sexo": "F"
+        "requiere_sexo": "F",
+        "requiere_flags": [
+          "casado"
+        ]
       },
       "izquierda": {
         "texto": "Apuntarte a bailes de salón y gastar la pensión en cruceros",

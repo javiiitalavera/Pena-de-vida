@@ -98,6 +98,7 @@ function pintarCartas() {
           cond.requiere_flags?.length && `requiere: ${cond.requiere_flags.join(', ')}`,
           cond.excluye_flags?.length && `excluye: ${cond.excluye_flags.join(', ')}`,
           cond.prioridad && `prioridad ${cond.prioridad}`,
+          cond.probabilidad != null && `sale en el ${Math.round(cond.probabilidad * 100)}% de partidas`,
           c.lote && `lote ${c.lote}`,
         ].filter(Boolean);
         const ops = LADOS.map((l) => {
@@ -107,6 +108,7 @@ function pintarCartas() {
             .join('');
           const flags = [
             ...(o.add_flags || []).map((f) => `+${f}`),
+            ...Object.entries(o.add_flags_por_sexo || {}).flatMap(([s, fs]) => fs.map((f) => `+${f} (si ${s === 'F' ? 'mujer' : 'hombre'})`)),
             ...(o.remove_flags || []).map((f) => `−${f}`),
             ...(o.encolar || []).map((e) => `encola ${e.id}`),
             o.fin && 'fin de partida',

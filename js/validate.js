@@ -61,6 +61,7 @@ export function validar(datos) {
     for (const f of cond.requiere_flags || []) flagsUsados.set(f, [...(flagsUsados.get(f) || []), c.id]);
     for (const f of cond.excluye_flags || []) flagsUsados.set(f, [...(flagsUsados.get(f) || []), c.id]);
     if (cond.prioridad && !(cond.prioridad in (config.pesos_prioridad || {}))) err(c, `prioridad "${cond.prioridad}" no definida en config`);
+    if (cond.probabilidad != null && !(cond.probabilidad > 0 && cond.probabilidad <= 1)) err(c, 'probabilidad debe estar entre 0 y 1');
 
     for (const t of [c.texto, c.hito_biografico]) if (generoMalFormado(t)) err(c, 'marca de género mal escrita (usa {o/a})');
 
@@ -77,9 +78,11 @@ export function validar(datos) {
         if (typeof v !== 'number' || !Number.isFinite(v)) err(c, `${lado}: efecto de ${p} no es un número`);
         else if (Math.abs(v) > LIMITE_EFECTO) av(c, `${lado}: efecto ${p} ${v} muy fuerte (>${LIMITE_EFECTO})`);
       }
-      if (!Object.values(ef).some((v) => v)) av(c, `opción ${lado} sin efectos`);
+      if (!op.fin && !Object.values(ef).some((v) => v)) av(c, `opción ${lado} sin efectos`);
       efectosLado[lado] = ef;
-      for (const f of op.add_flags || []) flagsAnadidos.set(f, [...(flagsAnadidos.get(f) || []), c.id]);
+      for (const f of [...(op.add_flags || []), ...Object.values(op.add_flags_por_sexo || {}).flat()]) {
+        flagsAnadidos.set(f, [...(flagsAnadidos.get(f) || []), c.id]);
+      }
       for (const e of op.encolar || []) {
         encoladas.add(e.id);
         if (!cartas.some((x) => x.id === e.id)) err(c, `${lado}: encola "${e.id}", que no existe`);

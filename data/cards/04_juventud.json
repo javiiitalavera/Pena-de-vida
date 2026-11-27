@@ -197,7 +197,13 @@
           "vinculos": 15
         },
         "add_flags": [
-          "con_hijos"
+          "embarazada"
+        ],
+        "encolar": [
+          {
+            "id": "epidural",
+            "en_anios": 1
+          }
         ]
       },
       "derecha": {

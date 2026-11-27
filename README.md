@@ -46,7 +46,7 @@ data/cards/*.json     cartas, un archivo por etapa
 data/traits.json      rasgos pasivos
 data/jokers.json      comodines
 data/deaths.json      textos de muerte por barra
-data/remates.json     frase final de la necrológica
+data/remates.json     informe forense de la necrológica: todos los condicionales que encajen + uno aleatorio
 assets/cards/         imagen propia de una carta: {id}.png
 assets/characters/    imagen de un personaje (se reutiliza): {personaje}.png
 tools/revisar.mjs     validación + simulación por terminal
@@ -95,7 +95,9 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 | `edad_sugerida` | La carta tiende a salir cerca de esa edad, sin estar fijada. |
 | `personaje` | Id de personaje para reutilizar la misma imagen en varias cartas. |
 | `condiciones` | Filtros: sexo, rasgo, flags. Las cartas con `requiere_flags` o `requiere_rasgo` tienen prioridad alta por defecto. |
+| `condiciones.probabilidad` | Entre 0 y 1: en qué proporción de partidas puede salir. Sin ella, una carta disponible sale casi siempre (el juego intenta usar todas las cartas de cada etapa). Ej.: el Divorcio tiene 0.4. |
 | `hito_biografico` | Frase para la necrológica si se elige esa opción. Admite `peso_hito` (más alto = más relevante). |
+| `add_flags_por_sexo` | Flags extra según el sexo: `{ "F": ["embarazada"] }`. |
 | `add_flags` / `remove_flags` | Cambian el estado vital (casado, oficinista, con_hijos…). Los flags de un mismo grupo de `config.json → grupos_flags` se excluyen entre sí: al hacerte funcionario dejas de ser oficinista sin tener que escribirlo. |
 | `fin` | En la carta del año 100: `"fin": "centenario"` termina la partida. |
 | `lote` | Número de lote en el que llegó la carta (para seguimiento). |

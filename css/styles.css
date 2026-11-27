@@ -231,7 +231,8 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .necro-hitos li { display: grid; grid-template-columns: 3.4em 1fr; gap: 6px; margin-bottom: 6px; }
 .necro-hitos b { font-weight: normal; font-variant-numeric: tabular-nums; opacity: 0.7; }
 .necro-vacio { font-style: italic; opacity: 0.7; margin: 0; }
-.necro-remate { font-style: italic; font-size: 1rem; margin: 0; }
+.necro-remate { font-style: italic; font-size: 0.95rem; line-height: 1.4; margin: 0 0 8px; }
+.necro-remate:last-child { margin-bottom: 0; }
 .desbloqueos { text-align: center; color: var(--acento); font-size: 0.95rem; }
 .desbloqueos:empty { display: none; }
 

@@ -259,7 +259,7 @@ function acabar() {
     <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}</p>
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>
-    ${n.remate ? `<section class="necro-seccion"><p class="necro-remate">${escapar(n.remate)}</p></section>` : ''}`;
+    ${n.remates.length ? `<section class="necro-seccion"><h4>Informe forense</h4>${n.remates.map((r) => `<p class="necro-remate">${escapar(r)}</p>`).join('')}</section>` : ''}`;
   $('desbloqueos').textContent = nuevos.length ? `Nuevo rasgo desbloqueado: ${nuevos.map((r) => aplicarGenero(r.nombre, partida.sexo)).join(', ')}` : '';
   mostrar('pantalla-necrologica');
   $('pantalla-necrologica').scrollTop = 0;

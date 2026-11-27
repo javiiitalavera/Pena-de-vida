@@ -2,32 +2,60 @@
   "_nota": "Causas de muerte por pilar y extremo (0 o 100). 'variantes' permite otro texto según la edad (edad_min / edad_max). Lo marcado [PLACEHOLDER] está pendiente de redactar.",
   "muertes": {
     "salud": {
-      "0": { "titulo": "Salud a cero", "texto": "Te llega el SMS con la cita para la resonancia tres semanas después de tu entierro." },
-      "100": { "titulo": "Salud al cien", "texto": "Te vuelves un fanático del biohacking: mueres de fallo hepático por tomar 40 suplementos al día y hacer ayuno de 72 horas." }
+      "0": {
+        "titulo": "Salud a cero",
+        "texto": "Te llega el SMS con la cita para la resonancia tres semanas después de tu entierro."
+      },
+      "100": {
+        "titulo": "Salud al cien",
+        "texto": "Te vuelves un fanático del biohacking: mueres de fallo hepático por tomar 40 suplementos al día y hacer ayuno de 72 horas."
+      }
     },
     "dinero": {
       "0": {
         "titulo": "Dinero a cero",
         "texto": "Aceptas participar en un ensayo clínico sin licencia en un sótano para pagar el alquiler. Te salen dientes en el esófago.",
-        "variantes": [{ "edad_max": 14, "texto": "[PLACEHOLDER] Muerte por ruina de la economía familiar en la infancia." }]
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "[PLACEHOLDER] Muerte por ruina de la economía familiar en la infancia."
+          }
+        ]
       },
       "100": {
         "titulo": "Dinero al cien",
         "texto": "Te vuelves tan rico y paranoico que te bajas a ver el Titanic en un submarino controlado con un mando de PlayStation.",
-        "variantes": [{ "edad_max": 14, "texto": "[PLACEHOLDER] Muerte por exceso de riqueza familiar en la infancia." }]
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "[PLACEHOLDER] Muerte por exceso de riqueza familiar en la infancia."
+          }
+        ]
       }
     },
     "cordura": {
-      "0": { "titulo": "Cordura a cero", "texto": "Desconexión total. Te quedas mirando girar el plato del microondas hasta que te mueres de deshidratación." },
-      "100": { "titulo": "Cordura al cien", "texto": "Alcanzas la hiperlucidez estoica: te convences de que el hambre y el dolor son construcciones mentales y dejas de beber agua." }
+      "0": {
+        "titulo": "Cordura a cero",
+        "texto": "Desconexión total. Te quedas mirando girar el plato del microondas hasta que te mueres de deshidratación."
+      },
+      "100": {
+        "titulo": "Cordura al cien",
+        "texto": "Alcanzas la hiperlucidez estoica: te convences de que el hambre y el dolor son construcciones mentales y dejas de beber agua."
+      }
     },
     "vinculos": {
-      "0": { "titulo": "Vínculos a cero", "texto": "Te atragantas con una aceituna solo en casa. Te encuentran a los dos meses porque el vecino de abajo se queja de una mancha en el techo." },
-      "100": { "titulo": "Vínculos al cien", "texto": "No sabes decir que no. Mueres de un ictus intentando cuadrar tres bodas, una mudanza y dos cenas de empresa en el mismo fin de semana." }
+      "0": {
+        "titulo": "Vínculos a cero",
+        "texto": "Te atragantas con una aceituna solo en casa. Te encuentran a los dos meses porque el vecino de abajo se queja de una mancha en el techo."
+      },
+      "100": {
+        "titulo": "Vínculos al cien",
+        "texto": "No sabes decir que no. Mueres de un ictus intentando cuadrar tres bodas, una mudanza y dos cenas de empresa en el mismo fin de semana."
+      }
     },
     "centenario": {
       "titulo": "Centenari{o/a}",
-      "texto": "[PLACEHOLDER] Texto de muerte natural al cumplir 100 años."
+      "texto": "Sobreviviste a todo. No por mérito propio, sino por pura estadística y rencor acumulado. Eres oficialmente un problema presupuestario para el Estado."
     }
   }
 }

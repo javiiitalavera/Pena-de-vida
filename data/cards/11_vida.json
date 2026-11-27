@@ -1,0 +1,130 @@
+{
+  "_nota": "Grandes acontecimientos vitales que abarcan varias etapas: boda, hijos y sus consecuencias.",
+  "cartas": [
+    {
+      "id": "boda",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Boda",
+      "personaje": "suegra",
+      "texto": "Llevas seis meses discutiendo por las flores, tu suegra ha invitado a cuarenta primos del pueblo y el cura parece tener más resaca que tú.",
+      "condiciones": {
+        "excluye_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Dar el 'sí, quiero' y firmar la hipoteca emocional",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        },
+        "hito_biografico": "Se casó para no perder la señal del banquete.",
+        "add_flags": [
+          "casado"
+        ],
+        "remove_flags": [
+          "soltero"
+        ]
+      },
+      "derecha": {
+        "texto": "Salir corriendo por la sacristía",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Dejó plantada a su pareja en el altar.",
+        "add_flags": [
+          "soltero"
+        ]
+      },
+      "lote": 6
+    },
+    {
+      "id": "formar_familia",
+      "tipo": "etapa",
+      "etapa": "25-45",
+      "nombre": "Formar una Familia",
+      "personaje": "pareja",
+      "texto": "Tu pareja te mira con ojos vidriosos mientras sostiene un patuco minúsculo y dice que 'ya va tocando dejar descendencia'.",
+      "condiciones": {
+        "excluye_flags": [
+          "con_hijos",
+          "embarazada"
+        ]
+      },
+      "izquierda": {
+        "texto": "Tirar para adelante y despedirte de tu tiempo libre",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        },
+        "hito_biografico": "Decidió reproducirse a pesar de conocer el precio de la vivienda.",
+        "add_flags": [
+          "con_hijos"
+        ],
+        "add_flags_por_sexo": {
+          "F": [
+            "embarazada"
+          ]
+        },
+        "encolar": [
+          {
+            "id": "epidural",
+            "en_anios": 1
+          }
+        ]
+      },
+      "derecha": {
+        "texto": "Adoptar un perro y llamarle 'perrhijo'",
+        "efectos": {
+          "dinero": 5,
+          "cordura": 10
+        }
+      },
+      "lote": 6
+    },
+    {
+      "id": "epidural",
+      "tipo": "estado",
+      "nombre": "La Epidural",
+      "personaje": "cunada",
+      "texto": "Estás de parto con contracciones cada dos minutos y tu cuñada te manda un audio recomendándote 'parir sin anestesia para conectar con la madre tierra'.",
+      "condiciones": {
+        "requiere_sexo": "F",
+        "requiere_flags": [
+          "embarazada"
+        ],
+        "prioridad": "alta"
+      },
+      "izquierda": {
+        "texto": "Pedirle al anestesista que te ponga dosis de caballo",
+        "efectos": {
+          "salud": 10,
+          "cordura": 10
+        },
+        "add_flags": [
+          "con_hijos"
+        ],
+        "remove_flags": [
+          "embarazada"
+        ]
+      },
+      "derecha": {
+        "texto": "Intentarlo \"al natural\" y maldecir a toda tu estirpe",
+        "efectos": {
+          "salud": -15,
+          "cordura": -15
+        },
+        "hito_biografico": "Llamó 'escoria' a un anestesista durante un parto natural.",
+        "add_flags": [
+          "con_hijos"
+        ],
+        "remove_flags": [
+          "embarazada"
+        ]
+      },
+      "lote": 3
+    }
+  ]
+}

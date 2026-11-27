@@ -135,7 +135,10 @@
       "personaje": "pareja",
       "texto": "Hace dos grados en la calle, vas en manga corta sudando y tu marido te pregunta si 'estás un poco sensible hoy'.",
       "condiciones": {
-        "requiere_sexo": "F"
+        "requiere_sexo": "F",
+        "requiere_flags": [
+          "casado"
+        ]
       },
       "izquierda": {
         "texto": "Respirar hondo y no matarle",

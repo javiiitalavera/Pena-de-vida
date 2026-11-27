@@ -18,7 +18,7 @@ export async function cargarDatosCon(leer) {
     rasgos: rasgos.rasgos,
     muertes: muertes.muertes,
     comodines: comodines.comodines,
-    remates: remates.remates,
+    remates: remates,
     cartas,
   };
 }

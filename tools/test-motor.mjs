@@ -34,10 +34,22 @@ p=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); p.siguienteCarta();
 assert(aplicarGenero('maj{o/a} {el/la} señor{/a}','F')==='maja la señora','género F'); assert(aplicarGenero('maj{o/a}','M')==='majo','género M');
 // muerte y necrológica
 p=new Partida(datos,{sexo:'F'}); p.siguienteCarta(); p.pilares.salud=5; p.elegir('derecha'); assert(p.fin?.causa.pilar==='salud','muerte por salud 0');
-p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()===null && p.fin.causa.tipo==='centenario','centenario');
+p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); p.siguienteCarta(); p.elegir('izquierda'); assert(p.fin?.causa.tipo==='centenario','centenario');
 assert(construirNecrologia(p).titulo==='Centenaria','título centenaria con género');
 // profesiones excluyentes y cartas que abarcan dos etapas
 p=new Partida(datos,{sexo:'M'}); p.flags.add('oficinista'); p.carta=p.porId.get('examen_mir'); p.elegir('izquierda');
 assert(p.flags.has('medico')&&!p.flags.has('oficinista'),'MIR activa médico y quita oficinista');
 p.carta=p.porId.get('bootcamp'); p.elegir('izquierda'); assert(p.flags.has('informatico')&&!p.flags.has('medico'),'una sola profesión a la vez');
 p=new Partida(datos,{sexo:'M'}); p.flags.add('medico'); p.avanzarHasta(40); assert(p.disponiblesEtapa(40).some(c=>c.id==='guardia_24h'),'guardia (18-49) disponible a los 40');
+// lote 6: boda, familia, epidural, final, remates
+p=new Partida(datos,{sexo:'F',rng:rngSemilla(1)}); p.avanzarHasta(22); for(const c of datos.cartas) if(c.tipo==='ancla'&&c.anio<=22) p.usadas.add(c.id); p.carta=p.porId.get('test_embarazo'); p.elegir('izquierda');
+assert(p.flags.has('embarazada')&&!p.flags.has('con_hijos'),'test de embarazo: embarazada');
+{ let vista=null; for(let k=0;k<6&&!vista;k++){ const c=p.siguienteCarta(); for(const x in p.pilares)p.pilares[x]=50; if(c.id==='epidural')vista=p.anio; else p.elegir('izquierda'); }
+  assert(vista!==null && vista<=24,'epidural sale al año siguiente ('+vista+')'); p.elegir('derecha'); assert(p.flags.has('con_hijos')&&!p.flags.has('embarazada'),'epidural: con_hijos'); }
+p=new Partida(datos,{sexo:'M'}); p.avanzarHasta(30); p.carta=p.porId.get('formar_familia'); p.elegir('izquierda'); assert(p.flags.has('con_hijos')&&!p.flags.has('embarazada'),'familia hombre: con_hijos sin embarazo');
+assert(p.cola.length===1 && !require_ok(p),'epidural encolada pero no sale a hombres');
+function require_ok(p){ for(let k=0;k<4;k++){ const c=p.siguienteCarta(); if(c?.id==='epidural') return true; for(const x in p.pilares)p.pilares[x]=50; p.elegir('izquierda'); } return false; }
+p=new Partida(datos,{sexo:'M'}); p.carta=p.porId.get('boda'); p.elegir('izquierda'); assert(p.flags.has('casado')&&!p.flags.has('soltero'),'boda: casado');
+p.carta=p.porId.get('divorcio'); p.elegir('izquierda'); assert(p.flags.has('divorciado')&&!p.flags.has('casado'),'divorcio: divorciado');
+p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?.id==='centenario','carta del año 100'); p.elegir('derecha'); assert(p.fin?.causa.tipo==='centenario','la carta final termina la partida');
+const nec=construirNecrologia(p); assert(nec.remates.length===3 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario: '+nec.remates.length);

@@ -85,6 +85,16 @@ export class Partida {
     this.fin = null;
     this.eventos = [];
     this.porId = new Map(datos.cartas.map((c) => [c.id, c]));
+    this.tiradas = new Map(); // id -> resultado de "probabilidad", tirado una vez por partida
+  }
+
+  // Condiciones + probabilidad. La probabilidad se tira la primera vez que la carta podría salir.
+  elegible(carta, ctx = this.ctx()) {
+    if (!cumpleCondiciones(carta, ctx)) return false;
+    const prob = carta.condiciones?.probabilidad;
+    if (prob == null || prob >= 1) return true;
+    if (!this.tiradas.has(carta.id)) this.tiradas.set(carta.id, this.rng() < prob);
+    return this.tiradas.get(carta.id);
   }
 
   get anio() {
@@ -117,7 +127,7 @@ export class Partida {
     for (const c of this.datos.cartas) {
       if (c.tipo !== 'ancla' || this.usadas.has(c.id) || this.anclasDescartadas.has(c.id)) continue;
       if (c.anio > anio) continue;
-      if (cumpleCondiciones(c, ctx)) lista.push(c);
+      if (this.elegible(c, ctx)) lista.push(c);
       else this.anclasDescartadas.add(c.id); // una ancla solo vale en su año exacto
     }
     return lista.sort((a, b) => a.anio - b.anio);
@@ -128,7 +138,7 @@ export class Partida {
     return this.datos.cartas.filter((c) => {
       if (c.tipo !== 'etapa' || this.usadas.has(c.id)) return false;
       const r = rangoCarta(c);
-      return r && anio >= r[0] && anio <= r[1] && cumpleCondiciones(c, ctx);
+      return r && anio >= r[0] && anio <= r[1] && this.elegible(c, ctx);
     });
   }
 
@@ -178,7 +188,7 @@ export class Partida {
       this.cola.sort((a, b) => a.anio - b.anio);
       while (this.cola.length && this.cola[0].anio <= y) {
         const c = this.porId.get(this.cola.shift().id);
-        if (c && !this.usadas.has(c.id) && cumpleCondiciones(c, this.ctx())) return this.ponerCarta(c);
+        if (c && !this.usadas.has(c.id) && this.elegible(c)) return this.ponerCarta(c);
       }
 
       const pool = this.disponiblesEtapa(y);
@@ -196,7 +206,7 @@ export class Partida {
     for (const c of this.datos.cartas) {
       if (this.usadas.has(c.id)) continue;
       if (c.tipo === 'ancla' && !this.anclasDescartadas.has(c.id) && c.anio > y) min = Math.min(min, c.anio);
-      if (c.tipo === 'etapa' && cumpleCondiciones(c, ctx)) {
+      if (c.tipo === 'etapa' && this.elegible(c, ctx)) {
         const r = rangoCarta(c);
         if (r && r[0] > y) min = Math.min(min, r[0]);
       }
@@ -215,7 +225,7 @@ export class Partida {
     const ctx = this.ctx();
     let k = 0;
     for (const c of this.datos.cartas) {
-      if (c.tipo !== 'etapa' || this.usadas.has(c.id) || !cumpleCondiciones(c, ctx)) continue;
+      if (c.tipo !== 'etapa' || this.usadas.has(c.id) || !this.elegible(c, ctx)) continue;
       const r = rangoCarta(c);
       if (r && r[1] >= y && r[0] <= etapa.hasta) k++;
     }
@@ -232,7 +242,7 @@ export class Partida {
       if (anio > a && anio <= b && (min === null || anio < min)) min = anio;
     };
     for (const c of this.datos.cartas) {
-      if (c.tipo === 'ancla' && !this.usadas.has(c.id) && !this.anclasDescartadas.has(c.id) && cumpleCondiciones(c, ctx)) ver(c.anio);
+      if (c.tipo === 'ancla' && !this.usadas.has(c.id) && !this.anclasDescartadas.has(c.id) && this.elegible(c, ctx)) ver(c.anio);
     }
     for (const item of this.cola) ver(item.anio);
     return min;
@@ -335,7 +345,8 @@ export class Partida {
     const deltas = this.aplicarDeltas(this.calcularEfectos(op.efectos));
 
     for (const f of op.remove_flags || []) this.flags.delete(f);
-    for (const f of op.add_flags || []) {
+    const anadir = [...(op.add_flags || []), ...(op.add_flags_por_sexo?.[this.sexo] || [])];
+    for (const f of anadir) {
       // Flags de un mismo grupo son excluyentes: al añadir uno se quitan los demás.
       for (const grupo of Object.values(this.config.grupos_flags || {})) {
         if (grupo.includes(f)) for (const otro of grupo) this.flags.delete(otro);
@@ -429,11 +440,18 @@ export function construirNecrologia(partida) {
   const variante = (entrada.variantes || []).find((v) => anio <= (v.edad_max ?? Infinity) && anio >= (v.edad_min ?? 0));
   const textoCausa = variante?.texto ?? entrada.texto;
 
-  const remate = (datos.remates || []).find((r) => {
+  // Remates: todos los condicionales que encajen (en el orden del archivo) + uno aleatorio.
+  const R = datos.remates || {};
+  const encajan = (R.condicionales || []).filter((r) => {
     if (r.causa && r.causa !== causa.tipo) return false;
-    const v = pilares[r.pilar];
-    return v >= (r.min ?? -Infinity) && v < (r.max ?? Infinity);
+    if (r.pilar) {
+      const v = pilares[r.pilar];
+      if (v < (r.min ?? -Infinity) || v > (r.max ?? Infinity)) return false;
+    }
+    return anio >= (r.edad_min ?? -Infinity) && anio <= (r.edad_max ?? Infinity);
   });
+  const azar = R.aleatorios?.length ? [R.aleatorios[Math.floor(partida.rng() * R.aleatorios.length)]] : [];
+  const remates = [...encajan.map((r) => r.texto), ...azar.map((r) => (typeof r === 'string' ? r : r.texto))];
 
   return {
     edad: anio,
@@ -444,7 +462,7 @@ export function construirNecrologia(partida) {
     titulo: aplicarGenero(entrada.titulo || '', sexo),
     texto: aplicarGenero(textoCausa || '', sexo),
     hitos: seleccionarHitos(partida.hitos, datos.config.hitos_max ?? 6),
-    remate: aplicarGenero(remate?.texto || '', sexo),
+    remates: remates.map((t) => aplicarGenero(t, sexo)),
     rasgo: partida.rasgo ? aplicarGenero(partida.rasgo.nombre, sexo) : null,
     pilares,
   };
