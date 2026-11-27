@@ -51,8 +51,8 @@ assert(p.cola.length===1 && !require_ok(p),'epidural encolada pero no sale a hom
 function require_ok(p){ for(let k=0;k<4;k++){ const c=p.siguienteCarta(); if(c?.id==='epidural') return true; for(const x in p.pilares)p.pilares[x]=50; p.elegir('izquierda'); } return false; }
 p=new Partida(datos,{sexo:'M'}); p.carta=p.porId.get('boda'); p.elegir('izquierda'); assert(p.flags.has('casado')&&!p.flags.has('soltero'),'boda: casado');
 p.carta=p.porId.get('divorcio'); p.elegir('izquierda'); assert(p.flags.has('divorciado')&&!p.flags.has('casado'),'divorcio: divorciado');
-p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?.id==='centenario','carta del año 100'); p.elegir('derecha'); assert(p.fin?.causa.tipo==='centenario','la carta final termina la partida');
-const nec=construirNecrologia(p); assert(nec.remates.length===2 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario sin funeral: '+nec.remates.length);
+p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?.id==='centenario','carta del año 100'); p.elegir('izquierda'); assert(p.fin?.causa.tipo==='centenario','la carta final termina la partida');
+const nec=construirNecrologia(p); assert(nec.remates.length===2 && nec.remates.some(r=>r.includes('Héroe nacional')) && !nec.remates.some(r=>r.includes('COBOL')),'condena prorrogada: héroe nacional');
 p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfectos({salud:-10}); const e2=p.calcularEfectos({salud:10}); assert(e.salud===-7&&e2.salud===7,'cucaracha pérdidas x0.65 (−6.5→−7), ganancias x0.7');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilares.dinero=105; p.comprobarMuerte(); assert(construirNecrologia(p).texto.includes('atragantada'),'muerte infantil por dinero 100, en femenino');
 // desbloqueo por cualquier extremo
@@ -79,3 +79,5 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 { const vistos={}; for(let s=1;s<=300;s++){ const p=new Partida(datos,{sexo:'M',rng:rngSemilla(s)}); const c0=p.siguienteCarta(); p.elegir('izquierda'); const c1=p.siguienteCarta(); vistos[c0.id]=(vistos[c0.id]||0)+1; vistos[c1.id]=(vistos[c1.id]||0)+1; if(c0.anio!==0||c1.anio!==1) vistos.mal=(vistos.mal||0)+1; }
   assert(!vistos.mal && ['obstetra','parto_festivo','el_parecido','pediatra_vacunas','primera_palabra','parque_bolas'].every(id=>vistos[id]>50),'años 0 y 1: una carta al azar de cada grupo '+JSON.stringify(vistos)); }
 { const p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('comunion'); p.elegir('derecha'); assert(p.flags.has('sobre_comunion'),'la Comunión activa el arco del sobre'); }
+{ const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const r=construirNecrologia(a).remates;
+  assert(r.some(x=>x.includes('COBOL')&&x.includes('derrotada')) && !r.some(x=>x.includes('Héroe nacional')),'error del sistema: remate COBOL, sin héroe nacional'); }

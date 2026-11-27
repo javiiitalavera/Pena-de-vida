@@ -1,5 +1,5 @@
 {
-  "_nota": "La necrológica muestra todos los 'condicionales' que encajen (en este orden) y uno 'aleatorio'. Condiciones opcionales: pilar + min/max (incluidos), edad_min/edad_max, causa (muerte | centenario). Los aleatorios pueden ser texto o { texto, causa }.",
+  "_nota": "La necrológica muestra todos los 'condicionales' que encajen (en este orden) y uno 'aleatorio'. Condiciones opcionales: pilar + min/max (incluidos), edad_min/edad_max, causa (muerte | centenario), final (fin_id de la opción que terminó la partida). Los aleatorios pueden ser texto o { texto, causa }.",
   "condicionales": [
     {
       "pilar": "dinero",
@@ -35,7 +35,12 @@
     },
     {
       "edad_min": 100,
-      "texto": "Resumen vital: Le ganaste a la Seguridad Social. Héroe nacional."
+      "texto": "Resumen vital: Le ganaste a la Seguridad Social. Héroe nacional.",
+      "final": "condena_prorrogada"
+    },
+    {
+      "final": "error_sistema",
+      "texto": "Resumen vital: Sobreviviste un siglo entero para acabar derrotad{o/a} por un programa en COBOL de 1984."
     }
   ],
   "aleatorios": [

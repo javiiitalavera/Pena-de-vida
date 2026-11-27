@@ -22,7 +22,8 @@
         "fin": "centenario",
         "hito_biografico": "Intentó irse a los 100 y le encendieron el fluorescente.",
         "fin_texto": "Cierras los ojos esperando descansar por fin. Ves una luz blanca cegadora… y es la auxiliar encendiendo el fluorescente a las siete de la mañana: toca ducha y puré de calabacín. Te quedan otros diez años buenos.",
-        "fin_titulo": "Condena prorrogada"
+        "fin_titulo": "Condena prorrogada",
+        "fin_id": "condena_prorrogada"
       },
       "derecha": {
         "texto": "Prórroga, por maldad",
@@ -31,7 +32,8 @@
         "hito_biografico": "Pidió prórroga y la Seguridad Social le devolvió a la guardería.",
         "fin_texto": "El programa de la Seguridad Social, de 1984, solo admite edades de dos cifras. Al cumplir 100 pasas a tener 00 años: te cancelan la pensión y te llega una carta certificada con tu plaza en una guardería pública.",
         "fin_titulo": "Error del sistema",
-        "fin_rango": "Edad oficial: 00 años"
+        "fin_rango": "Edad oficial: 00 años",
+        "fin_id": "error_sistema"
       },
       "lote": 6
     }

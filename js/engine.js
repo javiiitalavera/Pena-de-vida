@@ -438,7 +438,7 @@ export class Partida {
 
     this.comprobarMuerte();
     if (!this.fin && op.fin) {
-      this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto, titulo: op.fin_titulo, rango: op.fin_rango });
+      this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin, texto: op.fin_texto, titulo: op.fin_titulo, rango: op.fin_rango, final: op.fin_id });
       if (Number.isFinite(op.fin_anio)) this.fin.anio = op.fin_anio;
     }
     if (!this.fin) this.avanzar();
@@ -514,6 +514,7 @@ export function construirNecrologia(partida) {
   const R = datos.remates || {};
   const encajan = (R.condicionales || []).filter((r) => {
     if (r.causa && r.causa !== causa.tipo) return false;
+    if (r.final && r.final !== causa.final) return false; // remate exclusivo de un final concreto
     if (r.pilar) {
       const v = pilares[r.pilar];
       if (v < (r.min ?? -Infinity) || v > (r.max ?? Infinity)) return false;
