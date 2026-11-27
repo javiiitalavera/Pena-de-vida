@@ -93,3 +93,8 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
   const p=new Partida(datos,{sexo:'M'}); p.carta={tags:[]}; const vistos=[]; let ok=true;
   for(const a of [0,30,70]){ p.avanzarHasta(a); const e=p.calcularEfectos({salud:-10,dinero:10}); vistos.push(e); ok = ok && JSON.stringify(e)===JSON.stringify(esperado(a)); }
   assert(ok,'dificultad aplicada según config '+JSON.stringify(vistos)); datos.config.dificultad = {}; }
+// sorpresas: con rng bajo se dispara (otros efectos + mensaje); con rng alto, efectos normales
+{ const g=datos.cartas.find(c=>c.id==='gimnasio');
+  const a=new Partida(datos,{sexo:'M',rng:()=>0}); a.carta=g; const ra=a.elegir('izquierda');
+  const b=new Partida(datos,{sexo:'M',rng:()=>0.99}); b.carta=g; const rb=b.elegir('izquierda');
+  assert(ra.sorpresa?.includes('tirón') && a.pilares.salud===40 && !rb.sorpresa && b.pilares.salud===60,'sorpresa del gimnasio'); }

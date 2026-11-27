@@ -84,6 +84,14 @@
         "efectos": {
           "salud": 10,
           "dinero": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.2,
+          "efectos": {
+            "salud": -10,
+            "dinero": -10
+          },
+          "mensaje": "La de la tensión y la del colesterol se llevan fatal. Dos días de mareo."
         }
       },
       "derecha": {
@@ -404,6 +412,14 @@
         "efectos": {
           "salud": -10,
           "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -10,
+            "vinculos": -10
+          },
+          "mensaje": "Te pillan con la boca llena y la camisa manchada de pimentón."
         }
       },
       "derecha": {

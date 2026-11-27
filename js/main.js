@@ -219,7 +219,9 @@ function mostrarCarta(carta) {
 
 function vistaPrevia(lado) {
   if (!partida?.carta) lado = null;
-  const deltas = lado ? partida.vistaPrevia(lado) : {};
+  // Con dificultad.vista_previa_barras = false no se muestran puntos: solo el texto de la opción.
+  const conPuntos = datos.config.dificultad?.vista_previa_barras !== false;
+  const deltas = lado && conPuntos ? partida.vistaPrevia(lado) : {};
   for (const el of $('barras').children) {
     const d = deltas[el.dataset.pilar] || 0;
     const punto = el.querySelector('.punto');
@@ -251,7 +253,8 @@ async function decidir(lado) {
   vistaPrevia(lado);
   reproducirEfecto('carta');
   await lanzar($('carta'), lado);
-  partida.elegir(lado);
+  const resultado = partida.elegir(lado);
+  if (resultado?.sorpresa) avisar(resultado.sorpresa, 2800);
   pintarBarras();
   procesarEventos();
   if (partida.fin) return setTimeout(acabar, 350);
@@ -274,12 +277,12 @@ function nombrePilar(id) {
 }
 
 let temporizadorAviso;
-function avisar(texto) {
+function avisar(texto, ms = 2400) {
   const el = $('aviso');
   el.textContent = texto;
   el.hidden = false;
   clearTimeout(temporizadorAviso);
-  temporizadorAviso = setTimeout(() => (el.hidden = true), 2400);
+  temporizadorAviso = setTimeout(() => (el.hidden = true), ms);
 }
 
 // ---------- comodín ----------

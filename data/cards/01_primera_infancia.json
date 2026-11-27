@@ -154,6 +154,14 @@
         "efectos": {
           "salud": 15,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.2,
+          "efectos": {
+            "salud": -10,
+            "cordura": -10
+          },
+          "mensaje": "El caldo llevaba un hueso de pollo escondido. Te atragantas."
         }
       },
       "derecha": {

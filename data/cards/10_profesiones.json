@@ -672,6 +672,14 @@
         "efectos": {
           "vinculos": 10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.35,
+          "efectos": {
+            "vinculos": 5,
+            "cordura": -20
+          },
+          "mensaje": "Ahora toda la familia sabe que «sabes de ordenadores». Llegan tres portátiles más."
         }
       },
       "derecha": {

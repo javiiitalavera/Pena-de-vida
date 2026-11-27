@@ -67,7 +67,15 @@
         },
         "add_flags": [
           "criptobro"
-        ]
+        ],
+        "sorpresa": {
+          "probabilidad": 0.15,
+          "efectos": {
+            "dinero": 20,
+            "vinculos": 5
+          },
+          "mensaje": "La moneda del perro sube un 400 %. Tu cuñado se cree un genio para siempre."
+        }
       },
       "derecha": {
         "texto": "Explicarle el esquema Ponzi",
@@ -206,6 +214,14 @@
         "efectos": {
           "salud": 10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "salud": -10,
+            "cordura": -10
+          },
+          "mensaje": "Te da un tirón lumbar en la primera serie."
         }
       },
       "derecha": {
@@ -665,7 +681,15 @@
           "cordura": 15,
           "dinero": -10
         },
-        "hito_biografico": "Dijo lo que pensaba al director general en la cena de Navidad."
+        "hito_biografico": "Dijo lo que pensaba al director general en la cena de Navidad.",
+        "sorpresa": {
+          "probabilidad": 0.2,
+          "efectos": {
+            "cordura": 15,
+            "dinero": 15
+          },
+          "mensaje": "Al director le encanta tu sinceridad y te asciende. Nadie lo entiende."
+        }
       },
       "derecha": {
         "texto": "Reírle el chiste",
@@ -711,6 +735,14 @@
         "efectos": {
           "dinero": -15,
           "cordura": 15
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "Tu psicólogo se pasa tres sesiones contándote su divorcio."
         }
       },
       "derecha": {
@@ -875,7 +907,15 @@
           "dinero": 15,
           "cordura": -10
         },
-        "hito_biografico": "Fingió un latigazo cervical por un toque a cinco por hora."
+        "hito_biografico": "Fingió un latigazo cervical por un toque a cinco por hora.",
+        "sorpresa": {
+          "probabilidad": 0.2,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "El perito te ve cargando sacos de cemento en Instagram. Multa por fraude."
+        }
       },
       "derecha": {
         "texto": "Parte amistoso honesto",
@@ -898,6 +938,14 @@
         "efectos": {
           "dinero": 15,
           "salud": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": -10,
+            "cordura": -10
+          },
+          "mensaje": "Tu jefe «se olvida» de pagarte los sábados. Sin contrato, no hay a quién reclamar."
         }
       },
       "derecha": {
@@ -945,7 +993,16 @@
           "dinero": 15,
           "salud": -10
         },
-        "hito_biografico": "Alquiló su hígado a la industria farmacéutica para llegar a fin de mes."
+        "hito_biografico": "Alquiló su hígado a la industria farmacéutica para llegar a fin de mes.",
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 15,
+            "salud": -10,
+            "cordura": -15
+          },
+          "mensaje": "Efecto secundario: llevas una semana oyendo los colores."
+        }
       },
       "derecha": {
         "texto": "Buscar dinero aburrido",
@@ -1061,6 +1118,14 @@
         "efectos": {
           "dinero": 15,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.3,
+          "efectos": {
+            "dinero": -10,
+            "vinculos": -15
+          },
+          "mensaje": "Los ingleses tiran el sofá por el balcón. La comunidad te denuncia."
         }
       },
       "derecha": {

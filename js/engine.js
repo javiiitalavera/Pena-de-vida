@@ -423,10 +423,14 @@ export class Partida {
     const carta = this.carta;
     if (!carta || this.fin) return null;
     const op = carta[lado] || {};
-    const deltas = this.aplicarDeltas(this.calcularEfectos(op.efectos));
+    // Sorpresa: con cierta probabilidad la opción sale de otra manera (otros efectos y, si los define, otros flags).
+    const sorpresa = op.sorpresa && this.rng() < op.sorpresa.probabilidad ? op.sorpresa : null;
+    const efectos = sorpresa ? sorpresa.efectos : op.efectos;
+    const quitar = sorpresa?.remove_flags ?? op.remove_flags;
+    const deltas = this.aplicarDeltas(this.calcularEfectos(efectos));
 
-    for (const f of op.remove_flags || []) this.flags.delete(f);
-    const anadir = [...(op.add_flags || []), ...(op.add_flags_por_sexo?.[this.sexo] || [])];
+    for (const f of quitar || []) this.flags.delete(f);
+    const anadir = [...(sorpresa?.add_flags ?? op.add_flags ?? []), ...(op.add_flags_por_sexo?.[this.sexo] || [])];
     for (const f of anadir) {
       // Flags de un mismo grupo son excluyentes: al añadir uno se quitan los demás.
       for (const grupo of Object.values(this.config.grupos_flags || {})) {
@@ -446,7 +450,7 @@ export class Partida {
         this.hitos.push({ anio, texto: this.texto(fuente.hito_biografico), peso: fuente.peso_hito ?? 1, carta: carta.id });
       }
     }
-    this.historial.push({ id: carta.id, lado, anio, deltas, invertida: this.invertida });
+    this.historial.push({ id: carta.id, lado, anio, deltas, invertida: this.invertida, sorpresa: !!sorpresa });
     this.carta = null;
     this.invertida = false;
 
@@ -456,7 +460,7 @@ export class Partida {
       if (Number.isFinite(op.fin_anio)) this.fin.anio = op.fin_anio;
     }
     if (!this.fin) this.avanzar();
-    return { deltas };
+    return { deltas, sorpresa: sorpresa ? this.texto(sorpresa.mensaje) : null };
   }
 
   // ---------- comodín ----------

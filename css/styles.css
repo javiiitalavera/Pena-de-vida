@@ -218,11 +218,15 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .debug { font-size: 0.7rem; color: var(--tinta-suave); font-family: ui-monospace, monospace; text-align: center; }
 
 .aviso-flotante {
-  position: absolute; left: 50%; top: 110px; transform: translateX(-50%);
-  background: var(--tinta); color: var(--fondo);
-  padding: 8px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
-  white-space: nowrap; z-index: 5;
+  position: absolute; left: 50%; top: calc(env(safe-area-inset-top) + 120px); transform: translateX(-50%);
+  width: max-content; max-width: min(86%, 380px);
+  background: var(--papel); color: var(--papel-tinta);
+  border: 1px solid var(--papel-tinta); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  padding: 10px 16px; border-radius: 12px;
+  font-family: var(--serif); font-style: italic; font-size: 0.95rem; line-height: 1.35; text-align: center;
+  z-index: 5; pointer-events: none; animation: aviso-entra 0.25s ease-out;
 }
+@keyframes aviso-entra { from { opacity: 0; transform: translate(-50%, -6px); } }
 
 .dialogo {
   border: 1px solid var(--linea); border-radius: var(--radio);

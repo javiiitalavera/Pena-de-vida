@@ -88,6 +88,19 @@ export function validar(datos) {
         if (!cartas.some((x) => x.id === e.id)) err(c, `${lado}: encola "${e.id}", que no existe`);
       }
       if (op.fin && op.fin !== true && op.fin !== 'centenario') err(c, `${lado}: "fin" debe ser "centenario"`);
+      if (op.sorpresa) {
+        const s = op.sorpresa;
+        if (!(s.probabilidad > 0 && s.probabilidad <= 1)) err(c, `${lado}: sorpresa.probabilidad debe estar entre 0 y 1`);
+        if (!s.efectos || !Object.keys(s.efectos).length) err(c, `${lado}: sorpresa sin efectos`);
+        for (const [p, v] of Object.entries(s.efectos || {})) {
+          if (!pilares.has(p)) err(c, `${lado}: sorpresa con pilar "${p}" que no existe`);
+          if (typeof v !== 'number' || !Number.isFinite(v)) err(c, `${lado}: sorpresa con efecto de ${p} no numérico`);
+        }
+        if (typeof s.mensaje !== 'string' || !s.mensaje.trim()) err(c, `${lado}: sorpresa sin mensaje`);
+        else if (s.mensaje.length > 100) av(c, `${lado}: mensaje de sorpresa largo (${s.mensaje.length} caracteres)`, 'texto');
+        if (generoMalFormado(s.mensaje)) err(c, `marca de género mal escrita en la sorpresa de ${lado}`);
+        for (const f of s.add_flags || []) flagsAnadidos.set(f, [...(flagsAnadidos.get(f) || []), c.id]);
+      }
     }
 
     const [a, b] = [efectosLado.izquierda || {}, efectosLado.derecha || {}];

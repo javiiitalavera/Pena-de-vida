@@ -116,6 +116,7 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 | `fin_texto`, `fin_titulo`, `fin_rango` | Junto a `fin`: texto, título y línea de edad propios en la pantalla final. Llegar a 100 no mata: la pantalla pasa de «Necrológica» a «Fe de vida». |
 | `variantes_texto` | Lista de textos alternativos de la carta con condiciones (`requiere_flags`, `excluye_flags`, `requiere_sexo`…): sale el primero que encaje. Sirve para que una carta recuerde decisiones pasadas. |
 | `grupo` | En anclas: de todas las del mismo grupo sale solo una por partida, al azar (p. ej. las tres cartas posibles del año 0). |
+| `sorpresa` | En una opción: `{ "probabilidad": 0.25, "efectos": {…}, "mensaje": "…" }`. Con esa probabilidad la opción aplica estos efectos en vez de los normales y el juego muestra el mensaje (puede llevar `add_flags`/`remove_flags` propios). |
 | `lote` | Número de lote en el que llegó la carta (para seguimiento). |
 
 **Género**: `{o/a}` se convierte según el sexo del personaje: `maj{o/a}` → majo / maja, `{el/la}`, `señor{/a}`.
@@ -148,6 +149,7 @@ En `config.json → dificultad`:
 
 - `volatilidad` y `volatilidad_desde`: multiplica todos los efectos de las decisiones a partir de esa edad (ahora ×1,3 desde el año 0).
 - `castigo_edad`: a partir de `desde`, las pérdidas se multiplican por `mult` (ahora ×1,3 desde los 65: de viejo cada golpe pesa más).
+- `vista_previa_barras`: con `false` no aparece ningún punto sobre las barras al arrastrar; solo se ve el texto de la opción.
 - `puntos_por_magnitud`: con `false`, los puntos de vista previa son todos del mismo tamaño; sabes qué barra cambia, pero no cuánto.
 
 El revisor (pestaña Simular) y `node tools/revisar.mjs` permiten medir el efecto de cada cambio.

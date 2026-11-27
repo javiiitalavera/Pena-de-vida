@@ -115,7 +115,8 @@ function pintarCartas() {
           ].filter(Boolean);
           return `<div class="op"><div class="lado">${l}</div><div>${g(o.texto)}</div><div>${ef}</div>
             ${flags.length ? `<div>${flags.map((f) => `<span class="chip">${esc(f)}</span>`).join('')}</div>` : ''}
-            ${o.hito_biografico ? `<div class="hito">Hito: ${g(o.hito_biografico)}</div>` : ''}</div>`;
+            ${o.hito_biografico ? `<div class="hito">Hito: ${g(o.hito_biografico)}</div>` : ''}
+            ${o.sorpresa ? `<div class="hito">Sorpresa (${Math.round(o.sorpresa.probabilidad * 100)}%): ${g(o.sorpresa.mensaje)} · ${Object.entries(o.sorpresa.efectos).map(([p, v]) => `${v > 0 ? '+' : '−'}${Math.abs(v)} ${esc(nombrePilar[p] || p)}`).join(', ')}</div>` : ''}</div>`;
         }).join('');
         const avs = (avisosPorCarta.get(c.id) || []).map((a) => `<div class="${a.error ? 'error' : ''}">${a.error ? '✗' : '·'} ${esc(a.msg)}</div>`).join('');
         return `<article class="carta">
