@@ -28,7 +28,7 @@ function decidir(partida, estrategia, rng) {
   return mejor.lado;
 }
 
-export function simular(datos, { partidas = 1000, estrategia = 'prudente', semilla = 1, rasgo = 'azar' } = {}) {
+export function simular(datos, { partidas = 1000, estrategia = 'prudente', semilla = 1, rasgo = 'azar', nivel = null } = {}) {
   const rng = rngSemilla(semilla);
   const edades = [];
   const causas = {};
@@ -40,7 +40,7 @@ export function simular(datos, { partidas = 1000, estrategia = 'prudente', semil
 
   for (let i = 0; i < partidas; i++) {
     const r = rasgo === 'azar' ? datos.rasgos[Math.floor(rng() * datos.rasgos.length)].id : rasgo;
-    const p = new Partida(datos, { sexo: rng() < 0.5 ? 'M' : 'F', rasgoId: r, rng });
+    const p = new Partida(datos, { sexo: rng() < 0.5 ? 'M' : 'F', rasgoId: r, nivel, rng });
     let guarda = 0;
     while (!p.fin && guarda++ < 2000) {
       const c = p.siguienteCarta();

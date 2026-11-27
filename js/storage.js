@@ -29,6 +29,25 @@ export function registrarPartida(progreso, fin, nuevos) {
   return p;
 }
 
+// Nivel de dificultad elegido en Ajustes.
+const CLAVE_NIVEL = 'muerte-subita:nivel';
+
+export function cargarNivel() {
+  try {
+    return localStorage.getItem(CLAVE_NIVEL);
+  } catch {
+    return null;
+  }
+}
+
+export function guardarNivel(id) {
+  try {
+    localStorage.setItem(CLAVE_NIVEL, id);
+  } catch {
+    /* sin almacenamiento: vale para esta sesión */
+  }
+}
+
 // Partida en curso: se guarda tras cada carta para poder continuar si el navegador recarga.
 const CLAVE_PARTIDA = 'muerte-subita:partida';
 

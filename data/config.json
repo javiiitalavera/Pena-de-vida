@@ -4,22 +4,26 @@
     {
       "id": "salud",
       "nombre": "Salud",
-      "icono": "salud"
+      "icono": "salud",
+      "descripcion": "Tu cuerpo. A cero te mata la enfermedad; al cien, la obsesión por cuidarte."
     },
     {
       "id": "dinero",
       "nombre": "Dinero",
-      "icono": "dinero"
+      "icono": "dinero",
+      "descripcion": "Lo que tienes. A cero, la ruina; al cien, la riqueza que te vuelve paranoico."
     },
     {
       "id": "cordura",
       "nombre": "Cordura",
-      "icono": "cordura"
+      "icono": "cordura",
+      "descripcion": "Tu paz mental. A cero te desconectas del mundo; al cien, te iluminas hasta olvidar beber agua."
     },
     {
       "id": "vinculos",
       "nombre": "Vínculos",
-      "icono": "vinculos"
+      "icono": "vinculos",
+      "descripcion": "Familia, pareja y amigos. A cero mueres solo; al cien, no sabes decir que no a nadie."
     }
   ],
   "valor_inicial": 50,
@@ -56,6 +60,52 @@
     },
     "puntos_por_magnitud": false,
     "vista_previa_barras": false
+  },
+  "niveles_dificultad": {
+    "_nota": "Cada nivel sobrescribe campos de 'dificultad'. sorpresas: probabilidad fija de las sorpresas (null = la de cada carta). comodines: usos por partida (0 = sin comodín). barras_ocultas: no se ve el nivel de las barras.",
+    "por_defecto": "normal",
+    "niveles": [
+      {
+        "id": "facil",
+        "nombre": "Fácil",
+        "descripcion": "Ves qué barras cambia cada decisión, sin sorpresas y con tres usos del comodín.",
+        "vista_previa_barras": true,
+        "puntos_por_magnitud": false,
+        "sorpresas": 0,
+        "comodines": 3
+      },
+      {
+        "id": "normal",
+        "nombre": "Normal",
+        "descripcion": "Sin pistas sobre las barras. Algunas decisiones salen mal sin avisar. Un comodín.",
+        "comodines": 1
+      },
+      {
+        "id": "dificil",
+        "nombre": "Difícil",
+        "descripcion": "Todo pesa ×1,5 y la vejez castiga ×1,5. La mitad de las decisiones con sorpresa la sufren. Sin comodín.",
+        "volatilidad": 1.5,
+        "castigo_edad": {
+          "desde": 65,
+          "mult": 1.5
+        },
+        "sorpresas": 0.5,
+        "comodines": 0
+      },
+      {
+        "id": "dios",
+        "nombre": "Modo dios",
+        "descripcion": "Como Difícil, pero a ciegas: no ves cómo están tus barras. Solo te enteras al morir.",
+        "volatilidad": 1.5,
+        "castigo_edad": {
+          "desde": 65,
+          "mult": 1.5
+        },
+        "sorpresas": 0.5,
+        "comodines": 0,
+        "barras_ocultas": true
+      }
+    ]
   },
   "pesos_prioridad": {
     "alta": 3,

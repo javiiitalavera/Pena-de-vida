@@ -63,7 +63,6 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .portada-botones { display: flex; flex-direction: column; align-items: center; gap: 10px; width: min(100%, 260px); padding: 0 16px; }
 .portada-botones .btn { width: 100%; min-width: 0; padding: 12px 20px; }
 .portada-pie { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 16px; text-align: center; }
-.lema { font-family: var(--serif); font-style: italic; color: var(--tinta-suave); font-size: 0.85rem; margin: 4px 0 0; opacity: 0.75; }
 
 .btn {
   border: 1px solid var(--linea);
@@ -123,11 +122,20 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .etiqueta .icono { width: 24px; height: 24px; }
 .pilar.peligro .etiqueta { color: var(--peligro); }
 .pilar.congelado .etiqueta { color: #7fa7c9; }
+.pilar { cursor: help; -webkit-tap-highlight-color: transparent; }
+.pilar:focus-visible { outline: 1px solid var(--tinta-suave); outline-offset: 4px; border-radius: 6px; }
+/* Modo dios: no se ve el nivel de las barras ni si están en peligro. */
+.barras.ocultas .relleno { display: none; }
+.barras.ocultas .tubo { border-style: dashed; }
+.barras.ocultas .pilar.peligro .etiqueta { color: var(--tinta-suave); }
 .pilar .delta { position: absolute; top: -4px; font-size: 0.7rem; font-weight: 700; }
 
-.edad { display: flex; justify-content: center; align-items: baseline; gap: 10px; margin: 4px 0; }
-#edad-anio { font-family: var(--serif); font-size: 1.3rem; }
-.edad-etapa { color: var(--tinta-suave); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; }
+.cabecera-carta { text-align: center; margin: 4px 0 2px; }
+.linea-anio { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.25; text-wrap: balance; }
+.linea-anio .separador { color: var(--tinta-suave); margin: 0 0.4em; }
+#carta-nombre:empty, #carta-nombre:empty ~ .separador { display: none; }
+.linea-anio:has(#carta-nombre:empty) .separador { display: none; }
+.edad-etapa { margin: 4px 0 0; color: var(--tinta-suave); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; }
 
 .carta-texto {
   font-family: var(--serif);
@@ -191,7 +199,6 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
 }
 
-.carta-nombre { text-align: center; font-family: var(--serif); font-style: italic; color: var(--tinta-suave); margin: 10px 0 8px; }
 
 .pista { text-align: center; color: var(--tinta-suave); font-size: 0.8rem; letter-spacing: 0.05em; margin: 0; animation: latido 2s ease-in-out infinite; }
 @keyframes latido { 50% { opacity: 0.45; } }
@@ -227,6 +234,30 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   z-index: 5; pointer-events: none; animation: aviso-entra 0.25s ease-out;
 }
 @keyframes aviso-entra { from { opacity: 0; transform: translate(-50%, -6px); } }
+
+.globo-pilar {
+  position: absolute; left: 50%; transform: translateX(-50%); z-index: 6;
+  width: min(86%, 320px);
+  background: var(--papel); color: var(--papel-tinta);
+  border: 1px solid var(--papel-tinta); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  padding: 10px 14px; text-align: center; font-size: 0.88rem; line-height: 1.35;
+  animation: aviso-entra 0.2s ease-out;
+}
+.globo-pilar strong { display: block; font-family: var(--serif); font-size: 1.05rem; margin-bottom: 2px; }
+.globo-pilar::before {
+  content: ''; position: absolute; top: -6px; width: 10px; height: 10px;
+  left: calc(var(--flecha, 50%) - 5px);
+  background: var(--papel); border-left: 1px solid var(--papel-tinta); border-top: 1px solid var(--papel-tinta);
+  transform: rotate(45deg);
+}
+
+.icono-btn.comodin { position: relative; }
+.icono-btn .usos {
+  position: absolute; top: -2px; right: -2px; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 10px; background: var(--tinta); color: var(--fondo);
+  font-size: 0.72rem; font-weight: 700; line-height: 20px;
+}
 
 .dialogo {
   border: 1px solid var(--linea); border-radius: var(--radio);
@@ -288,3 +319,25 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 #ajustes label { display: flex; justify-content: space-between; }
 #ajustes output { font-variant-numeric: tabular-nums; color: var(--tinta-suave); }
 #ajustes input { width: 100%; accent-color: var(--tinta); }
+
+/* ---------- selector de dificultad ---------- */
+.selector-dificultad { border: 0; padding: 0; margin: 0 0 6px; text-align: left; }
+.selector-dificultad legend { padding: 0; margin-bottom: 8px; }
+.niveles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.nivel {
+  position: relative; display: flex; flex-direction: column; gap: 6px;
+  padding: 10px 12px; border: 1px solid var(--linea); border-radius: 10px;
+  background: var(--fondo); cursor: pointer; transition: border-color 0.2s, background 0.2s;
+}
+#ajustes .nivel input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.nivel-nombre { font-family: var(--serif); font-size: 1rem; }
+.nivel-marcas { display: flex; gap: 4px; }
+.nivel-marcas i { width: 14px; height: 4px; border-radius: 2px; background: var(--tinta-suave); }
+.nivel-marcas i.vacia { background: var(--linea); }
+.nivel:hover { border-color: var(--tinta-suave); }
+.nivel:has(input:checked) { border-color: var(--tinta); background: var(--tinta); color: var(--fondo); }
+.nivel:has(input:checked) .nivel-marcas i { background: var(--peligro); }
+.nivel:has(input:checked) .nivel-marcas i.vacia { background: rgba(0, 0, 0, 0.15); }
+.nivel:has(input:focus-visible) { outline: 2px solid var(--acento); outline-offset: 2px; }
+.nivel-desc { margin: 10px 0 0 !important; font-size: 0.85rem; line-height: 1.4; min-height: 2.8em; text-align: left; }
+.nivel-nota { margin: 6px 0 0 !important; font-size: 0.8rem; color: var(--acento) !important; text-align: left; }

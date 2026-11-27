@@ -15,7 +15,7 @@ Añade `?debug` a la dirección (`index.html?debug`) para ver los números exact
 
 ## Controles
 
-- **Móvil**: desliza la carta a izquierda o derecha. Mientras arrastras, la respuesta aparece sobre la carta y unos puntos sobre las barras indican cuáles cambiarán.
+- **Móvil**: desliza la carta a izquierda o derecha. Mientras arrastras, la respuesta aparece sobre la carta (en Fácil, también unos puntos sobre las barras que cambiarán). Tocar una barra explica qué mide.
 - **Ordenador**: arrastra la carta con el ratón, o usa `←` / `→` (la primera pulsación inclina la carta y muestra la respuesta; la segunda confirma). `Esc` cancela, `C` abre el comodín.
 
 Cada carta es un año de vida: del año 0 al 100 (`cartas_por_anio: 1` en `config.json`).
@@ -151,6 +151,21 @@ En `config.json → dificultad`:
 - `castigo_edad`: a partir de `desde`, las pérdidas se multiplican por `mult` (ahora ×1,3 desde los 65: de viejo cada golpe pesa más).
 - `vista_previa_barras`: con `false` no aparece ningún punto sobre las barras al arrastrar; solo se ve el texto de la opción.
 - `puntos_por_magnitud`: con `false`, los puntos de vista previa son todos del mismo tamaño; sabes qué barra cambia, pero no cuánto.
+
+Además hay cuatro niveles, elegibles en Ajustes (`config.json → niveles_dificultad`). Cada nivel sobrescribe los campos anteriores y añade:
+
+- `sorpresas`: probabilidad fija de todas las sorpresas (0 = ninguna). Sin ella, cada carta usa la suya.
+- `comodines`: usos del comodín por partida (0 = sin comodín y sin pantalla para elegirlo).
+- `barras_ocultas`: no se ve el nivel de las barras.
+
+| Nivel | Puntos al arrastrar | Efectos | Sorpresas | Comodín |
+|---|---|---|---|---|
+| Fácil | sí, sin tamaño | ×1,3 | no | 3 usos |
+| Normal | no | ×1,3 | 25 % | 1 uso |
+| Difícil | no | ×1,5 (vejez ×1,5) | 50 % | no |
+| Modo dios | no, y barras ocultas | ×1,5 (vejez ×1,5) | 50 % | no |
+
+Una partida guarda su nivel: si se cambia en Ajustes a mitad de una vida, vale para la siguiente.
 
 El revisor (pestaña Simular) y `node tools/revisar.mjs` permiten medir el efecto de cada cambio.
 

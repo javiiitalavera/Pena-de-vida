@@ -1,8 +1,8 @@
 // Interfaz: pantallas, carta, barras y necrológica. La lógica está en engine.js.
 import { prepararAudio, reproducirEfecto } from './audio.js';
 import { cargarDatos } from './data.js';
-import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad } from './engine.js';
-import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida } from './storage.js';
+import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad, nivelesDificultad, nivelDificultad } from './engine.js';
+import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida, cargarNivel, guardarNivel } from './storage.js';
 import { montarImagen } from './images.js';
 import { aplicarGenero } from './text.js';
 import { icono } from './iconos.js';
@@ -65,8 +65,12 @@ function pintarInicio() {
   mostrar('pantalla-inicio');
 }
 
+function nivelActual() {
+  return nivelDificultad(datos.config, cargarNivel());
+}
+
 function elegirSexo(valor) {
-  eleccion = { sexo: valor === 'azar' ? (Math.random() < 0.5 ? 'M' : 'F') : valor };
+  eleccion = { sexo: valor === 'azar' ? (Math.random() < 0.5 ? 'M' : 'F') : valor, nivel: nivelActual()?.id };
   // Primera partida: sin elegir rasgo ni comodín, directo al año 0.
   if (progreso.partidas === 0) {
     eleccion.rasgoId = rasgosDisponibles(datos, progreso.desbloqueados)[0]?.id;
@@ -98,6 +102,11 @@ function pintarRasgos() {
 
 function pintarComodines() {
   const lista = comodinesDisponibles(datos, progreso.desbloqueados);
+  // En Difícil y Modo dios no hay comodín: no se pregunta.
+  if ((nivelActual()?.comodines ?? 1) === 0) {
+    eleccion.comodinId = null;
+    return empezar();
+  }
   if (lista.length === 1) {
     eleccion.comodinId = lista[0].id;
     return empezar();
@@ -151,12 +160,38 @@ function montarJuego() {
       d.dataset.pilar = p.id;
       d.title = p.nombre;
       d.setAttribute('aria-label', p.nombre);
+      d.tabIndex = 0;
+      d.addEventListener('click', () => mostrarGlobo(d, p));
       d.innerHTML = `<span class="punto"></span><div class="tubo"><div class="relleno"></div></div><span class="etiqueta">${icono(p.icono || p.id)}</span>`;
       return d;
     }),
   );
+  // Modo dios: las barras no muestran su nivel.
+  $('barras').classList.toggle('ocultas', !!partida.dif.barras_ocultas);
   mostrar('pantalla-juego');
   pintarBarras();
+}
+
+// Al tocar una barra: qué es y qué pasa en sus extremos.
+let temporizadorGlobo;
+function mostrarGlobo(el, pilar) {
+  const globo = $('globo-pilar');
+  if (!globo.hidden && globo.dataset.pilar === pilar.id) return ocultarGlobo();
+  globo.dataset.pilar = pilar.id;
+  globo.innerHTML = `<strong>${escapar(pilar.nombre)}</strong>${pilar.descripcion ? `<span>${escapar(pilar.descripcion)}</span>` : ''}`;
+  const caja = el.getBoundingClientRect();
+  const pantalla = $('pantalla-juego').getBoundingClientRect();
+  globo.style.top = `${caja.bottom - pantalla.top + 6}px`;
+  globo.hidden = false;
+  // La flechita apunta al centro de la barra tocada.
+  globo.style.setProperty('--flecha', `${caja.left + caja.width / 2 - globo.getBoundingClientRect().left}px`);
+  clearTimeout(temporizadorGlobo);
+  temporizadorGlobo = setTimeout(ocultarGlobo, 4000);
+}
+
+function ocultarGlobo() {
+  clearTimeout(temporizadorGlobo);
+  $('globo-pilar').hidden = true;
 }
 
 function guardar() {
@@ -184,10 +219,15 @@ function pintarBarras() {
 
 function pintarComodinBoton() {
   const b = $('btn-comodin');
-  if (!partida.comodin) { b.hidden = true; return; }
-  b.hidden = false;
-  b.innerHTML = icono(partida.comodin.icono);
-  const nombre = partida.comodinUsado ? `${partida.comodin.nombre} (usado)` : `Comodín: ${partida.comodin.nombre}`;
+  // Sin comodín el hueco se mantiene, para que Ajustes no se mueva.
+  b.style.visibility = partida.comodin ? '' : 'hidden';
+  if (!partida.comodin) return;
+  const restantes = partida.comodinesRestantes;
+  // Con varios usos (Fácil) se ve cuántos quedan.
+  b.innerHTML = icono(partida.comodin.icono) + (partida.maxComodin > 1 && restantes ? `<span class="usos">${restantes}</span>` : '');
+  const nombre = partida.comodinUsado
+    ? `${partida.comodin.nombre} (usado)`
+    : `Comodín: ${partida.comodin.nombre}${partida.maxComodin > 1 ? ` (quedan ${restantes})` : ''}`;
   b.setAttribute('aria-label', nombre);
   b.title = nombre;
   b.classList.toggle('usado', partida.comodinUsado);
@@ -219,15 +259,15 @@ function mostrarCarta(carta) {
 
 function vistaPrevia(lado) {
   if (!partida?.carta) lado = null;
-  // Con dificultad.vista_previa_barras = false no se muestran puntos: solo el texto de la opción.
-  const conPuntos = datos.config.dificultad?.vista_previa_barras !== false;
+  // Con vista_previa_barras = false (todos los niveles menos Fácil) no hay puntos: solo el texto de la opción.
+  const conPuntos = partida?.dif.vista_previa_barras !== false;
   const deltas = lado && conPuntos ? partida.vistaPrevia(lado) : {};
   for (const el of $('barras').children) {
     const d = deltas[el.dataset.pilar] || 0;
     const punto = el.querySelector('.punto');
     const mag = Math.abs(d);
     // Con dificultad.puntos_por_magnitud = false, todos los puntos son iguales: sabes qué barra cambia, no cuánto.
-    const tamano = datos.config.dificultad?.puntos_por_magnitud === false ? ' p2' : mag <= 5 ? ' p1' : mag <= 12 ? ' p2' : ' p3';
+    const tamano = partida.dif.puntos_por_magnitud === false ? ' p2' : mag <= 5 ? ' p1' : mag <= 12 ? ' p2' : ' p3';
     punto.className = `punto${mag ? tamano : ''}`;
     el.querySelector('.delta')?.remove();
     if (DEBUG && d) el.insertAdjacentHTML('beforeend', `<span class="delta">${d > 0 ? '+' : ''}${d}</span>`);
@@ -340,7 +380,7 @@ function acabar() {
     <p class="necro-cabecera">${escapar(n.cabecera)}</p>
     <p class="necro-cruz">${n.centenario ? '✶' : '†'}</p>
     <p class="necro-rango">${n.rango}</p>
-    <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}</p>
+    <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}${partida.nivel && partida.nivel !== 'normal' ? ` · ${escapar(nivelDificultad(datos.config, partida.nivel).nombre)}` : ''}</p>
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>
     ${n.remates.length ? `<section class="necro-seccion"><h4>${escapar(n.tituloInforme)}</h4>${n.remates.map((r) => `<p class="necro-remate">${escapar(r)}</p>`).join('')}</section>` : ''}`;
@@ -353,10 +393,46 @@ function acabar() {
   $('pantalla-necrologica').scrollTop = 0;
 }
 
+// ---------- dificultad (Ajustes) ----------
+
+function pintarSelectorNivel() {
+  const niveles = nivelesDificultad(datos.config);
+  const actual = nivelActual()?.id;
+  $('niveles').replaceChildren(
+    ...niveles.map((n, i) => {
+      const op = document.createElement('label');
+      op.className = 'nivel';
+      op.innerHTML = `<input type="radio" name="nivel" value="${n.id}"${n.id === actual ? ' checked' : ''}>
+        <span class="nivel-nombre">${escapar(n.nombre)}</span>
+        <span class="nivel-marcas" aria-hidden="true">${'<i></i>'.repeat(i + 1)}${'<i class="vacia"></i>'.repeat(niveles.length - i - 1)}</span>`;
+      op.querySelector('input').addEventListener('change', () => {
+        guardarNivel(n.id);
+        reproducirEfecto('boton');
+        describirNivel();
+      });
+      return op;
+    }),
+  );
+  describirNivel();
+}
+
+function describirNivel() {
+  const n = nivelActual();
+  $('nivel-desc').textContent = n?.descripcion || '';
+  // Una partida en curso conserva su nivel; el cambio vale para la siguiente.
+  const enCurso = partida && !partida.fin && partida.nivel !== n?.id && $('pantalla-juego').classList.contains('activa');
+  $('nivel-nota').hidden = !enCurso;
+}
+
 // ---------- arranque ----------
 
 function conectarEventos() {
   for (const b of document.querySelectorAll('.icono-btn.ajustes')) b.innerHTML = icono('ajustes');
+  pintarSelectorNivel();
+  for (const b of document.querySelectorAll('[data-ajustes]')) b.addEventListener('click', describirNivel);
+  document.addEventListener('pointerdown', (e) => {
+    if (!e.target.closest('.pilar, .globo-pilar')) ocultarGlobo();
+  });
   prepararAudio();
   $('btn-nueva').addEventListener('click', () => mostrar('pantalla-sexo'));
   $('btn-continuar').addEventListener('click', continuar);

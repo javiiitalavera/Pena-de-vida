@@ -58,15 +58,30 @@ function enteroEntre(rng, min, max) {
 
 // ---------- partida ----------
 
+// Nivel de dificultad (config.niveles_dificultad): sus campos sobrescriben los de config.dificultad.
+export function nivelesDificultad(config) {
+  return config.niveles_dificultad?.niveles || [];
+}
+
+export function nivelDificultad(config, id) {
+  const niveles = nivelesDificultad(config);
+  const defecto = config.niveles_dificultad?.por_defecto;
+  return niveles.find((n) => n.id === id) || niveles.find((n) => n.id === defecto) || null;
+}
+
 export class Partida {
-  constructor(datos, { sexo = 'M', rasgoId = null, comodinId = null, rng = Math.random } = {}) {
+  constructor(datos, { sexo = 'M', rasgoId = null, comodinId = null, nivel = null, rng = Math.random } = {}) {
     this.datos = datos;
     this.config = datos.config;
     this.rng = rng;
     this.sexo = sexo;
     this.rasgo = datos.rasgos.find((r) => r.id === rasgoId) || null;
-    this.comodin = datos.comodines.find((c) => c.id === comodinId) || null;
-    this.comodinUsado = false;
+    const n = nivelDificultad(this.config, nivel);
+    this.nivel = n?.id ?? null;
+    this.dif = { ...(this.config.dificultad || {}), ...(n || {}) };
+    this.maxComodin = this.dif.comodines ?? 1;
+    this.comodin = this.maxComodin > 0 ? datos.comodines.find((c) => c.id === comodinId) || null : null;
+    this.usosComodin = 0;
 
     this.edad = 0;
     this.pilares = {};
@@ -134,7 +149,8 @@ export class Partida {
       sexo: this.sexo,
       rasgoId: this.rasgo?.id ?? null,
       comodinId: this.comodin?.id ?? null,
-      comodinUsado: this.comodinUsado,
+      nivel: this.nivel,
+      usosComodin: this.usosComodin,
       edad: this.edad,
       pilares: { ...this.pilares },
       flags: [...this.flags],
@@ -152,10 +168,10 @@ export class Partida {
 
   static restaurar(datos, e, rng = Math.random) {
     if (!e || e.v !== 1) return null;
-    const p = new Partida(datos, { sexo: e.sexo, rasgoId: e.rasgoId, comodinId: e.comodinId, rng });
+    const p = new Partida(datos, { sexo: e.sexo, rasgoId: e.rasgoId, comodinId: e.comodinId, nivel: e.nivel ?? 'normal', rng });
     if (e.cartaId && !p.porId.has(e.cartaId)) return null; // el mazo ha cambiado: no se puede continuar
     Object.assign(p, {
-      comodinUsado: e.comodinUsado,
+      usosComodin: e.usosComodin ?? (e.comodinUsado ? 1 : 0),
       edad: e.edad,
       pilares: { ...e.pilares },
       flags: new Set(e.flags),
@@ -368,7 +384,7 @@ export class Partida {
       }
     }
     // Dificultad global (config.dificultad): volatilidad para todo y castigo extra a partir de cierta edad.
-    const dif = this.config.dificultad || {};
+    const dif = this.dif;
     const castigo = dif.castigo_edad && this.anio >= dif.castigo_edad.desde ? dif.castigo_edad.mult : 1;
     const volatilidad = this.anio >= (dif.volatilidad_desde ?? 0) ? dif.volatilidad ?? 1 : 1;
     for (const p of Object.keys(base)) {
@@ -424,7 +440,8 @@ export class Partida {
     if (!carta || this.fin) return null;
     const op = carta[lado] || {};
     // Sorpresa: con cierta probabilidad la opción sale de otra manera (otros efectos y, si los define, otros flags).
-    const sorpresa = op.sorpresa && this.rng() < op.sorpresa.probabilidad ? op.sorpresa : null;
+    const probSorpresa = this.dif.sorpresas ?? op.sorpresa?.probabilidad;
+    const sorpresa = op.sorpresa && this.rng() < probSorpresa ? op.sorpresa : null;
     const efectos = sorpresa ? sorpresa.efectos : op.efectos;
     const quitar = sorpresa?.remove_flags ?? op.remove_flags;
     const deltas = this.aplicarDeltas(this.calcularEfectos(efectos));
@@ -465,6 +482,14 @@ export class Partida {
 
   // ---------- comodín ----------
 
+  get comodinUsado() {
+    return this.usosComodin >= this.maxComodin;
+  }
+
+  get comodinesRestantes() {
+    return this.comodin ? Math.max(0, this.maxComodin - this.usosComodin) : 0;
+  }
+
   puedeUsarComodin() {
     return !!(this.comodin && !this.comodinUsado && !this.fin && this.carta);
   }
@@ -472,7 +497,7 @@ export class Partida {
   usarComodin() {
     if (!this.puedeUsarComodin()) return null;
     const { accion, parametros = {} } = this.comodin;
-    this.comodinUsado = true;
+    this.usosComodin++;
     switch (accion) {
       case 'descartar': {
         this.historial.push({ id: this.carta.id, lado: null, anio: this.anio, deltas: {}, comodin: this.comodin.id });
@@ -495,7 +520,7 @@ export class Partida {
         return { accion, deltas };
       }
       default:
-        this.comodinUsado = false;
+        this.usosComodin--;
         return null;
     }
   }

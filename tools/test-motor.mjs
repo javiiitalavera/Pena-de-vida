@@ -101,3 +101,18 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 // sorpresa en una opción derecha
 { const c=datos.cartas.find(x=>x.id==='hacienda_dividendo'); const a=new Partida(datos,{sexo:'F',rng:()=>0}); a.carta=c; const r=a.elegir('derecha');
   assert(r.sorpresa?.includes('expediente') && a.pilares.dinero===65 && a.pilares.cordura===60,'sorpresa en opción derecha (Hacienda) '+JSON.stringify(a.pilares)); }
+// niveles de dificultad
+{ const gim=datos.cartas.find(c=>c.id==='gimnasio'); const comodinId=datos.comodines[0].id;
+  const f=new Partida(datos,{sexo:'M',nivel:'facil',comodinId,rng:()=>0}); f.carta=gim; const rf=f.elegir('izquierda');
+  assert(!rf.sorpresa && f.maxComodin===3 && f.comodinesRestantes===3,'fácil: sin sorpresas y tres comodines');
+  const d=new Partida(datos,{sexo:'M',nivel:'dificil',comodinId,rng:()=>0.4}); d.carta=gim; const rd=d.elegir('izquierda');
+  assert(rd.sorpresa && !d.comodin && !d.puedeUsarComodin(),'difícil: sorpresa al 50 % y sin comodín');
+  const e=new Partida(datos,{sexo:'M',nivel:'dificil'}); e.carta={tags:[]};
+  assert(JSON.stringify(e.calcularEfectos({salud:-10,dinero:10}))==='{"salud":-15,"dinero":15}','difícil: efectos ×1,5');
+  const n=new Partida(datos,{sexo:'M',rng:()=>0.4}); n.carta=gim; const rn=n.elegir('izquierda');
+  assert(n.nivel==='normal' && !rn.sorpresa && n.maxComodin===1,'normal por defecto: sorpresa con la probabilidad de la carta');
+  const g=new Partida(datos,{sexo:'F',nivel:'dios',comodinId}); const q=Partida.restaurar(datos,g.exportar());
+  assert(q.nivel==='dios' && q.dif.barras_ocultas && !q.comodin,'modo dios se guarda y se restaura');
+  const t=new Partida(datos,{sexo:'M',nivel:'facil',comodinId:datos.comodines.find(c=>c.accion==='invertir').id}); t.carta=gim;
+  t.usarComodin(); t.usarComodin(); const r=Partida.restaurar(datos,t.exportar()); r.carta=gim;
+  assert(r.comodinesRestantes===1 && r.usarComodin() && !r.puedeUsarComodin(),'fácil: tres usos del comodín, también tras restaurar'); }
