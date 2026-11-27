@@ -37,7 +37,10 @@
         "efectos": {
           "vinculos": 10,
           "dinero": -15
-        }
+        },
+        "add_flags": [
+          "hipoteca"
+        ]
       },
       "derecha": {
         "texto": "Alquilar una habitación con cuatro estudiantes de Erasmus",
@@ -61,7 +64,10 @@
         "efectos": {
           "dinero": -15,
           "vinculos": 10
-        }
+        },
+        "add_flags": [
+          "criptobro"
+        ]
       },
       "derecha": {
         "texto": "Explicarle qué es un esquema Ponzi",

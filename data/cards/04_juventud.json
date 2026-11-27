@@ -132,7 +132,8 @@
           "funcionario",
           "profesor",
           "hosteleria",
-          "informatico"
+          "informatico",
+          "autonomo"
         ]
       },
       "izquierda": {

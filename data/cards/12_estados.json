@@ -1,0 +1,736 @@
+{
+  "_nota": "Cadenas de estado: cartas que solo salen con un flag activo (requiere_flags) y sus cartas de entrada.",
+  "cartas": [
+    {
+      "id": "puerta_bar",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Puerta del Bar",
+      "personaje": "reptiliano",
+      "texto": "Llueve a cántaros y hace tres grados, pero estás fuera del pub fumando solo con un tipo que te está contando su teoría sobre los reptilianos.",
+      "condiciones": {
+        "requiere_flags": [
+          "fumador"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aguantar el chaparrón y acabar el cigarro",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Tirarlo a medias e intentar dejarlo",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        },
+        "remove_flags": [
+          "fumador"
+        ]
+      },
+      "lote": 8
+    },
+    {
+      "id": "tos_matutina",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Tos Matutina",
+      "personaje": "pareja",
+      "texto": "Al levantarte suenas como un tractor diésel arrancando en invierno. Tu pareja te mira desde la cama calculando cuánto queda de hipoteca.",
+      "condiciones": {
+        "requiere_flags": [
+          "fumador"
+        ]
+      },
+      "izquierda": {
+        "texto": "Encenderte uno con el café para \"limpiar\"",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Pasarte al vapeador con sabor a chicle de fresa",
+        "efectos": {
+          "vinculos": -5,
+          "dinero": -10
+        },
+        "hito_biografico": "Sustituyó el tabaco por vapor con olor a gominola a los 40."
+      },
+      "lote": 8
+    },
+    {
+      "id": "radiografia_torax",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Radiografía de Tórax",
+      "personaje": "neumologo",
+      "texto": "El neumólogo gira el monitor hacia ti y señala una mancha. Te pregunta si fumas mucho mientras suspira.",
+      "condiciones": {
+        "requiere_flags": [
+          "fumador"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mentirle y decir \"solo los fines de semana\"",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Tirar el paquete a la papelera de la consulta",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        },
+        "remove_flags": [
+          "fumador"
+        ]
+      },
+      "lote": 8
+    },
+    {
+      "id": "proposicion",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Proposición",
+      "personaje": "pareja",
+      "texto": "Lleváis cinco años juntos y te saca el tema de la boda 'por los papeles y porque hace ilusión'. Tus padres ya están mirando restaurantes.",
+      "condiciones": {
+        "excluye_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Casarte",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        },
+        "add_flags": [
+          "casado"
+        ],
+        "remove_flags": [
+          "soltero"
+        ]
+      },
+      "derecha": {
+        "texto": "Decir que el matrimonio es una institución burguesa",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "add_flags": [
+          "soltero"
+        ]
+      },
+      "lote": 8
+    },
+    {
+      "id": "domingo_ikea",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Domingo en IKEA",
+      "personaje": "pareja",
+      "texto": "Lleváis cuatro horas discutiendo por una lámpara de 19 euros. Acabas de entender por qué las estadísticas de divorcio suben en septiembre.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comprar la lámpara y las albóndigas",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Salir por la salida de emergencia sin mirar atrás",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "comida_suegros",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Comida con tus Suegros",
+      "personaje": "suegro",
+      "texto": "Tu suegro lleva media hora explicándote cómo arreglaría él el país mientras tu suegra critica cómo cortas el pan.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Asentir con la boca llena",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Llevarle la contraria con datos",
+        "efectos": {
+          "vinculos": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "tinder_45",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Tinder a los 45",
+      "personaje": "match_tigre",
+      "texto": "Has vuelto al mercado. Tu único match de la semana tiene tres fotos con un tigre sedado y en su bio pone 'no dramas'.",
+      "condiciones": {
+        "requiere_flags": [
+          "divorciado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quedar a tomar una caña por pura desesperación",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Sobrevivió a una cita de Tinder tras su divorcio."
+      },
+      "derecha": {
+        "texto": "Borrar la app y comprarte un gato",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "piso_divorciado",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Piso de Divorciado",
+      "personaje": "colchon_suelo",
+      "texto": "Tienes un colchón en el suelo, una televisión de 65 pulgadas y un microondas. No necesitas nada más, pero tu madre ha llorado al verlo.",
+      "condiciones": {
+        "requiere_flags": [
+          "divorciado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comprar muebles de verdad",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Cenar pasta fría directamente de la olla",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "reloj_biologico",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Reloj Biológico",
+      "personaje": "carrito_bebe",
+      "texto": "Todos tus amigos están teniendo hijos y ya solo hablan de carritos y guarderías. Te entra el pánico a quedarte atrás.",
+      "condiciones": {
+        "excluye_flags": [
+          "con_hijos",
+          "embarazada"
+        ]
+      },
+      "izquierda": {
+        "texto": "Tener un hijo",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        },
+        "hito_biografico": "Tuvo descendencia por presión social.",
+        "add_flags": [
+          "con_hijos"
+        ],
+        "add_flags_por_sexo": {
+          "F": [
+            "embarazada"
+          ]
+        },
+        "encolar": [
+          {
+            "id": "epidural",
+            "en_anios": 1
+          }
+        ]
+      },
+      "derecha": {
+        "texto": "Dormir diez horas el domingo y sonreír",
+        "efectos": {
+          "dinero": 5,
+          "cordura": 10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "festival_navidad",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Festival de Navidad",
+      "personaje": "hijo",
+      "texto": "Tu hijo hace de árbol número 3. Llevas dos horas en una silla de plástico escuchando a treinta niños asesinar 'Noche de Paz' con flauta dulce.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Grabar todo en vídeo con cara de orgullo",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Escaparte al bar de enfrente a por un carajillo",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "hijo_32",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Tu Hijo de 32 Años",
+      "personaje": "hijo",
+      "texto": "Sigue viviendo en tu casa, se come tus yogures y dice que está 'montando una marca personal' desde la cama.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Darle 50 euros para el fin de semana",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Cambiar la cerradura y dejarle la maleta en el portal",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Desahució a su propio hijo de 32 años."
+      },
+      "lote": 8
+    },
+    {
+      "id": "team_building",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "El Team Building",
+      "personaje": "companeros_trabajo",
+      "texto": "La empresa organiza un sábado obligatorio de 'dinámicas de cohesión' en un polígono industrial. Hay que tirarse de espaldas para que te coja el de Contabilidad.",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Tirarte y rezar",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Alegar gastroenteritis fulminante",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "correo_viernes",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Correo del Viernes",
+      "personaje": "jefe",
+      "texto": "Son las 19:55 del viernes. Tu jefe te manda un email con asunto 'URGENTE - 5 minutitos' y un Excel de 40 pestañas.",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quedarte hasta las diez",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Apagar el ordenador y fingir que ya habías salido",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "cita_sepe",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Cita del SEPE",
+      "personaje": "funcionario_sepe",
+      "texto": "Llevas dos semanas intentando pedir cita previa online. Al fin te atiende un funcionario que te dice que te falta una fotocopia compulsada de tu alma.",
+      "condiciones": {
+        "requiere_flags": [
+          "desempleado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Volver mañana con la fotocopia",
+        "efectos": {
+          "cordura": -10,
+          "dinero": 10
+        }
+      },
+      "derecha": {
+        "texto": "Montar un espectáculo en la ventanilla",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Fue escoltad{o/a} por seguridad fuera de una oficina del SEPE."
+      },
+      "lote": 8
+    },
+    {
+      "id": "curso_inem",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Curso del INEM",
+      "personaje": "profesor_inem",
+      "texto": "Te obligan a hacer un curso de 'Ofimática Básica y Mindfulness' para no perder el subsidio. El profesor no sabe abrir un PDF.",
+      "condiciones": {
+        "requiere_flags": [
+          "desempleado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ir y dormir con los ojos abiertos",
+        "efectos": {
+          "dinero": 5,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Aceptar un trabajo en negro en una mudanza",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "remove_flags": [
+          "desempleado"
+        ]
+      },
+      "lote": 8
+    },
+    {
+      "id": "alta_autonomo",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "Darse de Alta",
+      "personaje": "gestor",
+      "texto": "Estás hart{o/a} de tener jefes y decides trabajar por tu cuenta. Tu gestor te mira con la misma pena que un veterinario antes de sacrificar un perro.",
+      "condiciones": {
+        "excluye_flags": [
+          "autonomo",
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Firmar el alta de autónomo",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -15
+        },
+        "hito_biografico": "Se hizo autónom{o/a} en España por voluntad propia.",
+        "add_flags": [
+          "autonomo"
+        ],
+        "remove_flags": [
+          "oficinista",
+          "desempleado"
+        ]
+      },
+      "derecha": {
+        "texto": "Aguantar a tu jefe un año más",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "trimestre_iva",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Trimestre del IVA",
+      "personaje": "hacienda",
+      "texto": "Es 20 de octubre. Hacienda te pasa el recibo y descubres que has trabajado tres meses gratis para pagar una rotonda en Murcia.",
+      "condiciones": {
+        "requiere_flags": [
+          "autonomo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar y comer arroz blanco hasta noviembre",
+        "efectos": {
+          "dinero": -10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir un aplazamiento con intereses",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "fiebre_39",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Fiebre de 39 Grados",
+      "personaje": "termometro",
+      "texto": "Tienes gripe, ves borroso y te duele hasta el pelo, pero si te das de baja cobras menos que un becario.",
+      "condiciones": {
+        "requiere_flags": [
+          "autonomo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Tomarte dos ibuprofenos y seguir trabajando",
+        "efectos": {
+          "dinero": 10,
+          "salud": -15
+        }
+      },
+      "derecha": {
+        "texto": "Meterte en la cama y que arda el mundo",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "subida_euribor",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Subida del Euríbor",
+      "personaje": "director_banco",
+      "texto": "Te llega la revisión anual. Tu cuota ha subido 280 euros al mes porque un señor en Fráncfort ha decidido enfriar la economía.",
+      "condiciones": {
+        "requiere_flags": [
+          "hipoteca"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quitar la calefacción y vivir con tres jerseys",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Renegociar con el banco a cambio de contratar un seguro de decesos y una alarma",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "derrama_comunidad",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Derrama de la Comunidad",
+      "personaje": "presidente_comunidad",
+      "texto": "En la junta de vecinos aprueban cambiar el ascensor y la fachada. El presidente del 4ºB te sonríe; resulta que su cuñado tiene la constructora.",
+      "condiciones": {
+        "requiere_flags": [
+          "hipoteca"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar los 6.000€ callado",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Impugnar el acta y enemistarte con todo el bloque",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Se convirtió en el vecino conflictivo de su comunidad."
+      },
+      "lote": 8
+    },
+    {
+      "id": "mudanza_amigo",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Mudanza del Amigo",
+      "personaje": "mejor_amigo",
+      "texto": "Un amigo te pide ayuda para bajar un sofá cama desde un cuarto sin ascensor a cambio de pizza fría y cerveza caliente.",
+      "condiciones": {
+        "excluye_flags": [
+          "hernia_discal"
+        ]
+      },
+      "izquierda": {
+        "texto": "Cargar con el sofá y oír un 'clac' en las lumbares",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        },
+        "add_flags": [
+          "hernia_discal"
+        ]
+      },
+      "derecha": {
+        "texto": "Decir que tienes lumbago preventivo",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "ataque_ciatica",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Ataque de Ciática",
+      "personaje": "pasillo",
+      "texto": "Te has agachado a recoger una moneda de 5 céntimos y te has quedado doblad{o/a} en ángulo recto en medio del pasillo.",
+      "condiciones": {
+        "requiere_flags": [
+          "hernia_discal"
+        ]
+      },
+      "izquierda": {
+        "texto": "Arrastrarte hasta el teléfono y pedir un fisio privado",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en el suelo hasta que se te pase solo",
+        "efectos": {
+          "salud": -15,
+          "dinero": 5
+        }
+      },
+      "lote": 8
+    },
+    {
+      "id": "mercado_bajista",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Mercado Bajista",
+      "personaje": "perro_gorro",
+      "texto": "Tu moneda del perro con gorro ha caído un 94% en dos horas. El fundador acaba de borrar su cuenta de Twitter.",
+      "condiciones": {
+        "requiere_flags": [
+          "criptobro"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comprar más porque \"está en rebajas\"",
+        "efectos": {
+          "dinero": -15,
+          "cordura": -10
+        },
+        "hito_biografico": "Promedió a la baja una estafa piramidal hasta la ruina."
+      },
+      "derecha": {
+        "texto": "Asumir la pérdida y no volver a hablar de dinero en cenas familiares",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "remove_flags": [
+          "criptobro"
+        ]
+      },
+      "lote": 8
+    },
+    {
+      "id": "cena_empresa_cripto",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Cena de Empresa",
+      "personaje": "becaria",
+      "texto": "Llevas tres copas y sientes la necesidad irrefrenable de explicarle a la becaria qué es la blockchain.",
+      "condiciones": {
+        "requiere_flags": [
+          "criptobro"
+        ]
+      },
+      "izquierda": {
+        "texto": "Darle la chapa durante una hora",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Callarte y pedir otro gin-tonic",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -5
+        }
+      },
+      "lote": 8
+    }
+  ]
+}
