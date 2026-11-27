@@ -140,6 +140,111 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "sonotone",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Sonotone",
+      "personaje": "sonotone",
+      "texto": "Tienes la tele al 95 de volumen, pero insistes en que no estás sordo, que 'es que los actores de ahora vocalizan fatal'.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Seguir gritando \"¿QUÉ?\" a todo el mundo",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -15
+        }
+      },
+      "derecha": {
+        "texto": "Comprarte el audífono",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "viudo_lavadora",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Viudo Independiente",
+      "personaje": "lavadora",
+      "texto": "Te has quedado solo en casa y descubres con horror que no tienes ni idea de cómo funciona la lavadora ni dónde se compra el detergente.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Lavar todo junto a 90 grados y encoger tu ropa a talla infantil",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Llamar a tu hija llorando",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "viuda_alegre",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Viuda Alegre",
+      "personaje": "baile_salon",
+      "texto": "Tu marido falleció hace dos años. Tus hijos esperan que lleves luto riguroso, pero acabas de descubrir que sin nadie roncando al lado vives en la gloria.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Apuntarte a bailes de salón y gastar la pensión en cruceros",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 15
+        },
+        "hito_biografico": "Vivió su mejor juventud entre los 75 y los 85 años."
+      },
+      "derecha": {
+        "texto": "Quedarte en casa viendo telenovelas para no dar que hablar",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "cadera",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Cadera",
+      "personaje": "acera",
+      "texto": "Ha llovido, la acera de mármol del centro está como una pista de patinaje y llevas los zapatos cómodos en casa.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Cruzar despacito agarrada a las paredes",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Confiar en tus reflejos y jugarte una prótesis de titanio",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 3
     }
   ]
 }

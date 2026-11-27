@@ -199,6 +199,86 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "coronilla",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Coronilla",
+      "personaje": "mejor_amigo",
+      "texto": "Te haces una foto de espaldas en la playa y descubres un claro preocupante en la nuca. Tu amigo ya te ha pasado el contacto de una clínica en Estambul.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Raparte al cero y asumir tu destino",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir un préstamo e irte a Turquía con una cinta en la frente",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Viajó a Estambul en un avión lleno de calvos con vendas."
+      },
+      "lote": 3
+    },
+    {
+      "id": "vuelta_a_casa",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Vuelta a Casa",
+      "personaje": "desconocido_noche",
+      "texto": "Son las tres de la mañana, vuelves sola y un tío camina detrás de ti al mismo ritmo desde hace tres manzanas.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Poner las llaves entre los nudillos y fingir una llamada",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir un taxi para un trayecto de cinco minutos",
+        "efectos": {
+          "dinero": -10,
+          "salud": 10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "entrevista_trabajo_f",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Entrevista de Trabajo",
+      "personaje": "rrhh",
+      "texto": "El director de Recursos Humanos mira tu edad en el currículum y te pregunta con una sonrisa paternalista si 'tienes planes de formar una familia pronto'.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Mentir y decir que odias a los niños",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Recordarle que esa pregunta es ilegal",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        },
+        "hito_biografico": "Dio una clase de derecho laboral en una entrevista que no superó."
+      },
+      "lote": 3
     }
   ]
 }

@@ -209,6 +209,172 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "dolor_pecho",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Dolor en el Pecho",
+      "personaje": "urgencias",
+      "texto": "Llevas tres días con un pinchazo raro en el brazo izquierdo, pero ir a urgencias te parece una exageración y hoy hay Champions.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Tomarte un ibuprofeno y ver el partido",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Ir al médico y descubrir que solo eran gases",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "vasectomia",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Vasectomía",
+      "personaje": "pareja",
+      "texto": "Tu pareja dice que ya habéis cumplido con la especie y que te toca pasar por taller. Te asegura que 'es un cortecito de nada'.",
+      "condiciones": {
+        "requiere_sexo": "M",
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Hacértela y pasarte el fin de semana con una bolsa de guisantes congelados",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Decir que prefieres la abstinencia",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -15
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "barbacoa",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Barbacoa",
+      "personaje": "barbacoa",
+      "texto": "Sientes una necesidad primitiva inexplicable de comprarte una barbacoa de 900 euros y pasarte seis horas vigilando un trozo de cerdo mientras bebes cerveza.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Comprarla y chamuscar las chuletas de todos tus amigos",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Hacer la carne en la sartén como un adulto funcional",
+        "efectos": {
+          "dinero": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "cena_navidad_arroz",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Cena de Navidad",
+      "personaje": "tia",
+      "texto": "Tu tía te mira la barriga mientras sirves el turrón y suelta: 'Ay, hija, date prisa que se te va a pasar el arroz'.",
+      "condiciones": {
+        "requiere_sexo": "F",
+        "excluye_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sonreír y cambiar de tema",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Contestar que en realidad estás buscando el momento para hacerte monja",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "mamografia",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Mamografía",
+      "personaje": "tecnica_rayos",
+      "texto": "La técnico de rayos te coloca frente a una prensa hidráulica de plástico helado diseñada claramente por un hombre del siglo XIX.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Apretar los dientes mientras te aplastan",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Posponerla \"para el mes que viene\" durante cuatro años",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "epidural",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Epidural",
+      "personaje": "cunada",
+      "texto": "Estás de parto con contracciones cada dos minutos y tu cuñada te manda un audio recomendándote 'parir sin anestesia para conectar con la madre tierra'.",
+      "condiciones": {
+        "requiere_sexo": "F",
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedirle al anestesista que te ponga dosis de caballo",
+        "efectos": {
+          "salud": 10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Intentarlo \"al natural\" y maldecir a toda tu estirpe",
+        "efectos": {
+          "salud": -15,
+          "cordura": -15
+        },
+        "hito_biografico": "Llamó 'escoria' a un anestesista durante un parto natural."
+      },
+      "lote": 3
     }
   ]
 }

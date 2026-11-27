@@ -203,6 +203,85 @@
         "hito_biografico": "Rompió con su familia por un apartamento en Torrevieja."
       },
       "lote": 2
+    },
+    {
+      "id": "pastilla_azul",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Pastilla Azul",
+      "personaje": "amigo_gimnasio",
+      "texto": "Últimamente las cosas no arrancan con la misma alegría. Un amigo del gimnasio te ofrece unas pastillas que ha comprado en una web rusa sin receta.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Probar media a ver qué pasa",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        },
+        "hito_biografico": "Probó fármacos de dudosa procedencia comprados en un gimnasio."
+      },
+      "derecha": {
+        "texto": "Pedir receta al médico de cabecera pasando vergüenza",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "nicturia",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Nicturia",
+      "personaje": "bano_nocturno",
+      "texto": "Son las cuatro de la mañana y es la tercera vez que te levantas a mear. Tienes la próstata del tamaño de un pomelo.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Mear a oscuras y jugártela con la puntería",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Encender la luz y desvelarte hasta las siete",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 5
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "crema_antiarrugas",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Crema Antiarrugas",
+      "personaje": "dependienta",
+      "texto": "Una dependienta de 22 años con la piel de porcelana te intenta vender un sérum de baba de caracol tibetano por 180 euros el bote.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Comprarlo por si hace milagros",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Comprar Nivea de lata azul de tres euros",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -5
+        }
+      },
+      "lote": 3
     }
   ]
 }

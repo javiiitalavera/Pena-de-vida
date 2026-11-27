@@ -149,6 +149,58 @@
         "hito_biografico": "Entregó la Selectividad en blanco por principios."
       },
       "lote": 2
+    },
+    {
+      "id": "pizarra_ereccion",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "La Pizarra",
+      "personaje": "profesora_matematicas",
+      "texto": "La profesora de Matemáticas te saca a resolver una ecuación. Justo en ese instante tu biología decide que es el momento perfecto para una erección espontánea sin motivo alguno.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Salir encorvado fingiendo un dolor de estómago",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Negarte a salir y llevarte un parte disciplinario",
+        "efectos": {
+          "cordura": -10,
+          "vinculos": 5
+        }
+      },
+      "lote": 3
+    },
+    {
+      "id": "sujetador_aros",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "El Sujetador con Aros",
+      "personaje": "sujetador",
+      "texto": "Se ha salido el alambre metálico del sujetador y te está apuñalando la costilla en medio de un examen de Latín.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Aguantar el desangramiento interno en silencio",
+        "efectos": {
+          "salud": -10,
+          "cordura": 5
+        }
+      },
+      "derecha": {
+        "texto": "Arrancarlo en el baño y tirar el resto del día sin él",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 3
     }
   ]
 }
