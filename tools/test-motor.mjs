@@ -81,3 +81,6 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 { const p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('comunion'); p.elegir('derecha'); assert(p.flags.has('sobre_comunion'),'la Comunión activa el arco del sobre'); }
 { const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const r=construirNecrologia(a).remates;
   assert(r.some(x=>x.includes('COBOL')&&x.includes('derrotada')) && !r.some(x=>x.includes('Héroe nacional')),'error del sistema: remate COBOL, sin héroe nacional'); }
+// una ancla cuyo año ya pasó no sale tarde (partidas guardadas con otra versión del mazo)
+{ const p=new Partida(datos,{sexo:'M',rng:rngSemilla(2)}); const e=p.exportar(); e.edad=3; e.usadas=['obstetra','pediatra_vacunas']; e.anclasDescartadas=[]; e.cartaId=null;
+  const q=Partida.restaurar(datos,e); const c=q.siguienteCarta(); assert(c && c.tipo!=='ancla' && q.anio===3,'ancla de un año pasado no sale tarde ('+c?.id+')'); }

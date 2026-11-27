@@ -186,6 +186,12 @@ export class Partida {
     for (const c of this.datos.cartas) {
       if (c.tipo !== 'ancla' || this.usadas.has(c.id) || this.anclasDescartadas.has(c.id)) continue;
       if (c.anio > anio) continue;
+      // Una ancla solo sale en su año exacto: si ese año ya pasó (p. ej. partidas guardadas
+      // con otra versión del mazo), se descarta en vez de salir tarde.
+      if (c.anio < anio) {
+        this.anclasDescartadas.add(c.id);
+        continue;
+      }
       if (this.elegible(c, ctx)) lista.push(c);
       else this.anclasDescartadas.add(c.id); // una ancla solo vale en su año exacto
     }
