@@ -145,8 +145,8 @@ Música («Vals de papel») y tres efectos (carta, comodín y final) en `assets/
 
 En `config.json → dificultad`:
 
-- `volatilidad` y `volatilidad_desde`: multiplica todos los efectos de las decisiones a partir de esa edad (ahora ×1,15 desde los 12; la infancia no se toca).
-- `castigo_edad`: a partir de `desde`, las pérdidas se multiplican por `mult` (ahora ×1,15 desde los 65: de viejo cada golpe pesa más).
+- `volatilidad` y `volatilidad_desde`: multiplica todos los efectos de las decisiones a partir de esa edad (ahora ×1,3 desde el año 0).
+- `castigo_edad`: a partir de `desde`, las pérdidas se multiplican por `mult` (ahora ×1,3 desde los 65: de viejo cada golpe pesa más).
 - `puntos_por_magnitud`: con `false`, los puntos de vista previa son todos del mismo tamaño; sabes qué barra cambia, pero no cuánto.
 
 El revisor (pestaña Simular) y `node tools/revisar.mjs` permiten medir el efecto de cada cambio.

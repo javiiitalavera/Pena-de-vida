@@ -8,6 +8,9 @@ import { aplicarGenero } from '../js/text.js';
 import { fileURLToPath } from 'node:url';
 const raiz=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const datos = await cargarDatosCon(async r => JSON.parse(await readFile(path.join(raiz,r),'utf8')));
+// Las pruebas de reglas usan dificultad neutra; la dificultad real se comprueba aparte al final.
+const dificultadReal = datos.config.dificultad;
+datos.config.dificultad = {};
 const assert=(c,m)=>{ if(!c){console.log('FALLO',m); process.exitCode=1;} else console.log('ok',m); };
 // play many games w/ prudent-ish (always pick side keeping safe) using immortal: reset pilares each turn
 function jugar(sexo, rasgo, seed){ const p=new Partida(datos,{sexo,rasgoId:rasgo,rng:rngSemilla(seed)}); const vistas=[]; 
@@ -84,7 +87,9 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 // una ancla cuyo año ya pasó no sale tarde (partidas guardadas con otra versión del mazo)
 { const p=new Partida(datos,{sexo:'M',rng:rngSemilla(2)}); const e=p.exportar(); e.edad=3; e.usadas=['obstetra','pediatra_vacunas']; e.anclasDescartadas=[]; e.cartaId=null;
   const q=Partida.restaurar(datos,e); const c=q.siguienteCarta(); assert(c && c.tipo!=='ancla' && q.anio===3,'ancla de un año pasado no sale tarde ('+c?.id+')'); }
-// dificultad: volatilidad desde los 12 y castigo de pérdidas desde los 65
-{ const p=new Partida(datos,{sexo:'M'}); p.carta={tags:[]}; const nino=p.calcularEfectos({salud:-10,dinero:10});
-  p.avanzarHasta(30); const adulto=p.calcularEfectos({salud:-10,dinero:10}); p.avanzarHasta(70); const viejo=p.calcularEfectos({salud:-10,dinero:10});
-  assert(nino.salud===-10 && adulto.salud===-12 && adulto.dinero===12 && viejo.salud===-13 && viejo.dinero===12,'dificultad: '+JSON.stringify([nino,adulto,viejo])); }
+// dificultad: se aplica según config (volatilidad desde una edad y castigo de pérdidas desde otra)
+{ datos.config.dificultad = dificultadReal; const dif=dificultadReal; const r=(v)=>Math.sign(v)*Math.round(Math.abs(v));
+  const esperado=(anio)=>{ const vol=anio>=(dif.volatilidad_desde??0)?(dif.volatilidad??1):1; const cas=dif.castigo_edad&&anio>=dif.castigo_edad.desde?dif.castigo_edad.mult:1; return {salud:r(-10*vol*cas),dinero:r(10*vol)}; };
+  const p=new Partida(datos,{sexo:'M'}); p.carta={tags:[]}; const vistos=[]; let ok=true;
+  for(const a of [0,30,70]){ p.avanzarHasta(a); const e=p.calcularEfectos({salud:-10,dinero:10}); vistos.push(e); ok = ok && JSON.stringify(e)===JSON.stringify(esperado(a)); }
+  assert(ok,'dificultad aplicada según config '+JSON.stringify(vistos)); datos.config.dificultad = {}; }
