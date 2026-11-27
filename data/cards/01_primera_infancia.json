@@ -15,7 +15,7 @@
         }
       },
       "derecha": {
-        "texto": "Quedarte morado un rato a ver qué pasa",
+        "texto": "Quedarte morado, a ver",
         "efectos": {
           "salud": -15,
           "vinculos": 10
@@ -125,14 +125,14 @@
       "personaje": "nino_mocos",
       "texto": "Un niño con mocos verdes hasta la barbilla te ofrece un trozo de plastilina mordida.",
       "izquierda": {
-        "texto": "Comértela para reforzar el sistema inmune",
+        "texto": "Comértela, por inmunidad",
         "efectos": {
           "salud": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Empujarle contra las colchonetas",
+        "texto": "Empujarle a las colchonetas",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -148,14 +148,14 @@
       "personaje": "abuela",
       "texto": "Tu abuela ha preparado un caldo con tanta sustancia que podría resucitar a un caballo. Huele a puerro hervido y amenaza con darte el avión con la cuchara.",
       "izquierda": {
-        "texto": "Comértelo todo sin rechistar",
+        "texto": "Comértelo todo",
         "efectos": {
           "salud": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Volcar el plato encima del gato",
+        "texto": "Volcarlo encima del gato",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -171,14 +171,14 @@
       "personaje": "cuna",
       "texto": "Son las tres de la tarde, hace calor y te han metido en la cuna con las persianas bajadas aunque tienes energía para derribar un tabique.",
       "izquierda": {
-        "texto": "Rendirte y dormir tres horas seguidas",
+        "texto": "Dormir tres horas",
         "efectos": {
           "salud": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Pintar la pared con un rotulador permanente",
+        "texto": "Rotulador permanente en la pared",
         "efectos": {
           "cordura": 10,
           "dinero": -5

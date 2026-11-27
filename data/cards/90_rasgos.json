@@ -15,14 +15,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Asentir y pedirle también la tarjeta de gasolina",
+        "texto": "Pedir también la gasolina",
         "efectos": {
           "dinero": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Decirle que eres un privilegiado",
+        "texto": "«Soy un{/a} privilegiad{o/a}»",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -43,7 +43,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Sabotear su informe y quedarte el puesto",
+        "texto": "Sabotear su informe",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -51,7 +51,7 @@
         "hito_biografico": "Ascendió a director hundiendo la salud mental de un compañero."
       },
       "derecha": {
-        "texto": "Dejarle ganar por ver qué se siente al tener empatía",
+        "texto": "Probar la empatía",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
@@ -72,14 +72,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Aprobar todo con notable sin abrir un libro",
+        "texto": "Notables sin abrir un libro",
         "efectos": {
           "dinero": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Decir que quieres repetir por dignidad",
+        "texto": "Repetir por dignidad",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -100,7 +100,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Volver con rastas y un discurso sobre el capitalismo",
+        "texto": "Volver con rastas",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -108,7 +108,7 @@
         "hito_biografico": "Se encontró a sí mismo en Australia con la Visa de su madre."
       },
       "derecha": {
-        "texto": "Entrar directamente de vicepresidente en la empresa familiar",
+        "texto": "Vicepresidencia familiar",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -129,7 +129,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Soltar la frase y ver cómo te cae el doble de multa",
+        "texto": "«¿Sabe quién es mi padre?»",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -137,7 +137,7 @@
         "hito_biografico": "Preguntó a la Guardia Civil si sabían quién era su padre."
       },
       "derecha": {
-        "texto": "Pagar los 600€ en el acto con una sonrisa",
+        "texto": "Pagar con una sonrisa",
         "efectos": {
           "cordura": 5,
           "dinero": -10
@@ -158,14 +158,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Mover el dinero a una sociedad en Luxemburgo",
+        "texto": "Sociedad en Luxemburgo",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Pagar llorando en tu Porsche",
+        "texto": "Pagar llorando en el Porsche",
         "efectos": {
           "dinero": -15,
           "cordura": -10
@@ -186,14 +186,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Preguntar si ya lo podéis tirar a la orgánica",
+        "texto": "¿Va a la orgánica?",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Fingir dos lágrimas mirando cómo lloran los demás",
+        "texto": "Fingir dos lágrimas",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -214,14 +214,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Preguntarle si se lleva las llaves hoy o mañana",
+        "texto": "¿Llaves hoy o mañana?",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Recitar una frase de tristeza sacada de una serie",
+        "texto": "Frase de serie triste",
         "efectos": {
           "vinculos": 5,
           "cordura": 5
@@ -242,7 +242,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Pedirle el despacho a Recursos Humanos esa misma tarde",
+        "texto": "Pedir su despacho",
         "efectos": {
           "dinero": 15,
           "vinculos": -15
@@ -250,7 +250,7 @@
         "hito_biografico": "Solicitó el despacho de un compañero mientras este iba en ambulancia."
       },
       "derecha": {
-        "texto": "Llevarle bombones al hospital para ganarte al jefe",
+        "texto": "Bombones al hospital",
         "efectos": {
           "vinculos": 10,
           "dinero": -10
@@ -271,7 +271,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Dejarlo todo en secreto a una protectora de palomas",
+        "texto": "Todo a las palomas",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
@@ -279,7 +279,7 @@
         "hito_biografico": "Desheredó a toda su familia por pura diversión."
       },
       "derecha": {
-        "texto": "Prometer la casa a tres personas distintas a la vez",
+        "texto": "La casa, a tres a la vez",
         "efectos": {
           "vinculos": 10,
           "cordura": 5
@@ -300,7 +300,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Quitarle lo verde con la cuchara y comértelo",
+        "texto": "Quitar lo verde y comer",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -308,7 +308,7 @@
         "hito_biografico": "Sobrevivió a un lácteo con ecosistema propio."
       },
       "derecha": {
-        "texto": "Tirarlo a la basura como un cobarde",
+        "texto": "Tirarlo, por cobarde",
         "efectos": {
           "dinero": -5,
           "salud": 5
@@ -329,14 +329,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Irte a correr 10 kilómetros para humillarles",
+        "texto": "Correr 10 km",
         "efectos": {
           "salud": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Desayunar las sobras del kebab frío",
+        "texto": "Kebab frío de desayuno",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -357,14 +357,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Ponerte hielo y seguir con tu día",
+        "texto": "Hielo y a seguir",
         "efectos": {
           "dinero": 5,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Ir a urgencias para que te digan que tienes el cráneo de hormigón",
+        "texto": "Urgencias: cráneo de hormigón",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -385,7 +385,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Ofrecer tu sangre a la ciencia a cambio de dinero",
+        "texto": "Vender tu sangre",
         "efectos": {
           "dinero": 10,
           "vinculos": 10
@@ -393,7 +393,7 @@
         "hito_biografico": "Su sistema inmune fue estudiado sin éxito por epidemiólogos."
       },
       "derecha": {
-        "texto": "Fingir síntomas para librarte de ir a trabajar una semana",
+        "texto": "Fingir síntomas",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -414,14 +414,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Ir a revisión a pedirle que compruebe si de verdad mereces esa nota",
+        "texto": "Pedir que lo revise",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Callarte y vivir con el pánico a que te descubran",
+        "texto": "Callar y temer",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -442,14 +442,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Asentir con cara seria y soltar 'hay que darle una vuelta'",
+        "texto": "«Hay que darle una vuelta»",
         "efectos": {
           "dinero": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Reconocer que no tienes ni idea de qué están hablando",
+        "texto": "Admitir que no entiendes",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -470,14 +470,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Decir 'no es para tanto, fue suerte' y quitarte todo el mérito",
+        "texto": "«Fue suerte»",
         "efectos": {
           "dinero": -10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Aceptar el cumplido y trabajar el doble este mes por culpa",
+        "texto": "Trabajar el doble, por culpa",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -498,7 +498,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Subir al escenario y confesar que improvisaste desde 1998",
+        "texto": "Confesar que improvisas",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -506,7 +506,7 @@
         "hito_biografico": "Confesó ser un fraude al recoger un premio a su trayectoria."
       },
       "derecha": {
-        "texto": "Recoger la placa con una sonrisa tensa",
+        "texto": "Sonrisa tensa",
         "efectos": {
           "vinculos": 10,
           "cordura": -10

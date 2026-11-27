@@ -157,8 +157,8 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   pointer-events: none;
 }
 /* El texto se pega al borde que sigue en pantalla mientras la carta se desplaza. */
-.carta-eleccion.izquierda { text-align: right; padding-left: 32%; }
-.carta-eleccion.derecha { text-align: left; padding-right: 32%; }
+.carta-eleccion.izquierda { text-align: right; padding-left: 14%; }
+.carta-eleccion.derecha { text-align: left; padding-right: 14%; }
 .carta-eleccion.visible { opacity: 1; }
 .carta-sello {
   position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%) rotate(-4deg);

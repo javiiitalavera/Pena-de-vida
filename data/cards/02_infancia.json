@@ -8,14 +8,14 @@
       "personaje": "tio_pueblo",
       "texto": "Llevas un traje de almirante que pica como el demonio, pero tu tío el del pueblo te acaba de dar un sobre muy gordo.",
       "izquierda": {
-        "texto": "Esconder el sobre en el calcetín",
+        "texto": "Sobre al calcetín",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Dárselo a tus padres \"para que te lo guarden\"",
+        "texto": "Dárselo a tus padres",
         "efectos": {
           "dinero": -5,
           "vinculos": 10
@@ -32,14 +32,14 @@
       "personaje": "padre",
       "texto": "Descubres a tu padre metiendo dos euros debajo de tu almohada en calzoncillos y con olor a cerveza.",
       "izquierda": {
-        "texto": "Hacerte el dormido y subir la tarifa el próximo diente",
+        "texto": "Subir la tarifa del diente",
         "efectos": {
           "dinero": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Montar un escándalo existencial",
+        "texto": "Escándalo existencial",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -103,14 +103,14 @@
       "personaje": "cumpleanero",
       "texto": "Han invitado a toda la clase menos a ti porque 'el parque de bolas tiene aforo limitado'.",
       "izquierda": {
-        "texto": "Llorar en silencio en tu habitación",
+        "texto": "Llorar en silencio",
         "efectos": {
           "cordura": -10,
           "vinculos": -5
         }
       },
       "derecha": {
-        "texto": "Rajarle las ruedas a la bici del cumpleañero",
+        "texto": "Rajarle las ruedas de la bici",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -134,7 +134,7 @@
         }
       },
       "derecha": {
-        "texto": "Escupir dentro del pan antes de dárselo",
+        "texto": "Escupir dentro del pan",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -157,7 +157,7 @@
         }
       },
       "derecha": {
-        "texto": "Aceptar una sonrisa de película británica",
+        "texto": "Sonrisa británica",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -173,14 +173,14 @@
       "personaje": "monitora_comedor",
       "texto": "Hoy toca pescado hervido con espinas y espinacas. La monitora te avisa de que no te levantas de la mesa hasta que dejes el plato limpio.",
       "izquierda": {
-        "texto": "Esconder el pescado en la servilleta y tirarlo al váter",
+        "texto": "Pescado al váter",
         "efectos": {
           "cordura": 10,
           "salud": -5
         }
       },
       "derecha": {
-        "texto": "Comértelo llorando y tragarte dos espinas",
+        "texto": "Comértelo llorando",
         "efectos": {
           "salud": -10,
           "vinculos": 10
@@ -196,14 +196,14 @@
       "personaje": "madre",
       "texto": "Llega una circular del colegio avisando de un brote. Te pica la cabeza como si tuvieras una colonia de hormigas y tu madre saca la lendrera metálica y vinagre.",
       "izquierda": {
-        "texto": "Dejar que te raspe el cráneo en la bañera",
+        "texto": "Lendrera y vinagre",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Decir que no te pica nada y contagiar a media clase",
+        "texto": "Contagiar a media clase",
         "efectos": {
           "salud": -10,
           "vinculos": -10
@@ -220,7 +220,7 @@
       "personaje": "padre",
       "texto": "Tu padre te quita los ruedines en lo alto de una cuesta y te grita '¡tú pedalea que yo te sujeto!' justo antes de soltarte por completo.",
       "izquierda": {
-        "texto": "Estamparte contra un contenedor de vidrio",
+        "texto": "Contra el contenedor",
         "efectos": {
           "salud": -15,
           "cordura": 10
@@ -228,7 +228,7 @@
         "hito_biografico": "Aprendió a desconfiar de su familia gracias a una bicicleta sin ruedines."
       },
       "derecha": {
-        "texto": "Frenar con los pies y destrozar las zapatillas nuevas",
+        "texto": "Frenar con las zapatillas nuevas",
         "efectos": {
           "salud": 5,
           "dinero": -10
@@ -244,14 +244,14 @@
       "personaje": "nino_mareado",
       "texto": "Te sientan en la última fila junto al niño que se marea siempre. El autobús huele a tortilla de patata tibia, gasóleo y tragedia inminente.",
       "izquierda": {
-        "texto": "Cederle la ventanilla por compasión y comerte el rebote",
+        "texto": "Cederle la ventanilla",
         "efectos": {
           "salud": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Cambiar de asiento sin mirar atrás",
+        "texto": "Cambiarte de asiento",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -267,14 +267,14 @@
       "personaje": "padre",
       "texto": "Juegas de {portero/portera} porque eres {el menos coordinado/la menos coordinada} del equipo. Tu padre lleva media hora insultando al árbitro de 16 años desde la banda.",
       "izquierda": {
-        "texto": "Dejarte meter un gol para que piten el final cuanto antes",
+        "texto": "Dejarte meter el gol",
         "efectos": {
           "salud": 5,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Tirarte a por el balón y comerte el poste",
+        "texto": "Comerte el poste",
         "efectos": {
           "salud": -10,
           "vinculos": 10
@@ -290,14 +290,14 @@
       "personaje": "madre",
       "texto": "Tu madre te ha comprado un casco gigante con dibujos de delfines y rodilleras. Los demás niños del parque ya se están riendo desde el tobogán.",
       "izquierda": {
-        "texto": "Llevarlo puesto como un{/a} astronauta ridícul{o/a}",
+        "texto": "Casco de astronauta",
         "efectos": {
           "salud": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Esconderlo en un seto en cuanto doblan la esquina",
+        "texto": "Al seto con el casco",
         "efectos": {
           "salud": -5,
           "vinculos": 10
@@ -313,14 +313,14 @@
       "personaje": "piscina",
       "texto": "Tus padres quieren que seas {un niño/una niña} 'complet{o/a}' y te han apuntado a natación a las siete de la tarde en invierno. El agua de la piscina está helada.",
       "izquierda": {
-        "texto": "Nadar cuarenta largos tragando cloro",
+        "texto": "Cuarenta largos de cloro",
         "efectos": {
           "salud": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Fingir dolor de oído todos los martes",
+        "texto": "Fingir dolor de oído",
         "efectos": {
           "salud": -5,
           "cordura": 10
@@ -336,14 +336,14 @@
       "personaje": "madre",
       "texto": "Hace 22 grados al sol, pero tu madre insiste en que 'por la sombra refresca' y te obliga a llevar una chaqueta de punto que pica.",
       "izquierda": {
-        "texto": "Aguantar sudando como un pollo",
+        "texto": "Aguantar sudando",
         "efectos": {
           "salud": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Quitártela y coger un catarro monumental",
+        "texto": "Quitártela y resfriarte",
         "efectos": {
           "salud": -10,
           "vinculos": 10
@@ -359,14 +359,14 @@
       "personaje": "jarabe",
       "texto": "Tienes tos y te toca tomar un jarabe rosa fosforescente que sabe a gasolina con azúcar.",
       "izquierda": {
-        "texto": "Tragártelo de golpe tapándote la nariz",
+        "texto": "Tragártelo de golpe",
         "efectos": {
           "salud": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Escupirlo detrás del sofá cuando no miran",
+        "texto": "Escupirlo tras el sofá",
         "efectos": {
           "salud": -10,
           "cordura": 10

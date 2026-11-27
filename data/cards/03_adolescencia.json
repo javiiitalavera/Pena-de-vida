@@ -16,7 +16,7 @@
         }
       },
       "derecha": {
-        "texto": "Quedarte en casa jugando a la consola",
+        "texto": "Quedarte con la consola",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -33,14 +33,14 @@
       "personaje": "orientador",
       "texto": "Te dice que tienes 'un perfil muy polivalente' mientras mira tus notas con la cara de quien acaba de atropellar a un perro.",
       "izquierda": {
-        "texto": "Estudiar una carrera sin salidas pero 'vocacional'",
+        "texto": "Carrera vocacional",
         "efectos": {
           "cordura": 10,
           "dinero": -15
         }
       },
       "derecha": {
-        "texto": "Meterte a algo que odias pero da dinero",
+        "texto": "Algo que odias pero paga",
         "efectos": {
           "dinero": 10,
           "cordura": -15
@@ -66,7 +66,7 @@
         }
       },
       "derecha": {
-        "texto": "Fingir una apendicitis y acabar en urgencias",
+        "texto": "Fingir una apendicitis",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -85,14 +85,14 @@
         "requiere_sexo": "M"
       },
       "izquierda": {
-        "texto": "Salir en toalla con dignidad estoica",
+        "texto": "Salir en toalla, digno",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte encerrado hasta que cierre el instituto",
+        "texto": "Encerrarte hasta el cierre",
         "efectos": {
           "salud": -5,
           "cordura": -10
@@ -108,14 +108,14 @@
       "personaje": "primer_amor",
       "texto": "Te dice que 'eres muy maj{o/a}' pero que prefiere salir con un repetidor de 19 años que tiene una moto sin tubo de escape.",
       "izquierda": {
-        "texto": "Escribir poesía oscura en un cuaderno",
+        "texto": "Poesía oscura",
         "efectos": {
           "cordura": -10,
           "salud": 5
         }
       },
       "derecha": {
-        "texto": "Empezar a fumar a escondidas para parecer interesante",
+        "texto": "Fumar para ser interesante",
         "efectos": {
           "salud": -10,
           "vinculos": 10
@@ -141,7 +141,7 @@
         }
       },
       "derecha": {
-        "texto": "Entregar en blanco y hacerte influencer",
+        "texto": "En blanco y a influencer",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -161,14 +161,14 @@
         "requiere_sexo": "M"
       },
       "izquierda": {
-        "texto": "Salir encorvado fingiendo un dolor de estómago",
+        "texto": "Salir encorvado",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Negarte a salir y llevarte un parte disciplinario",
+        "texto": "Negarte y comerte el parte",
         "efectos": {
           "cordura": -10,
           "vinculos": 5
@@ -187,14 +187,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Aguantar el desangramiento interno en silencio",
+        "texto": "Desangrarte en silencio",
         "efectos": {
           "salud": -10,
           "cordura": 5
         }
       },
       "derecha": {
-        "texto": "Arrancarlo en el baño y tirar el resto del día sin él",
+        "texto": "Arrancarlo en el baño",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -210,14 +210,14 @@
       "personaje": "espejo",
       "texto": "Te ha salido un grano en mitad de la frente del tamaño de una aceituna justo el día de la foto de clase.",
       "izquierda": {
-        "texto": "Explotarlo con las uñas sucias y provocar una infección",
+        "texto": "Explotarlo con las uñas",
         "efectos": {
           "salud": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Comprar una crema milagrosa de farmacia de 45 euros",
+        "texto": "Crema milagrosa de 45 €",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -233,14 +233,14 @@
       "personaje": "policia_local",
       "texto": "Estáis en un parque bebiendo calimocho de cartón cuando aparecen dos coches de la Policía Local con las luces puestas.",
       "izquierda": {
-        "texto": "Echar a correr a ciegas por los setos",
+        "texto": "Correr entre los setos",
         "efectos": {
           "dinero": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte quiet{o/a} y comerte la multa de 300 euros",
+        "texto": "Comerte la multa",
         "efectos": {
           "dinero": -15,
           "salud": 5
@@ -257,14 +257,14 @@
       "personaje": "padre",
       "texto": "En el recreo todos comen bollos industriales y patatas fritas. Tú sacas un tupper con pechuga de pavo y una manzana que te ha preparado tu padre.",
       "izquierda": {
-        "texto": "Comerte tu menú de hospital con dignidad",
+        "texto": "Tu menú de hospital",
         "efectos": {
           "salud": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Cambiarlo por un bollo caducado y un refresco energético",
+        "texto": "Cambiarlo por un bollo",
         "efectos": {
           "salud": -10,
           "vinculos": 10
@@ -280,14 +280,14 @@
       "personaje": "consola",
       "texto": "Son las once de la noche y mañana tienes examen de Filosofía. Tus amigos están conectados jugando online y te invitan a una partida.",
       "izquierda": {
-        "texto": "Apagar todo y dormir como un{/a} jubilad{o/a}",
+        "texto": "Dormir como un{/a} jubilad{o/a}",
         "efectos": {
           "salud": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte hasta las cuatro de la mañana insultando a desconocidos",
+        "texto": "Insultar a desconocidos",
         "efectos": {
           "salud": -10,
           "vinculos": 10

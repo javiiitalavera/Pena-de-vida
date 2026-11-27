@@ -8,7 +8,7 @@
       "personaje": "espejo",
       "texto": "Te miras al espejo, notas la barriga y sientes un impulso irrefrenable de comprarte una bici de carbono o hacerte un tatuaje tribal.",
       "izquierda": {
-        "texto": "Comprar la bici y salir los domingos en licra",
+        "texto": "Bici de carbono y licra",
         "efectos": {
           "dinero": -15,
           "salud": 10
@@ -16,7 +16,7 @@
         "hito_biografico": "Se convirtió en ciclista de domingo a los 40."
       },
       "derecha": {
-        "texto": "Aceptar la decadencia en el sofá",
+        "texto": "Decadencia en el sofá",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -33,7 +33,7 @@
       "personaje": "director_banco",
       "texto": "Te conceden la hipoteca a 30 años. El director te regala un bolígrafo de plástico mientras te mira como a un ganado bien cebado.",
       "izquierda": {
-        "texto": "Firmar y asumir que trabajarás hasta los 75",
+        "texto": "Firmar hasta los 75",
         "efectos": {
           "vinculos": 10,
           "dinero": -15
@@ -43,7 +43,7 @@
         ]
       },
       "derecha": {
-        "texto": "Alquilar una habitación con cuatro estudiantes de Erasmus",
+        "texto": "Piso con cuatro Erasmus",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -60,7 +60,7 @@
       "personaje": "cunado",
       "texto": "En la cena de Nochebuena te explica que las criptomonedas de un perro con gorro son el futuro y que eres un cobarde por no meter tus ahorros.",
       "izquierda": {
-        "texto": "Meter 5.000€ para que se calle",
+        "texto": "5.000 € para que se calle",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -70,7 +70,7 @@
         ]
       },
       "derecha": {
-        "texto": "Explicarle qué es un esquema Ponzi",
+        "texto": "Explicarle el esquema Ponzi",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -91,14 +91,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Poner 20€ y silenciar el grupo un año",
+        "texto": "20 € y silenciar un año",
         "efectos": {
           "dinero": -5,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Preguntar si nadie trabaja en este país",
+        "texto": "¿Aquí nadie trabaja?",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -114,7 +114,7 @@
       "personaje": "mejor_amigo",
       "texto": "Se casa en una finca a tres horas en coche. El cubierto cuesta 250€ y la barra libre es de garrafón.",
       "izquierda": {
-        "texto": "Ir y sonreír en las fotos",
+        "texto": "Sonreír en las fotos",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -138,14 +138,14 @@
       "personaje": "hacienda",
       "texto": "Te llega una carta certificada. Resulta que en 2019 te olvidaste de declarar 42 euros de un dividendo y ahora les debes un riñón.",
       "izquierda": {
-        "texto": "Pagar la multa sin rechistar",
+        "texto": "Pagar sin rechistar",
         "efectos": {
           "dinero": -15,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Recurrir y meterte en un bucle burocrático de 4 años",
+        "texto": "Recurrir cuatro años",
         "efectos": {
           "dinero": 10,
           "cordura": -15
@@ -167,7 +167,7 @@
         "probabilidad": 0.4
       },
       "izquierda": {
-        "texto": "Luchar por la custodia de la Thermomix",
+        "texto": "Pelear por la Thermomix",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -180,7 +180,7 @@
         ]
       },
       "derecha": {
-        "texto": "Firmar todo rápido y huir",
+        "texto": "Firmar y huir",
         "efectos": {
           "dinero": -15,
           "salud": 10
@@ -202,14 +202,14 @@
       "personaje": "gimnasio",
       "texto": "Llevas pagando 60€ al mes desde enero y solo has ido dos veces: una a apuntarte y otra a preguntar cómo darte de baja.",
       "izquierda": {
-        "texto": "Ir hoy aunque te dé un tirón",
+        "texto": "Ir aunque te dé un tirón",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Seguir pagando por si un día te da el venazo",
+        "texto": "Seguir pagando, por si acaso",
         "efectos": {
           "dinero": -10,
           "salud": -5
@@ -228,14 +228,14 @@
         "requiere_sexo": "M"
       },
       "izquierda": {
-        "texto": "Tomarte un ibuprofeno y ver el partido",
+        "texto": "Ibuprofeno y Champions",
         "efectos": {
           "salud": -15,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Ir al médico y descubrir que solo eran gases",
+        "texto": "Urgencias: eran gases",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -257,14 +257,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Hacértela y pasarte el fin de semana con una bolsa de guisantes congelados",
+        "texto": "Guisantes congelados",
         "efectos": {
           "vinculos": 10,
           "salud": -5
         }
       },
       "derecha": {
-        "texto": "Decir que prefieres la abstinencia",
+        "texto": "Abstinencia",
         "efectos": {
           "salud": 5,
           "vinculos": -15
@@ -283,14 +283,14 @@
         "requiere_sexo": "M"
       },
       "izquierda": {
-        "texto": "Comprarla y chamuscar las chuletas de todos tus amigos",
+        "texto": "Barbacoa de 900 €",
         "efectos": {
           "dinero": -15,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Hacer la carne en la sartén como un adulto funcional",
+        "texto": "Sartén, como un adulto",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -312,14 +312,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Sonreír y cambiar de tema",
+        "texto": "Cambiar de tema",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Contestar que en realidad estás buscando el momento para hacerte monja",
+        "texto": "Anunciar que te haces monja",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -338,14 +338,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Apretar los dientes mientras te aplastan",
+        "texto": "Dejarte aplastar",
         "efectos": {
           "salud": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Posponerla \"para el mes que viene\" durante cuatro años",
+        "texto": "Posponerla cuatro años",
         "efectos": {
           "salud": -15,
           "cordura": 10
@@ -366,7 +366,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Emborracharte con el de los cuchillos y pasártelo mejor que nadie",
+        "texto": "Copas con el de los cuchillos",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -374,7 +374,7 @@
         "hito_biografico": "Hizo amistad con un coleccionista de armas blancas en una boda."
       },
       "derecha": {
-        "texto": "Fingir una migraña e irte antes del baile",
+        "texto": "Migraña y a casa",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -395,14 +395,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Aguantar sol{o/a} y comer pasta con atún el día 20",
+        "texto": "Atún el día 20",
         "efectos": {
           "dinero": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Volver a compartir piso con tres universitarios",
+        "texto": "Volver a compartir piso",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -423,14 +423,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Pagar tu parte y desaparecer del grupo durante seis meses",
+        "texto": "Pagar y desaparecer",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Fingir interés y preguntar qué modelo de Roomba recomiendan",
+        "texto": "Preguntar por la Roomba",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -451,14 +451,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Montarlo a base de fuerza bruta y que sobren cuatro tornillos",
+        "texto": "Fuerza bruta, sobran tornillos",
         "efectos": {
           "salud": -10,
           "dinero": 5
         }
       },
       "derecha": {
-        "texto": "Pagar a un montador profesional y recuperar tu dignidad",
+        "texto": "Pagar a un montador",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -474,14 +474,14 @@
       "personaje": "fisio",
       "texto": "Te despiertas con una contractura brutal en el cuello. No has hecho deporte extremo; simplemente has dormido en una postura ligeramente rara.",
       "izquierda": {
-        "texto": "Ir al fisio para que te cobre 50 euros por hacerte daño",
+        "texto": "50 € de fisio",
         "efectos": {
           "dinero": -10,
           "salud": 10
         }
       },
       "derecha": {
-        "texto": "Empastillarte con relajantes musculares e ir a trabajar zombi",
+        "texto": "Relajantes y modo zombi",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -497,14 +497,14 @@
       "personaje": "grupo_whatsapp",
       "texto": "Lleváis cuatro meses intentando cuadrar una cena por WhatsApp. Alguien acaba de mandar una encuesta de Doodle para noviembre del año que viene.",
       "izquierda": {
-        "texto": "Proponer quedar hoy mismo y ver cómo nadie contesta",
+        "texto": "Quedar hoy mismo",
         "efectos": {
           "cordura": 5,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Votar fechas sabiendo que luego todos cancelarán",
+        "texto": "Votar en el Doodle",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -520,14 +520,14 @@
       "personaje": "albanil",
       "texto": "El albañil te dijo que tardaría diez días. Llevas seis semanas fregando los platos en la bañera y el tío ya no te coge el teléfono.",
       "izquierda": {
-        "texto": "Amenazarle con denunciarle y que te deje las tuberías al aire",
+        "texto": "Amenazar al albañil",
         "efectos": {
           "cordura": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Contratar a otro el doble de caro para terminar la pesadilla",
+        "texto": "Pagar a otro el doble",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -544,14 +544,14 @@
       "personaje": "festival",
       "texto": "Has comprado entradas para un festival pensando que sigues teniendo 22 años. Son las diez de la noche, te duelen las lumbares y el cabeza de cartel sale a la una.",
       "izquierda": {
-        "texto": "Aguantar bebiendo cerveza caliente de 9 euros el vaso",
+        "texto": "Cerveza caliente a 9 €",
         "efectos": {
           "salud": -10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Irte a dormir al hotel y escuchar el disco en Spotify",
+        "texto": "Al hotel, con Spotify",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -567,7 +567,7 @@
       "personaje": "cafetera",
       "texto": "Un amigo te ha metido en el mundo del café de filtro. Te ves a ti mism{o/a} pesando granos en una báscula de precisión a las siete de la mañana.",
       "izquierda": {
-        "texto": "Gastarte 600 euros en un molinillo alemán",
+        "texto": "Molinillo alemán de 600 €",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -575,7 +575,7 @@
         "hito_biografico": "Se convirtió en un{/a} esnob insoportable del café de especialidad."
       },
       "derecha": {
-        "texto": "Volver al café soluble de supermercado sin mirar atrás",
+        "texto": "Volver al soluble",
         "efectos": {
           "dinero": 10,
           "vinculos": -5
@@ -591,14 +591,14 @@
       "personaje": "hacienda",
       "texto": "Abres el borrador de Hacienda con ilusión y descubres que te sale a pagar 1.400 euros por haber tenido dos pagadores.",
       "izquierda": {
-        "texto": "Fraccionar el pago y maldecir el sistema fiscal",
+        "texto": "Fraccionar y maldecir",
         "efectos": {
           "dinero": -10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Pagar a un gestor para que te rasque 80 euros",
+        "texto": "Pagar al gestor",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -614,14 +614,14 @@
       "personaje": "companero_trabajo",
       "texto": "Un compañero de trabajo no para de hablar de su 'box' de CrossFit y te invita a una clase de prueba gratuita.",
       "izquierda": {
-        "texto": "Ir, levantar un neumático de tractor y lesionarte el manguito rotador",
+        "texto": "Levantar un neumático",
         "efectos": {
           "salud": -15,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Decirle que prefieres conservar tus articulaciones intactas",
+        "texto": "Conservar tus articulaciones",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -637,14 +637,14 @@
       "personaje": "amigo_rural",
       "texto": "Un conocido se ha ido a vivir a un pueblo de 40 habitantes y te da la chapa sobre que 'en la ciudad vivimos como ratas' mientras teletrabaja con fibra óptica.",
       "izquierda": {
-        "texto": "Darle la razón por educación y volver a tu atasco diario",
+        "texto": "Darle la razón",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Preguntarle a cuántos kilómetros tiene el hospital más cercano",
+        "texto": "¿Y el hospital, a cuántos km?",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -660,7 +660,7 @@
       "personaje": "director_general",
       "texto": "Es Navidad, hay barra libre y llevas cuatro gin-tonics. El director general se acerca a hablar contigo y te apetece decirle exactamente qué opinas de su gestión.",
       "izquierda": {
-        "texto": "Soltarle las verdades a la cara y quedarte en la gloria",
+        "texto": "Soltarle las verdades",
         "efectos": {
           "cordura": 15,
           "dinero": -10
@@ -668,7 +668,7 @@
         "hito_biografico": "Dijo lo que pensaba al director general en la cena de Navidad."
       },
       "derecha": {
-        "texto": "Reírle un chiste malísimo sobre los lunes",
+        "texto": "Reírle el chiste",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -684,14 +684,14 @@
       "personaje": "agente_seguros",
       "texto": "Llevas diez años sin dar un solo parte, pero tu aseguradora te sube la póliza 120 euros 'por la inflación'. Al llamar para darte de baja, te ofrecen bajarlo 15 euros.",
       "izquierda": {
-        "texto": "Pasarte tres tardes comparando pólizas por internet",
+        "texto": "Comparar pólizas tres tardes",
         "efectos": {
           "dinero": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Tragar con la subida porque no tienes energía vital",
+        "texto": "Tragar con la subida",
         "efectos": {
           "dinero": -10,
           "cordura": 5
@@ -707,14 +707,14 @@
       "personaje": "psicologo",
       "texto": "Decides ir a terapia para arreglar tu cabeza. A los veinte minutos te das cuenta de que el problema principal no es tu infancia, sino que eres pobre y duermes mal.",
       "izquierda": {
-        "texto": "Seguir yendo a 70 euros la sesión para desahogarte",
+        "texto": "Seguir yendo a 70 €",
         "efectos": {
           "dinero": -15,
           "cordura": 15
         }
       },
       "derecha": {
-        "texto": "Dejarlo y comprarte una freidora de aire",
+        "texto": "Freidora de aire",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -730,14 +730,14 @@
       "personaje": "concesionario",
       "texto": "Tu coche viejo ha muerto. El concesionario te intenta vender un SUV gigante financiado a ocho años con un TAE del 11%.",
       "izquierda": {
-        "texto": "Firmar la financiación y vivir para pagar el coche",
+        "texto": "El SUV a ocho años",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Comprarte un utilitario de segunda mano color beige",
+        "texto": "Utilitario beige",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -753,14 +753,14 @@
       "personaje": "polen",
       "texto": "Nunca has sido alérgic{o/a} a nada, pero esta primavera te levantas con los ojos como tomates y estornudando veinte veces seguidas.",
       "izquierda": {
-        "texto": "Tomar antihistamínicos que te dejan en coma en la oficina",
+        "texto": "Antihistamínicos, en coma",
         "efectos": {
           "salud": 10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Aguantar a pelo gastando tres paquetes de pañuelos al día",
+        "texto": "Tres paquetes de pañuelos",
         "efectos": {
           "salud": -10,
           "dinero": 5
@@ -776,14 +776,14 @@
       "personaje": "vecino_bateria",
       "texto": "El hijo del 3ºA ha decidido aprender a tocar la batería a las tres de la tarde, justo cuando intentas trabajar o echarte la siesta.",
       "izquierda": {
-        "texto": "Subir a hablar con sus padres con una sonrisa pasivo-agresiva",
+        "texto": "Sonrisa pasivo-agresiva",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Comprarte unos auriculares con cancelación de ruido de 350 euros",
+        "texto": "Auriculares de 350 €",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -800,14 +800,14 @@
       "personaje": "tarta",
       "texto": "No te apetece celebrar nada, pero te da pena pasar el día como un ermitaño. Si montas cena, te tocará pagar la ronda de copas.",
       "izquierda": {
-        "texto": "Apagar el móvil, pedir sushi y ver una película sol{o/a}",
+        "texto": "Sushi y peli a solas",
         "efectos": {
           "dinero": 5,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Montar una cena y fingir alegría hasta medianoche",
+        "texto": "Fingir alegría",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
@@ -823,14 +823,14 @@
       "personaje": "isla_griega",
       "texto": "Un conocido al que no ves desde 2016 te invita a su boda en una isla griega. El vuelo, el hotel y el regalo te salen por 1.800 euros.",
       "izquierda": {
-        "texto": "Ir por no quedar mal y comerte un arroz seco frente al mar",
+        "texto": "Arroz seco frente al mar",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Decir que tienes un compromiso ineludible y bloquearle",
+        "texto": "Excusa y bloquearle",
         "efectos": {
           "dinero": 10,
           "vinculos": -15
@@ -846,7 +846,7 @@
       "personaje": "coleccionista",
       "texto": "Encuentras en el trastero la cubertería de plata y las figuras de porcelana de tu abuela. Un coleccionista te ofrece 1.200€ en mano hoy mismo.",
       "izquierda": {
-        "texto": "Venderlo todo antes de que se entere tu madre",
+        "texto": "Venderlo todo ya",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -854,7 +854,7 @@
         "hito_biografico": "Liquidó el patrimonio sentimental de su familia en Wallapop."
       },
       "derecha": {
-        "texto": "Guardarlas en otra caja para los próximos veinte años",
+        "texto": "Otra caja, veinte años más",
         "efectos": {
           "dinero": -5,
           "vinculos": 10
@@ -870,7 +870,7 @@
       "personaje": "conductor_nervioso",
       "texto": "Te dan un golpe por detrás en un semáforo a 5 km/h. No tienes nada, pero el conductor del otro coche te mira nervioso y sabes cómo funcionan los seguros.",
       "izquierda": {
-        "texto": "Ponerte un collarín tres semanas y cobrar 2.500€ de indemnización",
+        "texto": "Collarín y 2.500 €",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -878,7 +878,7 @@
         "hito_biografico": "Fingió un latigazo cervical por un toque a cinco por hora."
       },
       "derecha": {
-        "texto": "Hacer un parte amistoso honesto y seguir con tu vida",
+        "texto": "Parte amistoso honesto",
         "efectos": {
           "vinculos": 10,
           "dinero": -5
@@ -894,14 +894,14 @@
       "personaje": "jefe",
       "texto": "Tu jefe te propone trabajar todos los sábados de este trimestre. Te los paga en metálico, sin declarar y sin cotizar.",
       "izquierda": {
-        "texto": "Coger el sobre marrón y despedirte de tu espalda",
+        "texto": "Coger el sobre",
         "efectos": {
           "dinero": 15,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Decir que los sábados son sagrados",
+        "texto": "Los sábados son sagrados",
         "efectos": {
           "salud": 10,
           "dinero": -5
@@ -917,14 +917,14 @@
       "personaje": "inquilino_insectos",
       "texto": "Tienes un cuarto vacío lleno de trastos. Un tipo muy silencioso que colecciona insectos disecados te paga 500€ al mes en negro por alquilarlo.",
       "izquierda": {
-        "texto": "Meterle en casa y cerrar tu puerta con pestillo por la noche",
+        "texto": "Alquilar y echar el pestillo",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Renunciar al dinero y conservar tu paz mental",
+        "texto": "Conservar tu paz mental",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -940,7 +940,7 @@
       "personaje": "farmaceutica_ensayo",
       "texto": "Una farmacéutica paga 900€ por probar durante una semana un medicamento experimental contra la migraña. El consentimiento informado tiene 40 páginas.",
       "izquierda": {
-        "texto": "Firmar sin leer y tragar la pastilla azul",
+        "texto": "Firmar sin leer",
         "efectos": {
           "dinero": 15,
           "salud": -10
@@ -948,7 +948,7 @@
         "hito_biografico": "Alquiló su hígado a la industria farmacéutica para llegar a fin de mes."
       },
       "derecha": {
-        "texto": "Romper el folleto y buscar dinero de forma aburrida",
+        "texto": "Buscar dinero aburrido",
         "efectos": {
           "salud": 5,
           "dinero": -5
@@ -964,14 +964,14 @@
       "personaje": "perito",
       "texto": "Tu televisor de 2014 ha muerto de viejo. Un amigo te sugiere decirle al seguro del hogar que fue una subida de tensión tras la tormenta de ayer.",
       "izquierda": {
-        "texto": "Colársela al perito y estrenar tele nueva",
+        "texto": "Colársela al perito",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Pagar una nueva de tu bolsillo como un{/a} ciudadan{o/a} ejemplar",
+        "texto": "Pagarla tú, ejemplar",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
@@ -987,14 +987,14 @@
       "personaje": "notario",
       "texto": "Ha muerto un tío lejano que no caía bien a nadie. Nadie de tu familia quiere ir al entierro en el pueblo, pero tiene una cartilla de ahorros sin repartir.",
       "izquierda": {
-        "texto": "Ir en primera fila, llorar a moco tendido y caerle bien al notario",
+        "texto": "Llorar en primera fila",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte en casa por coherencia moral",
+        "texto": "Coherencia moral",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -1010,7 +1010,7 @@
       "personaje": "agencia_marketing",
       "texto": "Una agencia de marketing te ofrece 1.500€ por grabar un vídeo de 30 segundos fingiendo que te hiciste ric{o/a} con un curso de criptomonedas.",
       "izquierda": {
-        "texto": "Grabarlo con gafas de sol y cobrar al contado",
+        "texto": "Gafas de sol y al contado",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -1034,14 +1034,14 @@
       "personaje": "rrhh",
       "texto": "Descubres que tu empresa lleva cuatro años pagándote mal un complemento salarial. Si denuncias te caen 4.000€, pero pasarás a ser {el enemigo público/la enemiga pública} en la oficina.",
       "izquierda": {
-        "texto": "Denunciar y mirar a Recursos Humanos a los ojos cada mañana",
+        "texto": "Denunciar",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Tragar saliva y evitar conflictos",
+        "texto": "Tragar saliva",
         "efectos": {
           "vinculos": 10,
           "dinero": -5
@@ -1057,14 +1057,14 @@
       "personaje": "turistas_britanicos",
       "texto": "Te vas de puente cuatro días. Puedes alquilar tu piso a unos turistas británicos sin licencia y sacarte medio sueldo.",
       "izquierda": {
-        "texto": "Alquilarlo y rezar para que no tiren el sofá por el balcón",
+        "texto": "Alquilarlo a los ingleses",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Dejar la casa vacía y tranquila",
+        "texto": "Casa vacía y tranquila",
         "efectos": {
           "salud": 5,
           "dinero": -5
@@ -1080,14 +1080,14 @@
       "personaje": "camarero",
       "texto": "Viajas por trabajo y la empresa te cubre hasta 65€ diarios en comidas. El camarero del bar te ofrece hacerte un ticket inflado si le dejas 5€ de propina.",
       "izquierda": {
-        "texto": "Cenar un bocadillo de 4€ y embolsarte la diferencia",
+        "texto": "Bocadillo y la diferencia",
         "efectos": {
           "dinero": 10,
           "salud": -5
         }
       },
       "derecha": {
-        "texto": "Cenar bien y pasar el ticket real",
+        "texto": "Cenar bien, ticket real",
         "efectos": {
           "salud": 5,
           "dinero": -5
@@ -1103,14 +1103,14 @@
       "personaje": "centro_plasma",
       "texto": "Un centro privado te compensa económicamente por donar plasma dos veces por semana. Sales un poco maread{o/a}, pero paga la compra del súper.",
       "izquierda": {
-        "texto": "Poner el brazo cada martes y jueves",
+        "texto": "Martes y jueves, el brazo",
         "efectos": {
           "dinero": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte con tus fluidos corporales intactos",
+        "texto": "Conservar tus fluidos",
         "efectos": {
           "salud": 5,
           "dinero": -5
@@ -1126,14 +1126,14 @@
       "personaje": "medico_cabecera",
       "texto": "Te haces un esguince leve. Ya estás bien, pero el médico te ofrece alargar la baja un mes más mientras puedes hacer chapuzas en negro desde casa.",
       "izquierda": {
-        "texto": "Alargar la baja y facturar por debajo de la mesa",
+        "texto": "Alargar la baja",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Pedir el alta voluntaria y volver a tu silla",
+        "texto": "Alta voluntaria",
         "efectos": {
           "vinculos": 10,
           "salud": -5
@@ -1149,14 +1149,14 @@
       "personaje": "gasolinera",
       "texto": "Tienes tarjeta de combustible de empresa para desplazamientos laborales, pero nadie revisa los kilómetros en agosto.",
       "izquierda": {
-        "texto": "Cruzar España de vacaciones a cuenta de la compañía",
+        "texto": "Vacaciones a su cuenta",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Pagar tu propia gasolina como un{/a} pringad{o/a}",
+        "texto": "Pagar como un{/a} pringad{o/a}",
         "efectos": {
           "dinero": -5,
           "vinculos": 10
@@ -1172,14 +1172,14 @@
       "personaje": "tipo_poligono",
       "texto": "Tu coche viejo no pasa la ITV. Un tipo en un polígono te ofrece 1.800€ en billetes de 50 sin cambiarlo de nombre 'porque es para exportación'.",
       "izquierda": {
-        "texto": "Coger el dinero y confiar en que no atraquen un banco con tu matrícula",
+        "texto": "Coger los billetes",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Llevarlo al desguace legal por 150€",
+        "texto": "Desguace legal por 150 €",
         "efectos": {
           "cordura": 10,
           "dinero": -5

@@ -16,7 +16,7 @@
         }
       },
       "derecha": {
-        "texto": "Cogerle el cartón porque le falta un número para línea",
+        "texto": "Cogerle el cartón",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -33,14 +33,14 @@
       "personaje": "nieto",
       "texto": "Ha venido a verte a la residencia por primera vez en dos años. Trae un notario.",
       "izquierda": {
-        "texto": "Firmar lo que sea para que te dé un abrazo",
+        "texto": "Firmar por un abrazo",
         "efectos": {
           "vinculos": 15,
           "dinero": -15
         }
       },
       "derecha": {
-        "texto": "Fingir que no le reconoces y llamarle 'Stalin'",
+        "texto": "Llamarle Stalin",
         "efectos": {
           "dinero": 10,
           "vinculos": -15
@@ -56,7 +56,7 @@
       "personaje": "medico_trafico",
       "texto": "En el psicotécnico no distingues una señal de Stop de un árbol, pero el médico te dice que 'para ir al pueblo todavía vales'.",
       "izquierda": {
-        "texto": "Seguir conduciendo a 40 por la autovía",
+        "texto": "Seguir conduciendo",
         "efectos": {
           "cordura": 10,
           "salud": -15
@@ -64,7 +64,7 @@
         "hito_biografico": "Condujo en dirección contraria por la A-1 sin inmutarse."
       },
       "derecha": {
-        "texto": "Entregar las llaves a tus hijos",
+        "texto": "Entregar las llaves",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -80,14 +80,14 @@
       "personaje": "pastillero",
       "texto": "Tienes catorce pastillas distintas para hoy. Una te baja la tensión, otra te la sube y otra te quita el dolor de estómago que te producen las dos primeras.",
       "izquierda": {
-        "texto": "Tomártelas todas como un reloj",
+        "texto": "Tomártelas todas",
         "efectos": {
           "salud": 10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Dejar de tomarlas y sustituirlas por un vasito de vino",
+        "texto": "Cambiarlas por vino",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -110,7 +110,7 @@
         }
       },
       "derecha": {
-        "texto": "Contestar que a ti nunca te cayó bien",
+        "texto": "«Nunca me caíste bien»",
         "efectos": {
           "dinero": 5,
           "cordura": 10
@@ -133,7 +133,7 @@
         }
       },
       "derecha": {
-        "texto": "Empezar a planear tu propio funeral para joder a tus herederos",
+        "texto": "Planear tu funeral, por venganza",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -152,7 +152,7 @@
         "requiere_sexo": "M"
       },
       "izquierda": {
-        "texto": "Seguir gritando \"¿QUÉ?\" a todo el mundo",
+        "texto": "Seguir gritando «¿QUÉ?»",
         "efectos": {
           "dinero": 5,
           "vinculos": -15
@@ -181,7 +181,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Lavar todo junto a 90 grados y encoger tu ropa a talla infantil",
+        "texto": "Todo a 90 grados",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -210,7 +210,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Apuntarte a bailes de salón y gastar la pensión en cruceros",
+        "texto": "Bailes y cruceros",
         "efectos": {
           "dinero": -15,
           "cordura": 15
@@ -218,7 +218,7 @@
         "hito_biografico": "Vivió su mejor juventud entre los 75 y los 85 años."
       },
       "derecha": {
-        "texto": "Quedarte en casa viendo telenovelas para no dar que hablar",
+        "texto": "Telenovelas y luto",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -237,14 +237,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Cruzar despacito agarrada a las paredes",
+        "texto": "Despacito, por las paredes",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Confiar en tus reflejos y jugarte una prótesis de titanio",
+        "texto": "Fiarte de tus reflejos",
         "efectos": {
           "salud": -15,
           "cordura": 10
@@ -260,14 +260,14 @@
       "personaje": "farmaceutica",
       "texto": "Son las 9:02 de la mañana y ya estás haciendo cola en la farmacia, aunque no necesitas nada hasta el jueves. Es tu red social.",
       "izquierda": {
-        "texto": "Contarle al de atrás tu operación de cataratas con todo detalle",
+        "texto": "Contarle tus cataratas",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Colarte disimuladamente aprovechando tu edad",
+        "texto": "Colarte por la edad",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -283,7 +283,7 @@
       "personaje": "empleado_banco",
       "texto": "Han cerrado tu oficina de toda la vida y un chico con corbata te dice que 'para sacar efectivo tienes que usar la app y el código QR'.",
       "izquierda": {
-        "texto": "Pedir la hoja de reclamaciones y sentarte en el suelo",
+        "texto": "Sentada en el banco",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -291,7 +291,7 @@
         "hito_biografico": "Protagonizó una sentada en un cajero automático contra la digitalización."
       },
       "derecha": {
-        "texto": "Sacar todos tus ahorros y meterlos debajo del colchón",
+        "texto": "Ahorros al colchón",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -307,14 +307,14 @@
       "personaje": "jubilados_obra",
       "texto": "Están levantando la acera de tu calle. Hay tres jubilados con las manos a la espalda supervisando la excavadora y te hacen sitio.",
       "izquierda": {
-        "texto": "Unirte y opinar que ese cemento está mal echado",
+        "texto": "Opinar del cemento",
         "efectos": {
           "vinculos": 5,
           "cordura": 5
         }
       },
       "derecha": {
-        "texto": "Seguir caminando y aceptar que no eres arquitect{o/a}",
+        "texto": "Seguir caminando",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -330,14 +330,14 @@
       "personaje": "agente_seguros",
       "texto": "Haces cuentas y descubres que llevas cuarenta años pagando el seguro de los muertos. Con ese dinero ya podrías haberte comprado una pirámide en Egipto.",
       "izquierda": {
-        "texto": "Seguir pagando por si acaso te mueres el martes",
+        "texto": "Seguir pagando",
         "efectos": {
           "dinero": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Darlo de baja y decirle a tus hijos que te tiren al contenedor gris",
+        "texto": "Al contenedor gris",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -354,14 +354,14 @@
       "personaje": "smartphone",
       "texto": "Tus hijos te han regalado un smartphone. Sin querer has reenviado una foto borrosa de tu pie al grupo de WhatsApp de la comunidad.",
       "izquierda": {
-        "texto": "Borrar el grupo entero y apagar el teléfono tres días",
+        "texto": "Apagar el móvil tres días",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Mandar un audio de seis minutos intentando explicarlo",
+        "texto": "Audio de seis minutos",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -377,14 +377,14 @@
       "personaje": "ministerio",
       "texto": "Te llega una carta del Ministerio anunciando con orgullo que tu pensión sube 11 euros al mes. El aceite de oliva acaba de subir 4 euros la botella.",
       "izquierda": {
-        "texto": "Comer pan con tomate el resto del mes",
+        "texto": "Pan con tomate",
         "efectos": {
           "dinero": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Comprar el aceite bueno y que pague el Estado",
+        "texto": "Aceite del bueno",
         "efectos": {
           "dinero": -10,
           "salud": 10
@@ -400,14 +400,14 @@
       "personaje": "chorizo",
       "texto": "Tienes el colesterol por las nubes y te han prohibido el embutido, pero hay un trozo de chorizo ibérico en la despensa mirándote fijamente.",
       "izquierda": {
-        "texto": "Comértelo a escondidas en el baño como un{/a} delincuente",
+        "texto": "Chorizo en el baño",
         "efectos": {
           "salud": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Cenar yogur desnatado y llorar en silencio",
+        "texto": "Yogur desnatado",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -423,7 +423,7 @@
       "personaje": "senora_albacete",
       "texto": "En el buffet libre del barco hay langostinos, pero una señora de Albacete con codos de acero acaba de bloquear la bandeja.",
       "izquierda": {
-        "texto": "Empujarla con la bandeja y llevarte medio kilo",
+        "texto": "Bandeja contra la señora",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -431,7 +431,7 @@
         "hito_biografico": "Inició una reyerta en un buffet libre por unos langostinos."
       },
       "derecha": {
-        "texto": "Conformarte con la ensalada de pasta tibia",
+        "texto": "Ensalada de pasta tibia",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -447,14 +447,14 @@
       "personaje": "hijos",
       "texto": "Tus hijos te sugieren con mucha delicadeza que 'esta casa es demasiado grande para ti' y que estarías mejor en un estudio de 30 metros sin ascensor.",
       "izquierda": {
-        "texto": "Decirles que de aquí solo sales con los pies por delante",
+        "texto": "Con los pies por delante",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Venderlo y repartirles la entrada de sus pisos",
+        "texto": "Venderlo y repartir",
         "efectos": {
           "dinero": -15,
           "vinculos": 15
@@ -470,14 +470,14 @@
       "personaje": "sofa",
       "texto": "Te tumbas a ver la etapa del Tour de Francia y te despiertas a las ocho de la tarde completamente desorientad{o/a}, pensando que llegas tarde al colegio.",
       "izquierda": {
-        "texto": "Desayunar café con galletas a las nueve de la noche",
+        "texto": "Desayunar a las nueve",
         "efectos": {
           "cordura": 10,
           "salud": -5
         }
       },
       "derecha": {
-        "texto": "Llamar a un familiar en pánico preguntando qué día es",
+        "texto": "Llamar en pánico",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -493,7 +493,7 @@
       "personaje": "pareja_baile",
       "texto": "El centro de mayores parece una discoteca de Ibiza pero con olor a Vicks VapoRub. Alguien muy insistente te saca a bailar un bolero.",
       "izquierda": {
-        "texto": "Darle una oportunidad al amor geriátrico",
+        "texto": "Amor geriátrico",
         "efectos": {
           "vinculos": 10,
           "salud": -10
@@ -501,7 +501,7 @@
         "hito_biografico": "Tuvo un romance tempestuoso en el centro de mayores."
       },
       "derecha": {
-        "texto": "Fingir un tirón en el gemelo y escapar",
+        "texto": "Fingir un tirón",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -517,14 +517,14 @@
       "personaje": "cadena_whatsapp",
       "texto": "Te llega una cadena que dice que si no la reenvías a diez contactos, WhatsApp te cobrará 50 euros al mes y te quitarán la pensión.",
       "izquierda": {
-        "texto": "Reenviarla a toda tu agenda a las seis de la mañana",
+        "texto": "Reenviarla a todos",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Ignorarla y vivir al límite",
+        "texto": "Vivir al límite",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -540,14 +540,14 @@
       "personaje": "ascensor",
       "texto": "Vives en un cuarto piso, vienes cargad{o/a} con la compra y el ascensor tiene un cartel que pone 'Fuera de servicio hasta el lunes'.",
       "izquierda": {
-        "texto": "Subir las escaleras como un escalador del Everest",
+        "texto": "Escaleras, como en el Everest",
         "efectos": {
           "salud": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Dejar las bolsas en el portal e irte a dormir a un hotel",
+        "texto": "Hotel y bolsas en el portal",
         "efectos": {
           "dinero": -15,
           "salud": 10
@@ -563,14 +563,14 @@
       "personaje": "nieto",
       "texto": "Tu nieto viene a comer. En el pasillo le pasas un billete de 50 euros doblado en la mano como si estuvieras traficando con droga.",
       "izquierda": {
-        "texto": "Decirle 'no le digas nada a tus padres'",
+        "texto": "«No se lo digas a tus padres»",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Darle un billete de 5 euros y un sermón sobre el ahorro",
+        "texto": "5 € y un sermón",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
@@ -586,14 +586,14 @@
       "personaje": "jubilado_rival",
       "texto": "Encuentras unas zapatillas ortopédicas por 8 euros, pero otro jubilado las agarra al mismo tiempo que tú. Os miráis a los ojos.",
       "izquierda": {
-        "texto": "Tirar con toda tu fuerza hasta que ceda",
+        "texto": "Tirar con todas tus fuerzas",
         "efectos": {
           "dinero": 5,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Soltarlas y maldecirle en voz baja",
+        "texto": "Soltar y maldecir",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -609,14 +609,14 @@
       "personaje": "familia_navidad",
       "texto": "En la comida de Navidad empiezas a contar por cuadragésima vez cómo era el invierno de 1978. Nadie te está escuchando; todos miran el móvil.",
       "izquierda": {
-        "texto": "Subir el volumen de voz hasta acallarlos a todos",
+        "texto": "Hablar más alto",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Callarte y servirte otra copa de vino",
+        "texto": "Otra copa de vino",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -632,14 +632,14 @@
       "personaje": "estudiante_reggaeton",
       "texto": "El estudiante del piso de arriba pone reguetón a las once de la noche. Tienes una escoba y mucha rabia acumulada.",
       "izquierda": {
-        "texto": "Aporrear el techo con el palo de la escoba",
+        "texto": "Escobazos al techo",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Poner la radio de misa a todo volumen a las siete de la mañana",
+        "texto": "Radio de misa a las siete",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -656,14 +656,14 @@
       "personaje": "nevera",
       "texto": "Entras en la cocina con un objetivo clarísimo, te quedas mirando la nevera abierta durante dos minutos y no tienes ni idea de qué venías a buscar.",
       "izquierda": {
-        "texto": "Coger un trozo de queso para disimular",
+        "texto": "Coger un trozo de queso",
         "efectos": {
           "salud": 5,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Volver al salón y fingir que solo estabas paseando",
+        "texto": "Fingir que paseabas",
         "efectos": {
           "cordura": 5,
           "salud": -5
@@ -679,14 +679,14 @@
       "personaje": "sala_espera",
       "texto": "Te duele un poco la espalda desde el martes, pero decides ir a urgencias hoy domingo a las cinco de la tarde porque en la tele no echan nada.",
       "izquierda": {
-        "texto": "Pasarte seis horas en la sala de espera haciendo amigos",
+        "texto": "Seis horas haciendo amigos",
         "efectos": {
           "vinculos": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte en casa con una manta eléctrica",
+        "texto": "Manta eléctrica en casa",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -702,14 +702,14 @@
       "personaje": "medico_cabecera",
       "texto": "El médico te pregunta si quieres dejar por escrito qué hacer en caso de que te quedes enchufad{o/a} a una máquina.",
       "izquierda": {
-        "texto": "Firmar 'desenchúfenme en cuanto deje de poder comer jamón'",
+        "texto": "«Sin jamón, desenchufadme»",
         "efectos": {
           "cordura": 10,
           "dinero": 5
         }
       },
       "derecha": {
-        "texto": "Decir que te mantengan viv{o/a} aunque sea con una batería de coche",
+        "texto": "Viv{o/a} aunque sea con batería",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -731,14 +731,14 @@
         "prioridad": "alta"
       },
       "izquierda": {
-        "texto": "Arrastrarle a urgencias aunque te monte un escándalo",
+        "texto": "Arrastrarle a urgencias",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Respetar su cabezonería y dejarle en paz",
+        "texto": "Respetar su cabezonería",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -761,14 +761,14 @@
       "personaje": "tarta",
       "texto": "Cumples 75 años. Acabas de darte cuenta de que cuando en el telediario hablan de 'proteger a las personas mayores durante la ola de calor', se refieren a ti.",
       "izquierda": {
-        "texto": "Salir a pasear a las tres de la tarde para demostrar que no eres de cristal",
+        "texto": "Pasear a las tres de la tarde",
         "efectos": {
           "salud": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Encerrarte con el aire acondicionado a 22 grados y ver concursos",
+        "texto": "Aire a 22 y concursos",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -784,14 +784,14 @@
       "personaje": "batamanta",
       "texto": "Cumples 85. Tus familiares te regalan una batamanta y unas zapatillas antideslizantes porque ya no saben qué comprarle a alguien que no sale de casa.",
       "izquierda": {
-        "texto": "Agradecerlo con una sonrisa resignada",
+        "texto": "Sonrisa resignada",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Pedir el ticket regalo y cambiarlo por una botella de buen whisky",
+        "texto": "Cambiarlo por whisky",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -813,14 +813,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Poner la calefacción a 25 grados a escondidas",
+        "texto": "Calefacción a escondidas",
         "efectos": {
           "salud": 10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Dormir con gorro de lana y callar",
+        "texto": "Gorro de lana y callar",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -841,14 +841,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Pagar la comida y sonreír para las fotos",
+        "texto": "Pagar y posar",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Decir que preferís el dinero en un sobre y quedaros en casa",
+        "texto": "Mejor en un sobre",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -870,14 +870,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Subir la radio hasta que no se le oiga",
+        "texto": "Subir la radio",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Parar en el arcén y darle las llaves",
+        "texto": "Darle las llaves",
         "efectos": {
           "vinculos": 10,
           "salud": -5
@@ -898,14 +898,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Esconder las pilas del mando y hacerte el loc{o/a}",
+        "texto": "Esconder las pilas",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Ver la telenovela y acabar enganchad{o/a} al capítulo 400",
+        "texto": "Engancharte al capítulo 400",
         "efectos": {
           "vinculos": 10,
           "cordura": -10

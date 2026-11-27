@@ -3,7 +3,7 @@ import { parseRango, rangoCarta, LADOS } from './engine.js';
 import { generoMalFormado, tieneGenero } from './text.js';
 
 const LIMITE_TEXTO = 220;
-const LIMITE_OPCION = 70;
+const LIMITE_OPCION = 32; // las respuestas se leen sobre la carta mientras se arrastra
 const LIMITE_EFECTO = 25;
 
 export function validar(datos) {

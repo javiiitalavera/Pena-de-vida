@@ -9,14 +9,14 @@
       "personaje": "casero",
       "texto": "El piso tiene humedades con forma de mapa de Europa, pero dice que si te quejas le sube el alquiler 200 euros al siguiente.",
       "izquierda": {
-        "texto": "Pintar encima del moho y callar",
+        "texto": "Pintar encima del moho",
         "efectos": {
           "dinero": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Irte a vivir con tus padres otra vez",
+        "texto": "Volver con tus padres",
         "efectos": {
           "salud": 10,
           "cordura": -15
@@ -40,7 +40,7 @@
         }
       },
       "derecha": {
-        "texto": "Prenderle fuego a la papelera",
+        "texto": "Quemar la papelera",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -57,14 +57,14 @@
       "personaje": "pareja",
       "texto": "Lleváis cuatro años juntos y te dice que 'necesita encontrarse a sí misma' en un retiro de yoga en Bali con su monitor de pilates.",
       "izquierda": {
-        "texto": "Pagarle el vuelo para demostrar confianza",
+        "texto": "Pagarle el vuelo",
         "efectos": {
           "dinero": -15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Cambiar la cerradura mientras está en el aeropuerto",
+        "texto": "Cambiar la cerradura",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
@@ -80,14 +80,14 @@
       "personaje": "erasmus",
       "texto": "Llevas seis meses en Polonia. No has pisado la facultad, pero hablas polaco fluido solo para pedir cerveza y kebab.",
       "izquierda": {
-        "texto": "Volver a España con un hígado nuevo en lista de espera",
+        "texto": "Volver con el hígado roto",
         "efectos": {
           "salud": -15,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Quedarte allí a vivir del cuento",
+        "texto": "Quedarte a vivir del cuento",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -137,7 +137,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Soltar el discurso corporativo",
+        "texto": "Discurso corporativo",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -166,14 +166,14 @@
       "personaje": "companero_piso",
       "texto": "Tu compañero de piso ha traído a su pareja a vivir 'solo unos días'. Llevan cuatro meses y no pagan la luz.",
       "izquierda": {
-        "texto": "Cortar el Wi-Fi y cambiar la contraseña",
+        "texto": "Cambiar la clave del Wi-Fi",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Pagar la factura callado para evitar conflictos",
+        "texto": "Pagar la luz callad{o/a}",
         "efectos": {
           "dinero": -10,
           "cordura": -10
@@ -208,7 +208,7 @@
         ]
       },
       "derecha": {
-        "texto": "Interrumpirlo y bloquearle de todas partes",
+        "texto": "Interrumpirlo y bloquearle",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -227,14 +227,14 @@
         "requiere_sexo": "M"
       },
       "izquierda": {
-        "texto": "Raparte al cero y asumir tu destino",
+        "texto": "Raparte al cero",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Pedir un préstamo e irte a Turquía con una cinta en la frente",
+        "texto": "Préstamo y a Turquía",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -254,14 +254,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Poner las llaves entre los nudillos y fingir una llamada",
+        "texto": "Llaves entre los nudillos",
         "efectos": {
           "cordura": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Pedir un taxi para un trayecto de cinco minutos",
+        "texto": "Taxi de cinco minutos",
         "efectos": {
           "dinero": -10,
           "salud": 10
@@ -280,14 +280,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Mentir y decir que odias a los niños",
+        "texto": "Decir que odias a los niños",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Recordarle que esa pregunta es ilegal",
+        "texto": "Recordarle que es ilegal",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -315,7 +315,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Firmar y vender tu alma a Excel",
+        "texto": "Vender tu alma a Excel",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -328,7 +328,7 @@
         ]
       },
       "derecha": {
-        "texto": "Apuntarte al paro y esperar una señal del universo",
+        "texto": "Al paro, a esperar señales",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -347,14 +347,14 @@
       "personaje": "nino_rico",
       "texto": "Los padres de un niño rico te pagan 25€ la hora en negro por darle clases de Matemáticas de 2º de la ESO. No te acuerdas de hacer una ecuación de segundo grado.",
       "izquierda": {
-        "texto": "Improvisar mirando tutoriales en el baño",
+        "texto": "Tutoriales en el baño",
         "efectos": {
           "dinero": 15,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Rechazarlo por honestidad intelectual",
+        "texto": "Rechazarlo con honestidad",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -370,14 +370,14 @@
       "personaje": "ministerio",
       "texto": "Te conceden 1.800€ de beca para material universitario y transporte. Puedes comprar los libros o irte de festival y renovar la consola.",
       "izquierda": {
-        "texto": "Invertirlo en libros de texto y fotocopias",
+        "texto": "Comprar los libros",
         "efectos": {
           "cordura": 10,
           "dinero": -5
         }
       },
       "derecha": {
-        "texto": "Fundírtelo en ocio y estudiar con apuntes robados",
+        "texto": "Fundírtela en ocio",
         "efectos": {
           "dinero": 15,
           "salud": -10
@@ -394,14 +394,14 @@
       "personaje": "tio",
       "texto": "Tu tío tiene un apartamento en el centro y te paga 150€ en mano cada domingo por limpiarlo después de las despedidas de soltero.",
       "izquierda": {
-        "texto": "Ponerte guantes de goma y fregar lo indecible",
+        "texto": "Fregar lo indecible",
         "efectos": {
           "dinero": 15,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Conservar tu dignidad y tu domingo libre",
+        "texto": "Conservar tu domingo",
         "efectos": {
           "salud": 10,
           "dinero": -5
@@ -417,14 +417,14 @@
       "personaje": "facultad",
       "texto": "Tienes los exámenes filtrados de los últimos cinco años de una asignatura imposible. La mitad de la facultad te ofrece dinero por el PDF.",
       "izquierda": {
-        "texto": "Montar un cartel y venderlos a 20€ la copia",
+        "texto": "Venderlos a 20 €",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Pasarlos gratis al grupo de WhatsApp para caer bien",
+        "texto": "Pasarlos gratis",
         "efectos": {
           "vinculos": 10,
           "dinero": -5
@@ -440,14 +440,14 @@
       "personaje": "rodaje",
       "texto": "Buscan extras para rodar un anuncio de una aseguradora a las cinco de la mañana bajo la lluvia artificial. Pagan 120€ y un bocadillo de chóped.",
       "izquierda": {
-        "texto": "Pasar doce horas calad{o/a} hasta los huesos",
+        "texto": "Doce horas calad{o/a}",
         "efectos": {
           "dinero": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Quedarte durmiendo calentit{o/a}",
+        "texto": "Seguir durmiendo",
         "efectos": {
           "salud": 5,
           "dinero": -5

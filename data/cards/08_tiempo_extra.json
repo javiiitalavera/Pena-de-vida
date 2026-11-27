@@ -9,14 +9,14 @@
       "personaje": "muerte",
       "texto": "Se sienta a los pies de tu cama, mira el reloj y te pregunta si de verdad hace falta alargar esto hasta los 100.",
       "izquierda": {
-        "texto": "Pedirle cinco minutos más por puro cabezonería",
+        "texto": "Cinco minutos más",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Preguntarle si hay Wi-Fi en el otro lado",
+        "texto": "¿Hay Wi-Fi allí?",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -32,14 +32,14 @@
       "personaje": "periodista",
       "texto": "Viene a entrevistarte por ser la persona más vieja del barrio y te pregunta cuál es el secreto de tu longevidad.",
       "izquierda": {
-        "texto": "Decir \"beber aceite de oliva y no casarse\"",
+        "texto": "«Aceite y no casarse»",
         "efectos": {
           "vinculos": 10,
           "cordura": 5
         }
       },
       "derecha": {
-        "texto": "Decir \"rencor puro y sobrevivir a mis enemigos\"",
+        "texto": "«Rencor puro»",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -56,14 +56,14 @@
       "personaje": "auxiliar",
       "texto": "Te traen un puré gris que huele a calcetín húmedo. La auxiliar te dice 'venga, cariñito, abre la boca' como si tuvieras dos años.",
       "izquierda": {
-        "texto": "Comértelo resignado",
+        "texto": "Comértelo resignad{o/a}",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Tirar la bandeja al suelo",
+        "texto": "Bandeja al suelo",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -79,14 +79,14 @@
       "personaje": "teleasistencia",
       "texto": "Has pulsado el colgante rojo sin querer mientras te rascabas el pecho. Una voz muy amable te pregunta por el altavoz si te has caído.",
       "izquierda": {
-        "texto": "Decir que solo querías hablar con alguien",
+        "texto": "«Solo quería hablar»",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Fingir que no hay nadie en casa y quedarte inmóvil",
+        "texto": "Hacerte {el muerto/la muerta}",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -102,7 +102,7 @@
       "personaje": "dentadura",
       "texto": "Te ríes de un chiste malo y tu dentadura sale disparada dentro de la sopera familiar en plena comida de domingo.",
       "izquierda": {
-        "texto": "Pescarla con el cucharón y volver a ponértela",
+        "texto": "Pescarla con el cucharón",
         "efectos": {
           "salud": 10,
           "vinculos": -10
@@ -110,7 +110,7 @@
         "hito_biografico": "Recuperó su dentadura de una sopera delante de toda su familia."
       },
       "derecha": {
-        "texto": "Fingir que no es tuya y comer solo pan blando",
+        "texto": "Fingir que no es tuya",
         "efectos": {
           "vinculos": 10,
           "salud": -10
@@ -126,7 +126,7 @@
       "personaje": "bisnieto",
       "texto": "Te enfoca con el móvil mientras duermes la siesta para subir un TikTok con música triste y el texto 'disfrutad de vuestros abuelos'.",
       "izquierda": {
-        "texto": "Hacerle una peineta mirando a cámara",
+        "texto": "Peineta a cámara",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -134,7 +134,7 @@
         "hito_biografico": "Se hizo viral a los 90 haciendo una peineta a su bisnieto."
       },
       "derecha": {
-        "texto": "Sonreír sin saber qué está pasando",
+        "texto": "Sonreír sin entender",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -150,14 +150,14 @@
       "personaje": "familia_herederos",
       "texto": "Te has quedado tan quiet{o/a} en el sillón que tu familia ya ha empezado a llamar a la funeraria y a repartirse la cubertería.",
       "izquierda": {
-        "texto": "Abrir un ojo de golpe y pegar un grito",
+        "texto": "Despertar gritando",
         "efectos": {
           "cordura": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Seguir haciéndote {el muerto/la muerta} para oír quién habla mal de ti",
+        "texto": "Seguir escuchando",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -173,14 +173,14 @@
       "personaje": "cura",
       "texto": "Cada vez que pasas por el pasillo te mira con una sonrisa profesional y te pregunta si 'ya estás en paz con el Señor'.",
       "izquierda": {
-        "texto": "Decirle que eres ate{o/a} y que te enterrarán con tus ahorros",
+        "texto": "Ateísmo y ahorros al ataúd",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Confesarte por si acaso hay algo arriba",
+        "texto": "Confesarte, por si acaso",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -196,14 +196,14 @@
       "personaje": "vecino_residencia",
       "texto": "El señor del 204 te ha retado a una carrera hasta el comedor antes de que se acaben las croquetas.",
       "izquierda": {
-        "texto": "Quitar el freno y derrapar en la curva de enfermería",
+        "texto": "Quitar el freno",
         "efectos": {
           "salud": -15,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Dejarle pasar y conformarte con la merluza hervida",
+        "texto": "Merluza hervida",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -219,14 +219,14 @@
       "personaje": "mando",
       "texto": "Has pulsado un botón raro y ahora la tele está en alemán y sin volumen. Llevas dos horas viendo un documental sobre salchichas.",
       "izquierda": {
-        "texto": "Aporrear el mando contra el brazo del sillón",
+        "texto": "Aporrear el mando",
         "efectos": {
           "cordura": 10,
           "dinero": -5
         }
       },
       "derecha": {
-        "texto": "Ver el documental entero y fingir que entiendes alemán",
+        "texto": "Fingir que sabes alemán",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -242,14 +242,14 @@
       "personaje": "geriatra",
       "texto": "Te mira los análisis, suelta un silbido y dice la frase que más odias en el mundo: 'Bueno, para su edad está estupend{o/a}'.",
       "izquierda": {
-        "texto": "Preguntarle cuántos años tiene él y desearle suerte",
+        "texto": "¿Y usted cuántos tiene?",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Asentir y pedirle otra caja de pastillas para dormir",
+        "texto": "Más pastillas para dormir",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -265,14 +265,14 @@
       "personaje": "tarta",
       "texto": "Te traen un bizcocho sin azúcar, sin gluten y sin alegría con una vela con forma de interrogación porque ya nadie se acuerda de tu edad exacta.",
       "izquierda": {
-        "texto": "Soplar y escupir medio pulmón encima",
+        "texto": "Soplar y escupir",
         "efectos": {
           "salud": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Pedir un chupito de coñac en lugar de tarta",
+        "texto": "Coñac en vez de tarta",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -288,14 +288,14 @@
       "personaje": "sobrinas",
       "texto": "Dos sobrinas tuyas están discutiendo en voz baja a los pies de tu cama sobre quién se queda con el aparador del salón.",
       "izquierda": {
-        "texto": "Decir en voz alta que lo has donado a una ONG",
+        "texto": "«Lo he donado a una ONG»",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
         }
       },
       "derecha": {
-        "texto": "Pedirles 50 euros a cada una por el derecho de tanteo",
+        "texto": "50 € a cada una",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -311,14 +311,14 @@
       "personaje": "hombre_del_tiempo",
       "texto": "Te duele la rodilla izquierda, lo que significa que mañana llueve. El hombre del tiempo dice que hará sol.",
       "izquierda": {
-        "texto": "Llamar a la tele para decirles que son unos incompetentes",
+        "texto": "Llamar a la tele",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Salir sin paraguas para demostrar tu teoría",
+        "texto": "Sin paraguas, por ciencia",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -334,14 +334,14 @@
       "personaje": "brasero",
       "texto": "Hace 28 grados en la habitación, pero tienes los pies helados y la calefacción está apagada por orden de dirección.",
       "izquierda": {
-        "texto": "Ponerte tres batas y un gorro de lana",
+        "texto": "Tres batas y gorro",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Enchufar un brasero eléctrico de 1982 escondido bajo la cama",
+        "texto": "Brasero ilegal de 1982",
         "efectos": {
           "salud": -15,
           "cordura": 10

@@ -106,6 +106,8 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 
 **Género**: `{o/a}` se convierte según el sexo del personaje: `maj{o/a}` → majo / maja, `{el/la}`, `señor{/a}`.
 
+**Respuestas**: cortas, de 2 a 4 palabras (máximo unos 30 caracteres): se leen sobre la carta mientras se arrastra. El revisor avisa si pasan de 32.
+
 **Valores**: ±10 por defecto; ±15 para decisiones fuertes; ±5 para efectos secundarios.
 
 ## Cómo funciona el tiempo

@@ -9,12 +9,12 @@
       "personaje": "alcalde",
       "texto": "Has llegado a los 100 años. El alcalde viene a entregarte una placa de metacrilato, tus biznietos no saben cómo te llamas y la Seguridad Social lleva dos décadas deseando tu muerte.",
       "izquierda": {
-        "texto": "Soplar la vela y apagar el chiringuito con dignidad",
+        "texto": "Soplar la vela",
         "efectos": {},
         "fin": "centenario"
       },
       "derecha": {
-        "texto": "Pedir prórroga hasta los 101 por pura maldad",
+        "texto": "Prórroga, por maldad",
         "efectos": {},
         "fin": "centenario"
       },

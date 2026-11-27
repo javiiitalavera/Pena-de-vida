@@ -14,7 +14,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Dar el 'sí, quiero' y firmar la hipoteca emocional",
+        "texto": "«Sí, quiero»",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -28,7 +28,7 @@
         ]
       },
       "derecha": {
-        "texto": "Salir corriendo por la sacristía",
+        "texto": "Huir por la sacristía",
         "efectos": {
           "dinero": 10,
           "vinculos": -15
@@ -54,7 +54,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Tirar para adelante y despedirte de tu tiempo libre",
+        "texto": "Tirar para adelante",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -76,7 +76,7 @@
         ]
       },
       "derecha": {
-        "texto": "Adoptar un perro y llamarle 'perrhijo'",
+        "texto": "Adoptar un «perrhijo»",
         "efectos": {
           "dinero": 5,
           "cordura": 10
@@ -98,7 +98,7 @@
         "prioridad": "alta"
       },
       "izquierda": {
-        "texto": "Pedirle al anestesista que te ponga dosis de caballo",
+        "texto": "Dosis de caballo",
         "efectos": {
           "salud": 10,
           "cordura": 5,
@@ -112,7 +112,7 @@
         ]
       },
       "derecha": {
-        "texto": "Intentarlo \"al natural\" y maldecir a toda tu estirpe",
+        "texto": "Al natural, maldiciendo",
         "efectos": {
           "salud": -10,
           "cordura": -10,
