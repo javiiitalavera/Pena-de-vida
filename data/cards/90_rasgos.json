@@ -1,0 +1,63 @@
+{
+  "_nota": "Cartas exclusivas de un rasgo (condiciones.requiere_rasgo).",
+  "cartas": [
+    {
+      "id": "coche_18",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "edad_sugerida": 18,
+      "nombre": "El Coche de los 18",
+      "personaje": "padre",
+      "texto": "Tu padre te regala un deportivo por aprobar el carnet a la cuarta. Te dice que 'en esta vida todo se consigue con esfuerzo'.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "hijo_de_papa"
+        ]
+      },
+      "izquierda": {
+        "texto": "Asentir y pedirle también la tarjeta de gasolina",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decirle que eres un privilegiado",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "ascenso_director",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Ascenso",
+      "personaje": "companero_trabajo",
+      "texto": "Hay una plaza de director libre. Tu compañero lleva diez años matándose a trabajar, pero sabes que tiene problemas de ansiedad.",
+      "condiciones": {
+        "requiere_rasgo": [
+          "psicopata_funcional"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sabotear su informe y quedarte el puesto",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Ascendió a director hundiendo la salud mental de un compañero."
+      },
+      "derecha": {
+        "texto": "Dejarle ganar por ver qué se siente al tener empatía",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

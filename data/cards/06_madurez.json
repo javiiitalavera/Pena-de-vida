@@ -1,0 +1,208 @@
+{
+  "cartas": [
+    {
+      "id": "jubilacion",
+      "tipo": "ancla",
+      "anio": 65,
+      "nombre": "La Jubilación",
+      "personaje": "companeros_trabajo",
+      "texto": "Tus compañeros te regalan un reloj chapado en oro y te dicen que 'a ver si nos vemos'. Sabes perfectamente que no volverás a ver a ninguno.",
+      "izquierda": {
+        "texto": "Empezar a mirar obras por la mañana",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Apuntarte a un máster de Historia del Arte",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "medico_cabecera",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "edad_sugerida": 51,
+      "nombre": "El Médico de Cabecera",
+      "personaje": "medico_cabecera",
+      "texto": "Te han salido los análisis mal. Te recomienda dejar el alcohol, el azúcar, la sal, la carne roja y el estrés.",
+      "izquierda": {
+        "texto": "Hacerle caso y comer pechuga hervida hasta morir",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cambiar de médico hasta encontrar uno más majo",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "urologo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "edad_sugerida": 54,
+      "nombre": "El Urólogo",
+      "personaje": "urologo",
+      "texto": "Se está poniendo el guante de látex mientras te pregunta qué tal el trabajo.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Relajarte",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Salir corriendo en calzoncillos",
+        "efectos": {
+          "salud": -10,
+          "dinero": 5
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "teleoperador",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "edad_sugerida": 68,
+      "nombre": "El Teleoperador",
+      "personaje": "teleoperador",
+      "texto": "Te llama un tipo muy amable con acento extranjero para decirte que has ganado un colchón ortopédico y solo necesita los números de tu tarjeta.",
+      "izquierda": {
+        "texto": "Dárselos porque hace tres días que no hablas con nadie",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Tenerle 40 minutos al teléfono contándole tu operación de vesícula",
+        "efectos": {
+          "cordura": 10,
+          "dinero": 5
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "ere_empresa",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El ERE de la Empresa",
+      "personaje": "rrhh",
+      "texto": "Te sustituyen por un chaval de 23 años que cobra la mitad y usa ChatGPT hasta para dar los buenos días.",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aceptar la indemnización y montar un bar",
+        "efectos": {
+          "dinero": -15,
+          "salud": -10
+        },
+        "hito_biografico": "Perdió su indemnización montando un bar sin clientes."
+      },
+      "derecha": {
+        "texto": "Demandar por despido improcedente",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "menopausia",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Menopausia",
+      "personaje": "pareja",
+      "texto": "Hace dos grados en la calle, vas en manga corta sudando y tu marido te pregunta si 'estás un poco sensible hoy'.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Respirar hondo y no matarle",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tirarle la cena por la ventana",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "imserso_benidorm",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "edad": [
+        60,
+        69
+      ],
+      "nombre": "El Viaje del IMSERSO",
+      "personaje": "coordinador_imserso",
+      "texto": "Te toca Benidorm en noviembre. El autobús huele a Reflex y el coordinador intenta animaros cantando canciones de Manolo Escobar.",
+      "izquierda": {
+        "texto": "Bailar pasodobles hasta las tres",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en la habitación viendo documentales de la Segunda Guerra Mundial",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "herencia_padres",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Herencia de tus Padres",
+      "personaje": "hermano",
+      "texto": "Tu hermano dice que el piso de la playa debería ser suyo porque él les llevaba al médico, aunque tú pagaste la caldera.",
+      "izquierda": {
+        "texto": "Dejárselo para no romper la familia",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "No volver a hablarle en lo que te queda de vida",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -15
+        },
+        "hito_biografico": "Rompió con su familia por un apartamento en Torrevieja."
+      },
+      "lote": 2
+    }
+  ]
+}

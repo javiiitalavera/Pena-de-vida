@@ -1,0 +1,145 @@
+{
+  "cartas": [
+    {
+      "id": "residencia_bingo",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "edad_sugerida": 82,
+      "nombre": "La Residencia",
+      "personaje": "vecino_residencia",
+      "texto": "Hoy hay bingo, pero el señor de al lado lleva dos horas sin pestañear y tiene un color tirando a berenjena.",
+      "izquierda": {
+        "texto": "Avisar a la enfermera",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cogerle el cartón porque le falta un número para línea",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "nieto_notario",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "edad_sugerida": 88,
+      "nombre": "Tu nieto",
+      "personaje": "nieto",
+      "texto": "Ha venido a verte a la residencia por primera vez en dos años. Trae un notario.",
+      "izquierda": {
+        "texto": "Firmar lo que sea para que te dé un abrazo",
+        "efectos": {
+          "vinculos": 15,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Fingir que no le reconoces y llamarle 'Stalin'",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "renovacion_carnet",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Renovación del Carnet",
+      "personaje": "medico_trafico",
+      "texto": "En el psicotécnico no distingues una señal de Stop de un árbol, pero el médico te dice que 'para ir al pueblo todavía vales'.",
+      "izquierda": {
+        "texto": "Seguir conduciendo a 40 por la autovía",
+        "efectos": {
+          "cordura": 10,
+          "salud": -15
+        },
+        "hito_biografico": "Condujo en dirección contraria por la A-1 sin inmutarse."
+      },
+      "derecha": {
+        "texto": "Entregar las llaves a tus hijos",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "pastillero",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Pastillero",
+      "personaje": "pastillero",
+      "texto": "Tienes catorce pastillas distintas para hoy. Una te baja la tensión, otra te la sube y otra te quita el dolor de estómago que te producen las dos primeras.",
+      "izquierda": {
+        "texto": "Tomártelas todas como un reloj",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dejar de tomarlas y sustituirlas por un vasito de vino",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "estafa_bizum",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Estafa del Hijo en Apuros",
+      "personaje": "estafador",
+      "texto": "Te llega un WhatsApp de un número desconocido: 'Hola, se me ha roto el móvil, hazme un Bizum de 1.800€ urgente'.",
+      "izquierda": {
+        "texto": "Hacerlo por si acaso",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 5
+        }
+      },
+      "derecha": {
+        "texto": "Contestar que a ti nunca te cayó bien",
+        "efectos": {
+          "dinero": 5,
+          "cordura": 10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "funeral_amigo",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Funeral de un Amigo",
+      "personaje": "cura",
+      "texto": "Es el cuarto entierro al que vas este año. Te das cuenta de que ya solo te queda gente que te cae regular.",
+      "izquierda": {
+        "texto": "Hacerte amigo del cura",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Empezar a planear tu propio funeral para joder a tus herederos",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

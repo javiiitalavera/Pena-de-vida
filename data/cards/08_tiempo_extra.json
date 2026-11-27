@@ -1,0 +1,75 @@
+{
+  "cartas": [
+    {
+      "id": "la_muerte",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "edad_sugerida": 96,
+      "nombre": "La Muerte",
+      "personaje": "muerte",
+      "texto": "Se sienta a los pies de tu cama, mira el reloj y te pregunta si de verdad hace falta alargar esto hasta los 100.",
+      "izquierda": {
+        "texto": "Pedirle cinco minutos más por puro cabezonería",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Preguntarle si hay Wi-Fi en el otro lado",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "periodista_local",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Periodista Local",
+      "personaje": "periodista",
+      "texto": "Viene a entrevistarte por ser la persona más vieja del barrio y te pregunta cuál es el secreto de tu longevidad.",
+      "izquierda": {
+        "texto": "Decir \"beber aceite de oliva y no casarse\"",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": 5
+        }
+      },
+      "derecha": {
+        "texto": "Decir \"rencor puro y sobrevivir a mis enemigos\"",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Atribuyó su longevidad al rencor en la prensa local."
+      },
+      "lote": 2
+    },
+    {
+      "id": "comida_triturada",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "La Comida Triturada",
+      "personaje": "auxiliar",
+      "texto": "Te traen un puré gris que huele a calcetín húmedo. La auxiliar te dice 'venga, cariñito, abre la boca' como si tuvieras dos años.",
+      "izquierda": {
+        "texto": "Comértelo resignado",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tirar la bandeja al suelo",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

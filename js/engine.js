@@ -1,0 +1,470 @@
+// Motor del juego. Sin DOM: se puede usar en el navegador y en Node (simulaciones, validador).
+import { aplicarGenero } from './text.js';
+
+export const LADOS = ['izquierda', 'derecha'];
+const EPS = 1e-9;
+
+// ---------- utilidades ----------
+
+export function parseRango(valor) {
+  if (Array.isArray(valor) && valor.length === 2) return [Number(valor[0]), Number(valor[1])];
+  const m = String(valor ?? '').match(/^\s*(\d+)\s*[-–—]\s*(\d+)\s*$/);
+  return m ? [Number(m[1]), Number(m[2])] : null;
+}
+
+// Rango de edad en el que puede salir una carta de etapa.
+// "edad": [60, 69] tiene prioridad sobre "etapa": "50-69".
+export function rangoCarta(carta) {
+  if (carta.tipo !== 'etapa') return null;
+  return parseRango(carta.edad) || parseRango(carta.etapa);
+}
+
+export function etapaDeEdad(config, anio) {
+  return config.etapas.find((e) => anio >= e.desde && anio <= e.hasta) || null;
+}
+
+export function cumpleCondiciones(carta, ctx) {
+  const c = carta.condiciones || {};
+  if (c.requiere_sexo && c.requiere_sexo !== ctx.sexo) return false;
+  if (c.requiere_rasgo?.length && !c.requiere_rasgo.includes(ctx.rasgo)) return false;
+  if (c.excluye_rasgo?.length && c.excluye_rasgo.includes(ctx.rasgo)) return false;
+  if (c.requiere_flags?.length && !c.requiere_flags.every((f) => ctx.flags.has(f))) return false;
+  if (c.excluye_flags?.length && c.excluye_flags.some((f) => ctx.flags.has(f))) return false;
+  return true;
+}
+
+// Las cartas que dependen de flags o rasgo son "alta" por defecto.
+export function prioridadDe(carta) {
+  const c = carta.condiciones || {};
+  if (c.prioridad) return c.prioridad;
+  if (c.requiere_flags?.length || c.requiere_rasgo?.length) return 'alta';
+  return 'normal';
+}
+
+function signoCumple(v, signo) {
+  if (!v) return false;
+  if (signo === 'positivo') return v > 0;
+  if (signo === 'negativo') return v < 0;
+  return true; // "ambos"
+}
+
+function redondear(v) {
+  return Math.sign(v) * Math.round(Math.abs(v));
+}
+
+function enteroEntre(rng, min, max) {
+  return min + Math.floor(rng() * (max - min + 1));
+}
+
+// ---------- partida ----------
+
+export class Partida {
+  constructor(datos, { sexo = 'M', rasgoId = null, comodinId = null, rng = Math.random } = {}) {
+    this.datos = datos;
+    this.config = datos.config;
+    this.rng = rng;
+    this.sexo = sexo;
+    this.rasgo = datos.rasgos.find((r) => r.id === rasgoId) || null;
+    this.comodin = datos.comodines.find((c) => c.id === comodinId) || null;
+    this.comodinUsado = false;
+
+    this.edad = 0;
+    this.pilares = {};
+    for (const p of this.config.pilares) this.pilares[p.id] = this.config.valor_inicial;
+    Object.assign(this.pilares, this.rasgo?.inicio || {});
+
+    this.flags = new Set(this.config.flags_iniciales || []);
+    this.usadas = new Set();
+    this.anclasDescartadas = new Set();
+    this.cola = [];
+    this.hitos = [];
+    this.historial = [];
+    this.carta = null;
+    this.invertida = false;
+    this.congelado = null; // { pilar, hasta }
+    this.fin = null;
+    this.eventos = [];
+    this.porId = new Map(datos.cartas.map((c) => [c.id, c]));
+  }
+
+  get anio() {
+    return Math.floor(this.edad + EPS);
+  }
+
+  ctx() {
+    return { sexo: this.sexo, rasgo: this.rasgo?.id ?? null, flags: this.flags };
+  }
+
+  reglas(tipo) {
+    return (this.rasgo?.reglas || []).filter((r) => r.tipo === tipo);
+  }
+
+  texto(t) {
+    return aplicarGenero(t, this.sexo);
+  }
+
+  sacarEventos() {
+    const e = this.eventos;
+    this.eventos = [];
+    return e;
+  }
+
+  // ---------- reparto de cartas ----------
+
+  anclasPendientes(anio) {
+    const ctx = this.ctx();
+    const lista = [];
+    for (const c of this.datos.cartas) {
+      if (c.tipo !== 'ancla' || this.usadas.has(c.id) || this.anclasDescartadas.has(c.id)) continue;
+      if (c.anio > anio) continue;
+      if (cumpleCondiciones(c, ctx)) lista.push(c);
+      else this.anclasDescartadas.add(c.id); // una ancla solo vale en su año exacto
+    }
+    return lista.sort((a, b) => a.anio - b.anio);
+  }
+
+  disponiblesEtapa(anio) {
+    const ctx = this.ctx();
+    return this.datos.cartas.filter((c) => {
+      if (c.tipo !== 'etapa' || this.usadas.has(c.id)) return false;
+      const r = rangoCarta(c);
+      return r && anio >= r[0] && anio <= r[1] && cumpleCondiciones(c, ctx);
+    });
+  }
+
+  pesoCarta(carta, anio) {
+    const pesos = this.config.pesos_prioridad || { alta: 3, normal: 1 };
+    let w = pesos[prioridadDe(carta)] ?? 1;
+    if (Number.isFinite(carta.edad_sugerida)) {
+      const d = Math.abs(anio - carta.edad_sugerida) / 2;
+      w *= 1 / (1 + d * d);
+    }
+    const r = rangoCarta(carta);
+    if (r && r[1] - anio <= 1) w *= 2; // que no se pierda si su rango se acaba
+    return w;
+  }
+
+  elegirPonderada(lista, anio) {
+    const pesos = lista.map((c) => this.pesoCarta(c, anio));
+    let t = this.rng() * pesos.reduce((a, b) => a + b, 0);
+    for (let i = 0; i < lista.length; i++) {
+      t -= pesos[i];
+      if (t <= 0) return lista[i];
+    }
+    return lista[lista.length - 1];
+  }
+
+  ponerCarta(carta) {
+    this.carta = carta;
+    this.invertida = false;
+    this.usadas.add(carta.id);
+    return carta;
+  }
+
+  siguienteCarta() {
+    this.invertida = false;
+    for (let guarda = 0; guarda < 1000 && !this.fin; guarda++) {
+      const y = this.anio;
+      const final = this.config.edad_final;
+      if (y >= final) {
+        const ultima = this.anclasPendientes(final).find((c) => c.anio === final);
+        if (ultima) return this.ponerCarta(ultima);
+        this.terminar({ tipo: 'centenario' });
+        return null;
+      }
+      const ancla = this.anclasPendientes(y)[0];
+      if (ancla) return this.ponerCarta(ancla);
+
+      this.cola.sort((a, b) => a.anio - b.anio);
+      while (this.cola.length && this.cola[0].anio <= y) {
+        const c = this.porId.get(this.cola.shift().id);
+        if (c && !this.usadas.has(c.id) && cumpleCondiciones(c, this.ctx())) return this.ponerCarta(c);
+      }
+
+      const pool = this.disponiblesEtapa(y);
+      if (pool.length) return this.ponerCarta(this.elegirPonderada(pool, y));
+
+      this.avanzarHasta(this.proximaOportunidad(y));
+    }
+    return null;
+  }
+
+  // Primer año futuro en el que podría salir algo.
+  proximaOportunidad(y) {
+    const ctx = this.ctx();
+    let min = this.config.edad_final;
+    for (const c of this.datos.cartas) {
+      if (this.usadas.has(c.id)) continue;
+      if (c.tipo === 'ancla' && !this.anclasDescartadas.has(c.id) && c.anio > y) min = Math.min(min, c.anio);
+      if (c.tipo === 'etapa' && cumpleCondiciones(c, ctx)) {
+        const r = rangoCarta(c);
+        if (r && r[0] > y) min = Math.min(min, r[0]);
+      }
+    }
+    for (const item of this.cola) if (item.anio > y) min = Math.min(min, item.anio);
+    return Math.max(min, y + 1);
+  }
+
+  // Cuánto avanza la edad tras una carta: depende de cuántas cartas quedan en la etapa.
+  // Con muchas cartas, ~cartas_por_anio; con pocas, se saltan años.
+  calcularPaso() {
+    const y = this.anio;
+    const etapa = etapaDeEdad(this.config, y);
+    if (!etapa) return 1;
+    const restantes = etapa.hasta + 1 - this.edad;
+    const ctx = this.ctx();
+    let k = 0;
+    for (const c of this.datos.cartas) {
+      if (c.tipo !== 'etapa' || this.usadas.has(c.id) || !cumpleCondiciones(c, ctx)) continue;
+      const r = rangoCarta(c);
+      if (r && r[1] >= y && r[0] <= etapa.hasta) k++;
+    }
+    const deseadas = Math.min(k, restantes * this.config.cartas_por_anio);
+    if (deseadas < 1) return restantes;
+    return (restantes / deseadas) * (0.8 + this.rng() * 0.4);
+  }
+
+  // Años (a, b] donde hay un ancla o una consecuencia programada: la edad se detiene ahí.
+  primerEventoEntre(a, b) {
+    const ctx = this.ctx();
+    let min = null;
+    const ver = (anio) => {
+      if (anio > a && anio <= b && (min === null || anio < min)) min = anio;
+    };
+    for (const c of this.datos.cartas) {
+      if (c.tipo === 'ancla' && !this.usadas.has(c.id) && !this.anclasDescartadas.has(c.id) && cumpleCondiciones(c, ctx)) ver(c.anio);
+    }
+    for (const item of this.cola) ver(item.anio);
+    return min;
+  }
+
+  avanzar() {
+    const antes = this.anio;
+    let nueva = this.edad + this.calcularPaso();
+    const corte = this.primerEventoEntre(antes, Math.floor(nueva + EPS));
+    if (corte !== null) nueva = corte;
+    this.avanzarHasta(nueva);
+  }
+
+  avanzarHasta(nueva) {
+    const antes = this.anio;
+    this.edad = Math.min(nueva, this.config.edad_final);
+    const despues = this.anio;
+    for (const regla of this.reglas('periodico')) {
+      const cada = regla.cada_anios;
+      for (let a = (Math.floor(antes / cada) + 1) * cada; a <= despues; a += cada) {
+        if (this.fin) return;
+        const deltas = this.aplicarDeltas(regla.efectos);
+        this.eventos.push({ tipo: 'periodico', anio: a, texto: regla.mensaje || this.rasgo.nombre, deltas });
+        this.comprobarMuerte();
+      }
+    }
+    if (this.congelado && this.edad + EPS >= this.congelado.hasta) {
+      this.eventos.push({ tipo: 'descongelado', pilar: this.congelado.pilar });
+      this.congelado = null;
+    }
+  }
+
+  // ---------- efectos ----------
+
+  // Devuelve los cambios reales (tras rasgo, inversión y congelación) sin aplicarlos.
+  calcularEfectos(efectos = {}, invertir = this.invertida) {
+    const base = {};
+    for (const [p, v] of Object.entries(efectos)) base[p] = invertir ? -v : v;
+
+    for (const r of this.reglas('anula')) {
+      if (signoCumple(base[r.si.pilar], r.si.signo) && signoCumple(base[r.anula.pilar], r.anula.signo)) {
+        base[r.anula.pilar] = 0;
+      }
+    }
+    const tags = this.carta?.tags || [];
+    for (const r of this.reglas('multiplicador')) {
+      if (r.tags?.length && !r.tags.some((t) => tags.includes(t))) continue;
+      for (const p of Object.keys(base)) {
+        if ((r.pilar === p || r.pilar === '*') && signoCumple(base[p], r.signo)) base[p] *= r.mult;
+      }
+    }
+    const out = {};
+    for (const [p, v] of Object.entries(base)) {
+      let d = redondear(v);
+      if (this.congelado && this.congelado.pilar === p) d = 0;
+      if (d !== 0) out[p] = d;
+    }
+    return out;
+  }
+
+  vistaPrevia(lado) {
+    if (!this.carta) return {};
+    return this.calcularEfectos(this.carta[lado]?.efectos);
+  }
+
+  aplicarDeltas(deltas) {
+    const aplicados = {};
+    for (const [p, v] of Object.entries(deltas)) {
+      if (!(p in this.pilares)) continue;
+      if (this.congelado && this.congelado.pilar === p) continue;
+      this.pilares[p] += v;
+      aplicados[p] = v;
+    }
+    return aplicados;
+  }
+
+  comprobarMuerte() {
+    if (this.fin) return;
+    let peor = null;
+    for (const p of this.config.pilares) {
+      const v = this.pilares[p.id];
+      let cand = null;
+      if (v <= 0) cand = { pilar: p.id, extremo: 0, exceso: -v };
+      else if (v >= 100) cand = { pilar: p.id, extremo: 100, exceso: v - 100 };
+      if (cand && (!peor || cand.exceso > peor.exceso)) peor = cand;
+    }
+    if (peor) this.terminar({ tipo: 'muerte', pilar: peor.pilar, extremo: peor.extremo });
+  }
+
+  terminar(causa) {
+    if (this.fin) return;
+    this.fin = { causa, anio: this.anio, pilares: { ...this.pilares } };
+    this.carta = null;
+  }
+
+  elegir(lado) {
+    const carta = this.carta;
+    if (!carta || this.fin) return null;
+    const op = carta[lado] || {};
+    const deltas = this.aplicarDeltas(this.calcularEfectos(op.efectos));
+
+    for (const f of op.remove_flags || []) this.flags.delete(f);
+    for (const f of op.add_flags || []) this.flags.add(f);
+
+    for (const e of op.encolar || []) {
+      const [min, max] = Array.isArray(e.en_anios) ? e.en_anios : [e.en_anios ?? 1, e.en_anios ?? 1];
+      this.cola.push({ id: e.id, anio: this.anio + enteroEntre(this.rng, min, max) });
+    }
+
+    const anio = this.anio;
+    for (const fuente of [carta, op]) {
+      if (fuente.hito_biografico) {
+        this.hitos.push({ anio, texto: this.texto(fuente.hito_biografico), peso: fuente.peso_hito ?? 1, carta: carta.id });
+      }
+    }
+    this.historial.push({ id: carta.id, lado, anio, deltas, invertida: this.invertida });
+    this.carta = null;
+    this.invertida = false;
+
+    this.comprobarMuerte();
+    if (!this.fin && op.fin) this.terminar({ tipo: op.fin === true ? 'centenario' : op.fin });
+    if (!this.fin) this.avanzar();
+    return { deltas };
+  }
+
+  // ---------- comodín ----------
+
+  puedeUsarComodin() {
+    return !!(this.comodin && !this.comodinUsado && !this.fin && this.carta);
+  }
+
+  usarComodin() {
+    if (!this.puedeUsarComodin()) return null;
+    const { accion, parametros = {} } = this.comodin;
+    this.comodinUsado = true;
+    switch (accion) {
+      case 'descartar': {
+        this.historial.push({ id: this.carta.id, lado: null, anio: this.anio, deltas: {}, comodin: this.comodin.id });
+        this.carta = null;
+        this.avanzar();
+        return { accion };
+      }
+      case 'invertir':
+        this.invertida = true;
+        return { accion };
+      case 'congelar': {
+        const { pilar, valor, anios } = parametros;
+        this.pilares[pilar] = valor;
+        this.congelado = { pilar, hasta: this.edad + anios };
+        return { accion };
+      }
+      case 'efecto_directo': {
+        const deltas = this.aplicarDeltas(parametros.efectos || {});
+        this.comprobarMuerte();
+        return { accion, deltas };
+      }
+      default:
+        this.comodinUsado = false;
+        return null;
+    }
+  }
+}
+
+// ---------- final de partida ----------
+
+function seleccionarHitos(hitos, max) {
+  if (hitos.length <= max) return [...hitos];
+  // Los de más peso primero; dentro del mismo peso, repartidos a lo largo de la vida.
+  const pesos = [...new Set(hitos.map((h) => h.peso))].sort((a, b) => b - a);
+  const elegidos = [];
+  for (const p of pesos) {
+    const grupo = hitos.filter((h) => h.peso === p);
+    const hueco = max - elegidos.length;
+    if (hueco <= 0) break;
+    if (grupo.length <= hueco) elegidos.push(...grupo);
+    else for (let i = 0; i < hueco; i++) elegidos.push(grupo[Math.round((i * (grupo.length - 1)) / Math.max(1, hueco - 1))]);
+  }
+  return elegidos.sort((a, b) => a.anio - b.anio);
+}
+
+export function construirNecrologia(partida) {
+  const { datos, fin, sexo } = partida;
+  const { causa, anio, pilares } = fin;
+  let entrada;
+  if (causa.tipo === 'muerte') entrada = datos.muertes[causa.pilar]?.[String(causa.extremo)];
+  else entrada = datos.muertes[causa.tipo];
+  entrada = entrada || { titulo: 'Causa desconocida', texto: '' };
+  const variante = (entrada.variantes || []).find((v) => anio <= (v.edad_max ?? Infinity) && anio >= (v.edad_min ?? 0));
+  const textoCausa = variante?.texto ?? entrada.texto;
+
+  const remate = (datos.remates || []).find((r) => {
+    if (r.causa && r.causa !== causa.tipo) return false;
+    const v = pilares[r.pilar];
+    return v >= (r.min ?? -Infinity) && v < (r.max ?? Infinity);
+  });
+
+  return {
+    edad: anio,
+    rango: `0 – ${anio} años`,
+    sexo,
+    centenario: causa.tipo === 'centenario',
+    causa,
+    titulo: aplicarGenero(entrada.titulo || '', sexo),
+    texto: aplicarGenero(textoCausa || '', sexo),
+    hitos: seleccionarHitos(partida.hitos, datos.config.hitos_max ?? 6),
+    remate: aplicarGenero(remate?.texto || '', sexo),
+    rasgo: partida.rasgo ? aplicarGenero(partida.rasgo.nombre, sexo) : null,
+    pilares,
+  };
+}
+
+export function evaluarDesbloqueos(datos, fin, desbloqueados) {
+  const ya = new Set(desbloqueados);
+  return datos.rasgos.filter((r) => {
+    const d = r.desbloqueo;
+    if (!d || d.tipo === 'inicial' || ya.has(r.id)) return false;
+    if (d.tipo === 'muerte') return fin.causa.tipo === 'muerte' && fin.causa.pilar === d.pilar && fin.causa.extremo === d.extremo;
+    if (d.tipo === 'centenario') return fin.causa.tipo === 'centenario';
+    return false;
+  });
+}
+
+export function rasgosDisponibles(datos, desbloqueados) {
+  const ya = new Set(desbloqueados);
+  return datos.rasgos.filter((r) => r.desbloqueo?.tipo === 'inicial' || ya.has(r.id));
+}
+
+export function draftRasgos(datos, desbloqueados, n = 3, rng = Math.random) {
+  const lista = [...rasgosDisponibles(datos, desbloqueados)];
+  for (let i = lista.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [lista[i], lista[j]] = [lista[j], lista[i]];
+  }
+  return lista.slice(0, n);
+}

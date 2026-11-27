@@ -1,0 +1,169 @@
+{
+  "cartas": [
+    {
+      "id": "comunion",
+      "tipo": "ancla",
+      "anio": 9,
+      "nombre": "La Comunión",
+      "personaje": "tio_pueblo",
+      "texto": "Llevas un traje de almirante que pica como el demonio, pero tu tío el del pueblo te acaba de dar un sobre muy gordo.",
+      "izquierda": {
+        "texto": "Esconder el sobre en el calcetín",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dárselo a tus padres \"para que te lo guarden\"",
+        "efectos": {
+          "dinero": -5,
+          "vinculos": 10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "raton_perez",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "edad_sugerida": 7,
+      "nombre": "El Ratón Pérez",
+      "personaje": "padre",
+      "texto": "Descubres a tu padre metiendo dos euros debajo de tu almohada en calzoncillos y con olor a cerveza.",
+      "izquierda": {
+        "texto": "Hacerte el dormido y subir la tarifa el próximo diente",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Montar un escándalo existencial",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "tio_cubata",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "edad_sugerida": 8,
+      "nombre": "Tu tío el gracioso",
+      "personaje": "tio",
+      "texto": "Te ofrece probar un sorbo de su cubata 'para que te hagas hombre' mientras tu madre no mira.",
+      "izquierda": {
+        "texto": "Beberlo",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Chivarte",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "profe_gimnasia_potro",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "edad_sugerida": 10,
+      "nombre": "El Profesor de Gimnasia",
+      "personaje": "profesor_gimnasia",
+      "texto": "Te obliga a saltar el potro delante de toda la clase. Lleva un chándal de 1994 y huele a tabaco.",
+      "izquierda": {
+        "texto": "Saltar y partirte la muñeca",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir un desmayo",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "cumple_parque_bolas",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Cumpleaños del Colegio",
+      "personaje": "cumpleanero",
+      "texto": "Han invitado a toda la clase menos a ti porque 'el parque de bolas tiene aforo limitado'.",
+      "izquierda": {
+        "texto": "Llorar en silencio en tu habitación",
+        "efectos": {
+          "cordura": -10,
+          "vinculos": -5
+        }
+      },
+      "derecha": {
+        "texto": "Rajarle las ruedas a la bici del cumpleañero",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Inició su historial delictivo por despecho en primaria."
+      },
+      "lote": 2
+    },
+    {
+      "id": "maton_patio",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Matón del Patio",
+      "personaje": "maton",
+      "texto": "Te pide el bocadillo de chorizo. Te saca dos cabezas y ya tiene bigote en cuarto de primaria.",
+      "izquierda": {
+        "texto": "Dárselo y sobrevivir",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Escupir dentro del pan antes de dárselo",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "dentista_aparato",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Dentista",
+      "personaje": "dentista",
+      "texto": "Dice que necesitas aparato dental durante cuatro años. Tu padre hace cuentas mentalmente y le da un tic en el ojo.",
+      "izquierda": {
+        "texto": "Ponértelo",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        }
+      },
+      "derecha": {
+        "texto": "Aceptar una sonrisa de película británica",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

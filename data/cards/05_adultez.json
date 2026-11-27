@@ -1,0 +1,214 @@
+{
+  "cartas": [
+    {
+      "id": "crisis_40",
+      "tipo": "ancla",
+      "anio": 40,
+      "nombre": "La Crisis de los 40",
+      "personaje": "espejo",
+      "texto": "Te miras al espejo, notas la barriga y sientes un impulso irrefrenable de comprarte una bici de carbono o hacerte un tatuaje tribal.",
+      "izquierda": {
+        "texto": "Comprar la bici y salir los domingos en licra",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        },
+        "hito_biografico": "Se convirtió en ciclista de domingo a los 40."
+      },
+      "derecha": {
+        "texto": "Aceptar la decadencia en el sofá",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "banco_hipoteca",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "edad_sugerida": 36,
+      "nombre": "El Banco",
+      "personaje": "director_banco",
+      "texto": "Te conceden la hipoteca a 30 años. El director te regala un bolígrafo de plástico mientras te mira como a un ganado bien cebado.",
+      "izquierda": {
+        "texto": "Firmar y asumir que trabajarás hasta los 75",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Alquilar una habitación con cuatro estudiantes de Erasmus",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "cunado_cripto",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "edad_sugerida": 44,
+      "nombre": "Tu Cuñado",
+      "personaje": "cunado",
+      "texto": "En la cena de Nochebuena te explica que las criptomonedas de un perro con gorro son el futuro y que eres un cobarde por no meter tus ahorros.",
+      "izquierda": {
+        "texto": "Meter 5.000€ para que se calle",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Explicarle qué es un esquema Ponzi",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "whatsapp_colegio",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Grupo de WhatsApp del Colegio",
+      "personaje": "grupo_whatsapp",
+      "texto": "Llevan 140 mensajes discutiendo si el regalo de la profesora debe ser un spa o una cesta de fruta ecológica.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Poner 20€ y silenciar el grupo un año",
+        "efectos": {
+          "dinero": -5,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Preguntar si nadie trabaja en este país",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "boda_mejor_amigo",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Boda de tu Mejor Amigo",
+      "personaje": "mejor_amigo",
+      "texto": "Se casa en una finca a tres horas en coche. El cubierto cuesta 250€ y la barra libre es de garrafón.",
+      "izquierda": {
+        "texto": "Ir y sonreír en las fotos",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir covid el día antes",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -15
+        },
+        "hito_biografico": "Fingió una enfermedad infecciosa para ahorrarse 250€."
+      },
+      "lote": 2
+    },
+    {
+      "id": "hacienda_dividendo",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Hacienda",
+      "personaje": "hacienda",
+      "texto": "Te llega una carta certificada. Resulta que en 2019 te olvidaste de declarar 42 euros de un dividendo y ahora les debes un riñón.",
+      "izquierda": {
+        "texto": "Pagar la multa sin rechistar",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Recurrir y meterte en un bucle burocrático de 4 años",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "divorcio",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Divorcio",
+      "personaje": "pareja",
+      "texto": "Tu pareja dice que 'la chispa se ha apagado'. Su abogado ya te ha mandado un burofax quedándose hasta con la Thermomix.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Luchar por la custodia de la Thermomix",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        },
+        "add_flags": [
+          "divorciado"
+        ],
+        "remove_flags": [
+          "casado"
+        ]
+      },
+      "derecha": {
+        "texto": "Firmar todo rápido y huir",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": -10
+        },
+        "add_flags": [
+          "divorciado"
+        ],
+        "remove_flags": [
+          "casado"
+        ]
+      },
+      "lote": 2
+    },
+    {
+      "id": "gimnasio",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Gimnasio",
+      "personaje": "gimnasio",
+      "texto": "Llevas pagando 60€ al mes desde enero y solo has ido dos veces: una a apuntarte y otra a preguntar cómo darte de baja.",
+      "izquierda": {
+        "texto": "Ir hoy aunque te dé un tirón",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Seguir pagando por si un día te da el venazo",
+        "efectos": {
+          "dinero": -10,
+          "salud": -5
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

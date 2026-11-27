@@ -1,0 +1,252 @@
+:root {
+  --fondo: #16140f;
+  --fondo-2: #211e17;
+  --tinta: #ece4d2;
+  --tinta-suave: #a59c88;
+  --papel: #efe6d2;
+  --papel-tinta: #1d1a14;
+  --acento: #c8a24a;
+  --peligro: #c4553f;
+  --linea: #3a352a;
+  --radio: 14px;
+  --carta: min(76vw, 320px, 34dvh);
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--sans);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+button { font: inherit; color: inherit; }
+
+#app { height: 100dvh; max-width: 520px; margin: 0 auto; position: relative; overflow: hidden; }
+
+.pantalla {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+}
+.pantalla.activa { display: flex; }
+.centro { margin: auto 0; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+
+.titulo { font-family: var(--serif); font-size: clamp(2.4rem, 11vw, 3.6rem); margin: 0; letter-spacing: -0.02em; }
+.subtitulo { margin: -8px 0 16px; color: var(--tinta-suave); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.8rem; }
+h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 0; }
+.ayuda, .stats { color: var(--tinta-suave); font-size: 0.9rem; margin: 0; }
+.enlace-discreto { color: var(--tinta-suave); font-size: 0.8rem; text-align: center; opacity: 0.6; }
+
+.btn {
+  border: 1px solid var(--linea);
+  background: var(--fondo-2);
+  padding: 14px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  min-width: 140px;
+}
+.btn:hover { border-color: var(--tinta-suave); }
+.btn.primario { background: var(--tinta); color: var(--fondo); border-color: var(--tinta); font-weight: 600; }
+.btn.secundario { background: transparent; }
+.btn:disabled { opacity: 0.35; cursor: default; }
+.fila-botones { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.lista-elecciones { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.eleccion {
+  text-align: left;
+  background: var(--fondo-2);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 16px;
+  cursor: pointer;
+}
+.eleccion:hover, .eleccion:focus-visible { border-color: var(--acento); outline: none; }
+.eleccion strong { display: block; font-family: var(--serif); font-size: 1.15rem; margin-bottom: 6px; }
+.eleccion span { display: block; font-size: 0.88rem; color: var(--tinta-suave); line-height: 1.4; }
+.eleccion .contra { color: #d79a8b; }
+
+/* ---------- juego ---------- */
+
+.barras { display: flex; justify-content: space-around; padding: 4px 0 8px; }
+.pilar { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 64px; position: relative; }
+.punto {
+  width: 0; height: 0; border-radius: 50%;
+  background: var(--tinta);
+  transition: width 0.15s, height 0.15s;
+  position: absolute; top: -2px;
+}
+.punto.p1 { width: 6px; height: 6px; }
+.punto.p2 { width: 10px; height: 10px; }
+.punto.p3 { width: 14px; height: 14px; }
+.tubo {
+  margin-top: 14px;
+  width: 26px; height: 48px;
+  border: 1.5px solid var(--tinta-suave);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: var(--fondo-2);
+}
+.relleno { position: absolute; left: 0; right: 0; bottom: 0; background: var(--tinta); transition: height 0.4s ease; }
+.pilar.peligro .relleno { background: var(--peligro); }
+.pilar.congelado .tubo { border-color: #7fa7c9; }
+.pilar.congelado .relleno { background: #7fa7c9; }
+.etiqueta { font-size: 0.72rem; color: var(--tinta-suave); letter-spacing: 0.04em; }
+.pilar .delta { position: absolute; top: -4px; font-size: 0.7rem; font-weight: 700; }
+
+.edad { display: flex; justify-content: center; align-items: baseline; gap: 10px; margin: 4px 0; }
+#edad-anio { font-family: var(--serif); font-size: 1.3rem; }
+.edad-etapa { color: var(--tinta-suave); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; }
+
+.carta-texto {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 4.2vw, 1.15rem);
+  line-height: 1.4;
+  text-align: center;
+  margin: 4px 0 10px;
+  min-height: 4.4em;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.mesa { display: flex; justify-content: center; perspective: 900px; }
+.carta {
+  width: var(--carta); height: var(--carta);
+  background: var(--papel);
+  border-radius: var(--radio);
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  will-change: transform;
+}
+.carta.arrastrando { cursor: grabbing; }
+.carta.volviendo { transition: transform 0.25s ease; }
+.carta.saliendo { transition: transform 0.3s ease-in, opacity 0.3s; opacity: 0; }
+.carta.entrando { animation: entrar 0.3s ease-out; }
+@keyframes entrar { from { transform: translateY(20px) scale(0.96); opacity: 0; } }
+
+.carta-imagen, .carta-imagen img, .placeholder { position: absolute; inset: 0; width: 100%; height: 100%; }
+.carta-imagen img { object-fit: cover; pointer-events: none; }
+.placeholder {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: calc(var(--carta) * 0.42);
+  color: hsl(var(--tono) 25% 30% / 0.55);
+  background: hsl(var(--tono) 30% 82%);
+}
+
+.carta-eleccion {
+  position: absolute; left: 0; right: 0; top: 0;
+  padding: 14px 16px 22px;
+  background: linear-gradient(rgba(16, 14, 10, 0.9), rgba(16, 14, 10, 0));
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  opacity: 0;
+  transition: opacity 0.12s;
+  pointer-events: none;
+}
+.carta-eleccion.izquierda { text-align: left; }
+.carta-eleccion.derecha { text-align: right; }
+.carta-eleccion.visible { opacity: 1; }
+.carta-sello {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%) rotate(-4deg);
+  border: 2px solid var(--peligro); color: var(--peligro);
+  background: rgba(239, 230, 210, 0.9);
+  padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
+}
+
+.carta-nombre { text-align: center; font-family: var(--serif); font-style: italic; color: var(--tinta-suave); margin: 10px 0 8px; }
+
+.opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.opcion {
+  background: transparent;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  cursor: pointer;
+  min-height: 3.4em;
+}
+.opcion[data-lado='izquierda'] { text-align: left; }
+.opcion[data-lado='izquierda']::before { content: '← '; color: var(--tinta-suave); }
+.opcion[data-lado='derecha'] { text-align: right; }
+.opcion[data-lado='derecha']::after { content: ' →'; color: var(--tinta-suave); }
+.opcion.marcada { border-color: var(--tinta); background: var(--fondo-2); }
+
+.pie-juego { margin-top: auto; padding-top: 10px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.btn.comodin { font-size: 0.85rem; padding: 10px 18px; }
+.debug { font-size: 0.7rem; color: var(--tinta-suave); font-family: ui-monospace, monospace; text-align: center; }
+
+.aviso-flotante {
+  position: absolute; left: 50%; top: 110px; transform: translateX(-50%);
+  background: var(--tinta); color: var(--fondo);
+  padding: 8px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+  white-space: nowrap; z-index: 5;
+}
+
+.dialogo {
+  border: 1px solid var(--linea); border-radius: var(--radio);
+  background: var(--fondo-2); color: var(--tinta);
+  max-width: min(90vw, 360px); padding: 20px; text-align: center;
+}
+.dialogo::backdrop { background: rgba(0, 0, 0, 0.6); }
+.dialogo h3 { font-family: var(--serif); margin: 0 0 8px; }
+.dialogo p { color: var(--tinta-suave); margin: 0 0 16px; }
+
+/* ---------- necrológica ---------- */
+
+#pantalla-necrologica { gap: 16px; align-items: center; }
+.necrologica {
+  background: var(--papel);
+  color: var(--papel-tinta);
+  font-family: var(--serif);
+  width: 100%;
+  padding: 24px 20px;
+  border: 3px double var(--papel-tinta);
+  outline: 6px solid var(--papel);
+  text-align: center;
+  margin-top: 8px;
+}
+.necrologica.centenario { border-color: #8a6d1f; }
+.necro-cabecera { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; margin: 0 0 12px; }
+.necro-cruz { font-size: 1.6rem; margin: 0; }
+.necro-rango { font-size: 2rem; margin: 4px 0 2px; }
+.necro-sub { font-style: italic; font-size: 0.9rem; margin: 0 0 16px; }
+.necro-seccion { border-top: 1px solid rgba(29, 26, 20, 0.35); padding-top: 12px; margin-top: 12px; }
+.necro-seccion h4 { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; margin: 0 0 8px; font-weight: normal; }
+.necro-causa { font-size: 1rem; line-height: 1.45; margin: 0; }
+.necro-hitos { list-style: none; padding: 0; margin: 0; text-align: left; font-size: 0.92rem; line-height: 1.4; }
+.necro-hitos li { display: grid; grid-template-columns: 3.4em 1fr; gap: 6px; margin-bottom: 6px; }
+.necro-hitos b { font-weight: normal; font-variant-numeric: tabular-nums; opacity: 0.7; }
+.necro-vacio { font-style: italic; opacity: 0.7; margin: 0; }
+.necro-remate { font-style: italic; font-size: 1rem; margin: 0; }
+.desbloqueos { text-align: center; color: var(--acento); font-size: 0.95rem; }
+.desbloqueos:empty { display: none; }
+
+.error-carga {
+  position: absolute; inset: 0; padding: 24px; background: var(--fondo);
+  display: flex; flex-direction: column; justify-content: center; gap: 12px; line-height: 1.5;
+}
+.error-carga code { background: var(--fondo-2); padding: 2px 6px; border-radius: 4px; }
+
+@media (max-height: 640px) {
+  :root { --carta: min(70vw, 240px, 30dvh); }
+  .tubo { height: 42px; }
+  .carta-texto { min-height: 4.4em; font-size: 0.98rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carta.volviendo, .carta.saliendo, .relleno { transition: none; }
+  .carta.entrando { animation: none; }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "muerte-subita",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "revisar": "node tools/revisar.mjs",
+    "servir": "python3 -m http.server 8000",
+    "test": "node tools/test-motor.mjs"
+  }
+}

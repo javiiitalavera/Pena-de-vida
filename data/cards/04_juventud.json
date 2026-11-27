@@ -1,0 +1,204 @@
+{
+  "cartas": [
+    {
+      "id": "casero_humedades",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "edad_sugerida": 21,
+      "nombre": "El Casero",
+      "personaje": "casero",
+      "texto": "El piso tiene humedades con forma de mapa de Europa, pero dice que si te quejas le sube el alquiler 200 euros al siguiente.",
+      "izquierda": {
+        "texto": "Pintar encima del moho y callar",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Irte a vivir con tus padres otra vez",
+        "efectos": {
+          "salud": 10,
+          "cordura": -15
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "rrhh_junior_senior",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "edad_sugerida": 26,
+      "nombre": "Recursos Humanos",
+      "personaje": "rrhh",
+      "texto": "Te ofrecen un puesto de 'Junior Senior Associate' por 1.100€ al mes y fruta gratis los martes.",
+      "izquierda": {
+        "texto": "Aceptar con una sonrisa",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Prenderle fuego a la papelera",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "pareja_bali",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "edad_sugerida": 28,
+      "nombre": "Tu Pareja",
+      "personaje": "pareja",
+      "texto": "Lleváis cuatro años juntos y te dice que 'necesita encontrarse a sí misma' en un retiro de yoga en Bali con su monitor de pilates.",
+      "izquierda": {
+        "texto": "Pagarle el vuelo para demostrar confianza",
+        "efectos": {
+          "dinero": -15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cambiar la cerradura mientras está en el aeropuerto",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "erasmus",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Beca Erasmus",
+      "personaje": "erasmus",
+      "texto": "Llevas seis meses en Polonia. No has pisado la facultad, pero hablas polaco fluido solo para pedir cerveza y kebab.",
+      "izquierda": {
+        "texto": "Volver a España con un hígado nuevo en lista de espera",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte allí a vivir del cuento",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        },
+        "hito_biografico": "Perdió un año académico y la dignidad en Cracovia."
+      },
+      "lote": 2
+    },
+    {
+      "id": "amigo_emprendedor",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Amigo Emprendedor",
+      "personaje": "amigo_emprendedor",
+      "texto": "Ha dejado el trabajo para montar una app que es 'como Uber, pero para pasear iguanas'. Necesita 3.000€ tuyos.",
+      "izquierda": {
+        "texto": "Invertir por amistad",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Decirle que es imbécil",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "entrevista_trabajo",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Entrevista de Trabajo",
+      "personaje": "entrevistador",
+      "texto": "Te preguntan 'dónde te ves dentro de cinco años'. Tienes ganas de contestar 'en un puente, si sigo cobrando esto'.",
+      "izquierda": {
+        "texto": "Soltar el discurso corporativo",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        },
+        "add_flags": [
+          "oficinista"
+        ]
+      },
+      "derecha": {
+        "texto": "Decir la verdad",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        },
+        "add_flags": [
+          "desempleado"
+        ]
+      },
+      "lote": 2
+    },
+    {
+      "id": "piso_compartido",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Piso Compartido",
+      "personaje": "companero_piso",
+      "texto": "Tu compañero de piso ha traído a su pareja a vivir 'solo unos días'. Llevan cuatro meses y no pagan la luz.",
+      "izquierda": {
+        "texto": "Cortar el Wi-Fi y cambiar la contraseña",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar la factura callado para evitar conflictos",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "test_embarazo",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Test de Embarazo",
+      "personaje": "test_embarazo",
+      "texto": "Han salido dos rayas. Tu pareja acaba de decir que 'va a bajar a por tabaco' y ni siquiera fuma.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Seguir adelante sola",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 15
+        },
+        "add_flags": [
+          "con_hijos"
+        ]
+      },
+      "derecha": {
+        "texto": "Interrumpirlo y bloquearle de todas partes",
+        "efectos": {
+          "dinero": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

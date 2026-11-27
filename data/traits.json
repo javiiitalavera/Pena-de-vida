@@ -1,0 +1,58 @@
+{
+  "_nota": "Rasgos pasivos. 'reglas' admite: multiplicador (pilar, signo, mult, tags opcional), anula (si/anula) y periodico (cada_anios, efectos). 'desbloqueo': inicial | muerte (pilar, extremo) | centenario.",
+  "rasgos": [
+    {
+      "id": "ciudadano_estandar",
+      "nombre": "Ciudadan{o/a} Estándar",
+      "ventaja": "Ninguna.",
+      "contrapartida": "Ninguna.",
+      "desbloqueo": { "tipo": "inicial" },
+      "reglas": []
+    },
+    {
+      "id": "hijo_de_papa",
+      "nombre": "Hij{o/a} de Papá",
+      "ventaja": "Empiezas con Dinero a 80 y las pérdidas de Dinero se reducen a la mitad.",
+      "contrapartida": "Las pérdidas de Cordura te afectan el doble.",
+      "desbloqueo": { "tipo": "muerte", "pilar": "dinero", "extremo": 0, "texto": "Morir por Dinero a 0" },
+      "inicio": { "dinero": 80 },
+      "reglas": [
+        { "tipo": "multiplicador", "pilar": "dinero", "signo": "negativo", "mult": 0.5 },
+        { "tipo": "multiplicador", "pilar": "cordura", "signo": "negativo", "mult": 2 }
+      ]
+    },
+    {
+      "id": "psicopata_funcional",
+      "nombre": "Psicópata Funcional",
+      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Cordura.",
+      "contrapartida": "Las subidas de Vínculos se reducen a la mitad.",
+      "desbloqueo": { "tipo": "muerte", "pilar": "vinculos", "extremo": 0, "texto": "Morir por Vínculos a 0" },
+      "reglas": [
+        { "tipo": "anula", "si": { "pilar": "vinculos", "signo": "negativo" }, "anula": { "pilar": "cordura", "signo": "negativo" } },
+        { "tipo": "multiplicador", "pilar": "vinculos", "signo": "positivo", "mult": 0.5 }
+      ]
+    },
+    {
+      "id": "genetica_cucaracha",
+      "nombre": "Genética de Cucaracha",
+      "ventaja": "Las pérdidas de Salud se reducen a la mitad.",
+      "contrapartida": "Las subidas de Salud también se reducen a la mitad.",
+      "desbloqueo": { "tipo": "muerte", "pilar": "salud", "extremo": 0, "texto": "Morir por Salud a 0" },
+      "reglas": [
+        { "tipo": "multiplicador", "pilar": "salud", "signo": "ambos", "mult": 0.5 }
+      ]
+    },
+    {
+      "id": "sindrome_impostor",
+      "nombre": "Síndrome del Impostor",
+      "ventaja": "Ganas un 50% más de Dinero y Vínculos.",
+      "contrapartida": "Cada 5 años pierdes 10 de Cordura.",
+      "desbloqueo": { "tipo": "muerte", "pilar": "cordura", "extremo": 100, "texto": "Morir por Cordura a 100" },
+      "reglas": [
+        { "tipo": "multiplicador", "pilar": "dinero", "signo": "positivo", "mult": 1.5 },
+        { "tipo": "multiplicador", "pilar": "vinculos", "signo": "positivo", "mult": 1.5 },
+        { "tipo": "periodico", "cada_anios": 5, "efectos": { "cordura": -10 }, "mensaje": "Síndrome del Impostor" }
+      ]
+    }
+  ]
+}

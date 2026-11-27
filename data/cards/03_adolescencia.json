@@ -1,0 +1,154 @@
+{
+  "cartas": [
+    {
+      "id": "licor_melocoton",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "edad_sugerida": 15,
+      "nombre": "Tu mejor amigo",
+      "personaje": "mejor_amigo",
+      "texto": "Ha encontrado una botella de licor de melocotón caducada en el trastero de su abuelo. Quiere bebérsela en un descampado.",
+      "izquierda": {
+        "texto": "A fondo",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en casa jugando a la consola",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "orientador",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "edad_sugerida": 17,
+      "nombre": "El Orientador del Instituto",
+      "personaje": "orientador",
+      "texto": "Te dice que tienes 'un perfil muy polivalente' mientras mira tus notas con la cara de quien acaba de atropellar a un perro.",
+      "izquierda": {
+        "texto": "Estudiar una carrera sin salidas pero 'vocacional'",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Meterte a algo que odias pero da dinero",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "regla_educacion_fisica",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "La Regla en Educación Física",
+      "personaje": "profesor_gimnasia",
+      "texto": "Llevas pantalón blanco, te acaba de bajar y el profesor dice que el dolor menstrual 'se pasa corriendo'.",
+      "condiciones": {
+        "requiere_sexo": "F"
+      },
+      "izquierda": {
+        "texto": "Correr el test de Cooper",
+        "efectos": {
+          "salud": -10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir una apendicitis y acabar en urgencias",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "vestuario",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "El Vestuario",
+      "personaje": "companeros_clase",
+      "texto": "Alguien ha escondido tu ropa mientras te duchabas y ha abierto la puerta del pasillo.",
+      "condiciones": {
+        "requiere_sexo": "M"
+      },
+      "izquierda": {
+        "texto": "Salir en toalla con dignidad estoica",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte encerrado hasta que cierre el instituto",
+        "efectos": {
+          "salud": -5,
+          "cordura": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "primer_amor",
+      "tipo": "etapa",
+      "etapa": "12-17",
+      "nombre": "Tu Primer Amor",
+      "personaje": "primer_amor",
+      "texto": "Te dice que 'eres muy maj{o/a}' pero que prefiere salir con un repetidor de 19 años que tiene una moto sin tubo de escape.",
+      "izquierda": {
+        "texto": "Escribir poesía oscura en un cuaderno",
+        "efectos": {
+          "cordura": -10,
+          "salud": 5
+        }
+      },
+      "derecha": {
+        "texto": "Empezar a fumar a escondidas para parecer interesante",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        },
+        "add_flags": [
+          "fumador"
+        ]
+      },
+      "lote": 2
+    },
+    {
+      "id": "selectividad",
+      "tipo": "ancla",
+      "anio": 18,
+      "nombre": "El Examen de Selectividad",
+      "personaje": "companero_examen",
+      "texto": "No te sabes ni una pregunta de Historia, pero el de al lado tiene la letra muy grande y buena caligrafía.",
+      "izquierda": {
+        "texto": "Copiar sin pudor",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Entregar en blanco y hacerte influencer",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Entregó la Selectividad en blanco por principios."
+      },
+      "lote": 2
+    }
+  ]
+}

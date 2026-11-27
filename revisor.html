@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisor de cartas</title>
+  <link rel="stylesheet" href="css/revisor.css">
+</head>
+<body>
+  <header class="cab">
+    <h1>Revisor de cartas</h1>
+    <a href="index.html">← Volver al juego</a>
+  </header>
+  <nav class="pestanas" id="pestanas">
+    <button data-tab="resumen" class="activa">Resumen</button>
+    <button data-tab="avisos">Avisos</button>
+    <button data-tab="cartas">Cartas</button>
+    <button data-tab="simular">Simular</button>
+    <button data-tab="imagenes">Imágenes</button>
+  </nav>
+  <main>
+    <section id="tab-resumen" class="tab activa"></section>
+    <section id="tab-avisos" class="tab"></section>
+    <section id="tab-cartas" class="tab">
+      <div class="filtros">
+        <select id="f-etapa"><option value="">Todas las etapas</option></select>
+        <select id="f-sexo"><option value="M">Leer como hombre</option><option value="F">Leer como mujer</option></select>
+        <label><input type="checkbox" id="f-avisos"> Solo con avisos</label>
+        <input type="search" id="f-texto" placeholder="Buscar…">
+      </div>
+      <div id="lista-cartas"></div>
+    </section>
+    <section id="tab-simular" class="tab">
+      <p class="nota">Juega miles de partidas automáticas. <b>Prudente</b> evita acercarse a 0 y 100; <b>azar</b> elige a ciegas. Un jugador real queda entre ambos.</p>
+      <div class="filtros">
+        <select id="s-estrategia"><option value="prudente">Prudente</option><option value="azar">Azar</option></select>
+        <select id="s-rasgo"><option value="azar">Rasgo al azar</option></select>
+        <button id="s-lanzar">Simular 2000 partidas</button>
+      </div>
+      <div id="s-resultado"></div>
+    </section>
+    <section id="tab-imagenes" class="tab"></section>
+  </main>
+  <script type="module" src="js/revisor.js"></script>
+</body>
+</html>

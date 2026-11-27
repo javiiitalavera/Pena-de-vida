@@ -1,0 +1,144 @@
+{
+  "cartas": [
+    {
+      "id": "obstetra",
+      "tipo": "ancla",
+      "anio": 0,
+      "nombre": "El Obstetra",
+      "personaje": "obstetra",
+      "texto": "Tienes el cordón umbilical rodeándote el cuello. Tu padre acaba de desmayarse y el médico tiene prisa porque juega el Madrid.",
+      "izquierda": {
+        "texto": "Llorar con fuerza",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte morado un rato a ver qué pasa",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "pediatra_vacunas",
+      "tipo": "ancla",
+      "anio": 1,
+      "nombre": "El Pediatra",
+      "personaje": "pediatra",
+      "texto": "Te va a poner tres vacunas seguidas. Tus padres tienen cara de haber leído demasiados foros de internet esta semana.",
+      "izquierda": {
+        "texto": "Dejarte pinchar",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pataleo nivel exorcista",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 5
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "enchufe",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "edad_sugerida": 2,
+      "nombre": "El Enchufe",
+      "personaje": "padres",
+      "texto": "Hay un tenedor en el suelo y dos agujeros muy interesantes en la pared. Tus padres están discutiendo sobre quién se dejó la luz del pasillo encendida.",
+      "izquierda": {
+        "texto": "Meter el tenedor",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Llorar sin motivo",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 1
+    },
+    {
+      "id": "abuela_anis",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "La Abuela",
+      "personaje": "abuela",
+      "texto": "Insiste en mojar tu chupete en anís 'para que duermas del tirón', como hacía con tu padre en el 74.",
+      "izquierda": {
+        "texto": "Chuparlo con entusiasmo",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        },
+        "hito_biografico": "Desarrolló tolerancia al alcohol antes que el habla."
+      },
+      "derecha": {
+        "texto": "Escupírselo en el ojo",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "perro_familia",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Perro de la Familia",
+      "personaje": "perro",
+      "texto": "Te está mirando fijamente mientras le tiras de las orejas. Lleva un rato enseñando los dientes y nadie está mirando.",
+      "izquierda": {
+        "texto": "Seguir tirando",
+        "efectos": {
+          "salud": -15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Darle tu galleta",
+        "efectos": {
+          "vinculos": 10,
+          "salud": 5
+        }
+      },
+      "lote": 2
+    },
+    {
+      "id": "guarderia_plastilina",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "La Guardería",
+      "personaje": "nino_mocos",
+      "texto": "Un niño con mocos verdes hasta la barbilla te ofrece un trozo de plastilina mordida.",
+      "izquierda": {
+        "texto": "Comértela para reforzar el sistema inmune",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Empujarle contra las colchonetas",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 2
+    }
+  ]
+}

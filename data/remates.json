@@ -1,0 +1,10 @@
+{
+  "_nota": "Remate final de la necrológica. Gana el primero que encaje: pilar en [min, max). 'causa' opcional (muerte | centenario).",
+  "remates": [
+    { "causa": "centenario", "pilar": "dinero", "min": 0, "max": 101, "texto": "[PLACEHOLDER] Remate para quien llega a los 100." },
+    { "pilar": "dinero", "min": -1000, "max": 20, "texto": "[PLACEHOLDER] Remate con dinero muy bajo." },
+    { "pilar": "dinero", "min": 20, "max": 45, "texto": "Valoración de Hacienda: Irrelevante." },
+    { "pilar": "dinero", "min": 45, "max": 70, "texto": "[PLACEHOLDER] Remate con dinero medio." },
+    { "pilar": "dinero", "min": 70, "max": 1000, "texto": "[PLACEHOLDER] Remate con dinero muy alto." }
+  ]
+}

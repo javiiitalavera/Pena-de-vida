@@ -1,0 +1,9 @@
+{
+  "_nota": "Comodines de un solo uso. 'accion': descartar | invertir | congelar (pilar, valor, anios) | efecto_directo (efectos).",
+  "comodines": [
+    { "id": "bomba_humo", "nombre": "Bomba de humo", "descripcion": "Descarta la carta actual sin aplicar ningún efecto.", "accion": "descartar" },
+    { "id": "orfidal", "nombre": "Orfidal", "descripcion": "Congela la Cordura en 50 durante 5 años.", "accion": "congelar", "parametros": { "pilar": "cordura", "valor": 50, "anios": 5 } },
+    { "id": "llamar_contacto", "nombre": "Llamar a un contacto", "descripcion": "+25 Dinero, −25 Vínculos al instante.", "accion": "efecto_directo", "parametros": { "efectos": { "dinero": 25, "vinculos": -25 } } },
+    { "id": "segunda_opinion", "nombre": "Segunda opinión", "descripcion": "Invierte los efectos de la carta actual.", "accion": "invertir" }
+  ]
+}
