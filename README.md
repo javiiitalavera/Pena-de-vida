@@ -90,13 +90,13 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 |---|---|
 | `id` | Único, en minúsculas y con `_`. Es también el nombre de su imagen. |
 | `tipo` | `ancla` (sale en un año exacto, con `"anio": 18`), `etapa` (sale al azar dentro de su etapa) o `estado` (solo sale si otra carta la encola). |
-| `etapa` | `0-3`, `4-11`, `12-17`, `18-29`, `30-49`, `50-69`, `70-89`, `90-99`. |
+| `etapa` | `0-3`, `4-11`, `12-17`, `18-29`, `30-49`, `50-69`, `70-89`, `90-99`, o un rango que abarque varias: `18-49`. |
 | `edad` | Opcional, estrecha el rango dentro de la etapa: `[60, 69]`. |
 | `edad_sugerida` | La carta tiende a salir cerca de esa edad, sin estar fijada. |
 | `personaje` | Id de personaje para reutilizar la misma imagen en varias cartas. |
 | `condiciones` | Filtros: sexo, rasgo, flags. Las cartas con `requiere_flags` o `requiere_rasgo` tienen prioridad alta por defecto. |
 | `hito_biografico` | Frase para la necrológica si se elige esa opción. Admite `peso_hito` (más alto = más relevante). |
-| `add_flags` / `remove_flags` | Cambian el estado vital (casado, oficinista, con_hijos…). |
+| `add_flags` / `remove_flags` | Cambian el estado vital (casado, oficinista, con_hijos…). Los flags de un mismo grupo de `config.json → grupos_flags` se excluyen entre sí: al hacerte funcionario dejas de ser oficinista sin tener que escribirlo. |
 | `fin` | En la carta del año 100: `"fin": "centenario"` termina la partida. |
 | `lote` | Número de lote en el que llegó la carta (para seguimiento). |
 
