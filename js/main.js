@@ -125,7 +125,9 @@ function montarJuego() {
       const d = document.createElement('div');
       d.className = 'pilar';
       d.dataset.pilar = p.id;
-      d.innerHTML = `<span class="punto"></span><div class="tubo"><div class="relleno"></div></div><span class="etiqueta">${escapar(p.nombre)}</span>`;
+      d.title = p.nombre;
+      d.setAttribute('aria-label', p.nombre);
+      d.innerHTML = `<span class="punto"></span><div class="tubo"><div class="relleno"></div></div><span class="etiqueta">${icono(p.icono || p.id)}</span>`;
       return d;
     }),
   );
@@ -144,7 +146,7 @@ function pintarBarras() {
     el.querySelector('.relleno').style.height = `${Math.max(0, Math.min(100, v))}%`;
     el.classList.toggle('peligro', v <= 15 || v >= 85);
     el.classList.toggle('congelado', partida.congelado?.pilar === id);
-    el.title = DEBUG ? `${id}: ${v}` : '';
+    el.title = DEBUG ? `${el.getAttribute('aria-label')}: ${v}` : el.getAttribute('aria-label');
   }
   const y = partida.anio;
   $('edad-anio').textContent = `Año ${y}`;

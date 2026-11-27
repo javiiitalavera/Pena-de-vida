@@ -3,19 +3,23 @@
   "pilares": [
     {
       "id": "salud",
-      "nombre": "Salud"
+      "nombre": "Salud",
+      "icono": "salud"
     },
     {
       "id": "dinero",
-      "nombre": "Dinero"
+      "nombre": "Dinero",
+      "icono": "dinero"
     },
     {
       "id": "cordura",
-      "nombre": "Cordura"
+      "nombre": "Cordura",
+      "icono": "cordura"
     },
     {
       "id": "vinculos",
-      "nombre": "Vínculos"
+      "nombre": "Vínculos",
+      "icono": "vinculos"
     }
   ],
   "valor_inicial": 50,

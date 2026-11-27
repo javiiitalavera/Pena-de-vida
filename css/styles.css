@@ -99,7 +99,10 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .pilar.peligro .relleno { background: var(--peligro); }
 .pilar.congelado .tubo { border-color: #7fa7c9; }
 .pilar.congelado .relleno { background: #7fa7c9; }
-.etiqueta { font-size: 0.72rem; color: var(--tinta-suave); letter-spacing: 0.04em; }
+.etiqueta { color: var(--tinta-suave); line-height: 0; transition: color 0.3s; }
+.etiqueta .icono { width: 24px; height: 24px; }
+.pilar.peligro .etiqueta { color: var(--peligro); }
+.pilar.congelado .etiqueta { color: #7fa7c9; }
 .pilar .delta { position: absolute; top: -4px; font-size: 0.7rem; font-weight: 700; }
 
 .edad { display: flex; justify-content: center; align-items: baseline; gap: 10px; margin: 4px 0; }
