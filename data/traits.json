@@ -42,7 +42,7 @@
     {
       "id": "psicopata_funcional",
       "nombre": "Psicópata Funcional",
-      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Cordura.",
+      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Cordura, y ganas un 20% más de Dinero.",
       "contrapartida": "Las subidas de Vínculos se reducen un 25%.",
       "desbloqueo": {
         "tipo": "muerte",
@@ -66,14 +66,20 @@
           "pilar": "vinculos",
           "signo": "positivo",
           "mult": 0.75
+        },
+        {
+          "tipo": "multiplicador",
+          "pilar": "dinero",
+          "signo": "positivo",
+          "mult": 1.2
         }
       ]
     },
     {
       "id": "genetica_de_cucaracha",
       "nombre": "Genética de Cucaracha",
-      "ventaja": "Las pérdidas de Salud se reducen un 30%.",
-      "contrapartida": "Las subidas de Salud se reducen a la mitad.",
+      "ventaja": "Las pérdidas de Salud se reducen un 35%.",
+      "contrapartida": "Las subidas de Salud se reducen un 30%.",
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "salud",
@@ -84,13 +90,13 @@
           "tipo": "multiplicador",
           "pilar": "salud",
           "signo": "negativo",
-          "mult": 0.7
+          "mult": 0.65
         },
         {
           "tipo": "multiplicador",
           "pilar": "salud",
           "signo": "positivo",
-          "mult": 0.5
+          "mult": 0.7
         }
       ]
     },

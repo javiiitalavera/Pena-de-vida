@@ -53,7 +53,7 @@ p=new Partida(datos,{sexo:'M'}); p.carta=p.porId.get('boda'); p.elegir('izquierd
 p.carta=p.porId.get('divorcio'); p.elegir('izquierda'); assert(p.flags.has('divorciado')&&!p.flags.has('casado'),'divorcio: divorciado');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?.id==='centenario','carta del año 100'); p.elegir('derecha'); assert(p.fin?.causa.tipo==='centenario','la carta final termina la partida');
 const nec=construirNecrologia(p); assert(nec.remates.length===3 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario: '+nec.remates.length);
-p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfectos({salud:-10}); const e2=p.calcularEfectos({salud:10}); assert(e.salud===-7&&e2.salud===5,'cucaracha pérdidas x0.7, ganancias x0.5');
+p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfectos({salud:-10}); const e2=p.calcularEfectos({salud:10}); assert(e.salud===-7&&e2.salud===7,'cucaracha pérdidas x0.65 (−6.5→−7), ganancias x0.7');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilares.dinero=105; p.comprobarMuerte(); assert(construirNecrologia(p).texto.includes('atragantada'),'muerte infantil por dinero 100, en femenino');
 // desbloqueo por cualquier extremo
 { const nuevos=evaluarDesbloqueos(datos,{causa:{tipo:'muerte',pilar:'cordura',extremo:0}},[]); assert(nuevos.some(r=>r.id==='sindrome_del_impostor'),'impostor se desbloquea también con Cordura a 0'); }
@@ -65,3 +65,5 @@ p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilare
   const nv=evaluarDesbloqueos(datos,{anio:20,causa:{tipo:'muerte',pilar:'vinculos',extremo:100}},[]).map(x=>x.id); assert(nv.includes('segunda_opinion'),'segunda opinión al morir por una barra al 100'); }
 p=new Partida(datos,{sexo:'M',rasgoId:'viejo_rencoroso'}); assert(p.pilares.salud===35&&p.pilares.cordura===65,'viejo rencoroso empieza 35/65');
 p.carta={tags:[]}; e=p.calcularEfectos({vinculos:-10,dinero:5}); assert(e.salud===5,'bajar vínculos da +5 salud');
+p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); p.carta={tags:[]}; e=p.calcularEfectos({dinero:10}); assert(e.dinero===12,'psicópata gana un 20% más de dinero');
+assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM desde los 18');

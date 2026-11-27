@@ -431,7 +431,7 @@
     {
       "id": "curso_inem",
       "tipo": "etapa",
-      "etapa": "30-49",
+      "etapa": "18-49",
       "nombre": "El Curso del INEM",
       "personaje": "profesor_inem",
       "texto": "Te obligan a hacer un curso de 'Ofimática Básica y Mindfulness' para no perder el subsidio. El profesor no sabe abrir un PDF.",
