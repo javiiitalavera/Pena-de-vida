@@ -238,3 +238,9 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   .carta.volviendo, .carta.saliendo, .relleno { transition: none; }
   .carta.entrando { animation: none; }
 }
+
+.acciones-juego { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px; }
+#ajustes form { display: grid; width: min(64vw, 260px); gap: 12px; }
+#ajustes label { display: flex; justify-content: space-between; }
+#ajustes output { font-variant-numeric: tabular-nums; color: var(--tinta-suave); }
+#ajustes input { width: 100%; accent-color: var(--tinta); }

@@ -16,6 +16,7 @@
         <p class="subtitulo">Año 0 – Año 100</p>
         <button class="btn primario" id="btn-continuar" hidden>Continuar vida</button>
         <button class="btn" id="btn-nueva">Nueva vida</button>
+        <button class="btn secundario" data-ajustes>Ajustes</button>
         <p class="stats" id="stats-inicio"></p>
       </div>
       <a class="enlace-discreto" href="revisor.html">Revisor de cartas</a>
@@ -65,7 +66,7 @@
       <p class="carta-nombre" id="carta-nombre"></p>
       <p class="pista" id="pista" hidden>← Desliza la carta para decidir →</p>
       <footer class="pie-juego">
-        <button class="btn comodin" id="btn-comodin"></button>
+        <div class="acciones-juego"><button class="btn comodin" id="btn-comodin"></button><button class="btn secundario" data-ajustes>Ajustes</button></div>
         <span class="debug" id="debug" hidden></span>
       </footer>
       <div class="aviso-flotante" id="aviso" hidden></div>
@@ -76,6 +77,17 @@
       <div class="desbloqueos" id="desbloqueos"></div>
       <button class="btn primario" id="btn-otra">Volver a empezar</button>
     </section>
+
+    <dialog id="ajustes" class="dialogo" aria-labelledby="titulo-ajustes">
+      <form method="dialog">
+        <h3 id="titulo-ajustes">Ajustes</h3>
+        <label for="vol-musica">Música <output id="nivel-musica" for="vol-musica"></output></label>
+        <input id="vol-musica" type="range" min="0" max="100">
+        <label for="vol-efectos">Efectos <output id="nivel-efectos" for="vol-efectos"></output></label>
+        <input id="vol-efectos" type="range" min="0" max="100">
+        <button class="btn">Cerrar</button>
+      </form>
+    </dialog>
 
     <dialog id="dialogo-comodin" class="dialogo">
       <h3 id="dlg-nombre"></h3>
