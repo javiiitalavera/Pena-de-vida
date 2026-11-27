@@ -73,8 +73,8 @@
       "tipo": "etapa",
       "etapa": "12-17",
       "nombre": "El Pacto del Descampado",
-      "personaje": "santi",
-      "texto": "Santi, tu mejor amigo, ha robado dos latas de cerveza caliente del garaje de su padre y te propone beberlas detrás del instituto.",
+      "personaje": "amigo_descampado",
+      "texto": "Tu mejor amigo ha robado dos latas de cerveza caliente del garaje de su padre y te propone beberlas detrás del instituto.",
       "izquierda": {
         "texto": "Beber a medias",
         "efectos": {
@@ -82,7 +82,7 @@
           "vinculos": 10
         },
         "add_flags": [
-          "amigo_santi"
+          "amigo_descampado"
         ]
       },
       "derecha": {
@@ -92,21 +92,21 @@
           "vinculos": -10
         },
         "add_flags": [
-          "enemigo_santi"
+          "enemigo_descampado"
         ]
       },
       "lote": 16
     },
     {
-      "id": "negocio_santi",
+      "id": "empanadas_gourmet",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "El Negocio de Santi",
-      "personaje": "santi",
-      "texto": "Santi reaparece tras diez años sin llamarte. Lleva un polo con el cuello levantado y te pide 3.000€ para montar 'una franquicia de empanadas gourmet'.",
+      "nombre": "Las Empanadas Gourmet",
+      "personaje": "amigo_descampado",
+      "texto": "Tu amigo del descampado reaparece tras diez años sin llamarte. Lleva un polo con el cuello levantado y te pide 3.000€ para montar 'una franquicia de empanadas gourmet'.",
       "condiciones": {
         "requiere_flags": [
-          "amigo_santi"
+          "amigo_descampado"
         ]
       },
       "izquierda": {
@@ -116,7 +116,7 @@
           "vinculos": 10
         },
         "add_flags": [
-          "santi_moroso"
+          "amigo_moroso"
         ]
       },
       "derecha": {
@@ -129,15 +129,15 @@
       "lote": 16
     },
     {
-      "id": "inspector_santi",
+      "id": "inspector_descampado",
       "tipo": "etapa",
       "etapa": "30-49",
       "nombre": "El Inspector de Hacienda",
-      "personaje": "santi",
-      "texto": "Te cae una inspección rutinaria. Cuando levantas la vista, el técnico que te pide las facturas de hace cuatro años es Santi, el del descampado. Sonríe.",
+      "personaje": "amigo_descampado",
+      "texto": "Te cae una inspección rutinaria. Cuando levantas la vista, el técnico que te pide las facturas de hace cuatro años es tu amigo del descampado. Sonríe.",
       "condiciones": {
         "requiere_flags": [
-          "enemigo_santi"
+          "enemigo_descampado"
         ]
       },
       "izquierda": {
@@ -162,11 +162,11 @@
       "tipo": "etapa",
       "etapa": "60-79",
       "nombre": "La Empanada de Oro",
-      "personaje": "santi",
-      "texto": "Te cruzas con Santi por la calle. Conduce un Mercedes nuevo, te abraza y dice que 'un día de estos' te devuelve los 3.000€.",
+      "personaje": "amigo_descampado",
+      "texto": "Te cruzas con tu amigo del descampado por la calle. Conduce un Mercedes nuevo, te abraza y dice que 'un día de estos' te devuelve los 3.000€.",
       "condiciones": {
         "requiere_flags": [
-          "santi_moroso"
+          "amigo_moroso"
         ]
       },
       "izquierda": {
@@ -191,8 +191,8 @@
       "tipo": "etapa",
       "etapa": "18-29",
       "nombre": "El Primer Jefe",
-      "personaje": "don_ernesto",
-      "texto": "Don Ernesto te da una palmada en la espalda y dice que 'aquí somos una familia', justo antes de pedirte que te quedes sin cobrar hasta las diez.",
+      "personaje": "primer_jefe",
+      "texto": "Tu primer jefe te da una palmada en la espalda y dice que 'aquí somos una familia', justo antes de pedirte que te quedes sin cobrar hasta las diez.",
       "izquierda": {
         "texto": "Quedarte y sonreír",
         "efectos": {
@@ -200,7 +200,7 @@
           "salud": -10
         },
         "add_flags": [
-          "ernesto_sumiso"
+          "jefe_sumiso"
         ]
       },
       "derecha": {
@@ -210,21 +210,21 @@
           "dinero": -10
         },
         "add_flags": [
-          "ernesto_rebelde"
+          "jefe_rebelde"
         ]
       },
       "lote": 16
     },
     {
-      "id": "jubilacion_ernesto",
+      "id": "jubilacion_jefe",
       "tipo": "etapa",
       "etapa": "45-60",
-      "nombre": "La Jubilación de Ernesto",
-      "personaje": "don_ernesto",
+      "nombre": "La Jubilación de tu Jefe",
+      "personaje": "primer_jefe",
       "texto": "Tu primer jefe se retira y te invita a su fiesta. Te entrega un bolígrafo con el logo de la empresa por 'tus años de lealtad'.",
       "condiciones": {
         "requiere_flags": [
-          "ernesto_sumiso"
+          "jefe_sumiso"
         ]
       },
       "izquierda": {
@@ -244,15 +244,15 @@
       "lote": 16
     },
     {
-      "id": "curriculum_ernesto",
+      "id": "curriculum_jefe",
       "tipo": "etapa",
       "etapa": "45-60",
       "nombre": "El Currículum",
-      "personaje": "don_ernesto",
-      "texto": "Ahora eres tú quien entrevista. Entra un señor mayor, nervioso, con el currículum arrugado. Es Don Ernesto, tu primer jefe.",
+      "personaje": "primer_jefe",
+      "texto": "Ahora eres tú quien entrevista. Entra un señor mayor, nervioso, con el currículum arrugado. Es tu primer jefe.",
       "condiciones": {
         "requiere_flags": [
-          "ernesto_rebelde"
+          "jefe_rebelde"
         ]
       },
       "izquierda": {
