@@ -36,8 +36,10 @@ export function validar(datos) {
       anclasPorAnio.set(k, c.id);
     }
     if (c.tipo === 'etapa') {
-      const e = etapas.get(c.etapa);
-      if (!e) err(c, `etapa "${c.etapa}" no existe en config`);
+      // "etapa" puede ser una etapa de config ("18-29") o un rango que abarque varias ("18-49").
+      const libre = parseRango(c.etapa);
+      const e = etapas.get(c.etapa) || (libre && libre[0] <= libre[1] && libre[1] < config.edad_final ? { desde: libre[0], hasta: libre[1] } : null);
+      if (!e) err(c, `etapa "${c.etapa}" no válida (usa una de config o un rango tipo "18-49")`);
       const r = rangoCarta(c);
       if (c.edad && !parseRango(c.edad)) err(c, '"edad" debe ser [min, max]');
       if (e && r && (r[0] < e.desde || r[1] > e.hasta)) err(c, `rango de edad ${r.join('-')} fuera de la etapa ${c.etapa}`);
@@ -98,6 +100,13 @@ export function validar(datos) {
   }
 
   const iniciales = new Set(config.flags_iniciales || []);
+  const enGrupo = new Map();
+  for (const [g, lista] of Object.entries(config.grupos_flags || {})) {
+    for (const f of lista) {
+      if (enGrupo.has(f)) err(null, `el flag "${f}" está en dos grupos (${enGrupo.get(f)} y ${g})`);
+      enGrupo.set(f, g);
+    }
+  }
   for (const [f, ids] of flagsUsados) {
     if (!flagsAnadidos.has(f) && !iniciales.has(f)) {
       av(null, `el flag "${f}" se exige en ${ids.join(', ')}, pero ninguna carta lo añade: esas cartas nunca salen`, 'flags');
@@ -126,7 +135,11 @@ export function resumir(datos) {
   const { config, cartas } = datos;
   const etapas = config.etapas.map((e) => {
     const anios = e.hasta - e.desde + 1;
-    const deEtapa = cartas.filter((c) => c.tipo === 'etapa' && c.etapa === e.id);
+    // Una carta que abarca varias etapas cuenta en la etapa donde empieza.
+    const deEtapa = cartas.filter((c) => {
+      const r = c.tipo === 'etapa' && rangoCarta(c);
+      return r && r[0] >= e.desde && r[0] <= e.hasta;
+    });
     const anclas = cartas.filter((c) => c.tipo === 'ancla' && c.anio >= e.desde && c.anio <= e.hasta);
     const sexo = (s) => deEtapa.filter((c) => (c.condiciones?.requiere_sexo || null) === s).length;
     const generales = deEtapa.filter((c) => !c.condiciones?.requiere_flags?.length && !c.condiciones?.requiere_rasgo?.length);

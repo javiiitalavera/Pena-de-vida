@@ -1,26 +1,95 @@
 {
   "titulo": "Muerte súbita",
   "pilares": [
-    { "id": "salud", "nombre": "Salud" },
-    { "id": "dinero", "nombre": "Dinero" },
-    { "id": "cordura", "nombre": "Cordura" },
-    { "id": "vinculos", "nombre": "Vínculos" }
+    {
+      "id": "salud",
+      "nombre": "Salud"
+    },
+    {
+      "id": "dinero",
+      "nombre": "Dinero"
+    },
+    {
+      "id": "cordura",
+      "nombre": "Cordura"
+    },
+    {
+      "id": "vinculos",
+      "nombre": "Vínculos"
+    }
   ],
   "valor_inicial": 50,
   "edad_final": 100,
   "cartas_por_anio": 1.5,
-  "flags_iniciales": ["soltero"],
-  "pesos_prioridad": { "alta": 3, "normal": 1 },
+  "flags_iniciales": [
+    "soltero"
+  ],
+  "grupos_flags": {
+    "profesion": [
+      "desempleado",
+      "oficinista",
+      "autonomo",
+      "medico",
+      "funcionario",
+      "profesor",
+      "hosteleria",
+      "informatico"
+    ]
+  },
+  "pesos_prioridad": {
+    "alta": 3,
+    "normal": 1
+  },
   "hitos_max": 6,
   "etapas": [
-    { "id": "0-3", "nombre": "Primera infancia", "desde": 0, "hasta": 3 },
-    { "id": "4-11", "nombre": "Infancia", "desde": 4, "hasta": 11 },
-    { "id": "12-17", "nombre": "Adolescencia", "desde": 12, "hasta": 17 },
-    { "id": "18-29", "nombre": "Juventud", "desde": 18, "hasta": 29 },
-    { "id": "30-49", "nombre": "Adultez", "desde": 30, "hasta": 49 },
-    { "id": "50-69", "nombre": "Madurez", "desde": 50, "hasta": 69 },
-    { "id": "70-89", "nombre": "Vejez", "desde": 70, "hasta": 89 },
-    { "id": "90-99", "nombre": "Tiempo extra", "desde": 90, "hasta": 99 }
+    {
+      "id": "0-3",
+      "nombre": "Primera infancia",
+      "desde": 0,
+      "hasta": 3
+    },
+    {
+      "id": "4-11",
+      "nombre": "Infancia",
+      "desde": 4,
+      "hasta": 11
+    },
+    {
+      "id": "12-17",
+      "nombre": "Adolescencia",
+      "desde": 12,
+      "hasta": 17
+    },
+    {
+      "id": "18-29",
+      "nombre": "Juventud",
+      "desde": 18,
+      "hasta": 29
+    },
+    {
+      "id": "30-49",
+      "nombre": "Adultez",
+      "desde": 30,
+      "hasta": 49
+    },
+    {
+      "id": "50-69",
+      "nombre": "Madurez",
+      "desde": 50,
+      "hasta": 69
+    },
+    {
+      "id": "70-89",
+      "nombre": "Vejez",
+      "desde": 70,
+      "hasta": 89
+    },
+    {
+      "id": "90-99",
+      "nombre": "Tiempo extra",
+      "desde": 90,
+      "hasta": 99
+    }
   ],
   "archivos_cartas": [
     "01_primera_infancia.json",
@@ -31,6 +100,7 @@
     "06_madurez.json",
     "07_vejez.json",
     "08_tiempo_extra.json",
+    "10_profesiones.json",
     "90_rasgos.json",
     "99_final.json"
   ],

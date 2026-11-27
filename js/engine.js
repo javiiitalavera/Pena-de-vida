@@ -335,7 +335,13 @@ export class Partida {
     const deltas = this.aplicarDeltas(this.calcularEfectos(op.efectos));
 
     for (const f of op.remove_flags || []) this.flags.delete(f);
-    for (const f of op.add_flags || []) this.flags.add(f);
+    for (const f of op.add_flags || []) {
+      // Flags de un mismo grupo son excluyentes: al añadir uno se quitan los demás.
+      for (const grupo of Object.values(this.config.grupos_flags || {})) {
+        if (grupo.includes(f)) for (const otro of grupo) this.flags.delete(otro);
+      }
+      this.flags.add(f);
+    }
 
     for (const e of op.encolar || []) {
       const [min, max] = Array.isArray(e.en_anios) ? e.en_anios : [e.en_anios ?? 1, e.en_anios ?? 1];

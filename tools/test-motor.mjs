@@ -36,3 +36,8 @@ assert(aplicarGenero('maj{o/a} {el/la} señor{/a}','F')==='maja la señora','gé
 p=new Partida(datos,{sexo:'F'}); p.siguienteCarta(); p.pilares.salud=5; p.elegir('derecha'); assert(p.fin?.causa.pilar==='salud','muerte por salud 0');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()===null && p.fin.causa.tipo==='centenario','centenario');
 assert(construirNecrologia(p).titulo==='Centenaria','título centenaria con género');
+// profesiones excluyentes y cartas que abarcan dos etapas
+p=new Partida(datos,{sexo:'M'}); p.flags.add('oficinista'); p.carta=p.porId.get('examen_mir'); p.elegir('izquierda');
+assert(p.flags.has('medico')&&!p.flags.has('oficinista'),'MIR activa médico y quita oficinista');
+p.carta=p.porId.get('bootcamp'); p.elegir('izquierda'); assert(p.flags.has('informatico')&&!p.flags.has('medico'),'una sola profesión a la vez');
+p=new Partida(datos,{sexo:'M'}); p.flags.add('medico'); p.avanzarHasta(40); assert(p.disponiblesEtapa(40).some(c=>c.id==='guardia_24h'),'guardia (18-49) disponible a los 40');

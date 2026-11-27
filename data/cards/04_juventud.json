@@ -126,6 +126,15 @@
       "nombre": "La Entrevista de Trabajo",
       "personaje": "entrevistador",
       "texto": "Te preguntan 'dónde te ves dentro de cinco años'. Tienes ganas de contestar 'en un puente, si sigo cobrando esto'.",
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
       "izquierda": {
         "texto": "Soltar el discurso corporativo",
         "efectos": {

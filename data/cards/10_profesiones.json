@@ -1,0 +1,709 @@
+{
+  "_nota": "Profesiones. Cada rama: una carta de entrada (excluye_flags de la rama) y cartas exclusivas (requiere_flags). Los flags de profesión son excluyentes entre sí (config.grupos_flags.profesion).",
+  "cartas": [
+    {
+      "id": "examen_mir",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Examen MIR",
+      "personaje": "opositor_mir",
+      "texto": "Llevas seis años estudiando medicina y ahora te encierras once meses en una habitación sin luz natural para competir por un sueldo de mileurista con guardias.",
+      "tags": [
+        "trabajo",
+        "medico"
+      ],
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sacar plaza y ponerte la bata",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Sobrevivió al MIR para acabar haciendo guardias de 24 horas.",
+        "add_flags": [
+          "medico"
+        ],
+        "remove_flags": [
+          "desempleado",
+          "oficinista"
+        ]
+      },
+      "derecha": {
+        "texto": "Dejarlo todo y montar una clínica de estética en Marbella",
+        "efectos": {
+          "dinero": 10,
+          "cordura": 10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "guardia_24h",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Guardia de 24 Horas",
+      "personaje": "paciente_urgencias",
+      "texto": "Son las cuatro de la madrugada. Entra un señor a urgencias por un dolor en el dedo gordo del pie que tiene 'desde hace tres semanas'.",
+      "tags": [
+        "trabajo",
+        "medico"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Atenderle con paciencia infinita",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Recetarle paracetamol y mirarle con desprecio clínico",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "paciente_google",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Paciente de Google",
+      "personaje": "paciente_google",
+      "texto": "Ha buscado sus síntomas en internet y te exige una resonancia magnética de cuerpo entero porque 'está seguro de que tiene un parásito tropical'.",
+      "tags": [
+        "trabajo",
+        "medico"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedirle la prueba para que salga de la consulta",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Explicarle durante veinte minutos que son gases",
+        "efectos": {
+          "cordura": -10,
+          "salud": 5
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "gerencia_hospital",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Gerencia del Hospital",
+      "personaje": "gerente_hospital",
+      "texto": "Un director con un máster en gestión que nunca ha visto un paciente te felicita por tu 'vocación' mientras te recorta el presupuesto y te añade diez citas al día.",
+      "tags": [
+        "trabajo",
+        "medico"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Agachar la cabeza y seguir cubriendo bajas",
+        "efectos": {
+          "salud": -15,
+          "dinero": 10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir la excedencia y pasarte a la privada",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Abandonó la sanidad pública tras una reunión con gerencia."
+      },
+      "lote": 4
+    },
+    {
+      "id": "oposicion",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Oposición",
+      "personaje": "madre",
+      "texto": "Tu madre insiste en que te saques una plaza fija. El temario son 140 temas de Derecho Administrativo redactados por alguien que odia la alegría.",
+      "tags": [
+        "trabajo",
+        "funcionario"
+      ],
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Empollar tres años y sacar la plaza",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        },
+        "hito_biografico": "Aprobó una oposición y dejó de mirar el reloj a las 14:30.",
+        "add_flags": [
+          "funcionario"
+        ],
+        "remove_flags": [
+          "desempleado",
+          "oficinista",
+          "autonomo"
+        ]
+      },
+      "derecha": {
+        "texto": "Quemar el temario en el balcón",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "cafe_1030",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Café de las 10:30",
+      "personaje": "cola_ventanilla",
+      "texto": "Hay doce personas haciendo cola en tu ventanilla, pero en tu reloj acaban de dar las diez y media en punto.",
+      "tags": [
+        "trabajo",
+        "funcionario"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Poner el cartel de 'Vuelvo en 5 minutos' e irte 40",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Atender al último de la fila antes de salir",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "nuevo_interino",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Nuevo Interino",
+      "personaje": "interino",
+      "texto": "Ha llegado un chaval con ganas de trabajar que despacha expedientes al triple de velocidad y está dejando en evidencia a toda la planta.",
+      "tags": [
+        "trabajo",
+        "funcionario"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Explicarle amablemente que aquí \"las cosas tienen su ritmo\"",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": 5
+        }
+      },
+      "derecha": {
+        "texto": "Pasarle todos tus expedientes atrasados de 2018",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "trienio",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Trienio",
+      "personaje": "ordenador_oficina",
+      "texto": "Te cae un aumento de 38 euros al mes por seguir vivo y respirando en la misma silla. El sistema informático lleva caído desde el martes.",
+      "tags": [
+        "trabajo",
+        "funcionario"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Jugar al Solitario hasta la hora de salida",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Intentar arreglar el sistema tú mismo",
+        "efectos": {
+          "cordura": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "master_profesorado",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Máster de Profesorado",
+      "personaje": "instituto",
+      "texto": "Tu carrera no tiene salidas, así que decides dar clase en un instituto. Te esperan dos meses de vacaciones al año y treinta adolescentes con déficit de atención.",
+      "tags": [
+        "trabajo",
+        "profesor"
+      ],
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aceptar el destino y comprar tizas",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "add_flags": [
+          "profesor"
+        ],
+        "remove_flags": [
+          "desempleado",
+          "oficinista"
+        ]
+      },
+      "derecha": {
+        "texto": "Buscar cualquier otra cosa",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "tutoria_padres",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Tutoría con los Padres",
+      "personaje": "padres_alumno",
+      "texto": "Su hijo ha sacado un 1,5 porque entregó el examen dibujando un pene gigante, pero los padres dicen que 'le tienes manía' y amenazan con ir a Inspección.",
+      "tags": [
+        "trabajo",
+        "profesor"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Subirle al 5 para no verles más la cara",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Enseñarles el dibujo con total frialdad",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se enfrentó a unos padres helicóptero con pruebas gráficas."
+      },
+      "lote": 4
+    },
+    {
+      "id": "movil_en_clase",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Móvil en Clase",
+      "personaje": "alumno_tiktok",
+      "texto": "Un alumno de 3º de la ESO está grabando un baile de TikTok en última fila mientras explicas la Revolución Industrial.",
+      "tags": [
+        "trabajo",
+        "profesor"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quitarle el móvil y aguantar su brote psicótico",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Ignorarlo y cobrar a fin de mes",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "afonia_cronica",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Afonía Crónica",
+      "personaje": "aula",
+      "texto": "Llevas veinticinco años gritando por encima del ruido de un aula. Tu voz suena como si hubieras desayunado grava.",
+      "tags": [
+        "trabajo",
+        "profesor"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedir la baja por estrés y nódulos",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Comprarte un micrófono de diadema como Britney Spears",
+        "efectos": {
+          "dinero": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "temporada_verano",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Temporada de Verano",
+      "personaje": "dueno_bar",
+      "texto": "El dueño de un bar te ofrece 'un contrato de 20 horas' en el que trabajarás 60, con horario partido y media paga en un sobre marrón.",
+      "tags": [
+        "trabajo",
+        "hosteleria"
+      ],
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Coger la bandeja",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "add_flags": [
+          "hosteleria"
+        ],
+        "remove_flags": [
+          "desempleado"
+        ]
+      },
+      "derecha": {
+        "texto": "Decirle que eso es esclavitud moderna",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "despedida_soltero",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "La Despedida de Soltero",
+      "personaje": "despedida_soltero",
+      "texto": "Entran catorce tíos disfrazados de bebé a las dos de la mañana pidiendo chupitos gratis y gritando '¡camarero, que nos morimos de sed!'.",
+      "tags": [
+        "trabajo",
+        "hosteleria"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Servirles garrafón a precio de reserva",
+        "efectos": {
+          "dinero": 10,
+          "cordura": 5
+        }
+      },
+      "derecha": {
+        "texto": "Echarles a escobazos",
+        "efectos": {
+          "dinero": -10,
+          "salud": -10
+        },
+        "hito_biografico": "Desalojó una despedida de soltero a escobazos."
+      },
+      "lote": 4
+    },
+    {
+      "id": "cliente_entendido",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Cliente Entendido",
+      "personaje": "cliente_vino",
+      "texto": "Te devuelve un vino de 12 euros diciendo que 'tiene notas de corcho' y te amenaza con ponerte una estrella en Google.",
+      "tags": [
+        "trabajo",
+        "hosteleria"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Cambiarle la botella por otra exactamente igual",
+        "efectos": {
+          "dinero": 5,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Escupir en su copa en la cocina",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "varices",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Las Varices",
+      "personaje": "barra_bar",
+      "texto": "Llevas treinta años de pie detrás de una barra. Tus piernas parecen un mapa de carreteras secundarias.",
+      "tags": [
+        "trabajo",
+        "hosteleria"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comprar medias de compresión y seguir tirando",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Traspasar el bar y no volver a oler un calimocho",
+        "efectos": {
+          "salud": 10,
+          "dinero": -15
+        },
+        "remove_flags": [
+          "hosteleria"
+        ]
+      },
+      "lote": 4
+    },
+    {
+      "id": "bootcamp",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Bootcamp",
+      "personaje": "bootcamp",
+      "texto": "Te prometen que en doce semanas programarás en Python y cobrarás 60.000€ desde una playa en Bali.",
+      "tags": [
+        "trabajo",
+        "informatico"
+      ],
+      "condiciones": {
+        "excluye_flags": [
+          "medico",
+          "funcionario",
+          "profesor",
+          "hosteleria",
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar el curso y acabar manteniendo código de 2004",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "add_flags": [
+          "informatico"
+        ],
+        "remove_flags": [
+          "desempleado",
+          "oficinista"
+        ]
+      },
+      "derecha": {
+        "texto": "Seguir sin saber qué es una API",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "despliegue_viernes",
+      "tipo": "etapa",
+      "etapa": "18-49",
+      "nombre": "Despliegue en Viernes",
+      "personaje": "jefe_producto",
+      "texto": "Son las 17:45 del viernes. El jefe de producto dice que es 'un cambiecito de nada' y te pide subirlo a producción antes de irte.",
+      "tags": [
+        "trabajo",
+        "informatico"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Subirlo y rezar para que no arda el servidor",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -15
+        },
+        "hito_biografico": "Tumbó los servidores de la empresa un viernes a las seis."
+      },
+      "derecha": {
+        "texto": "Decir que tu religión te prohíbe desplegar en viernes",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "impresora_tia",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Impresora de tu Tía",
+      "personaje": "tia",
+      "texto": "En la comida familiar te sacan una impresora de 2009 y un portátil lleno de barras de herramientas rusas porque 'tú que sabes de ordenadores, míramelo un momento'.",
+      "tags": [
+        "trabajo",
+        "informatico"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Arreglarlo gratis durante tres horas",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que solo trabajas con Linux",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    },
+    {
+      "id": "teletrabajo_pijama",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Teletrabajo en Pijama",
+      "personaje": "videollamada",
+      "texto": "Llevas cuatro días sin salir de casa ni ducharte. Tienes una videollamada con el cliente en cinco minutos.",
+      "tags": [
+        "trabajo",
+        "informatico"
+      ],
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ponerte camisa arriba y seguir en calzoncillos abajo",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Fingir que se ha roto la cámara",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 4
+    }
+  ]
+}

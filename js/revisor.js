@@ -65,7 +65,10 @@ for (const e of datos.config.etapas) $('f-etapa').insertAdjacentHTML('beforeend'
 for (const r of datos.rasgos) $('s-rasgo').insertAdjacentHTML('beforeend', `<option value="${r.id}">${esc(r.nombre)}</option>`);
 
 function etapaDeCarta(c) {
-  if (c.tipo === 'etapa') return c.etapa;
+  if (c.tipo === 'etapa') {
+    const r = rangoCarta(c);
+    return datos.config.etapas.find((e) => r && r[0] >= e.desde && r[0] <= e.hasta)?.id;
+  }
   if (c.tipo === 'ancla') return datos.config.etapas.find((e) => c.anio >= e.desde && c.anio <= e.hasta)?.id;
   return null;
 }
