@@ -1,3 +1,4 @@
+import { prepararAudio, reproducirEfecto } from './audio.js';
 // Interfaz: pantallas, carta, barras y necrológica. La lógica está en engine.js.
 import { cargarDatos } from './data.js';
 import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad } from './engine.js';
@@ -215,6 +216,7 @@ async function decidir(lado) {
   ocupado = true;
   swipe.bloquear(true);
   vistaPrevia(lado);
+  reproducirEfecto('carta');
   await lanzar($('carta'), lado);
   partida.elegir(lado);
   pintarBarras();
@@ -260,6 +262,7 @@ async function usarComodin() {
   $('dialogo-comodin').close();
   const r = partida.usarComodin();
   if (!r) return;
+  reproducirEfecto('comodin');
   if (r.accion === 'descartar') {
     ocupado = true;
     swipe.bloquear(true);
@@ -284,6 +287,7 @@ async function usarComodin() {
 // ---------- final ----------
 
 function acabar() {
+  reproducirEfecto('cierre');
   borrarPartida();
   const n = construirNecrologia(partida);
   const nuevos = evaluarDesbloqueos(datos, partida.fin, progreso.desbloqueados);
@@ -315,6 +319,7 @@ function acabar() {
 // ---------- arranque ----------
 
 function conectarEventos() {
+  prepararAudio();
   $('btn-nueva').addEventListener('click', () => mostrar('pantalla-sexo'));
   $('btn-continuar').addEventListener('click', continuar);
   for (const b of document.querySelectorAll('[data-sexo]')) b.addEventListener('click', () => elegirSexo(b.dataset.sexo));
@@ -330,7 +335,7 @@ function conectarEventos() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (!$('pantalla-juego').classList.contains('activa') || $('dialogo-comodin').open || ocupado) return;
+    if (!$('pantalla-juego').classList.contains('activa') || document.querySelector('dialog[open]') || ocupado) return;
     const lado = { ArrowLeft: 'izquierda', ArrowRight: 'derecha', a: 'izquierda', d: 'derecha' }[e.key];
     if (lado) {
       e.preventDefault();
