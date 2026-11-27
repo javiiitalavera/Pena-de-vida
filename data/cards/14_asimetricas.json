@@ -1,0 +1,281 @@
+{
+  "_nota": "Cartas asimétricas: las dos opciones mueven la misma barra en la misma dirección; solo eliges qué otra barra sacrificas.",
+  "cartas": [
+    {
+      "id": "caldera_enero",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Caldera en Enero",
+      "personaje": "tecnico_caldera",
+      "texto": "Se rompe la caldera un domingo a dos grados. El técnico de urgencias te mira como un tiburón a una foca.",
+      "izquierda": {
+        "texto": "Pagar la urgencia",
+        "efectos": {
+          "dinero": -15,
+          "cordura": -5
+        }
+      },
+      "derecha": {
+        "texto": "Esperar al lunes helad{o/a}",
+        "efectos": {
+          "dinero": -10,
+          "salud": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "multa_radar",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Multa de Radar",
+      "personaje": "radar",
+      "texto": "Te llega una foto en blanco y negro de tu coche a 142 km/h. Si pagas hoy es la mitad; si recurres, te arriesgas al doble.",
+      "izquierda": {
+        "texto": "Pagar pronto y callar",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pagar a un abogado",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "gripe_noviembre",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Gripe de Noviembre",
+      "personaje": "termometro",
+      "texto": "Tienes 38,5 de fiebre, te duele hasta el pelo y mañana entregas un proyecto clave en el trabajo.",
+      "izquierda": {
+        "texto": "Ir empastillad{o/a}",
+        "efectos": {
+          "salud": -15,
+          "dinero": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en la cama",
+        "efectos": {
+          "salud": -5,
+          "dinero": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "boda_agosto",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Boda en Agosto",
+      "personaje": "secarral",
+      "texto": "Boda a las dos de la tarde en un secarral a 41 grados. La invitación exige traje o vestido largo.",
+      "izquierda": {
+        "texto": "Beber agua y aguantar",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Arrasar la barra libre",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "subida_alquiler",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "La Subida del Alquiler",
+      "personaje": "casero",
+      "texto": "El casero te sube el alquiler un 40% porque 'el barrio se está poniendo de moda'. Tienes quince días para decidir.",
+      "izquierda": {
+        "texto": "Tragar con la subida",
+        "efectos": {
+          "cordura": -10,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Volver con tus padres",
+        "efectos": {
+          "cordura": -15,
+          "dinero": 10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "dos_cenas",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Dos Cenas el Mismo Sábado",
+      "personaje": "calendario",
+      "texto": "Coinciden el cumpleaños de tu mejor amigo y el aniversario de tus padres. Vayas a donde vayas, alguien se va a ofender.",
+      "izquierda": {
+        "texto": "Ir con tus padres",
+        "efectos": {
+          "vinculos": -10,
+          "dinero": 10
+        }
+      },
+      "derecha": {
+        "texto": "Ir con tu amigo",
+        "efectos": {
+          "vinculos": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "marisco_escote",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Marisco a Escote",
+      "personaje": "grupo_whatsapp",
+      "texto": "En el grupo familiar proponen encargar marisco caro a escote para Navidad. Te mencionan para que confirmes.",
+      "izquierda": {
+        "texto": "Pagar sin rechistar",
+        "efectos": {
+          "vinculos": 15,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Ofrecerte a cocinar tú",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "vecino_agradecido",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Vecino Agradecido",
+      "personaje": "vecino",
+      "texto": "Le recogiste un paquete una vez y ahora llama a tu puerta cada tarde con un tupper de croquetas y ganas de charla.",
+      "izquierda": {
+        "texto": "Invitarle a café",
+        "efectos": {
+          "vinculos": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Comerte las croquetas",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "libro_autoayuda",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Libro de Autoayuda",
+      "personaje": "libro",
+      "texto": "Te regalan un best-seller sobre 'soltar lo que no te suma'. Te da vergüenza, pero tiene un par de frases que te calman.",
+      "izquierda": {
+        "texto": "Cortar con un amigo",
+        "efectos": {
+          "cordura": 15,
+          "vinculos": -15
+        }
+      },
+      "derecha": {
+        "texto": "Comprar la segunda parte",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "fin_semana_incomunicado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Fin de Semana Incomunicado",
+      "personaje": "movil_avion",
+      "texto": "Llevas dos días enteros sin hablar con nadie, en pijama y con el móvil en modo avión. Es peligrosamente agradable.",
+      "izquierda": {
+        "texto": "Pedir otro día libre",
+        "efectos": {
+          "cordura": 15,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Ignorar a tu familia",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "garaje_heredado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Garaje Heredado",
+      "personaje": "garaje",
+      "texto": "Muere un primo segundo y te deja una plaza de garaje en el centro. Nadie más la quiere, pero te obliga a mover papeles.",
+      "izquierda": {
+        "texto": "Venderla hoy mismo",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Alquilársela a tu cuñado",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 16
+    },
+    {
+      "id": "analisis_impecables",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Los Análisis Impecables",
+      "personaje": "medico_cabecera",
+      "texto": "Tu chequeo anual sale perfecto. El médico te mira con sospecha y te anima a 'seguir así de disciplinad{o/a}'.",
+      "izquierda": {
+        "texto": "Apuntarte a pilates",
+        "efectos": {
+          "salud": 15,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Presumir en la cena",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 16
+    }
+  ]
+}

@@ -367,6 +367,14 @@ export class Partida {
         for (const [p, v] of Object.entries(r.efectos)) base[p] = (base[p] || 0) + v;
       }
     }
+    // Dificultad global (config.dificultad): volatilidad para todo y castigo extra a partir de cierta edad.
+    const dif = this.config.dificultad || {};
+    const castigo = dif.castigo_edad && this.anio >= dif.castigo_edad.desde ? dif.castigo_edad.mult : 1;
+    const volatilidad = this.anio >= (dif.volatilidad_desde ?? 0) ? dif.volatilidad ?? 1 : 1;
+    for (const p of Object.keys(base)) {
+      base[p] *= volatilidad;
+      if (base[p] < 0) base[p] *= castigo;
+    }
     const out = {};
     for (const [p, v] of Object.entries(base)) {
       let d = redondear(v);

@@ -200,7 +200,9 @@ function vistaPrevia(lado) {
     const d = deltas[el.dataset.pilar] || 0;
     const punto = el.querySelector('.punto');
     const mag = Math.abs(d);
-    punto.className = `punto${mag ? (mag <= 5 ? ' p1' : mag <= 12 ? ' p2' : ' p3') : ''}`;
+    // Con dificultad.puntos_por_magnitud = false, todos los puntos son iguales: sabes qué barra cambia, no cuánto.
+    const tamano = datos.config.dificultad?.puntos_por_magnitud === false ? ' p2' : mag <= 5 ? ' p1' : mag <= 12 ? ' p2' : ' p3';
+    punto.className = `punto${mag ? tamano : ''}`;
     el.querySelector('.delta')?.remove();
     if (DEBUG && d) el.insertAdjacentHTML('beforeend', `<span class="delta">${d > 0 ? '+' : ''}${d}</span>`);
   }

@@ -141,6 +141,16 @@ Música («Vals de papel») y tres efectos (carta, comodín y final) en `assets/
 - Las anclas detienen el tiempo en su año exacto. Las cartas encoladas, también.
 - Al llegar a 100 sale la carta del año 100, si existe, y después la necrológica de centenario.
 
+## Dificultad
+
+En `config.json → dificultad`:
+
+- `volatilidad` y `volatilidad_desde`: multiplica todos los efectos de las decisiones a partir de esa edad (ahora ×1,15 desde los 12; la infancia no se toca).
+- `castigo_edad`: a partir de `desde`, las pérdidas se multiplican por `mult` (ahora ×1,15 desde los 65: de viejo cada golpe pesa más).
+- `puntos_por_magnitud`: con `false`, los puntos de vista previa son todos del mismo tamaño; sabes qué barra cambia, pero no cuánto.
+
+El revisor (pestaña Simular) y `node tools/revisar.mjs` permiten medir el efecto de cada cambio.
+
 ## Rasgos
 
 Se definen en `data/traits.json` con reglas genéricas, así que un rasgo nuevo no necesita tocar el código:

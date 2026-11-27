@@ -46,6 +46,16 @@
       "viudo"
     ]
   },
+  "dificultad": {
+    "_nota": "volatilidad: multiplica todos los efectos de las decisiones desde volatilidad_desde. castigo_edad: multiplica las pérdidas desde cierta edad. puntos_por_magnitud: false = todos los puntos de vista previa del mismo tamaño.",
+    "volatilidad": 1.15,
+    "volatilidad_desde": 12,
+    "castigo_edad": {
+      "desde": 65,
+      "mult": 1.15
+    },
+    "puntos_por_magnitud": false
+  },
   "pesos_prioridad": {
     "alta": 3,
     "normal": 1
@@ -114,6 +124,7 @@
     "11_vida.json",
     "12_estados.json",
     "13_arcos.json",
+    "14_asimetricas.json",
     "90_rasgos.json",
     "99_final.json"
   ],

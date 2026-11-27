@@ -84,3 +84,7 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 // una ancla cuyo año ya pasó no sale tarde (partidas guardadas con otra versión del mazo)
 { const p=new Partida(datos,{sexo:'M',rng:rngSemilla(2)}); const e=p.exportar(); e.edad=3; e.usadas=['obstetra','pediatra_vacunas']; e.anclasDescartadas=[]; e.cartaId=null;
   const q=Partida.restaurar(datos,e); const c=q.siguienteCarta(); assert(c && c.tipo!=='ancla' && q.anio===3,'ancla de un año pasado no sale tarde ('+c?.id+')'); }
+// dificultad: volatilidad desde los 12 y castigo de pérdidas desde los 65
+{ const p=new Partida(datos,{sexo:'M'}); p.carta={tags:[]}; const nino=p.calcularEfectos({salud:-10,dinero:10});
+  p.avanzarHasta(30); const adulto=p.calcularEfectos({salud:-10,dinero:10}); p.avanzarHasta(70); const viejo=p.calcularEfectos({salud:-10,dinero:10});
+  assert(nino.salud===-10 && adulto.salud===-12 && adulto.dinero===12 && viejo.salud===-13 && viejo.dinero===12,'dificultad: '+JSON.stringify([nino,adulto,viejo])); }
