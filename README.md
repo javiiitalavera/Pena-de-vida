@@ -15,8 +15,10 @@ Añade `?debug` a la dirección (`index.html?debug`) para ver los números exact
 
 ## Controles
 
-- **Móvil**: desliza la carta a izquierda o derecha. También puedes tocar una opción (primer toque = vista previa, segundo = confirmar).
-- **Ordenador**: pasa el ratón por una opción para ver la vista previa y haz clic para elegir. Con teclado: `←` / `→` (pulsar dos veces confirma), `Esc` cancela, `C` abre el comodín.
+- **Móvil**: desliza la carta a izquierda o derecha. Mientras arrastras, la respuesta aparece sobre la carta y unos puntos sobre las barras indican cuáles cambiarán.
+- **Ordenador**: arrastra la carta con el ratón, o usa `←` / `→` (la primera pulsación inclina la carta y muestra la respuesta; la segunda confirma). `Esc` cancela, `C` abre el comodín.
+
+Cada carta es un año de vida: del año 0 al 100 (`cartas_por_anio: 1` en `config.json`).
 
 ## Revisor de cartas (control de calidad)
 

@@ -15,7 +15,6 @@ let partida = null;
 let eleccion = {};
 let marcado = null;
 let ocupado = false;
-let ultimoPuntero = 'mouse';
 let swipe;
 
 function mostrar(id) {
@@ -147,8 +146,8 @@ function siguiente() {
   const t = (x) => partida.texto(x);
   $('carta-texto').textContent = t(carta.texto);
   $('carta-nombre').textContent = t(carta.nombre);
-  $('op-izquierda').textContent = t(carta.izquierda.texto);
-  $('op-derecha').textContent = t(carta.derecha.texto);
+  // Pista del gesto solo en las primeras cartas de la primera partida.
+  $('pista').hidden = !(progreso.partidas === 0 && partida.historial.length < 3);
   $('carta-sello').hidden = true;
   montarImagen($('carta-imagen'), datos.config, carta);
   limpiarVista();
@@ -176,7 +175,6 @@ function vistaPrevia(lado) {
   } else {
     etiqueta.className = 'carta-eleccion';
   }
-  for (const l of ['izquierda', 'derecha']) $(`op-${l}`).classList.toggle('marcada', l === lado);
 }
 
 function limpiarVista() {
@@ -300,19 +298,6 @@ function conectarEventos() {
     alCancelar: () => limpiarVista(),
   });
 
-  for (const lado of ['izquierda', 'derecha']) {
-    const b = $(`op-${lado}`);
-    b.addEventListener('pointerdown', (e) => (ultimoPuntero = e.pointerType));
-    b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && !ocupado) vistaPrevia(lado); });
-    b.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !ocupado) vistaPrevia(marcado); });
-    b.addEventListener('click', () => {
-      if (ocupado) return;
-      if (ultimoPuntero === 'mouse' || marcado === lado) return decidir(lado);
-      marcado = lado;
-      vistaPrevia(lado);
-    });
-  }
-
   document.addEventListener('keydown', (e) => {
     if (!$('pantalla-juego').classList.contains('activa') || $('dialogo-comodin').open || ocupado) return;
     const lado = { ArrowLeft: 'izquierda', ArrowRight: 'derecha', a: 'izquierda', d: 'derecha' }[e.key];
@@ -321,6 +306,9 @@ function conectarEventos() {
       if (marcado === lado) return decidir(lado);
       marcado = lado;
       vistaPrevia(lado);
+      const x = lado === 'izquierda' ? -48 : 48;
+      $('carta').classList.add('volviendo');
+      $('carta').style.transform = `translateX(${x}px) rotate(${x / 18}deg)`;
     } else if (e.key === 'Escape') {
       limpiarVista();
       volver($('carta'));

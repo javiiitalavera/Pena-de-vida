@@ -231,6 +231,8 @@ export class Partida {
     }
     const deseadas = Math.min(k, restantes * this.config.cartas_por_anio);
     if (deseadas < 1) return restantes;
+    // Con 1 carta por año (o menos), la edad avanza en años enteros: cada decisión es un año.
+    if (this.config.cartas_por_anio <= 1) return Math.max(1, Math.round(restantes / deseadas));
     return (restantes / deseadas) * (0.8 + this.rng() * 0.4);
   }
 

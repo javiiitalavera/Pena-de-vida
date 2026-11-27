@@ -9,7 +9,7 @@
   --peligro: #c4553f;
   --linea: #3a352a;
   --radio: 14px;
-  --carta: min(76vw, 320px, 34dvh);
+  --carta: min(84vw, 360px, 44dvh);
   --serif: Georgia, 'Times New Roman', serif;
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
@@ -150,14 +150,15 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   background: linear-gradient(rgba(16, 14, 10, 0.9), rgba(16, 14, 10, 0));
   color: #fff;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.3;
+  font-size: 1.15rem;
+  line-height: 1.25;
   opacity: 0;
   transition: opacity 0.12s;
   pointer-events: none;
 }
-.carta-eleccion.izquierda { text-align: left; }
-.carta-eleccion.derecha { text-align: right; }
+/* El texto se pega al borde que sigue en pantalla mientras la carta se desplaza. */
+.carta-eleccion.izquierda { text-align: right; padding-left: 32%; }
+.carta-eleccion.derecha { text-align: left; padding-right: 32%; }
 .carta-eleccion.visible { opacity: 1; }
 .carta-sello {
   position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%) rotate(-4deg);
@@ -168,22 +169,8 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 
 .carta-nombre { text-align: center; font-family: var(--serif); font-style: italic; color: var(--tinta-suave); margin: 10px 0 8px; }
 
-.opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.opcion {
-  background: transparent;
-  border: 1px solid var(--linea);
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  cursor: pointer;
-  min-height: 3.4em;
-}
-.opcion[data-lado='izquierda'] { text-align: left; }
-.opcion[data-lado='izquierda']::before { content: '← '; color: var(--tinta-suave); }
-.opcion[data-lado='derecha'] { text-align: right; }
-.opcion[data-lado='derecha']::after { content: ' →'; color: var(--tinta-suave); }
-.opcion.marcada { border-color: var(--tinta); background: var(--fondo-2); }
+.pista { text-align: center; color: var(--tinta-suave); font-size: 0.8rem; letter-spacing: 0.05em; margin: 0; animation: latido 2s ease-in-out infinite; }
+@keyframes latido { 50% { opacity: 0.45; } }
 
 .pie-juego { margin-top: auto; padding-top: 10px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .btn.comodin { font-size: 0.85rem; padding: 10px 18px; }
@@ -243,7 +230,7 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .error-carga code { background: var(--fondo-2); padding: 2px 6px; border-radius: 4px; }
 
 @media (max-height: 640px) {
-  :root { --carta: min(70vw, 240px, 30dvh); }
+  :root { --carta: min(78vw, 280px, 38dvh); }
   .tubo { height: 42px; }
   .carta-texto { min-height: 4.4em; font-size: 0.98rem; }
 }

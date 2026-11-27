@@ -20,7 +20,7 @@
   ],
   "valor_inicial": 50,
   "edad_final": 100,
-  "cartas_por_anio": 1.5,
+  "cartas_por_anio": 1,
   "flags_iniciales": [
     "soltero"
   ],
