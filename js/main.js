@@ -1,6 +1,6 @@
 // Interfaz: pantallas, carta, barras y necrológica. La lógica está en engine.js.
 import { cargarDatos } from './data.js';
-import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, etapaDeEdad } from './engine.js';
+import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad } from './engine.js';
 import { cargarProgreso, guardarProgreso, registrarPartida } from './storage.js';
 import { montarImagen } from './images.js';
 import { aplicarGenero } from './text.js';
@@ -41,7 +41,7 @@ function elegirSexo(valor) {
   // Primera partida: sin elegir rasgo ni comodín, directo al año 0.
   if (progreso.partidas === 0) {
     eleccion.rasgoId = rasgosDisponibles(datos, progreso.desbloqueados)[0]?.id;
-    eleccion.comodinId = datos.comodines[0]?.id;
+    eleccion.comodinId = comodinesDisponibles(datos, progreso.desbloqueados)[0]?.id;
     return empezar();
   }
   pintarRasgos();
@@ -58,7 +58,7 @@ function pintarRasgos() {
     total < 3 ? `Tienes ${total} de ${datos.rasgos.length} rasgos desbloqueados. Muere de formas nuevas para conseguir más.` : 'Sin repetir tirada.';
   $('lista-rasgos').replaceChildren(
     ...opciones.map((r) =>
-      tarjetaEleccion(aplicarGenero(r.nombre, eleccion.sexo), [r.ventaja, r.contrapartida && `<em class="contra">${escapar(r.contrapartida)}</em>`], () => {
+      tarjetaEleccion(aplicarGenero(r.nombre, eleccion.sexo), [r.descripcion && aplicarGenero(r.descripcion, eleccion.sexo), r.ventaja, r.contrapartida && `<em class="contra">${escapar(r.contrapartida)}</em>`], () => {
         eleccion.rasgoId = r.id;
         pintarComodines();
       }),
@@ -68,8 +68,13 @@ function pintarRasgos() {
 }
 
 function pintarComodines() {
+  const lista = comodinesDisponibles(datos, progreso.desbloqueados);
+  if (lista.length === 1) {
+    eleccion.comodinId = lista[0].id;
+    return empezar();
+  }
   $('lista-comodines').replaceChildren(
-    ...datos.comodines.map((c) =>
+    ...lista.map((c) =>
       tarjetaEleccion(c.nombre, [c.descripcion], () => {
         eleccion.comodinId = c.id;
         empezar();
@@ -270,7 +275,11 @@ function acabar() {
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>
     ${n.remates.length ? `<section class="necro-seccion"><h4>Informe forense</h4>${n.remates.map((r) => `<p class="necro-remate">${escapar(r)}</p>`).join('')}</section>` : ''}`;
-  $('desbloqueos').textContent = nuevos.length ? `Nuevo rasgo desbloqueado: ${nuevos.map((r) => aplicarGenero(r.nombre, partida.sexo)).join(', ')}` : '';
+  const nombres = (clase) => nuevos.filter((x) => x._clase === clase).map((x) => aplicarGenero(x.nombre, partida.sexo)).join(', ');
+  $('desbloqueos').textContent = [
+    nombres('rasgo') && `Nuevo rasgo desbloqueado: ${nombres('rasgo')}`,
+    nombres('comodin') && `Nuevo comodín desbloqueado: ${nombres('comodin')}`,
+  ].filter(Boolean).join(' · ');
   mostrar('pantalla-necrologica');
   $('pantalla-necrologica').scrollTop = 0;
 }

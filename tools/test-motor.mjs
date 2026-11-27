@@ -57,3 +57,11 @@ p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfe
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilares.dinero=105; p.comprobarMuerte(); assert(construirNecrologia(p).texto.includes('atragantada'),'muerte infantil por dinero 100, en femenino');
 // desbloqueo por cualquier extremo
 { const nuevos=evaluarDesbloqueos(datos,{causa:{tipo:'muerte',pilar:'cordura',extremo:0}},[]); assert(nuevos.some(r=>r.id==='sindrome_del_impostor'),'impostor se desbloquea también con Cordura a 0'); }
+// lote 15: comodines desbloqueables, viejo rencoroso, tos de la pareja
+{ const { comodinesDisponibles }=await import('../js/engine.js');
+  assert(comodinesDisponibles(datos,[]).map(c=>c.id).join()==='bomba_humo','solo la bomba de humo al principio');
+  const n41=evaluarDesbloqueos(datos,{anio:41,causa:{tipo:'muerte',pilar:'salud',extremo:0}},[]).map(x=>x.id); assert(n41.includes('orfidal')&&!n41.includes('llamar_contacto'),'orfidal al superar 40');
+  const n100=evaluarDesbloqueos(datos,{anio:100,causa:{tipo:'centenario'}},[]).map(x=>x.id); assert(n100.includes('viejo_rencoroso')&&n100.includes('llamar_contacto'),'centenario: viejo rencoroso + contacto');
+  const nv=evaluarDesbloqueos(datos,{anio:20,causa:{tipo:'muerte',pilar:'vinculos',extremo:100}},[]).map(x=>x.id); assert(nv.includes('segunda_opinion'),'segunda opinión al morir por una barra al 100'); }
+p=new Partida(datos,{sexo:'M',rasgoId:'viejo_rencoroso'}); assert(p.pilares.salud===35&&p.pilares.cordura===65,'viejo rencoroso empieza 35/65');
+p.carta={tags:[]}; e=p.calcularEfectos({vinculos:-10,dinero:5}); assert(e.salud===5,'bajar vínculos da +5 salud');

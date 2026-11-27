@@ -734,14 +734,14 @@
         "texto": "Arrastrarle a urgencias aunque te monte un escándalo",
         "efectos": {
           "dinero": -10,
-          "cordura": -10
+          "vinculos": 10
         }
       },
       "derecha": {
         "texto": "Respetar su cabezonería y dejarle en paz",
         "efectos": {
           "dinero": 10,
-          "cordura": 10
+          "vinculos": -10
         },
         "hito_biografico": "Respetó la cabezonería médica de su pareja hasta las últimas consecuencias.",
         "remove_flags": [
@@ -799,6 +799,119 @@
         "hito_biografico": "Cambió unas zapatillas antideslizantes por whisky a los 85 años."
       },
       "lote": 13
+    },
+    {
+      "id": "termostato",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Termostato",
+      "personaje": "pareja",
+      "texto": "Lleváis cuarenta años casados y la guerra fría por la calefacción ha escalado. Tú tienes frío; tu pareja abre la ventana porque 'se ahoga'.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Poner la calefacción a 25 grados a escondidas",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dormir con gorro de lana y callar",
+        "efectos": {
+          "dinero": 5,
+          "salud": -10
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "bodas_oro",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "Las Bodas de Oro",
+      "personaje": "pareja",
+      "texto": "Cumplís 50 años de casados. Vuestros hijos quieren montar un banquete emotivo, pero vosotros lleváis tres semanas sin hablaros por un tupper perdido.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar la comida y sonreír para las fotos",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que preferís el dinero en un sobre y quedaros en casa",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Cambió su fiesta de bodas de oro por dinero en efectivo."
+      },
+      "lote": 15
+    },
+    {
+      "id": "copiloto",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Copiloto",
+      "personaje": "pareja",
+      "texto": "Vais al pueblo en coche a 50 km/h. Tu pareja frena con el pie imaginario en el suelo y te grita '¡cuidado!' cada vez que aparece un árbol a doscientos metros.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Subir la radio hasta que no se le oiga",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Parar en el arcén y darle las llaves",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "telenovela_turca",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Mando de la Tele",
+      "personaje": "pareja",
+      "texto": "Son las nueve de la noche. Tú quieres ver el telediario; tu pareja quiere ver una telenovela turca de tres horas. Solo hay una televisión.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Esconder las pilas del mando y hacerte el loc{o/a}",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Ver la telenovela y acabar enganchad{o/a} al capítulo 400",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 15
     }
   ]
 }

@@ -19,7 +19,8 @@
           "profesor",
           "hosteleria",
           "informatico",
-          "autonomo"
+          "autonomo",
+          "oficinista"
         ]
       },
       "izquierda": {
@@ -161,7 +162,8 @@
           "profesor",
           "hosteleria",
           "informatico",
-          "autonomo"
+          "autonomo",
+          "oficinista"
         ]
       },
       "izquierda": {
@@ -303,7 +305,8 @@
           "profesor",
           "hosteleria",
           "informatico",
-          "autonomo"
+          "autonomo",
+          "oficinista"
         ]
       },
       "izquierda": {
@@ -444,7 +447,8 @@
           "profesor",
           "hosteleria",
           "informatico",
-          "autonomo"
+          "autonomo",
+          "oficinista"
         ]
       },
       "izquierda": {
@@ -587,7 +591,8 @@
           "profesor",
           "hosteleria",
           "informatico",
-          "autonomo"
+          "autonomo",
+          "oficinista"
         ]
       },
       "izquierda": {

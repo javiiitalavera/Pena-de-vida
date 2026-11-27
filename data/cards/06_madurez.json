@@ -750,6 +750,197 @@
         }
       },
       "lote": 9
+    },
+    {
+      "id": "atico_heredado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Ático Heredado",
+      "personaje": "estudiantes",
+      "texto": "Heredas un zulo de 28 metros sin ascensor en el centro. Puedes alquilarlo a un precio razonable o pedir 1.150€ a unos estudiantes desesperados.",
+      "izquierda": {
+        "texto": "Exprimir el mercado inmobiliario sin pestañear",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Alquiló un trastero con ventana a precio de chalet."
+      },
+      "derecha": {
+        "texto": "Poner un alquiler justo y dormir tranquil{o/a}",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "prejubilacion",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Prejubilación",
+      "personaje": "rrhh",
+      "texto": "La empresa quiere quitarte de en medio y te ofrece un cheque generoso por marcharte cinco años antes, a cambio de firmar que nunca hablarás mal de ellos.",
+      "izquierda": {
+        "texto": "Coger el dinero y desaparecer antes de que se arrepientan",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte hasta los 65 solo por fastidiar al director",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "reloj_abuelo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Reloj del Abuelo",
+      "personaje": "hermano",
+      "texto": "Encuentras un reloj suizo antiguo en un cajón. Un anticuario te da 3.500€ en metálico ahora mismo, pero tu hermano cree que es una reliquia familiar.",
+      "izquierda": {
+        "texto": "Venderlo y decir que se perdió en la mudanza",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dárselo a tu hermano para que lo guarde en otro cajón",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "consultoria_fantasma",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Consultoría Fantasma",
+      "personaje": "conocido_subvencion",
+      "texto": "Un antiguo conocido te pide un informe de asesoramiento para justificar una subvención. Son 2.500€ por copiar y pegar cuatro gráficas en un PowerPoint.",
+      "izquierda": {
+        "texto": "Facturar 2.500€ por veinte minutos de humo",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que eso roza la prevaricación",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "decimo_premiado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Décimo Premiado",
+      "personaje": "empresario_bar",
+      "texto": "Te tocan 6.000€ en la Lotería de Navidad. Un empresario del bar te ofrece 6.500€ en billetes de 50 por tu décimo para blanquear dinero.",
+      "izquierda": {
+        "texto": "Hacer el cambio detrás de la máquina tragaperras",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        },
+        "hito_biografico": "Vendió un décimo premiado en la trastienda de un bar."
+      },
+      "derecha": {
+        "texto": "Ir al banco y pagar tu parte a Hacienda",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "trastero_sospechoso",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Trastero Sospechoso",
+      "personaje": "inquilino_cajas",
+      "texto": "Alquilas tu plaza de garaje y trastero por 200€ al mes en negro. El inquilino guarda cajas muy pesadas que nunca abre de día.",
+      "izquierda": {
+        "texto": "Cobrar puntual y no hacer preguntas",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Echarle antes de que entre la policía",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "vuelo_retrasado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Vuelo Retrasado",
+      "personaje": "aerolinea",
+      "texto": "Tu vuelo de vuelta de vacaciones se retrasa cinco horas. La aerolínea te ofrece un vale de 10€ para un sándwich o puedes pelear la indemnización legal de 400€.",
+      "izquierda": {
+        "texto": "Comerte la burocracia y sacarles hasta el último euro",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Coger el sándwich de plástico y olvidar el asunto",
+        "efectos": {
+          "cordura": 5,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "habitacion_hijo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Habitación del Hijo",
+      "personaje": "estudiante_intercambio",
+      "texto": "Tu hijo por fin se ha independizado. Su cuarto está vacío y una agencia te ofrece 600€ al mes por meter a un estudiante de intercambio.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Alquilarlo al día siguiente sin avisarle",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dejarlo como un museo de su adolescencia",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
     }
   ]
 }

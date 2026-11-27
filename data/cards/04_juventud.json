@@ -338,6 +338,122 @@
         ]
       },
       "lote": 14
+    },
+    {
+      "id": "clases_particulares",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "Clases Particulares",
+      "personaje": "nino_rico",
+      "texto": "Los padres de un niño rico te pagan 25€ la hora en negro por darle clases de Matemáticas de 2º de la ESO. No te acuerdas de hacer una ecuación de segundo grado.",
+      "izquierda": {
+        "texto": "Improvisar mirando tutoriales en el baño",
+        "efectos": {
+          "dinero": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Rechazarlo por honestidad intelectual",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "chollo_beca",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Chollo de la Beca",
+      "personaje": "ministerio",
+      "texto": "Te conceden 1.800€ de beca para material universitario y transporte. Puedes comprar los libros o irte de festival y renovar la consola.",
+      "izquierda": {
+        "texto": "Invertirlo en libros de texto y fotocopias",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "derecha": {
+        "texto": "Fundírtelo en ocio y estudiar con apuntes robados",
+        "efectos": {
+          "dinero": 15,
+          "salud": -10
+        },
+        "hito_biografico": "Financió su vida nocturna con una beca del Ministerio de Educación."
+      },
+      "lote": 15
+    },
+    {
+      "id": "piso_turistico_tio",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Piso Turístico de tu Tío",
+      "personaje": "tio",
+      "texto": "Tu tío tiene un apartamento en el centro y te paga 150€ en mano cada domingo por limpiarlo después de las despedidas de soltero.",
+      "izquierda": {
+        "texto": "Ponerte guantes de goma y fregar lo indecible",
+        "efectos": {
+          "dinero": 15,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Conservar tu dignidad y tu domingo libre",
+        "efectos": {
+          "salud": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "apuntes_oro",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "Apuntes a Precio de Oro",
+      "personaje": "facultad",
+      "texto": "Tienes los exámenes filtrados de los últimos cinco años de una asignatura imposible. La mitad de la facultad te ofrece dinero por el PDF.",
+      "izquierda": {
+        "texto": "Montar un cartel y venderlos a 20€ la copia",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pasarlos gratis al grupo de WhatsApp para caer bien",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -5
+        }
+      },
+      "lote": 15
+    },
+    {
+      "id": "figurante",
+      "tipo": "etapa",
+      "etapa": "18-29",
+      "nombre": "El Figurante",
+      "personaje": "rodaje",
+      "texto": "Buscan extras para rodar un anuncio de una aseguradora a las cinco de la mañana bajo la lluvia artificial. Pagan 120€ y un bocadillo de chóped.",
+      "izquierda": {
+        "texto": "Pasar doce horas calad{o/a} hasta los huesos",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte durmiendo calentit{o/a}",
+        "efectos": {
+          "salud": 5,
+          "dinero": -5
+        }
+      },
+      "lote": 15
     }
   ]
 }

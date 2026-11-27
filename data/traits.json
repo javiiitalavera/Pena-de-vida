@@ -1,5 +1,5 @@
 {
-  "_nota": "Rasgos pasivos. 'reglas' admite: multiplicador (pilar, signo, mult, tags opcional), anula (si/anula) y periodico (cada_anios, efectos). 'desbloqueo': inicial | muerte (pilar; extremo 0/100 opcional: sin él vale cualquiera) | centenario.",
+  "_nota": "Rasgos pasivos. 'reglas' admite: multiplicador (pilar, signo, mult, tags opcional), anula (si/anula) y periodico (cada_anios, efectos), transferencia (si: pilar+signo → efectos extra). 'desbloqueo': inicial | muerte (pilar; extremo 0/100 opcional: sin él vale cualquiera) | centenario.",
   "rasgos": [
     {
       "id": "ciudadano_estandar",
@@ -124,6 +124,33 @@
             "cordura": -5
           },
           "mensaje": "Síndrome del Impostor"
+        }
+      ]
+    },
+    {
+      "id": "viejo_rencoroso",
+      "nombre": "{Viejo Rencoroso/Vieja Rencorosa}",
+      "descripcion": "Has llegado a los 100 a base de odio puro.",
+      "ventaja": "Cada vez que una decisión te baje Vínculos, recuperas +5 de Salud.",
+      "contrapartida": "Empiezas con Salud al 35 y Cordura al 65.",
+      "desbloqueo": {
+        "tipo": "centenario",
+        "texto": "Llegar al año 100"
+      },
+      "inicio": {
+        "salud": 35,
+        "cordura": 65
+      },
+      "reglas": [
+        {
+          "tipo": "transferencia",
+          "si": {
+            "pilar": "vinculos",
+            "signo": "negativo"
+          },
+          "efectos": {
+            "salud": 5
+          }
         }
       ]
     }

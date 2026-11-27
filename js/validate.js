@@ -130,7 +130,7 @@ export function validar(datos) {
   if (placeholders) av(null, `${placeholders} textos [PLACEHOLDER] pendientes en muertes, remates o rasgos`, 'contenido');
   for (const r of rasgos) if (!r.desbloqueo) err(null, `rasgo ${r.id} sin "desbloqueo"`);
   if (!rasgos.some((r) => r.desbloqueo?.tipo === 'inicial')) err(null, 'no hay ningún rasgo inicial');
-  if (!comodines.length) err(null, 'no hay comodines');
+  if (!comodines.some((c) => !c.desbloqueo || c.desbloqueo.tipo === 'inicial')) err(null, 'no hay ningún comodín inicial');
 
   return { errores, avisos, resumen: resumir(datos) };
 }

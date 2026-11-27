@@ -294,6 +294,12 @@ export class Partida {
         if ((r.pilar === p || r.pilar === '*') && signoCumple(base[p], r.signo)) base[p] *= r.mult;
       }
     }
+    // "Cuando una decisión baja X, sube Y": se suma después de los multiplicadores.
+    for (const r of this.reglas('transferencia')) {
+      if (signoCumple(base[r.si.pilar], r.si.signo)) {
+        for (const [p, v] of Object.entries(r.efectos)) base[p] = (base[p] || 0) + v;
+      }
+    }
     const out = {};
     for (const [p, v] of Object.entries(base)) {
       let d = redondear(v);
@@ -468,18 +474,31 @@ export function construirNecrologia(partida) {
   };
 }
 
+// ¿Cumple este final la condición de desbloqueo?
+// tipos: inicial | muerte (pilar y extremo opcionales) | centenario | edad (min: edad alcanzada)
+export function cumpleDesbloqueo(d, fin) {
+  if (!d || d.tipo === 'inicial') return false;
+  const c = fin.causa;
+  if (d.tipo === 'muerte') {
+    return c.tipo === 'muerte' && (d.pilar == null || c.pilar === d.pilar) && (d.extremo == null || c.extremo === d.extremo);
+  }
+  if (d.tipo === 'centenario') return c.tipo === 'centenario';
+  if (d.tipo === 'edad') return fin.anio >= d.min;
+  return false;
+}
+
+// Rasgos y comodines nuevos que desbloquea este final. Cada uno lleva _clase: 'rasgo' | 'comodin'.
 export function evaluarDesbloqueos(datos, fin, desbloqueados) {
   const ya = new Set(desbloqueados);
-  return datos.rasgos.filter((r) => {
-    const d = r.desbloqueo;
-    if (!d || d.tipo === 'inicial' || ya.has(r.id)) return false;
-    if (d.tipo === 'muerte') {
-      // Sin "extremo": vale morir por esa barra a 0 o a 100.
-      return fin.causa.tipo === 'muerte' && fin.causa.pilar === d.pilar && (d.extremo == null || fin.causa.extremo === d.extremo);
-    }
-    if (d.tipo === 'centenario') return fin.causa.tipo === 'centenario';
-    return false;
-  });
+  return [
+    ...datos.rasgos.map((r) => ({ ...r, _clase: 'rasgo' })),
+    ...datos.comodines.map((c) => ({ ...c, _clase: 'comodin' })),
+  ].filter((x) => !ya.has(x.id) && cumpleDesbloqueo(x.desbloqueo, fin));
+}
+
+export function comodinesDisponibles(datos, desbloqueados) {
+  const ya = new Set(desbloqueados);
+  return datos.comodines.filter((c) => !c.desbloqueo || c.desbloqueo.tipo === 'inicial' || ya.has(c.id));
 }
 
 export function rasgosDisponibles(datos, desbloqueados) {
