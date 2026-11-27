@@ -1,5 +1,5 @@
 {
-  "_nota": "Rasgos pasivos. 'reglas' admite: multiplicador (pilar, signo, mult, tags opcional), anula (si/anula) y periodico (cada_anios, efectos). 'desbloqueo': inicial | muerte (pilar, extremo) | centenario.",
+  "_nota": "Rasgos pasivos. 'reglas' admite: multiplicador (pilar, signo, mult, tags opcional), anula (si/anula) y periodico (cada_anios, efectos). 'desbloqueo': inicial | muerte (pilar; extremo 0/100 opcional: sin él vale cualquiera) | centenario.",
   "rasgos": [
     {
       "id": "ciudadano_estandar",
@@ -19,8 +19,7 @@
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "dinero",
-        "extremo": 0,
-        "texto": "Morir por Dinero a 0"
+        "texto": "Morir por Dinero (a 0 o a 100)"
       },
       "inicio": {
         "dinero": 80
@@ -48,8 +47,7 @@
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "vinculos",
-        "extremo": 0,
-        "texto": "Morir por Vínculos a 0"
+        "texto": "Morir por Vínculos (a 0 o a 100)"
       },
       "reglas": [
         {
@@ -79,8 +77,7 @@
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "salud",
-        "extremo": 0,
-        "texto": "Morir por Salud a 0"
+        "texto": "Morir por Salud (a 0 o a 100)"
       },
       "reglas": [
         {
@@ -105,8 +102,7 @@
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "cordura",
-        "extremo": 100,
-        "texto": "Morir por Cordura a 100"
+        "texto": "Morir por Cordura (a 0 o a 100)"
       },
       "reglas": [
         {

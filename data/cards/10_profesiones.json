@@ -40,8 +40,8 @@
       "derecha": {
         "texto": "Dejarlo todo y montar una clínica de estética en Marbella",
         "efectos": {
-          "dinero": 10,
-          "cordura": 10
+          "dinero": 15,
+          "vinculos": -10
         }
       },
       "lote": 4
@@ -495,8 +495,8 @@
       "derecha": {
         "texto": "Echarles a escobazos",
         "efectos": {
-          "dinero": -10,
-          "salud": -10
+          "cordura": 15,
+          "dinero": -10
         },
         "hito_biografico": "Desalojó una despedida de soltero a escobazos."
       },
@@ -522,7 +522,7 @@
         "texto": "Cambiarle la botella por otra exactamente igual",
         "efectos": {
           "dinero": 5,
-          "cordura": 10
+          "cordura": -5
         }
       },
       "derecha": {

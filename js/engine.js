@@ -473,7 +473,10 @@ export function evaluarDesbloqueos(datos, fin, desbloqueados) {
   return datos.rasgos.filter((r) => {
     const d = r.desbloqueo;
     if (!d || d.tipo === 'inicial' || ya.has(r.id)) return false;
-    if (d.tipo === 'muerte') return fin.causa.tipo === 'muerte' && fin.causa.pilar === d.pilar && fin.causa.extremo === d.extremo;
+    if (d.tipo === 'muerte') {
+      // Sin "extremo": vale morir por esa barra a 0 o a 100.
+      return fin.causa.tipo === 'muerte' && fin.causa.pilar === d.pilar && (d.extremo == null || fin.causa.extremo === d.extremo);
+    }
     if (d.tipo === 'centenario') return fin.causa.tipo === 'centenario';
     return false;
   });

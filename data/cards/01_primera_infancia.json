@@ -105,7 +105,7 @@
         "texto": "Seguir tirando",
         "efectos": {
           "salud": -15,
-          "cordura": -10
+          "cordura": 10
         }
       },
       "derecha": {

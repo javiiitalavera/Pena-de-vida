@@ -120,6 +120,8 @@ Se definen en `data/traits.json` con reglas genéricas, así que un rasgo nuevo 
 - `anula`: si una opción baja X, no baja Y.
 - `periodico`: efecto automático cada N años.
 - `inicio`: valores de partida distintos de 50.
-- `desbloqueo`: `inicial`, `muerte` (pilar y extremo) o `centenario`.
+- `desbloqueo`: `inicial`, `muerte` (pilar; `extremo` 0 o 100 es opcional: sin él vale morir por esa barra en cualquiera de los dos extremos) o `centenario`.
+
+La primera partida empieza directamente en el año 0 como rasgo inicial y con el primer comodín, sin pantallas de elección. Si solo hay un rasgo disponible, también se salta la elección de rasgo.
 
 Los comodines están en `data/jokers.json` con cuatro acciones: `descartar`, `invertir`, `congelar` y `efecto_directo`.

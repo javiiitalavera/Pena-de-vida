@@ -38,12 +38,22 @@ function pintarInicio() {
 
 function elegirSexo(valor) {
   eleccion = { sexo: valor === 'azar' ? (Math.random() < 0.5 ? 'M' : 'F') : valor };
+  // Primera partida: sin elegir rasgo ni comodín, directo al año 0.
+  if (progreso.partidas === 0) {
+    eleccion.rasgoId = rasgosDisponibles(datos, progreso.desbloqueados)[0]?.id;
+    eleccion.comodinId = datos.comodines[0]?.id;
+    return empezar();
+  }
   pintarRasgos();
 }
 
 function pintarRasgos() {
   const opciones = draftRasgos(datos, progreso.desbloqueados, 3);
   const total = rasgosDisponibles(datos, progreso.desbloqueados).length;
+  if (opciones.length === 1) {
+    eleccion.rasgoId = opciones[0].id;
+    return pintarComodines();
+  }
   $('ayuda-rasgo').textContent =
     total < 3 ? `Tienes ${total} de ${datos.rasgos.length} rasgos desbloqueados. Muere de formas nuevas para conseguir más.` : 'Sin repetir tirada.';
   $('lista-rasgos').replaceChildren(

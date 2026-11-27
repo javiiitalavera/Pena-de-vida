@@ -132,7 +132,7 @@
         "texto": "Soltar la frase y ver cómo te cae el doble de multa",
         "efectos": {
           "dinero": -15,
-          "vinculos": -10
+          "cordura": 10
         },
         "hito_biografico": "Preguntó a la Guardia Civil si sabían quién era su padre."
       },
@@ -416,7 +416,7 @@
       "izquierda": {
         "texto": "Ir a revisión a pedirle que compruebe si de verdad mereces esa nota",
         "efectos": {
-          "cordura": -10,
+          "cordura": 10,
           "vinculos": -10
         }
       },

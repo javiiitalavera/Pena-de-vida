@@ -183,7 +183,7 @@
         "texto": "Firmar todo rápido y huir",
         "efectos": {
           "dinero": -15,
-          "vinculos": -10
+          "salud": 10
         },
         "add_flags": [
           "divorciado"

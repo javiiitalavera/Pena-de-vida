@@ -2,7 +2,7 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { cargarDatosCon } from '../js/data.js';
-import { Partida, construirNecrologia } from '../js/engine.js';
+import { Partida, construirNecrologia, evaluarDesbloqueos } from '../js/engine.js';
 import { rngSemilla } from '../js/simulate.js';
 import { aplicarGenero } from '../js/text.js';
 import { fileURLToPath } from 'node:url';
@@ -55,3 +55,5 @@ p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?
 const nec=construirNecrologia(p); assert(nec.remates.length===3 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario: '+nec.remates.length);
 p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfectos({salud:-10}); const e2=p.calcularEfectos({salud:10}); assert(e.salud===-7&&e2.salud===5,'cucaracha pérdidas x0.7, ganancias x0.5');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilares.dinero=105; p.comprobarMuerte(); assert(construirNecrologia(p).texto.includes('atragantada'),'muerte infantil por dinero 100, en femenino');
+// desbloqueo por cualquier extremo
+{ const nuevos=evaluarDesbloqueos(datos,{causa:{tipo:'muerte',pilar:'cordura',extremo:0}},[]); assert(nuevos.some(r=>r.id==='sindrome_del_impostor'),'impostor se desbloquea también con Cordura a 0'); }

@@ -711,8 +711,8 @@
       "derecha": {
         "texto": "Decir que te mantengan viv{o/a} aunque sea con una batería de coche",
         "efectos": {
-          "dinero": -10,
-          "salud": -10
+          "salud": 10,
+          "dinero": -10
         }
       },
       "lote": 11

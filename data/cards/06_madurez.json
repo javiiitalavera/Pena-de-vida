@@ -343,15 +343,15 @@
       "izquierda": {
         "texto": "Firmar porque te da pereza entenderlo",
         "efectos": {
-          "dinero": -10,
+          "dinero": -5,
           "cordura": 10
         }
       },
       "derecha": {
         "texto": "Decirle que prefieres gastártelo en jamón y viajes",
         "efectos": {
-          "cordura": 10,
-          "dinero": -10
+          "dinero": -15,
+          "cordura": 15
         }
       },
       "lote": 9
@@ -482,7 +482,7 @@
       "izquierda": {
         "texto": "Dar vueltas en la cama hasta que suene el despertador",
         "efectos": {
-          "salud": -10,
+          "salud": 5,
           "cordura": -10
         }
       },

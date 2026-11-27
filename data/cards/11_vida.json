@@ -101,7 +101,8 @@
         "texto": "Pedirle al anestesista que te ponga dosis de caballo",
         "efectos": {
           "salud": 10,
-          "cordura": 10
+          "cordura": 5,
+          "vinculos": -10
         },
         "add_flags": [
           "con_hijos"
@@ -113,8 +114,9 @@
       "derecha": {
         "texto": "Intentarlo \"al natural\" y maldecir a toda tu estirpe",
         "efectos": {
-          "salud": -15,
-          "cordura": -15
+          "salud": -10,
+          "cordura": -10,
+          "vinculos": 10
         },
         "hito_biografico": "Llamó 'escoria' a un anestesista durante un parto natural.",
         "add_flags": [
