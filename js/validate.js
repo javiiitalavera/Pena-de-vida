@@ -93,6 +93,7 @@ export function validar(datos) {
     const [a, b] = [efectosLado.izquierda || {}, efectosLado.derecha || {}];
     const todos = [...new Set([...Object.keys(a), ...Object.keys(b)])];
     const dif = todos.map((p) => (a[p] || 0) - (b[p] || 0));
+    if (todos.length && dif.every((d) => d === 0)) av(c, 'las dos opciones tienen exactamente los mismos efectos');
     if (todos.length && dif.every((d) => d >= 0) && dif.some((d) => d > 0)) av(c, 'la izquierda es mejor o igual en todo: falso dilema');
     if (todos.length && dif.every((d) => d <= 0) && dif.some((d) => d < 0)) av(c, 'la derecha es mejor o igual en todo: falso dilema');
     for (const lado of LADOS) {

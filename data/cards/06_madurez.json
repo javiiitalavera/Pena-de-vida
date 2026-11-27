@@ -285,6 +285,471 @@
         }
       },
       "lote": 3
+    },
+    {
+      "id": "presbicia",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Presbicia",
+      "personaje": "camarero",
+      "texto": "En un restaurante con poca luz estiras tanto el brazo para leer la carta que casi le sacas un ojo al camarero.",
+      "izquierda": {
+        "texto": "Comprarte unas gafas de farmacia de 9 euros",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir lo mismo que el de al lado para no admitir que no ves",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "colonoscopia",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "edad_sugerida": 50,
+      "nombre": "La Colonoscopia",
+      "personaje": "colonoscopia",
+      "texto": "Te toca la revisión de los 50. Tienes que beberte cuatro litros de un líquido con sabor a lejía salada y vivir en el baño toda la noche.",
+      "izquierda": {
+        "texto": "Beberlo todo como un valiente y sufrir en silencio",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cancelar la cita y confiar en tu buena estrella",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "plan_pensiones",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Plan de Pensiones",
+      "personaje": "director_banco",
+      "texto": "El gestor del banco te enseña una gráfica muy bonita para convencerte de meter tus ahorros en un fondo que cobra un 3% de comisión y pierde dinero cada año.",
+      "izquierda": {
+        "texto": "Firmar porque te da pereza entenderlo",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Decirle que prefieres gastártelo en jamón y viajes",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "reencuentro_instituto",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Reencuentro del Instituto",
+      "personaje": "antiguos_alumnos",
+      "texto": "Te meten en un grupo de WhatsApp con gente que no ves desde 1995. La mitad están calvos, la otra mitad se han hecho coaches emocionales.",
+      "izquierda": {
+        "texto": "Ir a la cena solo para comprobar quién ha envejecido peor",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Acudió a una cena de antiguos alumnos movido únicamente por el morbo."
+      },
+      "derecha": {
+        "texto": "Salir del grupo sin despedirte",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "partido_padel",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Partido de Pádel",
+      "personaje": "pista_padel",
+      "texto": "Te invitan a jugar un partido de dobles. Tu mente cree que tienes 22 años; tu tendón de Aquiles opina lo contrario.",
+      "izquierda": {
+        "texto": "Tirarte a por una bola imposible y oír un latigazo en el gemelo",
+        "efectos": {
+          "salud": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte quiet{o/a} en la red y echarle la culpa al viento",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "parquimetro",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Parquímetro Inteligente",
+      "personaje": "parquimetro",
+      "texto": "Ya no acepta monedas. Tienes que bajarte una app, registrarte con tu DNI, meter la tarjeta y validar un código por SMS mientras llueve.",
+      "izquierda": {
+        "texto": "Aparcar sin pagar y asumir la multa con dignidad",
+        "efectos": {
+          "dinero": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Pasarte veinte minutos peleándote con el móvil bajo la lluvia",
+        "efectos": {
+          "dinero": 5,
+          "salud": -5
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "resaca_dos_copas",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Resaca de Dos Copas",
+      "personaje": "copa_vino",
+      "texto": "Anoche te tomaste dos copas de vino cenando. Hoy te levantas con la sensación de haber sido atropellad{o/a} por un camión de mudanzas.",
+      "izquierda": {
+        "texto": "Pasarte el domingo en posición fetal jurando no volver a beber",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tomarte una cerveza a mediodía para 'cortar el malestar'",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "seguro_medico",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Seguro Médico Privado",
+      "personaje": "agente_seguros",
+      "texto": "Llevas veinte años pagando la póliza sin pisar una consulta. Ahora que empiezas a tener goteras, te suben la cuota un 45% por 'ajuste de edad'.",
+      "izquierda": {
+        "texto": "Pagar la subida tragando bilis",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        }
+      },
+      "derecha": {
+        "texto": "Darte de baja y rezarle a la Seguridad Social",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "insomnio",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Insomnio de las Cuatro",
+      "personaje": "despertador",
+      "texto": "Te despiertas a las 4:15 de la madrugada sin motivo. Tu cerebro aprovecha para recordarte una tontería que dijiste en una cena en 2003.",
+      "izquierda": {
+        "texto": "Dar vueltas en la cama hasta que suene el despertador",
+        "efectos": {
+          "salud": -10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Levantarte a comer galletas a oscuras en la cocina",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "jerga_becarios",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Jerga de los Becarios",
+      "personaje": "becaria",
+      "texto": "Los jóvenes de la oficina dicen palabras como 'bro', 'random' y 'cringe'. Sientes el impulso suicida de usar una para parecer cercan{o/a}.",
+      "izquierda": {
+        "texto": "Soltar un 'qué cringe, bro' en mitad de la reunión",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Hizo el ridículo corporativo intentando hablar como la Generación Z."
+      },
+      "derecha": {
+        "texto": "Mirarles en silencio y aceptar que ya eres un dinosaurio",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "huerto_pueblo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Huerto del Pueblo",
+      "personaje": "huerto",
+      "texto": "Te entra la fiebre rural y decides plantar tomates. Entre abono, riego, herramientas y gasolina, cada tomate te ha salido a 45 euros.",
+      "izquierda": {
+        "texto": "Repartir tomates a tus vecinos presumiendo de que 'no llevan química'",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Abandonar el huerto y comprarlos en el Mercadona",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "telediario",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Telediario",
+      "personaje": "presentador_tv",
+      "texto": "Te das cuenta de que llevas diez minutos discutiendo a gritos con el presentador de las noticias como si pudiera oírte.",
+      "izquierda": {
+        "texto": "Seguir insultando al televisor para desahogarte",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Apagar la tele y ponerte un documental de animales",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "colchon_viscoelastico",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Colchón Viscoelástico",
+      "personaje": "vendedor_colchones",
+      "texto": "Te levantas cada mañana con la espalda como una tabla. Un vendedor con bata blanca te intenta colocar un colchón 'con tecnología de la NASA' por 2.400 euros.",
+      "izquierda": {
+        "texto": "Comprarlo a plazos con tal de dormir sin dolor",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        }
+      },
+      "derecha": {
+        "texto": "Darle la vuelta al colchón de 1999 y aguantar",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "boda_sobrino",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Boda de tu Sobrino",
+      "personaje": "sobrino",
+      "texto": "Miras el plano de las mesas y descubres con horror que ya no te sientan con los jóvenes, sino en la mesa de los tíos mayores junto al altavoz.",
+      "izquierda": {
+        "texto": "Emborracharte en la barra libre para demostrar que sigues en activo",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Irte a casa a las once antes de que empiece el reguetón",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "calculo_pension",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Cálculo de la Pensión",
+      "personaje": "simulador_pension",
+      "texto": "Entras en el simulador de la Seguridad Social para ver cuánto te quedará al jubilarte. La cifra que sale en pantalla te da escalofríos.",
+      "izquierda": {
+        "texto": "Empezar a ahorrar de forma obsesiva y cenar sopa de sobre",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cerrar la pestaña y vivir en la negación absoluta",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "bar_musica_alta",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Bar con Música Alta",
+      "personaje": "camarero",
+      "texto": "Quedas a cenar en un sitio de moda. La música está tan fuerte que tienes que gritar para pedir agua y la comida te la sirven en una teja.",
+      "izquierda": {
+        "texto": "Quejarte al camarero y pedir la cuenta antes del postre",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir que te encanta el concepto gastronómico",
+        "efectos": {
+          "dinero": -10,
+          "cordura": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "canas",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Las Canas",
+      "personaje": "peluquero",
+      "texto": "Te miras al espejo y ves que tienes más pelo blanco que oscuro. El peluquero te ofrece un tinte 'muy natural' que parece betún de zapatos.",
+      "izquierda": {
+        "texto": "Teñirte y parecer un presentador de televisión de los 80",
+        "efectos": {
+          "dinero": -10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Llevó un tinte negro azulado sospechoso durante media década."
+      },
+      "derecha": {
+        "texto": "Dejarte las canas y presumir de madurez",
+        "efectos": {
+          "dinero": 5,
+          "cordura": 10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "linkedin_58",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "edad_sugerida": 58,
+      "nombre": "El LinkedIn a los 58",
+      "personaje": "reclutador",
+      "texto": "Actualizas tu perfil profesional por si acaso. Un reclutador de 24 años te escribe para decirte que 'estás sobrecualificad{o/a}', que es la forma fina de llamarte viej{o/a}.",
+      "izquierda": {
+        "texto": "Quitar quince años de experiencia de tu currículum",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Responderle deseándole suerte cuando llegue a tu edad",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "cuidador_padres",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "{El Cuidador/La Cuidadora}",
+      "personaje": "padres",
+      "texto": "Tus padres ya no pueden solos y te toca llevarles al médico, hacerles la compra y escuchar que 'antes los jóvenes tenían más paciencia'.",
+      "izquierda": {
+        "texto": "Hacerte cargo de todo sacrificando tu propia vida",
+        "efectos": {
+          "vinculos": 15,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Contratar ayuda externa aunque te coma medio sueldo",
+        "efectos": {
+          "dinero": -15,
+          "cordura": 10
+        }
+      },
+      "lote": 9
+    },
+    {
+      "id": "mochila_senderismo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Mochila de Senderismo",
+      "personaje": "decathlon",
+      "texto": "De repente te apetece ir al Decathlon a comprarte bastones de trekking, pantalones desmontables y unas botas para hacer rutas de dos horas por el parque.",
+      "izquierda": {
+        "texto": "Equiparte como si fueras a cruzar los Andes",
+        "efectos": {
+          "dinero": -15,
+          "salud": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en el bar tomando el vermut",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "lote": 9
     }
   ]
 }
