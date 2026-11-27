@@ -164,6 +164,123 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "comedor_colegio",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Comedor del Colegio",
+      "personaje": "monitora_comedor",
+      "texto": "Hoy toca pescado hervido con espinas y espinacas. La monitora te avisa de que no te levantas de la mesa hasta que dejes el plato limpio.",
+      "izquierda": {
+        "texto": "Esconder el pescado en la servilleta y tirarlo al váter",
+        "efectos": {
+          "cordura": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Comértelo llorando y tragarte dos espinas",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 12
+    },
+    {
+      "id": "piojos",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "Los Piojos",
+      "personaje": "madre",
+      "texto": "Llega una circular del colegio avisando de un brote. Te pica la cabeza como si tuvieras una colonia de hormigas y tu madre saca la lendrera metálica y vinagre.",
+      "izquierda": {
+        "texto": "Dejar que te raspe el cráneo en la bañera",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Decir que no te pica nada y contagiar a media clase",
+        "efectos": {
+          "salud": -10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Fue {el/la} paciente cero de un brote de piojos en 3º de Primaria."
+      },
+      "lote": 12
+    },
+    {
+      "id": "bici_ruedines",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Bici sin Ruedines",
+      "personaje": "padre",
+      "texto": "Tu padre te quita los ruedines en lo alto de una cuesta y te grita '¡tú pedalea que yo te sujeto!' justo antes de soltarte por completo.",
+      "izquierda": {
+        "texto": "Estamparte contra un contenedor de vidrio",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Aprendió a desconfiar de su familia gracias a una bicicleta sin ruedines."
+      },
+      "derecha": {
+        "texto": "Frenar con los pies y destrozar las zapatillas nuevas",
+        "efectos": {
+          "salud": 5,
+          "dinero": -10
+        }
+      },
+      "lote": 12
+    },
+    {
+      "id": "excursion_autobus",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Excursión en Autobús",
+      "personaje": "nino_mareado",
+      "texto": "Te sientan en la última fila junto al niño que se marea siempre. El autobús huele a tortilla de patata tibia, gasóleo y tragedia inminente.",
+      "izquierda": {
+        "texto": "Cederle la ventanilla por compasión y comerte el rebote",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Cambiar de asiento sin mirar atrás",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 12
+    },
+    {
+      "id": "partido_sabado",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Partido del Sábado",
+      "personaje": "padre",
+      "texto": "Juegas de {portero/portera} porque eres {el menos coordinado/la menos coordinada} del equipo. Tu padre lleva media hora insultando al árbitro de 16 años desde la banda.",
+      "izquierda": {
+        "texto": "Dejarte meter un gol para que piten el final cuanto antes",
+        "efectos": {
+          "salud": 5,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Tirarte a por el balón y comerte el poste",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 12
     }
   ]
 }
