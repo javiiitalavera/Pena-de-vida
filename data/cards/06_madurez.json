@@ -350,7 +350,7 @@
           "probabilidad": 0.35,
           "efectos": {
             "dinero": -15,
-            "cordura": 10
+            "cordura": -10
           },
           "mensaje": "Comisión de gestión, de custodia y de «servicio». Te queda la mitad."
         }
@@ -569,6 +569,14 @@
         "efectos": {
           "salud": 5,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": -5,
+            "cordura": -15
+          },
+          "mensaje": "Es de leones cazando crías. Lloras hasta la una de la madrugada."
         }
       },
       "lote": 9

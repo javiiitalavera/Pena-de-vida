@@ -68,6 +68,14 @@
         "efectos": {
           "salud": 10,
           "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": -10,
+            "vinculos": -10
+          },
+          "mensaje": "Tus hijos venden el coche al día siguiente y se reparten el dinero."
         }
       },
       "lote": 2
@@ -89,7 +97,7 @@
           "probabilidad": 0.2,
           "efectos": {
             "salud": -10,
-            "dinero": -10
+            "cordura": -10
           },
           "mensaje": "La de la tensión y la del colesterol se llevan fatal. Dos días de mareo."
         }
@@ -145,6 +153,14 @@
         "efectos": {
           "cordura": 10,
           "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.2,
+          "efectos": {
+            "dinero": -15,
+            "cordura": 10
+          },
+          "mensaje": "La funeraria te cobra un «anticipo de exclusividad». Muy por adelantado."
         }
       },
       "lote": 2

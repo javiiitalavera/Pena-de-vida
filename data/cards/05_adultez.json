@@ -72,7 +72,7 @@
           "probabilidad": 0.15,
           "efectos": {
             "dinero": 20,
-            "vinculos": 5
+            "cordura": -10
           },
           "mensaje": "La moneda del perro sube un 400 %. Tu cuñado se cree un genio para siempre."
         }
@@ -157,6 +157,14 @@
         "efectos": {
           "dinero": 10,
           "cordura": -15
+        },
+        "sorpresa": {
+          "probabilidad": 0.2,
+          "efectos": {
+            "dinero": 15,
+            "cordura": 10
+          },
+          "mensaje": "Hacienda pierde tu expediente. Ganas el recurso por aburrimiento."
         }
       },
       "lote": 2
@@ -210,7 +218,7 @@
       "personaje": "gimnasio",
       "texto": "Llevas pagando 60€ al mes desde enero y solo has ido dos veces: una a apuntarte y otra a preguntar cómo darte de baja.",
       "izquierda": {
-        "texto": "Ir aunque te dé un tirón",
+        "texto": "Ir a darlo todo",
         "efectos": {
           "salud": 10,
           "cordura": -10

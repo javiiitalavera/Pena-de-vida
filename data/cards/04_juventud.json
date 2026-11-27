@@ -20,6 +20,14 @@
         "efectos": {
           "salud": 10,
           "cordura": -15
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": -15,
+            "vinculos": -10
+          },
+          "mensaje": "Tu madre ha convertido tu cuarto en un gimnasio con una bicicleta estática."
         }
       },
       "lote": 1

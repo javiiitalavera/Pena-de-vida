@@ -98,3 +98,6 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
   const a=new Partida(datos,{sexo:'M',rng:()=>0}); a.carta=g; const ra=a.elegir('izquierda');
   const b=new Partida(datos,{sexo:'M',rng:()=>0.99}); b.carta=g; const rb=b.elegir('izquierda');
   assert(ra.sorpresa?.includes('tirón') && a.pilares.salud===40 && !rb.sorpresa && b.pilares.salud===60,'sorpresa del gimnasio'); }
+// sorpresa en una opción derecha
+{ const c=datos.cartas.find(x=>x.id==='hacienda_dividendo'); const a=new Partida(datos,{sexo:'F',rng:()=>0}); a.carta=c; const r=a.elegir('derecha');
+  assert(r.sorpresa?.includes('expediente') && a.pilares.dinero===65 && a.pilares.cordura===60,'sorpresa en opción derecha (Hacienda) '+JSON.stringify(a.pilares)); }
