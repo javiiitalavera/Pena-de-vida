@@ -1,5 +1,5 @@
 {
-  "_nota": "Causas de muerte por pilar y extremo (0 o 100). 'variantes' permite otro texto según la edad (edad_min / edad_max). Lo marcado [PLACEHOLDER] está pendiente de redactar.",
+  "_nota": "Causas de muerte por pilar y extremo (0 o 100). 'variantes' permite otro texto según la edad (edad_min / edad_max).",
   "muertes": {
     "salud": {
       "0": {
@@ -18,7 +18,7 @@
         "variantes": [
           {
             "edad_max": 14,
-            "texto": "[PLACEHOLDER] Muerte por ruina de la economía familiar en la infancia."
+            "texto": "Desahucian a tu familia y te mandan a vivir con tu tío el del pueblo, que cree que los antibióticos son un invento masónico. Mueres de una infección de oído tonta."
           }
         ]
       },
@@ -28,7 +28,7 @@
         "variantes": [
           {
             "edad_max": 14,
-            "texto": "[PLACEHOLDER] Muerte por exceso de riqueza familiar en la infancia."
+            "texto": "Tus padres se hacen obscenamente ricos y te internan en un colegio suizo de élite. Mueres atragantad{o/a} con caviar beluga durante una clase de equitación."
           }
         ]
       }

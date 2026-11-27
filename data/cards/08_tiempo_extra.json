@@ -70,6 +70,285 @@
         }
       },
       "lote": 2
+    },
+    {
+      "id": "teleasistencia",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Botón de Teleasistencia",
+      "personaje": "teleasistencia",
+      "texto": "Has pulsado el colgante rojo sin querer mientras te rascabas el pecho. Una voz muy amable te pregunta por el altavoz si te has caído.",
+      "izquierda": {
+        "texto": "Decir que solo querías hablar con alguien",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Fingir que no hay nadie en casa y quedarte inmóvil",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "dentadura_postiza",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "La Dentadura Postiza",
+      "personaje": "dentadura",
+      "texto": "Te ríes de un chiste malo y tu dentadura sale disparada dentro de la sopera familiar en plena comida de domingo.",
+      "izquierda": {
+        "texto": "Pescarla con el cucharón y volver a ponértela",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Recuperó su dentadura de una sopera delante de toda su familia."
+      },
+      "derecha": {
+        "texto": "Fingir que no es tuya y comer solo pan blando",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "bisnieto_influencer",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Bisnieto Influencer",
+      "personaje": "bisnieto",
+      "texto": "Te enfoca con el móvil mientras duermes la siesta para subir un TikTok con música triste y el texto 'disfrutad de vuestros abuelos'.",
+      "izquierda": {
+        "texto": "Hacerle una peineta mirando a cámara",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se hizo viral a los 90 haciendo una peineta a su bisnieto."
+      },
+      "derecha": {
+        "texto": "Sonreír sin saber qué está pasando",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "siesta_profunda",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "La Siesta Profunda",
+      "personaje": "familia_herederos",
+      "texto": "Te has quedado tan quiet{o/a} en el sillón que tu familia ya ha empezado a llamar a la funeraria y a repartirse la cubertería.",
+      "izquierda": {
+        "texto": "Abrir un ojo de golpe y pegar un grito",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Seguir haciéndote {el muerto/la muerta} para oír quién habla mal de ti",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "cura_residencia",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Cura de la Residencia",
+      "personaje": "cura",
+      "texto": "Cada vez que pasas por el pasillo te mira con una sonrisa profesional y te pregunta si 'ya estás en paz con el Señor'.",
+      "izquierda": {
+        "texto": "Decirle que eres ate{o/a} y que te enterrarán con tus ahorros",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Confesarte por si acaso hay algo arriba",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "andador",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Andador",
+      "personaje": "vecino_residencia",
+      "texto": "El señor del 204 te ha retado a una carrera hasta el comedor antes de que se acaben las croquetas.",
+      "izquierda": {
+        "texto": "Quitar el freno y derrapar en la curva de enfermería",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Dejarle pasar y conformarte con la merluza hervida",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "mando_distancia",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Mando a Distancia",
+      "personaje": "mando",
+      "texto": "Has pulsado un botón raro y ahora la tele está en alemán y sin volumen. Llevas dos horas viendo un documental sobre salchichas.",
+      "izquierda": {
+        "texto": "Aporrear el mando contra el brazo del sillón",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -5
+        }
+      },
+      "derecha": {
+        "texto": "Ver el documental entero y fingir que entiendes alemán",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "geriatra",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Geriatra",
+      "personaje": "geriatra",
+      "texto": "Te mira los análisis, suelta un silbido y dice la frase que más odias en el mundo: 'Bueno, para su edad está estupend{o/a}'.",
+      "izquierda": {
+        "texto": "Preguntarle cuántos años tiene él y desearle suerte",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Asentir y pedirle otra caja de pastillas para dormir",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "tarta_cumpleanos",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "La Tarta de Cumpleaños",
+      "personaje": "tarta",
+      "texto": "Te traen un bizcocho sin azúcar, sin gluten y sin alegría con una vela con forma de interrogación porque ya nadie se acuerda de tu edad exacta.",
+      "izquierda": {
+        "texto": "Soplar y escupir medio pulmón encima",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Pedir un chupito de coñac en lugar de tarta",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "sobrinas_aparador",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "Las Sobrinas",
+      "personaje": "sobrinas",
+      "texto": "Dos sobrinas tuyas están discutiendo en voz baja a los pies de tu cama sobre quién se queda con el aparador del salón.",
+      "izquierda": {
+        "texto": "Decir en voz alta que lo has donado a una ONG",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        }
+      },
+      "derecha": {
+        "texto": "Pedirles 50 euros a cada una por el derecho de tanteo",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "parte_meteorologico",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Parte Meteorológico",
+      "personaje": "hombre_del_tiempo",
+      "texto": "Te duele la rodilla izquierda, lo que significa que mañana llueve. El hombre del tiempo dice que hará sol.",
+      "izquierda": {
+        "texto": "Llamar a la tele para decirles que son unos incompetentes",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Salir sin paraguas para demostrar tu teoría",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "lote": 7
+    },
+    {
+      "id": "calentador",
+      "tipo": "etapa",
+      "etapa": "90-99",
+      "nombre": "El Calentador",
+      "personaje": "brasero",
+      "texto": "Hace 28 grados en la habitación, pero tienes los pies helados y la calefacción está apagada por orden de dirección.",
+      "izquierda": {
+        "texto": "Ponerte tres batas y un gorro de lana",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Enchufar un brasero eléctrico de 1982 escondido bajo la cama",
+        "efectos": {
+          "salud": -15,
+          "cordura": 10
+        },
+        "hito_biografico": "Hizo saltar los plomos de toda una residencia con un brasero ilegal."
+      },
+      "lote": 7
     }
   ]
 }

@@ -24,7 +24,7 @@ const {vistas}=jugar('M','ciudadano_estandar',7); for(const id in anclas) assert
 let p=new Partida(datos,{sexo:'M',rasgoId:'hijo_de_papa'}); assert(p.pilares.dinero===80,'hijo de papá empieza en 80');
 p.carta={tags:[]}; let e=p.calcularEfectos({dinero:-15,cordura:-10}); assert(e.dinero===-8&&e.cordura===-20,'hijo de papá x0.5 dinero(−7.5→−8) y x2 cordura '+JSON.stringify(e));
 p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); e=p.calcularEfectos({vinculos:-10,cordura:-10}); assert(!e.cordura&&e.vinculos===-10,'psicópata anula cordura');
-e=p.calcularEfectos({vinculos:10}); assert(e.vinculos===5,'psicópata sube vínculos a la mitad');
+e=p.calcularEfectos({vinculos:10}); assert(e.vinculos===8,'psicópata sube vínculos x0.75 (7.5→8)');
 p=new Partida(datos,{sexo:'M',rasgoId:'sindrome_del_impostor'}); p.avanzarHasta(11); assert(p.pilares.cordura===40,'impostor −5 a los 5 y 10: '+p.pilares.cordura);
 // comodines
 p=new Partida(datos,{sexo:'M',comodinId:'segunda_opinion'}); p.siguienteCarta(); p.usarComodin(); assert(JSON.stringify(p.vistaPrevia('izquierda'))==='{"salud":-10,"cordura":10}','segunda opinión invierte');
@@ -53,3 +53,5 @@ p=new Partida(datos,{sexo:'M'}); p.carta=p.porId.get('boda'); p.elegir('izquierd
 p.carta=p.porId.get('divorcio'); p.elegir('izquierda'); assert(p.flags.has('divorciado')&&!p.flags.has('casado'),'divorcio: divorciado');
 p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(100); assert(p.siguienteCarta()?.id==='centenario','carta del año 100'); p.elegir('derecha'); assert(p.fin?.causa.tipo==='centenario','la carta final termina la partida');
 const nec=construirNecrologia(p); assert(nec.remates.length===3 && nec.remates.some(r=>r.includes('Héroe nacional')),'remates centenario: '+nec.remates.length);
+p=new Partida(datos,{sexo:'M',rasgoId:'genetica_de_cucaracha'}); e=p.calcularEfectos({salud:-10}); const e2=p.calcularEfectos({salud:10}); assert(e.salud===-7&&e2.salud===5,'cucaracha pérdidas x0.7, ganancias x0.5');
+p=new Partida(datos,{sexo:'F'}); p.avanzarHasta(9); p.siguienteCarta(); p.pilares.dinero=105; p.comprobarMuerte(); assert(construirNecrologia(p).texto.includes('atragantada'),'muerte infantil por dinero 100, en femenino');
