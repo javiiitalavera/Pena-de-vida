@@ -584,7 +584,7 @@
       "personaje": "festival",
       "texto": "Has comprado entradas para un festival pensando que sigues teniendo 22 años. Son las diez de la noche, te duelen las lumbares y el cabeza de cartel sale a la una.",
       "izquierda": {
-        "texto": "Aguentar con cerveza a 9 €",
+        "texto": "Aguantar con cerveza a 9 €",
         "efectos": {
           "salud": -10,
           "dinero": -10
