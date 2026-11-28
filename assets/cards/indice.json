@@ -2,6 +2,7 @@
   "ilustraciones": [
     "abuela_anis",
     "acne",
+    "alergia_repentina",
     "alquiler_solitario",
     "amigo_emprendedor",
     "amigo_rural",
@@ -11,6 +12,7 @@
     "barbacoa",
     "bici_ruedines",
     "bocadillo_pavo",
+    "boda_destino",
     "boda_mejor_amigo",
     "botellon",
     "cafetera_especialidad",
@@ -27,6 +29,7 @@
     "coronilla",
     "crisis_40",
     "crossfit",
+    "cumple_38",
     "cumple_parque_bolas",
     "cunado_cripto",
     "declaracion_renta",
@@ -83,8 +86,10 @@
     "test_embarazo",
     "tio_cubata",
     "vasectomia",
+    "vecino_musico",
     "vestuario",
     "vuelta_a_casa",
+    "wallapop_familiar",
     "whatsapp_colegio"
   ]
 }
