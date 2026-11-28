@@ -620,6 +620,246 @@
         }
       },
       "lote": 17
+    },
+    {
+      "id": "cabalgata_reyes",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Cabalgata de Reyes",
+      "texto": "Un señor de 70 años con un paraguas invertido te acaba de dar un codazo en las costillas para llevarse tres caramelos de eucalipto.",
+      "izquierda": {
+        "texto": "Pisar su paraguas",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Cederle los caramelos",
+        "efectos": {
+          "salud": 5,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "misa_domingo",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Misa de Doce",
+      "texto": "Tu abuela te ha llevado a misa. Llevas cuarenta minutos mirando una grieta del techo y te entra una risa floja incontrolable justo en el momento de silencio.",
+      "izquierda": {
+        "texto": "Morderte el carrillo",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -5
+        }
+      },
+      "derecha": {
+        "texto": "Reírte a carcajadas",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Sufrió un ataque de risa en plena consagración y perdió el favor de su abuela."
+      },
+      "lote": 18
+    },
+    {
+      "id": "varicela",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Varicela",
+      "texto": "Tienes granos hasta en las orejas y te han untado una loción blanca que parece yeso. El médico ha dicho que si te rascas te quedarán marcas para siempre.",
+      "izquierda": {
+        "texto": "Rascarte a escondidas",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "derecha": {
+        "texto": "Dormir con manoplas",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "cuaderno_vacaciones",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Cuaderno de Vacaciones",
+      "texto": "Es 29 de agosto y el cuaderno de repaso sigue precintado en su plástico original. Tu madre acaba de entrar en tu cuarto preguntando por él.",
+      "izquierda": {
+        "texto": "Rellenarlo a boleo",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": 15,
+            "vinculos": 10
+          },
+          "mensaje": "La profesora ni lo mira y te pone un sello de estrella."
+        }
+      },
+      "derecha": {
+        "texto": "Hacerlo sin dormir",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "mando_dos",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Mando Dos",
+      "texto": "Vas a casa de un amigo a jugar a la consola. Te da el mando de marca blanca con el botón pegajoso y sospechas que ni siquiera está enchufado.",
+      "izquierda": {
+        "texto": "Fingir que juegas",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Desenchufar la consola",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "viaje_playa",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Viaje a la Playa",
+      "texto": "Lleváis cuatro horas de autopista a 36 grados. Tu padre lleva dos horas diciendo que «ya casi llegamos» y se niega a parar en una gasolinera por no perder ritmo.",
+      "izquierda": {
+        "texto": "Aguantar las ganas",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Amenazar con vomitar",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "festival_fin_curso",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Festival de Fin de Curso",
+      "texto": "Te han disfrazado de nube con una bolsa de basura blanca y algodón pegado. Tienes que bailar delante de doscientos padres con cámara de vídeo.",
+      "izquierda": {
+        "texto": "Bailar como si nada",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte ties{o/a}",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "armario_reyes",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "edad_sugerida": 8,
+      "nombre": "El Armario de tus Padres",
+      "texto": "Buscando unas pilas encuentras la consola que pediste a los Reyes escondida detrás de las sábanas de tus padres.",
+      "izquierda": {
+        "texto": "Callar y exprimir la farsa",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -5
+        },
+        "hito_biografico": "Fingió creer en los Reyes hasta los trece años por interés económico."
+      },
+      "derecha": {
+        "texto": "Contárselo a tu clase",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "vinculos": -15,
+            "cordura": -10
+          },
+          "mensaje": "Tres madres llaman a la tuya llorando. Ese año te traen calcetines."
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "piscina_pueblo",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "La Piscina del Pueblo",
+      "texto": "El agua está a doce grados y tienes los labios morados, pero tu primo mayor te dice que si no te tiras de bomba eres un{/a} cobarde.",
+      "izquierda": {
+        "texto": "Tirarte de bomba",
+        "efectos": {
+          "salud": -10,
+          "vinculos": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en la toalla",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "campamento_verano",
+      "tipo": "etapa",
+      "etapa": "4-11",
+      "nombre": "El Campamento de Verano",
+      "texto": "Tus padres te mandan quince días a un pinar sin cobertura para que «te espabiles». El monitor lleva guitarra y las duchas solo tienen agua fría.",
+      "izquierda": {
+        "texto": "Sobrevivir sin ducharte",
+        "efectos": {
+          "salud": -5,
+          "cordura": 10
+        },
+        "hito_biografico": "Pasó quince días de campamento con la misma camiseta puesta."
+      },
+      "derecha": {
+        "texto": "Llamar llorando a casa",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
     }
   ]
 }

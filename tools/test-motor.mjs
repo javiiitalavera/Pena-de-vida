@@ -79,8 +79,26 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
 { const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const n=construirNecrologia(a);
   assert(n.texto.includes('guardería') && n.rango==='Edad oficial: 00 años' && n.cabecera==='Fe de vida' && !n.remates.some(r=>/funeral|Epitafio|forense/.test(r)),'la prórroga: fe de vida, edad 00 y sin remates de funeral'); }
 // anclas alternativas y arcos
-{ const vistos={}; for(let s=1;s<=300;s++){ const p=new Partida(datos,{sexo:'M',rng:rngSemilla(s)}); const c0=p.siguienteCarta(); p.elegir('izquierda'); const c1=p.siguienteCarta(); vistos[c0.id]=(vistos[c0.id]||0)+1; vistos[c1.id]=(vistos[c1.id]||0)+1; if(c0.anio!==0||c1.anio!==1) vistos.mal=(vistos.mal||0)+1; }
-  assert(!vistos.mal && ['obstetra','parto_festivo','el_parecido','pediatra_vacunas','primera_palabra','parque_bolas'].every(id=>vistos[id]>50),'años 0 y 1: una carta al azar de cada grupo '+JSON.stringify(vistos)); }
+{
+  const grupos = ['nacimiento', 'primer_anio'];
+  const alternativas = datos.cartas.filter(c => c.tipo === 'ancla' && grupos.includes(c.grupo));
+  const vistas = new Set();
+  let ordenCorrecto = true;
+  for (let semilla = 1; semilla <= 300; semilla++) {
+    const partida = new Partida(datos, { sexo: 'M', rng: rngSemilla(semilla) });
+    for (const [anio, grupo] of grupos.entries()) {
+      const carta = partida.siguienteCarta();
+      if (carta?.grupo !== grupo || carta.anio !== anio || partida.anio !== anio) {
+        ordenCorrecto = false;
+        break;
+      }
+      vistas.add(carta.id);
+      partida.elegir('izquierda');
+    }
+  }
+  assert(ordenCorrecto && alternativas.every(c => vistas.has(c.id)),
+    'años 0 y 1: una carta por grupo y todas las alternativas pueden salir');
+}
 { const p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('comunion'); p.elegir('derecha'); assert(p.flags.has('sobre_comunion'),'la Comunión activa el arco del sobre'); }
 { const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const r=construirNecrologia(a).remates;
   assert(r.some(x=>x.includes('COBOL')&&x.includes('derrotada')) && !r.some(x=>x.includes('Héroe nacional')),'error del sistema: remate COBOL, sin héroe nacional'); }
