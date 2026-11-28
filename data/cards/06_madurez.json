@@ -15,7 +15,7 @@
         }
       },
       "derecha": {
-        "texto": "Máster de Historia del Arte",
+        "texto": "Apuntarte a Historia del Arte",
         "efectos": {
           "vinculos": 10,
           "dinero": -10
@@ -32,7 +32,7 @@
       "personaje": "medico_cabecera",
       "texto": "Te han salido los análisis mal. Te recomienda dejar el alcohol, el azúcar, la sal, la carne roja y el estrés.",
       "izquierda": {
-        "texto": "Pechuga hervida de por vida",
+        "texto": "Comer pechuga hervida",
         "efectos": {
           "salud": 15,
           "cordura": -10
@@ -127,7 +127,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Indemnización y un bar",
+        "texto": "Cobrar y montar un bar",
         "efectos": {
           "dinero": -15,
           "salud": -10
@@ -164,7 +164,7 @@
         }
       },
       "derecha": {
-        "texto": "Cena por la ventana",
+        "texto": "Tirar la cena por la ventana",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
@@ -184,14 +184,14 @@
       "personaje": "coordinador_imserso",
       "texto": "Te toca Benidorm en noviembre. El autobús huele a Reflex y el coordinador intenta animaros cantando canciones de Manolo Escobar.",
       "izquierda": {
-        "texto": "Pasodobles hasta las tres",
+        "texto": "Bailar pasodobles hasta las tres",
         "efectos": {
           "vinculos": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Documentales de la guerra",
+        "texto": "Ver documentales en el cuarto",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -294,7 +294,7 @@
         }
       },
       "derecha": {
-        "texto": "Nivea de lata azul",
+        "texto": "Seguir con Nivea de lata azul",
         "efectos": {
           "dinero": 5,
           "vinculos": -5
@@ -310,7 +310,7 @@
       "personaje": "camarero",
       "texto": "En un restaurante con poca luz estiras tanto el brazo para leer la carta que casi le sacas un ojo al camarero.",
       "izquierda": {
-        "texto": "Gafas de farmacia",
+        "texto": "Comprar gafas de farmacia",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -372,7 +372,7 @@
         }
       },
       "derecha": {
-        "texto": "Jamón y viajes",
+        "texto": "Gastarlo en jamón y viajes",
         "efectos": {
           "dinero": -15,
           "cordura": 15
@@ -420,7 +420,7 @@
       "personaje": "pista_padel",
       "texto": "Te invitan a jugar un partido de dobles. Tu mente cree que tienes 22 años; tu tendón de Aquiles opina lo contrario.",
       "izquierda": {
-        "texto": "A por la bola imposible",
+        "texto": "Tirarte a por la bola",
         "efectos": {
           "salud": -15,
           "vinculos": 10
@@ -466,14 +466,14 @@
       "personaje": "copa_vino",
       "texto": "Anoche te tomaste dos copas de vino cenando. Hoy te levantas con la sensación de haber sido atropellad{o/a} por un camión de mudanzas.",
       "izquierda": {
-        "texto": "Domingo en posición fetal",
+        "texto": "Pasar el día en posición fetal",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Una cerveza para cortarla",
+        "texto": "Tomar una cerveza para cortarla",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -519,7 +519,7 @@
         }
       },
       "derecha": {
-        "texto": "Galletas a oscuras",
+        "texto": "Comer galletas a oscuras",
         "efectos": {
           "cordura": 10,
           "salud": -5
@@ -566,7 +566,7 @@
         }
       },
       "derecha": {
-        "texto": "Mercadona y a otra cosa",
+        "texto": "Comprarlos en el súper",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -589,7 +589,7 @@
         }
       },
       "derecha": {
-        "texto": "Documental de animales",
+        "texto": "Poner un documental",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -651,7 +651,7 @@
         }
       },
       "derecha": {
-        "texto": "A casa antes del reguetón",
+        "texto": "Irte antes del reguetón",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -667,7 +667,7 @@
       "personaje": "simulador_pension",
       "texto": "Entras en el simulador de la Seguridad Social para ver cuánto te quedará al jubilarte. La cifra que sale en pantalla te da escalofríos.",
       "izquierda": {
-        "texto": "Ahorro obsesivo",
+        "texto": "Ahorrar obsesivamente",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -713,7 +713,7 @@
       "personaje": "peluquero",
       "texto": "Te miras al espejo y ves que tienes más pelo blanco que oscuro. El peluquero te ofrece un tinte 'muy natural' que parece betún de zapatos.",
       "izquierda": {
-        "texto": "Tinte de presentador",
+        "texto": "Teñirte de negro betún",
         "efectos": {
           "dinero": -10,
           "vinculos": -10
@@ -807,7 +807,7 @@
         }
       },
       "derecha": {
-        "texto": "Vermut en el bar",
+        "texto": "Irte de vermut al bar",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -831,7 +831,7 @@
         "hito_biografico": "Alquiló un trastero con ventana a precio de chalet."
       },
       "derecha": {
-        "texto": "Alquiler justo",
+        "texto": "Poner un alquiler justo",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -900,7 +900,7 @@
         }
       },
       "derecha": {
-        "texto": "Eso roza la prevaricación",
+        "texto": "Negarte a firmarlo",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -916,7 +916,7 @@
       "personaje": "empresario_bar",
       "texto": "Te tocan 6.000€ en la Lotería de Navidad. Un empresario del bar te ofrece 6.500€ en billetes de 50 por tu décimo para blanquear dinero.",
       "izquierda": {
-        "texto": "Cambio en la trastienda",
+        "texto": "Venderlo en la trastienda",
         "efectos": {
           "dinero": 15,
           "cordura": -10
