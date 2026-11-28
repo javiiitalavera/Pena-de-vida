@@ -99,7 +99,7 @@
         ]
       },
       "izquierda": {
-        "texto": "20 € y silenciar un año",
+        "texto": "Pagar 20 € y silenciar un año",
         "efectos": {
           "dinero": -5,
           "cordura": 10
@@ -289,7 +289,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Guisantes congelados",
+        "texto": "Hacértela y ponerte hielo",
         "efectos": {
           "vinculos": 10,
           "salud": -5
@@ -322,7 +322,7 @@
         }
       },
       "derecha": {
-        "texto": "Sartén, como un adulto",
+        "texto": "Usar la sartén, como un adulto",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -406,7 +406,7 @@
         "hito_biografico": "Hizo amistad con un coleccionista de armas blancas en una boda."
       },
       "derecha": {
-        "texto": "Migraña y a casa",
+        "texto": "Fingir migraña e irte",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -427,7 +427,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Atún el día 20",
+        "texto": "Seguir sol{o/a} a base de latas",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -483,7 +483,7 @@
         ]
       },
       "izquierda": {
-        "texto": "A fuerza bruta",
+        "texto": "Montarlo a fuerza bruta",
         "efectos": {
           "salud": -10,
           "dinero": 5
@@ -506,7 +506,7 @@
       "personaje": "fisio",
       "texto": "Te despiertas con una contractura brutal en el cuello. No has hecho deporte extremo; simplemente has dormido en una postura ligeramente rara.",
       "izquierda": {
-        "texto": "50 € de fisio",
+        "texto": "Pagar 50 € de fisio",
         "efectos": {
           "dinero": -10,
           "salud": 10
@@ -584,14 +584,14 @@
       "personaje": "festival",
       "texto": "Has comprado entradas para un festival pensando que sigues teniendo 22 años. Son las diez de la noche, te duelen las lumbares y el cabeza de cartel sale a la una.",
       "izquierda": {
-        "texto": "Cerveza caliente a 9 €",
+        "texto": "Aguentar con cerveza a 9 €",
         "efectos": {
           "salud": -10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Al hotel, con Spotify",
+        "texto": "Irte al hotel",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -778,7 +778,7 @@
         }
       },
       "derecha": {
-        "texto": "Freidora de aire",
+        "texto": "Dejarlo y sufrir gratis",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -863,7 +863,7 @@
         }
       },
       "derecha": {
-        "texto": "Auriculares de 350 €",
+        "texto": "Comprar auriculares de 350 €",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -934,7 +934,7 @@
         "hito_biografico": "Liquidó el patrimonio sentimental de su familia en Wallapop."
       },
       "derecha": {
-        "texto": "Otra caja, veinte años más",
+        "texto": "Guardarlas otros 20 años",
         "efectos": {
           "dinero": -5,
           "vinculos": 10
@@ -950,7 +950,7 @@
       "personaje": "conductor_nervioso",
       "texto": "Te dan un golpe por detrás en un semáforo a 5 km/h. No tienes nada, pero el conductor del otro coche te mira nervioso y sabes cómo funcionan los seguros.",
       "izquierda": {
-        "texto": "Collarín y 2.500 €",
+        "texto": "Fingir collarín por 2.500 €",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -966,7 +966,7 @@
         }
       },
       "derecha": {
-        "texto": "Parte amistoso honesto",
+        "texto": "Hacer parte amistoso",
         "efectos": {
           "vinculos": 10,
           "dinero": -5
@@ -1099,7 +1099,7 @@
         }
       },
       "derecha": {
-        "texto": "Coherencia moral",
+        "texto": "No ir por coherencia",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -1115,7 +1115,7 @@
       "personaje": "agencia_marketing",
       "texto": "Una agencia de marketing te ofrece 1.500€ por grabar un vídeo de 30 segundos fingiendo que te hiciste ric{o/a} con un curso de criptomonedas.",
       "izquierda": {
-        "texto": "Gafas de sol y al contado",
+        "texto": "Grabar con gafas de sol",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -1123,7 +1123,7 @@
         "hito_biografico": "Prestó su cara para anunciar una estafa financiera en redes."
       },
       "derecha": {
-        "texto": "Mandarles a la mierda",
+        "texto": "Mandarles a Cuenca",
         "efectos": {
           "vinculos": 10,
           "dinero": -5
@@ -1177,7 +1177,7 @@
         }
       },
       "derecha": {
-        "texto": "Casa vacía y tranquila",
+        "texto": "Dejar el piso vacío",
         "efectos": {
           "salud": 5,
           "dinero": -5
@@ -1193,7 +1193,7 @@
       "personaje": "camarero",
       "texto": "Viajas por trabajo y la empresa te cubre hasta 65€ diarios en comidas. El camarero del bar te ofrece hacerte un ticket inflado si le dejas 5€ de propina.",
       "izquierda": {
-        "texto": "Bocadillo y la diferencia",
+        "texto": "Inflar el ticket",
         "efectos": {
           "dinero": 10,
           "salud": -5
@@ -1216,7 +1216,7 @@
       "personaje": "centro_plasma",
       "texto": "Un centro privado te compensa económicamente por donar plasma dos veces por semana. Sales un poco maread{o/a}, pero paga la compra del súper.",
       "izquierda": {
-        "texto": "Martes y jueves, el brazo",
+        "texto": "Donar dos veces por semana",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -1246,7 +1246,7 @@
         }
       },
       "derecha": {
-        "texto": "Alta voluntaria",
+        "texto": "Pedir el alta",
         "efectos": {
           "vinculos": 10,
           "salud": -5
@@ -1262,7 +1262,7 @@
       "personaje": "gasolinera",
       "texto": "Tienes tarjeta de combustible de empresa para desplazamientos laborales, pero nadie revisa los kilómetros en agosto.",
       "izquierda": {
-        "texto": "Vacaciones a su cuenta",
+        "texto": "Pagar tus vacaciones con ella",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -1292,7 +1292,7 @@
         }
       },
       "derecha": {
-        "texto": "Desguace legal por 150 €",
+        "texto": "Llevarlo al desguace legal",
         "efectos": {
           "cordura": 10,
           "dinero": -5
