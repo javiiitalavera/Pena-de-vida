@@ -30,7 +30,7 @@ p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); e=p.calcularEfect
 e=p.calcularEfectos({vinculos:10}); assert(e.vinculos===8,'psicópata sube vínculos x0.75 (7.5→8)');
 p=new Partida(datos,{sexo:'M',rasgoId:'sindrome_del_impostor'}); p.avanzarHasta(11); assert(p.pilares.cordura===40,'impostor −5 a los 5 y 10: '+p.pilares.cordura);
 // comodines
-p=new Partida(datos,{sexo:'M',comodinId:'segunda_opinion'}); p.carta=p.porId.get('obstetra'); p.usarComodin(); assert(JSON.stringify(p.vistaPrevia('izquierda'))==='{"salud":-10,"cordura":10}','segunda opinión invierte');
+p=new Partida(datos,{sexo:'M',comodinId:'segunda_opinion'}); p.carta=p.porId.get('obstetra'); p.usarComodin(); assert(JSON.stringify(p.vistaPrevia('izquierda'))==='{"salud":-10,"vinculos":10}','segunda opinión invierte');
 p=new Partida(datos,{sexo:'M',comodinId:'orfidal'}); p.siguienteCarta(); p.pilares.cordura=20; p.usarComodin(); p.elegir('izquierda'); assert(p.pilares.cordura===50,'orfidal congela'); p.avanzarHasta(6); assert(!p.congelado,'orfidal caduca');
 p=new Partida(datos,{sexo:'M',comodinId:'bomba_humo'}); const c1=p.siguienteCarta(); p.usarComodin(); assert(p.pilares.salud===50 && p.siguienteCarta().id!==c1.id,'bomba de humo descarta');
 p=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); p.siguienteCarta(); p.usarComodin(); assert(p.pilares.dinero===75&&p.pilares.vinculos===25,'contacto +25/−25');
