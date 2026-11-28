@@ -117,16 +117,16 @@
       "etapa": "70-89",
       "nombre": "La Estafa del Hijo en Apuros",
       "personaje": "estafador",
-      "texto": "Te llega un WhatsApp de un número desconocido: 'Hola, se me ha roto el móvil, hazme un Bizum de 1.800€ urgente'.",
+      "texto": "Te llega un mensaje de un número desconocido: «Hola, se me ha roto el móvil, hazme una transferencia de 1.800 € urgente».",
       "izquierda": {
-        "texto": "Hacerlo por si acaso",
+        "texto": "Enviar el dinero por si acaso",
         "efectos": {
           "dinero": -15,
           "vinculos": 5
         }
       },
       "derecha": {
-        "texto": "«Nunca me caíste bien»",
+        "texto": "Decirle que nunca te cayó bien",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -313,7 +313,7 @@
       "etapa": "70-89",
       "nombre": "La Sucursal Bancaria",
       "personaje": "empleado_banco",
-      "texto": "Han cerrado tu oficina de toda la vida y un chico con corbata te dice que 'para sacar efectivo tienes que usar la app y el código QR'.",
+      "texto": "Han cerrado tu oficina de toda la vida y un chico con corbata te dice que «para sacar efectivo tienes que usar el teléfono y un código en pantalla».",
       "izquierda": {
         "texto": "Hacer una sentada en el banco",
         "efectos": {
@@ -398,9 +398,9 @@
       "id": "movil_nuevo",
       "tipo": "etapa",
       "etapa": "70-89",
-      "nombre": "El Móvil Nuevo",
+      "nombre": "El Teléfono Nuevo",
       "personaje": "smartphone",
-      "texto": "Tus hijos te han regalado un smartphone. Sin querer has reenviado una foto borrosa de tu pie al grupo de WhatsApp de la comunidad.",
+      "texto": "Tus hijos te han regalado un teléfono táctil. Sin querer has reenviado una foto borrosa de tu pie al grupo de mensajes de la comunidad.",
       "izquierda": {
         "texto": "Apagar el móvil tres días",
         "efectos": {
@@ -547,7 +547,7 @@
       "etapa": "70-89",
       "nombre": "El Baile del Centro Cívico",
       "personaje": "pareja_baile",
-      "texto": "El centro de mayores parece una discoteca de Ibiza pero con olor a Vicks VapoRub. Alguien muy insistente te saca a bailar un bolero.",
+      "texto": "El centro de mayores parece una sala de fiestas pero con olor a pomada mentolada. Alguien muy insistente te saca a bailar un bolero.",
       "izquierda": {
         "texto": "Bailar y ligar",
         "efectos": {
@@ -569,9 +569,9 @@
       "id": "bulo_whatsapp",
       "tipo": "etapa",
       "etapa": "70-89",
-      "nombre": "El Bulo de WhatsApp",
+      "nombre": "El Bulo en Cadena",
       "personaje": "cadena_whatsapp",
-      "texto": "Te llega una cadena que dice que si no la reenvías a diez contactos, WhatsApp te cobrará 50 euros al mes y te quitarán la pensión.",
+      "texto": "Te llega una cadena de mensajes que dice que si no la reenvías a diez contactos te cobrarán 50 euros al mes y te quitarán la pensión.",
       "izquierda": {
         "texto": "Reenviarla a todos",
         "efectos": {
@@ -580,7 +580,7 @@
         }
       },
       "derecha": {
-        "texto": "Vivir al límite",
+        "texto": "Ignorarla y vivir al límite",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -679,7 +679,7 @@
       "etapa": "70-89",
       "nombre": "Las Batallitas",
       "personaje": "familia_navidad",
-      "texto": "En la comida de Navidad empiezas a contar por cuadragésima vez cómo era el invierno de 1978. Nadie te está escuchando; todos miran el móvil.",
+      "texto": "En la comida de Navidad empiezas a contar por cuadragésima vez cómo era el invierno de tu juventud. Nadie te escucha; todos miran la pantalla.",
       "izquierda": {
         "texto": "Hablar más alto",
         "efectos": {

@@ -146,16 +146,16 @@
       "id": "bisnieto_influencer",
       "tipo": "etapa",
       "etapa": "90-99",
-      "nombre": "El Bisnieto Influencer",
+      "nombre": "El Bisnieto con Cámara",
       "personaje": "bisnieto",
-      "texto": "Te enfoca con el móvil mientras duermes la siesta para subir un TikTok con música triste y el texto 'disfrutad de vuestros abuelos'.",
+      "texto": "Te graba con el móvil mientras duermes la siesta para subir un vídeo con música triste y el texto «disfrutad de vuestros abuelos».",
       "izquierda": {
         "texto": "Hacer una peineta a cámara",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         },
-        "hito_biografico": "Se hizo viral a los 90 haciendo una peineta a su bisnieto."
+        "hito_biografico": "Se hizo viral a los noventa haciendo una peineta a su bisnieto."
       },
       "derecha": {
         "texto": "Sonreír sin entender",
@@ -365,7 +365,7 @@
         }
       },
       "derecha": {
-        "texto": "Enchufar el brasero de 1982",
+        "texto": "Enchufar el brasero antiguo",
         "efectos": {
           "salud": -15,
           "cordura": 10

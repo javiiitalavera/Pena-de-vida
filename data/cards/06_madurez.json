@@ -120,7 +120,7 @@
       "etapa": "50-69",
       "nombre": "El ERE de la Empresa",
       "personaje": "rrhh",
-      "texto": "Te sustituyen por un chaval de 23 años que cobra la mitad y usa ChatGPT hasta para dar los buenos días.",
+      "texto": "Te sustituyen por un chaval de 23 años que cobra la mitad y usa un programa automático hasta para redactar los buenos días.",
       "condiciones": {
         "requiere_flags": [
           "oficinista"
@@ -135,7 +135,7 @@
         "hito_biografico": "Perdió su indemnización montando un bar sin clientes."
       },
       "derecha": {
-        "texto": "Demandar",
+        "texto": "Demandar a la empresa",
         "efectos": {
           "dinero": 10,
           "cordura": -15
@@ -182,16 +182,16 @@
       ],
       "nombre": "El Viaje del IMSERSO",
       "personaje": "coordinador_imserso",
-      "texto": "Te toca Benidorm en noviembre. El autobús huele a Reflex y el coordinador intenta animaros cantando canciones de Manolo Escobar.",
+      "texto": "Te toca Benidorm en noviembre. El autobús huele a linimento y el coordinador intenta animaros cantando pasodobles por megafonía.",
       "izquierda": {
-        "texto": "Bailar pasodobles hasta las tres",
+        "texto": "Bailar hasta las tres",
         "efectos": {
           "vinculos": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Ver documentales en el cuarto",
+        "texto": "Ver documentales en tu cuarto",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -390,7 +390,7 @@
       "etapa": "50-69",
       "nombre": "El Reencuentro del Instituto",
       "personaje": "antiguos_alumnos",
-      "texto": "Te meten en un grupo de WhatsApp con gente que no ves desde 1995. La mitad están calvos, la otra mitad se han hecho coaches emocionales.",
+      "texto": "Te meten en un grupo con gente a la que no ves desde hace treinta años. La mitad están calvos y la otra mitad dan charlas de autoayuda.",
       "izquierda": {
         "texto": "Ir a ver quién está peor",
         "efectos": {
@@ -445,7 +445,7 @@
       "etapa": "50-69",
       "nombre": "El Parquímetro Inteligente",
       "personaje": "parquimetro",
-      "texto": "Ya no acepta monedas. Tienes que bajarte una app, registrarte con tu DNI, meter la tarjeta y validar un código por SMS mientras llueve.",
+      "texto": "Ya no acepta monedas. Tienes que registrarte con tu DNI, meter la tarjeta en el teléfono y validar un código por mensaje mientras llueve.",
       "izquierda": {
         "texto": "Aparcar sin pagar",
         "efectos": {
@@ -454,7 +454,7 @@
         }
       },
       "derecha": {
-        "texto": "Pelearte con la app",
+        "texto": "Pelearte con la máquina",
         "efectos": {
           "dinero": 5,
           "cordura": -10
@@ -514,7 +514,7 @@
       "etapa": "50-69",
       "nombre": "El Insomnio de las Cuatro",
       "personaje": "despertador",
-      "texto": "Te despiertas a las 4:15 de la madrugada sin motivo. Tu cerebro aprovecha para recordarte una tontería que dijiste en una cena en 2003.",
+      "texto": "Te despiertas a las 4:15 de la madrugada sin motivo. Tu cerebro aprovecha para recordarte una tontería que dijiste en una cena hace veinte años.",
       "izquierda": {
         "texto": "Dar vueltas en la cama",
         "efectos": {
@@ -537,17 +537,17 @@
       "etapa": "50-69",
       "nombre": "La Jerga de los Becarios",
       "personaje": "becaria",
-      "texto": "Los jóvenes de la oficina dicen palabras como 'bro', 'random' y 'cringe'. Sientes el impulso suicida de usar una para parecer cercan{o/a}.",
+      "texto": "Los jóvenes de la oficina usan palabras que no entiendes y se ríen de cosas sin gracia. Sientes el impulso suicida de imitarles para parecer cercan{o/a}.",
       "izquierda": {
-        "texto": "«Qué cringe, bro»",
+        "texto": "Imitar su forma de hablar",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         },
-        "hito_biografico": "Hizo el ridículo corporativo intentando hablar como la Generación Z."
+        "hito_biografico": "Hizo el ridículo corporativo intentando hablar como los becarios."
       },
       "derecha": {
-        "texto": "Aceptar que eres un dinosaurio",
+        "texto": "Aceptar que eres mayor",
         "efectos": {
           "cordura": -10,
           "salud": 5
@@ -615,7 +615,7 @@
       "etapa": "50-69",
       "nombre": "El Colchón Viscoelástico",
       "personaje": "vendedor_colchones",
-      "texto": "Te levantas cada mañana con la espalda como una tabla. Un vendedor con bata blanca te intenta colocar un colchón 'con tecnología de la NASA' por 2.400 euros.",
+      "texto": "Te levantas cada mañana con la espalda como una tabla. Un vendedor con bata blanca te intenta colocar un colchón «con tecnología aeroespacial» por 2.400 euros.",
       "izquierda": {
         "texto": "Comprarlo a plazos",
         "efectos": {
@@ -628,11 +628,11 @@
             "dinero": -15,
             "salud": -5
           },
-          "mensaje": "Tecnología de la NASA: duermes como un astronauta, es decir, fatal."
+          "mensaje": "Tecnología aeroespacial: duermes como un astronauta, es decir, fatal."
         }
       },
       "derecha": {
-        "texto": "Girar el de 1999",
+        "texto": "Girar el colchón viejo",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -746,9 +746,9 @@
       "tipo": "etapa",
       "etapa": "50-69",
       "edad_sugerida": 58,
-      "nombre": "El LinkedIn a los 58",
+      "nombre": "El Currículum a los 58",
       "personaje": "reclutador",
-      "texto": "Actualizas tu perfil profesional por si acaso. Un reclutador de 24 años te escribe para decirte que 'estás sobrecualificad{o/a}', que es la forma fina de llamarte viej{o/a}.",
+      "texto": "Actualizas tu perfil profesional por si acaso. Un reclutador de 24 años te escribe para decirte que «estás sobrecualificad{o/a}», que es la forma fina de llamarte viej{o/a}.",
       "izquierda": {
         "texto": "Quitarte quince años",
         "efectos": {
@@ -798,7 +798,7 @@
       "etapa": "50-69",
       "nombre": "La Mochila de Senderismo",
       "personaje": "decathlon",
-      "texto": "De repente te apetece ir al Decathlon a comprarte bastones de trekking, pantalones desmontables y unas botas para hacer rutas de dos horas por el parque.",
+      "texto": "De repente te apetece ir a una tienda de deportes a comprar bastones de trekking, pantalones desmontables y botas para caminar dos horas por el parque.",
       "izquierda": {
         "texto": "Equiparte para los Andes",
         "efectos": {
@@ -899,7 +899,7 @@
       "etapa": "50-69",
       "nombre": "Consultoría Fantasma",
       "personaje": "conocido_subvencion",
-      "texto": "Un antiguo conocido te pide un informe de asesoramiento para justificar una subvención. Son 2.500€ por copiar y pegar cuatro gráficas en un PowerPoint.",
+      "texto": "Un antiguo conocido te pide un informe de asesoramiento para justificar una subvención. Son 2.500 € por copiar y pegar cuatro gráficas en una presentación.",
       "izquierda": {
         "texto": "Facturar humo",
         "efectos": {

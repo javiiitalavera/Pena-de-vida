@@ -139,23 +139,23 @@
       "id": "domingo_ikea",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "Domingo en IKEA",
+      "nombre": "Domingo de Muebles",
       "personaje": "pareja",
-      "texto": "Lleváis cuatro horas discutiendo por una lámpara de 19 euros. Acabas de entender por qué las estadísticas de divorcio suben en septiembre.",
+      "texto": "Lleváis cuatro horas en una gran superficie discutiendo por una lámpara de 19 euros. Acabas de entender por qué los divorcios suben en septiembre.",
       "condiciones": {
         "requiere_flags": [
           "casado"
         ]
       },
       "izquierda": {
-        "texto": "Comprar lámpara y albóndigas",
+        "texto": "Comprar lámpara y comer allí",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Huir por la salida de emergencia",
+        "texto": "Huir por la salida",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -195,24 +195,24 @@
       "id": "tinder_45",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "Tinder a los 45",
+      "nombre": "Citas a los 45",
       "personaje": "match_tigre",
-      "texto": "Has vuelto al mercado. Tu único match de la semana tiene tres fotos con un tigre sedado y en su bio pone 'no dramas'.",
+      "texto": "Has vuelto al mercado. Tu única cita de la semana tiene tres fotos con un tigre sedado y en su perfil pone «no dramas».",
       "condiciones": {
         "requiere_flags": [
           "divorciado"
         ]
       },
       "izquierda": {
-        "texto": "Tomar una caña por desesperación",
+        "texto": "Tomar una caña igualmente",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         },
-        "hito_biografico": "Sobrevivió a una cita de Tinder tras su divorcio."
+        "hito_biografico": "Sobrevivió a una cita por internet tras su divorcio."
       },
       "derecha": {
-        "texto": "Borrar la app y adoptar un gato",
+        "texto": "Borrar perfil y adoptar gato",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -384,7 +384,7 @@
       "etapa": "30-49",
       "nombre": "El Correo del Viernes",
       "personaje": "jefe",
-      "texto": "Son las 19:55 del viernes. Tu jefe te manda un email con asunto 'URGENTE - 5 minutitos' y un Excel de 40 pestañas.",
+      "texto": "Son las 19:55 del viernes. Tu jefe te manda un correo con asunto «URGENTE - 5 minutitos» y una hoja de cálculo de cuarenta pestañas.",
       "condiciones": {
         "requiere_flags": [
           "oficinista"
@@ -691,7 +691,7 @@
       "etapa": "30-49",
       "nombre": "El Mercado Bajista",
       "personaje": "perro_gorro",
-      "texto": "Tu moneda del perro con gorro ha caído un 94% en dos horas. El fundador acaba de borrar su cuenta de Twitter.",
+      "texto": "Tu fondo milagroso ha caído un 94 % en dos horas. El fundador acaba de borrar todos sus perfiles y su teléfono da apagado.",
       "condiciones": {
         "requiere_flags": [
           "criptobro"
@@ -723,21 +723,21 @@
       "etapa": "30-49",
       "nombre": "La Cena de Empresa",
       "personaje": "becaria",
-      "texto": "Llevas tres copas y sientes la necesidad irrefrenable de explicarle a la becaria qué es la blockchain.",
+      "texto": "Llevas tres copas y sientes la necesidad irrefrenable de explicarle a la becaria cómo funciona tu inversión milagrosa.",
       "condiciones": {
         "requiere_flags": [
           "criptobro"
         ]
       },
       "izquierda": {
-        "texto": "Darle la chapa de blockchain",
+        "texto": "Darle la chapa financiera",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Pedir otro gin-tonic y callar",
+        "texto": "Pedir otra copa y callar",
         "efectos": {
           "vinculos": 10,
           "cordura": -10

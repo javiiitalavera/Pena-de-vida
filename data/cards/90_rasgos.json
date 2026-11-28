@@ -155,7 +155,7 @@
       "etapa": "50-69",
       "nombre": "El Impuesto de Sucesiones",
       "personaje": "hacienda",
-      "texto": "Heredas tres pisos en el centro y una finca, pero te toca pagar impuestos. Te indignas tanto que das una entrevista en la tele diciendo que 'en este país no se puede vivir'.",
+      "texto": "Heredas tres pisos en el centro y una finca, pero te toca pagar impuestos. Te indignas tanto que sales en la tele diciendo que «en este país no se puede vivir».",
       "condiciones": {
         "requiere_rasgo": [
           "hijo_de_papa"
@@ -169,7 +169,7 @@
         }
       },
       "derecha": {
-        "texto": "Pagar llorando en el Porsche",
+        "texto": "Pagar llorando en tu deportivo",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -297,7 +297,7 @@
       "etapa": "18-29",
       "nombre": "El Yogur Caducado",
       "personaje": "yogur",
-      "texto": "Encuentras un yogur en el fondo de la nevera que caducó en 2021. Tiene una capa verde encima que parece musgo.",
+      "texto": "Encuentras un yogur en el fondo de la nevera que caducó hace cinco años. Tiene una capa verde encima que parece musgo.",
       "condiciones": {
         "requiere_rasgo": [
           "genetica_de_cucaracha"
@@ -312,7 +312,7 @@
         "hito_biografico": "Sobrevivió a un lácteo con ecosistema propio."
       },
       "derecha": {
-        "texto": "Tirarlo, por cobarde",
+        "texto": "Tirarlo por cobarde",
         "efectos": {
           "dinero": -5,
           "salud": 5
@@ -439,14 +439,14 @@
       "etapa": "30-49",
       "nombre": "La Reunión de Directivos",
       "personaje": "directivos",
-      "texto": "Te ascienden y te meten en una reunión donde todo el mundo dice palabras en inglés como 'synergy' y 'KPI'. Sientes que en cualquier momento entrará seguridad a sacarte.",
+      "texto": "Te ascienden y te meten en una reunión donde todo el mundo usa siglas en inglés que nadie entiende. Sientes que en cualquier momento entrará seguridad a sacarte.",
       "condiciones": {
         "requiere_rasgo": [
           "sindrome_del_impostor"
         ]
       },
       "izquierda": {
-        "texto": "«Hay que darle una vuelta»",
+        "texto": "Soltar una frase vacía",
         "efectos": {
           "dinero": 10,
           "cordura": -10

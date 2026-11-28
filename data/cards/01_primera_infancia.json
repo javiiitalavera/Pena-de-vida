@@ -275,7 +275,7 @@
       "grupo": "nacimiento",
       "nombre": "El Nombre del Abuelo",
       "personaje": "abuela",
-      "texto": "Tu abuela insiste en que te pongan el nombre de un antepasado que suena a notario de 1940. Tus padres no se atreven a llevarle la contraria.",
+      "texto": "Tu abuela insiste en que te pongan el nombre de un antepasado que suena a notario de posguerra. Tus padres no se atreven a llevarle la contraria.",
       "izquierda": {
         "texto": "Llorar al oírlo",
         "efectos": {
@@ -284,7 +284,7 @@
         }
       },
       "derecha": {
-        "texto": "Aceptar el nombre de 1940",
+        "texto": "Aceptar el nombre antiguo",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -380,7 +380,7 @@
       "grupo": "nacimiento",
       "nombre": "La Primera Foto",
       "personaje": "padres",
-      "texto": "Llevas cuatro minutos fuera y pareces una patata arrugada, pero tus padres ya están mandando tu foto al grupo de WhatsApp familiar.",
+      "texto": "Llevas cuatro minutos fuera y pareces una patata arrugada, pero tus padres ya están mandando tu foto al grupo de la familia.",
       "izquierda": {
         "texto": "Sacar la lengua",
         "efectos": {
@@ -454,7 +454,7 @@
       "grupo": "primer_anio",
       "nombre": "El Parque de Bolas",
       "personaje": "bebe_rival",
-      "texto": "Te sueltan en una piscina de bolas que no se limpia desde 1998. Otro bebé te quita el chupete con total impunidad.",
+      "texto": "Te sueltan en una piscina de bolas que no se limpia desde antes de que nacieras. Otro bebé te quita el chupete con total impunidad.",
       "izquierda": {
         "texto": "Morderle la mano",
         "efectos": {

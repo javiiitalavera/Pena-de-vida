@@ -31,7 +31,7 @@
       "edad_sugerida": 17,
       "nombre": "El Orientador del Instituto",
       "personaje": "orientador",
-      "texto": "Te dice que tienes 'un perfil muy polivalente' mientras mira tus notas con la cara de quien acaba de atropellar a un perro.",
+      "texto": "Te dice que tienes «un perfil muy polivalente» mientras mira tus notas con la cara de quien acaba de atropellar a un perro.",
       "izquierda": {
         "texto": "Estudiar por vocación",
         "efectos": {
@@ -51,7 +51,7 @@
             "dinero": -10,
             "cordura": -15
           },
-          "mensaje": "La carrera que paga desaparece el año que terminas. La sustituye una app."
+          "mensaje": "La carrera que paga desaparece el año que terminas. La sustituye un programa."
         }
       },
       "lote": 1

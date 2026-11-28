@@ -98,7 +98,7 @@
       "edad_sugerida": 10,
       "nombre": "El Profesor de Gimnasia",
       "personaje": "profesor_gimnasia",
-      "texto": "Te obliga a saltar el potro delante de toda la clase. Lleva un chándal de 1994 y huele a tabaco.",
+      "texto": "Te obliga a saltar el potro delante de toda la clase. Lleva un chándal de hace tres décadas y huele a tabaco.",
       "izquierda": {
         "texto": "Saltar el potro",
         "efectos": {

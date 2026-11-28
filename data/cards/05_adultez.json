@@ -31,7 +31,7 @@
       "edad_sugerida": 36,
       "nombre": "El Banco",
       "personaje": "director_banco",
-      "texto": "Te conceden la hipoteca a 30 años. El director te regala un bolígrafo de plástico mientras te mira como a un ganado bien cebado.",
+      "texto": "Te conceden la hipoteca a treinta años. El director te regala un bolígrafo de plástico mientras te mira como a ganado bien cebado.",
       "izquierda": {
         "texto": "Firmar hasta los 75",
         "efectos": {
@@ -44,7 +44,7 @@
         ]
       },
       "derecha": {
-        "texto": "Piso con cuatro Erasmus",
+        "texto": "Compartir piso con estudiantes",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -59,14 +59,14 @@
       "edad_sugerida": 44,
       "nombre": "Tu Cuñado",
       "personaje": "cunado",
-      "texto": "En la cena de Nochebuena te explica que las criptomonedas de un perro con gorro son el futuro y que eres un cobarde por no meter tus ahorros.",
+      "texto": "En la cena de Nochebuena te asegura que un fondo financiero milagroso es el futuro y que eres un cobarde por no meter tus ahorros.",
       "izquierda": {
-        "texto": "5.000 € para que se calle",
+        "texto": "Invertir 5.000 € por paz",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
         },
-        "consecuencia": "Metes tus ahorros en criptomonedas y empiezas a dormir peor que antes.",
+        "consecuencia": "Metes tus ahorros en un chiringuito financiero y empiezas a dormir peor.",
         "add_flags": [
           "criptobro"
         ],
@@ -76,11 +76,11 @@
             "dinero": 20,
             "cordura": -10
           },
-          "mensaje": "La moneda del perro sube un 400 %. Tu cuñado se cree un genio para siempre."
+          "mensaje": "El fondo sube un 400 % antes de quebrar. Tu cuñado se cree un genio para siempre."
         }
       },
       "derecha": {
-        "texto": "Explicarle el esquema Ponzi",
+        "texto": "Explicarle qué es una estafa",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -92,23 +92,23 @@
       "id": "whatsapp_colegio",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "El Grupo de WhatsApp del Colegio",
+      "nombre": "El Grupo del Colegio",
       "personaje": "grupo_whatsapp",
-      "texto": "Llevan 140 mensajes discutiendo si el regalo de la profesora debe ser un spa o una cesta de fruta ecológica.",
+      "texto": "Llevan 140 mensajes discutiendo si el regalo de la profesora debe ser un balneario o una cesta de fruta ecológica.",
       "condiciones": {
         "requiere_flags": [
           "con_hijos"
         ]
       },
       "izquierda": {
-        "texto": "Pagar 20 € y silenciar un año",
+        "texto": "Pagar 20 € y silenciar",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "¿Aquí nadie trabaja?",
+        "texto": "Preguntar si nadie trabaja",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -122,7 +122,7 @@
       "etapa": "30-49",
       "nombre": "La Boda de tu Mejor Amigo",
       "personaje": "mejor_amigo",
-      "texto": "Se casa en una finca a tres horas en coche. El cubierto cuesta 250€ y la barra libre es de garrafón.",
+      "texto": "Se casa en una finca a tres horas en coche. El cubierto cuesta 250 € y la barra libre es de garrafón.",
       "izquierda": {
         "texto": "Sonreír en las fotos",
         "efectos": {
@@ -131,19 +131,19 @@
         }
       },
       "derecha": {
-        "texto": "Fingir covid el día antes",
+        "texto": "Fingir una gripe el día antes",
         "efectos": {
           "dinero": 5,
           "vinculos": -15
         },
-        "hito_biografico": "Fingió una enfermedad infecciosa para ahorrarse 250€.",
+        "hito_biografico": "Fingió una enfermedad contagiosa para ahorrarse 250 €.",
         "sorpresa": {
           "probabilidad": 0.25,
           "efectos": {
             "vinculos": -15,
             "cordura": -10
           },
-          "mensaje": "Sales de fondo en un story del novio: estás en el Mercadona."
+          "mensaje": "Te cruzas con el hermano del novio en el supermercado el día de la boda."
         }
       },
       "lote": 2
@@ -154,7 +154,7 @@
       "etapa": "30-49",
       "nombre": "Hacienda",
       "personaje": "hacienda",
-      "texto": "Te llega una carta certificada. Resulta que en 2019 te olvidaste de declarar 42 euros de un dividendo y ahora les debes un riñón.",
+      "texto": "Te llega una carta certificada. Resulta que hace cinco años te olvidaste de declarar 42 euros de un dividendo y ahora les debes un riñón.",
       "izquierda": {
         "texto": "Pagar sin rechistar",
         "efectos": {
@@ -185,7 +185,7 @@
       "etapa": "30-49",
       "nombre": "El Divorcio",
       "personaje": "pareja",
-      "texto": "Tu pareja dice que 'la chispa se ha apagado'. Su abogado ya te ha mandado un burofax quedándose hasta con la Thermomix.",
+      "texto": "Tu pareja dice que «la chispa se ha apagado». Su abogado ya te ha mandado un burofax quedándose hasta con el robot de cocina.",
       "condiciones": {
         "requiere_flags": [
           "casado"
@@ -193,12 +193,12 @@
         "probabilidad": 0.4
       },
       "izquierda": {
-        "texto": "Pelear por la Thermomix",
+        "texto": "Pelear por el robot de cocina",
         "efectos": {
           "dinero": -10,
           "cordura": 10
         },
-        "consecuencia": "Te divorcias tras meses de facturas, pero conservas la Thermomix.",
+        "consecuencia": "Te divorcias tras meses de facturas, pero conservas el robot de cocina.",
         "add_flags": [
           "divorciado"
         ],
@@ -452,7 +452,7 @@
       "etapa": "30-49",
       "nombre": "La Cena con Parejas",
       "personaje": "amigos_parejas",
-      "texto": "Quedas con tus amigos de toda la vida. Llevan dos horas hablando de tipos de interés, colegios concertados y marcas de robots aspiradores.",
+      "texto": "Quedas con tus amigos de toda la vida. Llevan dos horas hablando de tipos de interés, colegios concertados y robots aspiradores.",
       "condiciones": {
         "requiere_flags": [
           "soltero"
@@ -466,7 +466,7 @@
         }
       },
       "derecha": {
-        "texto": "Preguntar por la Roomba",
+        "texto": "Preguntar por el aspirador",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -480,7 +480,7 @@
       "etapa": "30-49",
       "nombre": "La Mudanza sin Pareja",
       "personaje": "armario_ikea",
-      "texto": "Tienes que montar un armario de IKEA de dos metros tú sol{o/a}. En las instrucciones salen dos muñequitos sonriendo; tú estás sudando y a punto de llorar.",
+      "texto": "Tienes que montar un armario desmontable de dos metros tú sol{o/a}. En las instrucciones salen dos muñequitos sonriendo; tú estás sudando y a punto de llorar.",
       "condiciones": {
         "requiere_flags": [
           "soltero"
@@ -531,7 +531,7 @@
       "etapa": "30-49",
       "nombre": "El Grupo de Amigos",
       "personaje": "grupo_whatsapp",
-      "texto": "Lleváis cuatro meses intentando cuadrar una cena por WhatsApp. Alguien acaba de mandar una encuesta de Doodle para noviembre del año que viene.",
+      "texto": "Lleváis cuatro meses intentando cuadrar una cena por mensajes. Alguien acaba de mandar una encuesta de fechas para noviembre del año que viene.",
       "izquierda": {
         "texto": "Quedar hoy mismo",
         "efectos": {
@@ -540,7 +540,7 @@
         }
       },
       "derecha": {
-        "texto": "Votar en el Doodle",
+        "texto": "Votar en la encuesta",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -905,7 +905,7 @@
       "etapa": "30-49",
       "nombre": "La Boda de Destino",
       "personaje": "isla_griega",
-      "texto": "Un conocido al que no ves desde 2016 te invita a su boda en una isla griega. El vuelo, el hotel y el regalo te salen por 1.800 euros.",
+      "texto": "Un conocido al que no ves desde hace diez años te invita a su boda en una isla griega. El vuelo, el hotel y el regalo te salen por 1.800 euros.",
       "izquierda": {
         "texto": "Ir por no quedar mal",
         "efectos": {
@@ -914,7 +914,7 @@
         }
       },
       "derecha": {
-        "texto": "Excusa y bloquearle",
+        "texto": "Poner excusa y desaparecer",
         "efectos": {
           "dinero": 10,
           "vinculos": -15
@@ -926,19 +926,19 @@
       "id": "wallapop_familiar",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "Wallapop Familiar",
+      "nombre": "Liquidación Familiar",
       "personaje": "coleccionista",
-      "texto": "Encuentras en el trastero la cubertería de plata y las figuras de porcelana de tu abuela. Un coleccionista te ofrece 1.200€ en mano hoy mismo.",
+      "texto": "Encuentras en el trastero la cubertería de plata y las figuras de porcelana de tu abuela. Un coleccionista te ofrece 1.200 € en mano hoy mismo.",
       "izquierda": {
         "texto": "Venderlo todo ya",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         },
-        "hito_biografico": "Liquidó el patrimonio sentimental de su familia en Wallapop."
+        "hito_biografico": "Liquidó el patrimonio sentimental de su familia en un portal de segunda mano."
       },
       "derecha": {
-        "texto": "Guardarlas otros 20 años",
+        "texto": "Guardarlas otros veinte años",
         "efectos": {
           "dinero": -5,
           "vinculos": 10
@@ -952,7 +952,7 @@
       "etapa": "30-49",
       "nombre": "El Latigazo Cervical",
       "personaje": "conductor_nervioso",
-      "texto": "Te dan un golpe por detrás en un semáforo a 5 km/h. No tienes nada, pero el conductor del otro coche te mira nervioso y sabes cómo funcionan los seguros.",
+      "texto": "Te dan un golpe por detrás en un semáforo a 5 km/h. No tienes nada, pero el otro conductor te mira nervioso y sabes cómo funcionan los seguros.",
       "izquierda": {
         "texto": "Fingir collarín por 2.500 €",
         "efectos": {
@@ -966,7 +966,7 @@
             "dinero": -15,
             "cordura": -10
           },
-          "mensaje": "El perito te ve cargando sacos de cemento en Instagram. Multa por fraude."
+          "mensaje": "El detective del seguro te fotografía cargando sacos de cemento. Multa por fraude."
         }
       },
       "derecha": {
@@ -1071,7 +1071,7 @@
       "etapa": "30-49",
       "nombre": "El Parte del Seguro",
       "personaje": "perito",
-      "texto": "Tu televisor de 2014 ha muerto de viejo. Un amigo te sugiere decirle al seguro del hogar que fue una subida de tensión tras la tormenta de ayer.",
+      "texto": "Tu televisor de hace doce años ha muerto de viejo. Un amigo te sugiere decirle al seguro del hogar que fue una subida de tensión tras la tormenta de ayer.",
       "izquierda": {
         "texto": "Colársela al perito",
         "efectos": {
@@ -1080,7 +1080,7 @@
         }
       },
       "derecha": {
-        "texto": "Pagarla tú, ejemplar",
+        "texto": "Pagar uno nuevo",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
@@ -1115,19 +1115,19 @@
       "id": "anuncio_instagram",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "El Anuncio de Instagram",
+      "nombre": "El Anuncio Engañoso",
       "personaje": "agencia_marketing",
-      "texto": "Una agencia de marketing te ofrece 1.500€ por grabar un vídeo de 30 segundos fingiendo que te hiciste ric{o/a} con un curso de criptomonedas.",
+      "texto": "Una agencia de publicidad te ofrece 1.500 € por grabar un vídeo de 30 segundos fingiendo que te hiciste ric{o/a} con un curso de inversión.",
       "izquierda": {
         "texto": "Grabar con gafas de sol",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         },
-        "hito_biografico": "Prestó su cara para anunciar una estafa financiera en redes."
+        "hito_biografico": "Prestó su cara para anunciar una estafa financiera."
       },
       "derecha": {
-        "texto": "Mandarles a Cuenca",
+        "texto": "Rechazar la oferta",
         "efectos": {
           "cordura": 10,
           "dinero": -5

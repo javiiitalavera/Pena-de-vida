@@ -171,7 +171,7 @@
       "etapa": "60-79",
       "nombre": "La Empanada de Oro",
       "personaje": "amigo_descampado",
-      "texto": "Te cruzas con tu amigo del descampado por la calle. Conduce un Mercedes nuevo, te abraza y dice que 'un día de estos' te devuelve los 3.000€.",
+      "texto": "Te cruzas con tu amigo del descampado por la calle. Conduce una berlina de lujo nueva, te abraza y dice que «un día de estos» te devuelve los 3.000 €.",
       "condiciones": {
         "requiere_flags": [
           "amigo_moroso"
@@ -183,7 +183,7 @@
           "cordura": 10,
           "vinculos": -10
         },
-        "hito_biografico": "Se cobró una vieja deuda en la pintura de un Mercedes."
+        "hito_biografico": "Se cobró una vieja deuda en la pintura de un coche de lujo."
       },
       "derecha": {
         "texto": "Pedirle que invite a café",

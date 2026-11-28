@@ -80,9 +80,9 @@
       "id": "paciente_google",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "El Paciente de Google",
+      "nombre": "El Paciente Informado",
       "personaje": "paciente_google",
-      "texto": "Ha buscado sus síntomas en internet y te exige una resonancia magnética de cuerpo entero porque 'está seguro de que tiene un parásito tropical'.",
+      "texto": "Ha buscado sus síntomas en internet y te exige una resonancia magnética de cuerpo entero porque «está seguro de que tiene un parásito tropical».",
       "condiciones": {
         "requiere_flags": [
           "medico"
@@ -222,14 +222,14 @@
         ]
       },
       "izquierda": {
-        "texto": "«Aquí hay un ritmo»",
+        "texto": "Explicarle el ritmo de aquí",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Pasarle lo de 2018",
+        "texto": "Pasarle los expedientes viejos",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -346,7 +346,7 @@
       "etapa": "30-49",
       "nombre": "El Móvil en Clase",
       "personaje": "alumno_tiktok",
-      "texto": "Un alumno de 3º de la ESO está grabando un baile de TikTok en última fila mientras explicas la Revolución Industrial.",
+      "texto": "Un alumno de secundaria está grabando un baile con el móvil en última fila mientras explicas la Revolución Industrial.",
       "condiciones": {
         "requiere_flags": [
           "profesor"
@@ -388,7 +388,7 @@
         }
       },
       "derecha": {
-        "texto": "Usar micro de Britney",
+        "texto": "Usar micrófono de diadema",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
@@ -476,7 +476,7 @@
       "etapa": "30-49",
       "nombre": "El Cliente Entendido",
       "personaje": "cliente_vino",
-      "texto": "Te devuelve un vino de 12 euros diciendo que 'tiene notas de corcho' y te amenaza con ponerte una estrella en Google.",
+      "texto": "Te devuelve un vino de 12 euros diciendo que «tiene notas de corcho» y te amenaza con dejarte una estrella en internet.",
       "condiciones": {
         "requiere_flags": [
           "hosteleria"
@@ -537,9 +537,9 @@
         21,
         29
       ],
-      "nombre": "El Bootcamp",
+      "nombre": "El Curso Acelerado",
       "personaje": "bootcamp",
-      "texto": "Te prometen que en doce semanas programarás en Python y cobrarás 60.000€ desde una playa en Bali.",
+      "texto": "Te prometen que en doce semanas programarás como un experto y cobrarás 60.000 € desde una playa tropical.",
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -567,7 +567,7 @@
         ]
       },
       "derecha": {
-        "texto": "Seguir sin saber qué es una API",
+        "texto": "Seguir sin saber programar",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -610,7 +610,7 @@
       "etapa": "30-49",
       "nombre": "La Impresora de tu Tía",
       "personaje": "tia",
-      "texto": "En la comida familiar te sacan una impresora de 2009 y un portátil lleno de barras de herramientas rusas porque 'tú que sabes de ordenadores, míramelo un momento'.",
+      "texto": "En la comida familiar te sacan una impresora de hace quince años y un portátil lleno de virus porque «tú que sabes de ordenadores, míramelo un momento».",
       "condiciones": {
         "requiere_flags": [
           "informatico"
@@ -632,7 +632,7 @@
         }
       },
       "derecha": {
-        "texto": "«Solo trabajo con Linux»",
+        "texto": "Fingir que no es tu rama",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -900,7 +900,7 @@
       "etapa": "50-69",
       "nombre": "La Reforma Educativa",
       "personaje": "ministerio",
-      "texto": "El Gobierno vuelve a cambiar la ley de educación y ahora tienes que redactar 80 páginas de 'competencias transversales' que nadie va a leer.",
+      "texto": "El Gobierno vuelve a cambiar la ley de educación y ahora tienes que redactar 80 páginas de «competencias transversales» que nadie va a leer.",
       "condiciones": {
         "requiere_flags": [
           "profesor"
@@ -914,7 +914,7 @@
         }
       },
       "derecha": {
-        "texto": "Copiar el de 2011",
+        "texto": "Copiar el de hace diez años",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -954,9 +954,9 @@
       "id": "influencer_gastronomico",
       "tipo": "etapa",
       "etapa": "30-49",
-      "nombre": "El Influencer Gastronómico",
+      "nombre": "El Crítico de Internet",
       "personaje": "influencer",
-      "texto": "Un chaval con 600 seguidores en Instagram te dice que si le invitas a cenar a él y a su novia, te sube una historia 'para darte visibilidad'.",
+      "texto": "Un chaval con seiscientos seguidores te dice que si le invitas a cenar a él y a su novia, te hace una reseña «para darte visibilidad».",
       "condiciones": {
         "requiere_flags": [
           "hosteleria"
@@ -968,7 +968,7 @@
           "dinero": 10,
           "vinculos": -10
         },
-        "hito_biografico": "Se negó a aceptar 'visibilidad' como moneda de curso legal."
+        "hito_biografico": "Se negó a aceptar «visibilidad» como moneda de curso legal."
       },
       "derecha": {
         "texto": "Invitarle a croquetas congeladas",
@@ -1013,7 +1013,7 @@
       "etapa": "30-49",
       "nombre": "La Reunión Diaria",
       "personaje": "jefe_producto",
-      "texto": "Lleváis una hora y media en una 'Daily' de quince minutos escuchando al jefe de proyecto dibujar flechas en una pizarra virtual.",
+      "texto": "Lleváis una hora y media en una reunión «rápida» de quince minutos escuchando al jefe de proyecto dibujar flechas en una pizarra.",
       "condiciones": {
         "requiere_flags": [
           "informatico"
@@ -1027,7 +1027,7 @@
         }
       },
       "derecha": {
-        "texto": "Apagar y trabajar",
+        "texto": "Colgar y trabajar",
         "efectos": {
           "dinero": 10,
           "vinculos": -10

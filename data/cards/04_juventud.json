@@ -108,11 +108,11 @@
         19,
         24
       ],
-      "nombre": "La Beca Erasmus",
+      "nombre": "La Beca en el Extranjero",
       "personaje": "erasmus",
-      "texto": "Llevas seis meses en Polonia. No has pisado la facultad, pero hablas polaco fluido solo para pedir cerveza y kebab.",
+      "texto": "Llevas seis meses de beca en el extranjero. No has pisado la facultad, pero dominas el idioma local para pedir cerveza.",
       "izquierda": {
-        "texto": "Volver a España",
+        "texto": "Volver a casa",
         "efectos": {
           "cordura": -10,
           "vinculos": 10
@@ -123,7 +123,7 @@
             "dinero": -15,
             "cordura": -10
           },
-          "mensaje": "Te llega la factura del móvil: 1.400 € de roaming polaco."
+          "mensaje": "Te llega la factura del teléfono: 1.400 € de llamadas internacionales."
         }
       },
       "derecha": {
@@ -132,7 +132,7 @@
           "dinero": -10,
           "cordura": 10
         },
-        "hito_biografico": "Perdió un año académico y la dignidad en Cracovia."
+        "hito_biografico": "Perdió un año académico y la dignidad en el extranjero."
       },
       "lote": 2
     },
@@ -146,7 +146,7 @@
       ],
       "nombre": "El Amigo Emprendedor",
       "personaje": "amigo_emprendedor",
-      "texto": "Ha dejado el trabajo para montar una app que es 'como Uber, pero para pasear iguanas'. Necesita 3.000€ tuyos.",
+      "texto": "Ha dejado el trabajo para montar un negocio revolucionario de pasear iguanas a domicilio. Necesita 3.000 € tuyos.",
       "izquierda": {
         "texto": "Invertir por amistad",
         "efectos": {
@@ -159,7 +159,7 @@
             "dinero": 20,
             "vinculos": 10
           },
-          "mensaje": "Google compra la app de las iguanas. Nadie sabe por qué. Tú tampoco."
+          "mensaje": "Una multinacional compra el negocio de las iguanas. Nadie sabe por qué. Tú tampoco."
         }
       },
       "derecha": {
@@ -386,7 +386,7 @@
       "anio": 23,
       "nombre": "El Mercado Laboral",
       "personaje": "consultora",
-      "texto": "Ya tienes edad de cotizar. Una consultora gris te ofrece un cubículo sin ventanas con contrato indefinido; la alternativa es seguir buscando 'tu vocación'.",
+      "texto": "Ya tienes edad de cotizar. Una consultora gris te ofrece un cubículo sin ventanas con contrato indefinido; la alternativa es seguir buscando «tu vocación».",
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -399,7 +399,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Vender tu alma a Excel",
+        "texto": "Vender tu alma a la oficina",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -413,7 +413,7 @@
         ]
       },
       "derecha": {
-        "texto": "Al paro, a esperar señales",
+        "texto": "Irte al paro a esperar",
         "efectos": {
           "cordura": 10,
           "dinero": -10
