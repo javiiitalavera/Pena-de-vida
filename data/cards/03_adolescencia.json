@@ -9,14 +9,14 @@
       "personaje": "mejor_amigo",
       "texto": "Ha encontrado una botella de licor de melocotón caducada en el trastero de su abuelo. Quiere bebérsela en un descampado.",
       "izquierda": {
-        "texto": "A fondo",
+        "texto": "Beberla con él",
         "efectos": {
           "salud": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Quedarte con la consola",
+        "texto": "Quedarte en casa",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -33,14 +33,14 @@
       "personaje": "orientador",
       "texto": "Te dice que tienes 'un perfil muy polivalente' mientras mira tus notas con la cara de quien acaba de atropellar a un perro.",
       "izquierda": {
-        "texto": "Carrera vocacional",
+        "texto": "Estudiar por vocación",
         "efectos": {
           "cordura": 10,
           "dinero": -15
         }
       },
       "derecha": {
-        "texto": "Algo que odias pero paga",
+        "texto": "Estudiar algo que pague",
         "efectos": {
           "dinero": 10,
           "cordura": -15
@@ -116,7 +116,7 @@
       "personaje": "primer_amor",
       "texto": "Te dice que 'eres muy maj{o/a}' pero que prefiere salir con un repetidor de 19 años que tiene una moto sin tubo de escape.",
       "izquierda": {
-        "texto": "Poesía oscura",
+        "texto": "Escribir poesía oscura",
         "efectos": {
           "cordura": -10,
           "salud": 5
@@ -149,7 +149,7 @@
         }
       },
       "derecha": {
-        "texto": "En blanco y a influencer",
+        "texto": "Dejarlo en blanco",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -233,7 +233,7 @@
         }
       },
       "derecha": {
-        "texto": "Crema milagrosa de 45 €",
+        "texto": "Comprar crema de 45 €",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
@@ -281,7 +281,7 @@
       "personaje": "padre",
       "texto": "En el recreo todos comen bollos industriales y patatas fritas. Tú sacas un tupper con pechuga de pavo y una manzana que te ha preparado tu padre.",
       "izquierda": {
-        "texto": "Tu menú de hospital",
+        "texto": "Comer tu menú de hospital",
         "efectos": {
           "salud": 15,
           "vinculos": -10
