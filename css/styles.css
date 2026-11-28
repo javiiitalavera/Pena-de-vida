@@ -207,17 +207,6 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 }
 
 .mesa { position: relative; display: flex; justify-content: center; perspective: 900px; }
-.zona-texto { position: relative; }
-.sorpresa {
-  /* Tapa el texto de la carta nueva, sin tocar la ilustración. */
-  position: absolute; inset: 0; z-index: 4;
-  display: flex; align-items: center; justify-content: center;
-  padding: 8px 16px; background: var(--papel); color: var(--papel-tinta);
-  border: 1px solid var(--papel-tinta); border-radius: 0;
-  font-family: var(--serif); font-size: clamp(1rem, 4.2vw, 1.1rem); line-height: 1.4; text-align: center;
-  cursor: pointer; animation: sorpresa-entra 0.25s ease-out;
-}
-@keyframes sorpresa-entra { from { opacity: 0; } }
 .carta {
   width: var(--carta); height: var(--carta);
   background: var(--papel);
@@ -234,6 +223,17 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .carta.volviendo { transition: transform 0.25s ease; }
 .carta.saliendo { transition: transform 0.3s ease-in, opacity 0.3s; opacity: 0; }
 .carta.entrando { animation: entrar 0.3s ease-out; }
+.carta.girando { transition: transform 0.16s ease-in-out; }
+.mesa { perspective: 900px; }
+.carta-dorso {
+  /* Dorso de la carta: papel liso con el mensaje de lo que acaba de pasar. */
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  padding: 12%; background: var(--papel); color: var(--papel-tinta);
+  box-shadow: inset 0 0 0 10px var(--papel), inset 0 0 0 11px rgba(29, 26, 20, 0.35);
+  font-family: var(--serif); font-size: calc(var(--carta) * 0.062); line-height: 1.45; text-align: center;
+  cursor: pointer;
+}
 @keyframes entrar { from { transform: translateY(20px) scale(0.96); opacity: 0; } }
 
 .carta-imagen, .carta-imagen img, .placeholder { position: absolute; inset: 0; width: 100%; height: 100%; }

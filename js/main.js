@@ -201,7 +201,7 @@ function guardar() {
   if (partida && !partida.fin) guardarPartida(partida.exportar());
 }
 
-function pintarBarras() {
+function pintarBarras({ conEdad = true } = {}) {
   for (const el of $('barras').children) {
     const id = el.dataset.pilar;
     const v = partida.pilares[id];
@@ -211,8 +211,11 @@ function pintarBarras() {
     el.title = DEBUG ? `${el.getAttribute('aria-label')}: ${v}` : el.getAttribute('aria-label');
   }
   const y = partida.anio;
-  $('edad-anio').textContent = `Año ${y}`;
-  $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
+  // Mientras se lee el dorso, la cabecera sigue siendo la de la carta decidida.
+  if (conEdad) {
+    $('edad-anio').textContent = `Año ${y}`;
+    $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
+  }
   pintarComodinBoton();
   if (DEBUG) {
     $('debug').hidden = false;
@@ -252,6 +255,7 @@ function mostrarCarta(carta) {
   // Pista del gesto solo en las primeras cartas de la primera partida.
   $('pista').hidden = !(progreso.partidas === 0 && partida.historial.length < 3);
   $('carta-sello').hidden = !partida.invertida;
+  $('carta-dorso').hidden = true;
   montarImagen($('carta-imagen'), datos.config, carta);
   limpiarVista();
   entrar($('carta'));
@@ -295,25 +299,22 @@ async function decidir(lado) {
   swipe.bloquear(true);
   vistaPrevia(lado);
   reproducirEfecto('carta');
-  await lanzar($('carta'), lado);
   const resultado = partida.elegir(lado);
   anunciarDesbloqueosPorEdad();
+  const mensajes = [resultado?.sorpresa, resultado?.consecuencia].filter(Boolean);
+  if (mensajes.length) {
+    // La carta vuelve al centro y se da la vuelta: el mensaje está en su dorso.
+    limpiarVista();
+    volver($('carta'));
+    await esperar(220);
+    pintarBarras({ conEdad: false });
+    for (const m of mensajes) await leerDorso(m);
+  }
+  await lanzar($('carta'), lado);
   pintarBarras();
   procesarEventos();
-  const mensajes = [resultado?.sorpresa, resultado?.consecuencia].filter(Boolean);
-  if (partida.fin) {
-    for (const m of mensajes) await mostrarSorpresa(m);
-    return setTimeout(acabar, 350);
-  }
+  if (partida.fin) return setTimeout(acabar, 350);
   siguiente();
-  if (!mensajes.length) return;
-  // La carta nueva ya está en la mesa; el mensaje tapa su texto hasta que se lee.
-  ocupado = true;
-  swipe.bloquear(true);
-  for (const m of mensajes) await mostrarSorpresa(m);
-  ocupado = false;
-  swipe.bloquear(false);
-  pintarComodinBoton();
 }
 
 // Comodines que se ganan al cumplir cierta edad: se anuncian en el momento y se guardan ya,
@@ -364,20 +365,32 @@ function siguienteAviso() {
 }
 
 // Se cierra al tocar la pantalla o pulsar una tecla, o sola a los 3,5 s.
-function mostrarSorpresa(texto) {
-  const el = $('sorpresa');
-  el.textContent = texto;
-  el.hidden = false;
-  return new Promise((resolver) => {
+const esperar = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Media vuelta hasta el canto, se cambia la cara y termina el giro.
+async function girarCarta(alDorso, texto) {
+  const carta = $('carta');
+  carta.classList.add('girando');
+  carta.style.transform = 'rotateY(90deg)';
+  await esperar(160);
+  $('carta-dorso').textContent = texto || '';
+  $('carta-dorso').hidden = !alDorso;
+  carta.style.transform = 'rotateY(0deg)';
+  await esperar(160);
+  carta.classList.remove('girando');
+}
+
+// Se cierra al tocar la pantalla o pulsar una tecla, o sola a los 4 s.
+async function leerDorso(texto) {
+  await girarCarta(true, texto);
+  await new Promise((resolver) => {
     const cerrar = () => {
       clearTimeout(t);
       document.removeEventListener('pointerdown', cerrar, true);
       document.removeEventListener('keydown', cerrar, true);
-      el.hidden = true;
       resolver();
     };
-    const t = setTimeout(cerrar, 3500);
-    // Un instante de gracia para que el mismo gesto del swipe no la cierre.
+    const t = setTimeout(cerrar, 4000);
     setTimeout(() => {
       document.addEventListener('pointerdown', cerrar, true);
       document.addEventListener('keydown', cerrar, true);
