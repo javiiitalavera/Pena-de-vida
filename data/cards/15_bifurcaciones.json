@@ -1,0 +1,1656 @@
+{
+  "_nota": "Lote 19: cartas que solo existen según la vida elegida (profesión, pareja, hijos, pueblo o ciudad, tabaco).",
+  "cartas": [
+    {
+      "id": "medico_receta_vecino",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Pasillo de Consultas",
+      "texto": "Un vecino te para en el portal con unos análisis arrugados y te pide que les eches un vistazo «porque en el centro de salud no le hacen caso».",
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Leerlos en el portal",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Pasó consultas gratuitas en el portal de su edificio hasta el final."
+      },
+      "derecha": {
+        "texto": "Mandarlo a su médico",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "medico_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Paciente Difícil",
+      "texto": "Te toca ir a consulta como paciente. Un residente de veintiséis años te explica tu propia enfermedad como si no hubieras ejercido cuarenta.",
+      "condiciones": {
+        "requiere_flags": [
+          "medico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Corregirle el diagnóstico",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Discutió la dosis de sus propias pastillas con tres residentes."
+      },
+      "derecha": {
+        "texto": "Asentir en silencio",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "funcionario_traslado",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Concurso de Traslados",
+      "texto": "Sale una plaza más cerca de casa, pero implica aprender un programa informático nuevo y renunciar a tu mesa junto a la ventana.",
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pedir el traslado",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Conservar tu ventana",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Defendió la misma mesa junto a la ventana durante treinta y dos años."
+      },
+      "lote": 19
+    },
+    {
+      "id": "funcionario_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Otro Lado",
+      "texto": "Vas a renovar un trámite municipal y el funcionario de turno te manda volver mañana por un sello que no existe. Reconoces el truco al instante.",
+      "condiciones": {
+        "requiere_flags": [
+          "funcionario"
+        ]
+      },
+      "izquierda": {
+        "texto": "Citarle el decreto",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Ganó una discusión en ventanilla citando un decreto de 1992."
+      },
+      "derecha": {
+        "texto": "Respetar el oficio",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "profesor_claustro",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Claustro Eterno",
+      "texto": "El director propone sustituir los exámenes por «rúbricas emocionales». Llevas tres horas en una sala sin ventilación y nadie se atreve a contradecirle.",
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Votar en contra",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se opuso en solitario a las rúbricas emocionales en su instituto."
+      },
+      "derecha": {
+        "texto": "Firmar e irte",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "profesor_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Antiguo Alumno",
+      "texto": "Un señor calvo de cincuenta años te saluda en la farmacia y te recuerda que le suspendiste en 1994. Sigue escocido.",
+      "condiciones": {
+        "requiere_flags": [
+          "profesor"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mantener el suspenso",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Ratificó un suspenso de 1994 treinta años después en una farmacia."
+      },
+      "derecha": {
+        "texto": "Fingir que le recuerdas",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hosteleria_resena",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Estrella en Google",
+      "texto": "Un cliente que pidió el café «templado pero hirviendo» te deja una reseña de una estrella insultando a tu madre.",
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Contestar con veneno",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Se hizo famoso en el barrio por insultar a sus clientes en Google."
+      },
+      "derecha": {
+        "texto": "Tragar y limpiar mesas",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hosteleria_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Café Mal Tirado",
+      "texto": "Te sientas en una terraza por fin como cliente. El camarero nuevo te sirve un café quemado y tarda veinte minutos en traer la cuenta.",
+      "condiciones": {
+        "requiere_flags": [
+          "hosteleria"
+        ]
+      },
+      "izquierda": {
+        "texto": "Dejar buena propina",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Siguió dejando propina generosa por solidaridad gremial hasta el final."
+      },
+      "derecha": {
+        "texto": "Darle una clase gratis",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "informatico_ia",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Becario con IA",
+      "texto": "Contratan a un chaval que no sabe qué es un puntero pero genera código en diez segundos. Tu jefe te pide que supervises sus chapuzas.",
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Arreglar su desastre",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        }
+      },
+      "derecha": {
+        "texto": "Dejar que arda",
+        "efectos": {
+          "cordura": 15,
+          "dinero": -10
+        },
+        "hito_biografico": "Dejó caer la plataforma de su empresa para demostrar que tenía razón."
+      },
+      "lote": 19
+    },
+    {
+      "id": "informatico_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Soporte del Hogar",
+      "texto": "Llevas diez años jubilad{o/a}, pero cada vez que falla el Wi-Fi en el centro de mayores todos te miran como si fueras el técnico de guardia.",
+      "condiciones": {
+        "requiere_flags": [
+          "informatico"
+        ]
+      },
+      "izquierda": {
+        "texto": "Reiniciar el router",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Reinició el router del centro de mayores durante quince años seguidos."
+      },
+      "derecha": {
+        "texto": "Fingir que no entiendes",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "oficinista_cumpleanos",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Bote del Cumpleaños",
+      "texto": "Pasan un sobre por la planta para comprar un regalo a un compañero de Marketing con el que solo has cruzado un «buenos días» en cuatro años.",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Poner diez euros",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Pasar el sobre vacío",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se negó a financiar cumpleaños de compañeros que no conocía."
+      },
+      "lote": 19
+    },
+    {
+      "id": "oficinista_reestructuracion",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Reestructuración",
+      "texto": "Un consultor de veintiocho años llega a «optimizar procesos». Tu puesto de veinte años queda reducido a un recuadro gris en un PowerPoint.",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Justificar tu existencia",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 10,
+            "cordura": -10
+          },
+          "mensaje": "Te salvan del despido, pero te mudan a un despacho sin ventanas."
+        }
+      },
+      "derecha": {
+        "texto": "Pactar la indemnización",
+        "efectos": {
+          "cordura": 15,
+          "dinero": -10
+        },
+        "hito_biografico": "Sobrevivió a tres reestructuraciones antes de firmar la salida."
+      },
+      "lote": 19
+    },
+    {
+      "id": "oficinista_jefe_joven",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Jefe Nuevo",
+      "texto": "Te asignan un jefe que nació cuando tú ya cotizabas. Te llama por tu nombre en diminutivo y pide «actitud de lunes».",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sonreír y asentir",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Contestar con monosílabos",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Respondió solo con monosílabos a su último jefe durante seis años."
+      },
+      "lote": 19
+    },
+    {
+      "id": "oficinista_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Reloj de Despedida",
+      "texto": "Encuentras en un cajón el reloj grabado que te regaló la empresa al jubilarte. Se paró a los tres meses y nadie de la oficina ha vuelto a llamarte.",
+      "condiciones": {
+        "requiere_flags": [
+          "oficinista"
+        ]
+      },
+      "izquierda": {
+        "texto": "Tirarlo a la basura",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Tiró el reloj conmemorativo de su empresa sin cambiarle la pila."
+      },
+      "derecha": {
+        "texto": "Llevarlo a arreglar",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "autonomo_moroso",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Factura a 90 Días",
+      "texto": "Un cliente importante lleva cuatro meses sin pagarte, pero acaba de subir fotos esquiando en los Alpes.",
+      "condiciones": {
+        "requiere_flags": [
+          "autonomo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Llamar cada mañana",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": 15,
+            "vinculos": -10
+          },
+          "mensaje": "Te paga por agotamiento y te bloquea en todas partes."
+        }
+      },
+      "derecha": {
+        "texto": "Darla por perdida",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -15
+        },
+        "hito_biografico": "Perdonó más facturas impagadas de las que cobró a tiempo."
+      },
+      "lote": 19
+    },
+    {
+      "id": "autonomo_vacaciones",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Agosto sin Ingresos",
+      "texto": "Llevas seis años sin coger una semana entera de vacaciones porque si cierras no facturas. Tienes el cuello hecho una piedra.",
+      "condiciones": {
+        "requiere_flags": [
+          "autonomo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Apagar el móvil",
+        "efectos": {
+          "salud": 15,
+          "dinero": -10
+        },
+        "hito_biografico": "Se atrevió a apagar el móvil una semana entera en agosto."
+      },
+      "derecha": {
+        "texto": "Trabajar desde la playa",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "autonomo_inspeccion",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Carta Certificada",
+      "texto": "Te llega un aviso de Hacienda pidiendo los tickets de gasolina de hace cuatro años. Los guardaste en una caja de zapatos y se ha borrado la tinta.",
+      "condiciones": {
+        "requiere_flags": [
+          "autonomo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar la sanción",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -15
+        }
+      },
+      "derecha": {
+        "texto": "Recurrir hasta el final",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -15
+        },
+        "hito_biografico": "Peleó durante tres años con Hacienda por unos tickets borrados."
+      },
+      "lote": 19
+    },
+    {
+      "id": "autonomo_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Pensión Mínima",
+      "texto": "Cotizaste por la base mínima durante cuarenta años «para ahorrar». Ahora tu pensión apenas da para la luz y las lentejas.",
+      "condiciones": {
+        "requiere_flags": [
+          "autonomo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Hacer chapuzas en negro",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Siguió trabajando en negro pasados los setenta para llegar a fin de mes."
+      },
+      "derecha": {
+        "texto": "Apretar el cinturón",
+        "efectos": {
+          "salud": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "desempleado_entrevista",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Hueco en el Currículum",
+      "texto": "En la entrevista de trabajo te miran con sospecha y preguntan qué hiciste durante los últimos dos años sin cotizar.",
+      "condiciones": {
+        "requiere_flags": [
+          "desempleado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Inventar un proyecto",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Justificó dos años de paro llamándolo «consultoría independiente»."
+      },
+      "derecha": {
+        "texto": "Admitir que sobrevivías",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "desempleado_mayores_52",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Subsidio de los 52",
+      "texto": "Para ti ya eres demasiado mayor en todas las ofertas, pero demasiado joven para jubilarte. El subsidio te obliga a sellar cada noventa días.",
+      "condiciones": {
+        "requiere_flags": [
+          "desempleado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sellar con puntualidad",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "No faltó a una sola cita para sellar el paro en doce años."
+      },
+      "derecha": {
+        "texto": "Aceptar trabajo precario",
+        "efectos": {
+          "dinero": 10,
+          "salud": -15
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "desempleado_cena_clase",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Cena de Antiguos Alumnos",
+      "texto": "Te invitan a cenar con tu promoción del instituto. Todos hablan de sus hipotecas, sus ascensos y sus planes de pensiones.",
+      "condiciones": {
+        "requiere_flags": [
+          "desempleado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quedarte en casa",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Evitó todas las cenas de antiguos alumnos por no explicar a qué se dedicaba."
+      },
+      "derecha": {
+        "texto": "Ir y cambiar de tema",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "desempleado_jubilado",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Pensión no Contributiva",
+      "texto": "Al revisar tu vida laboral ves tantos huecos en blanco que parece un crucigrama a medias. Te corresponde la paga más baja del Estado.",
+      "condiciones": {
+        "requiere_flags": [
+          "desempleado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Compartir piso de mayor",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Acabó compartiendo piso a los setenta como en sus tiempos de estudiante."
+      },
+      "derecha": {
+        "texto": "Vivir con lo mínimo",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "soltero_boda_mesa",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Mesa de los Sobrinos",
+      "texto": "En la boda de un sobrino te sientan con tres chavales de veinte años y un primo al que nadie dirige la palabra.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Beber con los chavales",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Fue el alma de la mesa de solteros pasados los cincuenta."
+      },
+      "derecha": {
+        "texto": "Irte antes del postre",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "soltero_alquiler_solo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Factura sin Dividir",
+      "texto": "Pagas la luz, la compra y el alquiler sin nadie con quien repartirlo. El mundo entero está tarifado para parejas.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mudarte a un estudio",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Pagó durante décadas el sobrecoste silencioso de vivir sol{o/a}."
+      },
+      "derecha": {
+        "texto": "Mantener tu espacio",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -15
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "soltero_urgencias",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Contacto de Emergencia",
+      "texto": "En admisión del hospital te piden un teléfono de contacto familiar. Te quedas mirando el formulario en blanco durante un minuto entero.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Poner al vecino",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Puso a su vecino del tercero como contacto de emergencia oficial."
+      },
+      "derecha": {
+        "texto": "Dejarlo en blanco",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "soltero_libertad_70",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Tortilla de las Once",
+      "texto": "Cenas tortilla francesa a las once de la noche viendo documentales en ropa interior. Nadie te corrige ni te pregunta a qué hora vuelves.",
+      "condiciones": {
+        "requiere_flags": [
+          "soltero"
+        ]
+      },
+      "izquierda": {
+        "texto": "Disfrutar del silencio",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Murió sin haber negociado jamás el canal de la televisión."
+      },
+      "derecha": {
+        "texto": "Bajar a charlar",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "divorciado_ex_boda",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Boda de tu Ex",
+      "texto": "Te enteras por un conocido de que tu expareja vuelve a casarse con alguien quince años menor y en una finca con helicóptero.",
+      "condiciones": {
+        "requiere_flags": [
+          "divorciado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Cotillear sus fotos",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Bloquear y seguir",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Sobrevivió con dignidad a la segunda boda de su expareja."
+      },
+      "lote": 19
+    },
+    {
+      "id": "divorciado_pension_comp",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Encuentro en el Mercado",
+      "texto": "Te cruzas con tu expareja en la pescadería tras veinte años sin veros. Os miráis como dos desconocidos que comparten un trauma común.",
+      "condiciones": {
+        "requiere_flags": [
+          "divorciado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Tomar un café rápido",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Firmó una paz fría con su expareja frente a la pescadería."
+      },
+      "derecha": {
+        "texto": "Fingir miopía severa",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "divorciado_album",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Álbum Recortado",
+      "texto": "Ordenando el trastero encuentras las fotos de tu matrimonio. En la mitad recortaste a tu expareja con tijeras hace treinta años.",
+      "condiciones": {
+        "requiere_flags": [
+          "divorciado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quemar el álbum",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Conservó un álbum de boda con siluetas recortadas a tijera."
+      },
+      "derecha": {
+        "texto": "Guardarlo otra década",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "casado_silencio_cena",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Silencio de los Martes",
+      "texto": "Lleváis veinticinco años casados y acabáis de cenar en un restaurante sin cruzar más de cuatro frases. Ninguno sabe si es paz o aburrimiento.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Proponer un viaje",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Aceptar la rutina",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Perfeccionó el arte de cenar en silencio tras veinticinco años de matrimonio."
+      },
+      "lote": 19
+    },
+    {
+      "id": "casado_ronquidos",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Habitaciones Separadas",
+      "texto": "Los ronquidos de tu pareja ya superan los decibelios de una obra pública. Dormir en cuartos separados empieza a parecer un lujo.",
+      "condiciones": {
+        "requiere_flags": [
+          "casado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Mudarte al otro cuarto",
+        "efectos": {
+          "salud": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Salvó su matrimonio durmiendo en habitaciones separadas."
+      },
+      "derecha": {
+        "texto": "Aguantar con tapones",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "viudo_ropa_armario",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Mitad del Armario",
+      "texto": "Han pasado años desde que enviudaste, pero sus abrigos siguen colgados en el mismo lado del armario porque quitarlos parece definitivo.",
+      "condiciones": {
+        "requiere_flags": [
+          "viudo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Donar toda la ropa",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Tardó años en vaciar la otra mitad del armario."
+      },
+      "derecha": {
+        "texto": "Dejarla donde está",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_grupo_padres",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Grupo del Colegio",
+      "texto": "Hay 184 mensajes sin leer en el WhatsApp de padres sobre si la cartulina de mañana es azul cielo o azul turquesa.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Silenciarlo para siempre",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Silenció el grupo de WhatsApp del colegio durante toda la primaria."
+      },
+      "derecha": {
+        "texto": "Participar en el debate",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_ortodoncia",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Ortodoncista",
+      "texto": "El dentista mira la boca de tu hijo con una sonrisa empresarial y te entrega un presupuesto que cuesta lo mismo que un coche de segunda mano.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar los brackets",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -15
+        },
+        "hito_biografico": "Financió la ortodoncia de su hijo a cambio de renunciar a tres veranos."
+      },
+      "derecha": {
+        "texto": "Buscar segunda opinión",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "El segundo dentista es más caro y añade una férula nocturna."
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_vuelve_casa",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Retorno con Maletas",
+      "texto": "Tu hijo llama al timbre con dos maletas y una planta moribunda: le han subido el alquiler y pregunta si puede quedarse «unos meses».",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Hacerle hueco",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Volvió a acoger a su hijo adulto durante «unos meses» que duraron cuatro años."
+      },
+      "derecha": {
+        "texto": "Ponerle fecha límite",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_no_llama",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Teléfono Mudo",
+      "texto": "Tu hijo vive en otra ciudad y lleva tres semanas sin llamar, pero sube fotos todos los días tomando café en sitios modernos.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Llamar sin reproches",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Esperar a que llame",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Mantuvo un pulso de silencios telefónicos con su hijo durante meses."
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_aval_piso",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Aval de la Hipoteca",
+      "texto": "Tu hijo quiere comprarse un piso y el banco le pide que avales con tu casa. Te asegura que su trabajo en una startup «es muy estable».",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Firmar el aval",
+        "efectos": {
+          "vinculos": 15,
+          "dinero": -15
+        },
+        "hito_biografico": "Avaló la hipoteca de su hijo con su propia vivienda.",
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "La startup quiebra al año siguiente y el banco te escribe a ti."
+        }
+      },
+      "derecha": {
+        "texto": "Negarte en redondo",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_nietos_guarderia",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Guardería Gratuita",
+      "texto": "Te dejan a los nietos todos los martes y jueves «porque contigo están mejor». Te duele la espalda, pero adoran tus croquetas.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Cuidarlos con gusto",
+        "efectos": {
+          "vinculos": 15,
+          "salud": -10
+        },
+        "hito_biografico": "Ejerció de guardería gratuita hasta que le fallaron las rodillas."
+      },
+      "derecha": {
+        "texto": "Pedir descanso",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_residencia_charla",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Folleto de la Residencia",
+      "texto": "Tu hijo deja encima de la mesa el folleto de una residencia «con jardín y actividades». Dice que es solo por mirar.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aceptar visitarla",
+        "efectos": {
+          "salud": 10,
+          "cordura": -15
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte en tu casa",
+        "efectos": {
+          "cordura": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se negó a salir de su casa pese a los folletos de residencias."
+      },
+      "lote": 19
+    },
+    {
+      "id": "hijos_reparto_herencia",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Visita al Notario",
+      "texto": "Tus hijos ya han empezado a insinuar qué muebles quieren quedarse cuando no estés. La vajilla buena despierta pasiones.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Dejarlo todo atado",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "derecha": {
+        "texto": "Gastar tus ahorros",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Decidió disfrutar de sus ahorros y dejar a sus hijos solo los muebles."
+      },
+      "lote": 19
+    },
+    {
+      "id": "sin_hijos_sobrinos",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "{El Tío Raro/La Tía Rara}",
+      "texto": "Como no tienes hijos, toda la familia da por hecho que te sobra dinero y tiempo. Tus sobrinos te miran como a un cajero simpático.",
+      "condiciones": {
+        "excluye_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Repartir billetes",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Fue el familiar sin hijos que siempre aparecía con sobres en Navidad."
+      },
+      "derecha": {
+        "texto": "Regalar calcetines",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "sin_hijos_silencio",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "La Casa en Silencio",
+      "texto": "Es domingo a las once de la mañana. Tus amigos con hijos llevan horas en un campo de fútbol helado; tú desayunas sin ruido.",
+      "condiciones": {
+        "excluye_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Saborear la calma",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "No se arrepintió ni un solo domingo de no haber tenido hijos."
+      },
+      "derecha": {
+        "texto": "Invitar a comer",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "sin_hijos_cuidados",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Pregunta de Siempre",
+      "texto": "Te cuesta subir las escaleras y un conocido te suelta el clásico «¿y ahora quién te va a cuidar?» con una sonrisa de lástima.",
+      "condiciones": {
+        "excluye_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Contratar ayuda privada",
+        "efectos": {
+          "salud": 15,
+          "dinero": -15
+        },
+        "hito_biografico": "Demostró que el dinero ahorrado sin hijos paga mejores cuidados."
+      },
+      "derecha": {
+        "texto": "Mandarlo a paseo",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "sin_hijos_herencia_sobrino",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Sobrino Atento",
+      "texto": "Un sobrino que no te llamaba desde 2012 empieza a traerte magdalenas cada viernes y pregunta mucho por la escritura de tu piso.",
+      "condiciones": {
+        "excluye_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comerte las magdalenas",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Vender la nuda propiedad",
+        "efectos": {
+          "dinero": 15,
+          "vinculos": -15
+        },
+        "hito_biografico": "Vendió su piso en nuda propiedad y decepcionó a media familia."
+      },
+      "lote": 19
+    },
+    {
+      "id": "cruce_pueblo_ciudad",
+      "tipo": "ancla",
+      "anio": 20,
+      "nombre": "La Maleta de los Veinte",
+      "texto": "Tus amigos se marchan a buscar trabajo a la capital mientras el pueblo se queda cada invierno un poco más vacío. Te toca elegir dónde echas raíces.",
+      "izquierda": {
+        "texto": "Irte a la ciudad",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "add_flags": [
+          "ciudad"
+        ],
+        "consecuencia": "Te mudas a la ciudad: ahora tienes mil opciones y nadie sabe cómo te llamas.",
+        "hito_biografico": "Cambió el pueblo por un piso interior en la ciudad a los veinte años."
+      },
+      "derecha": {
+        "texto": "Quedarte en el pueblo",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "add_flags": [
+          "pueblo"
+        ],
+        "consecuencia": "Te quedas en el pueblo: vivirás más despacio, pero bajo vigilancia vecinal.",
+        "hito_biografico": "Decidió quedarse en su pueblo mientras casi toda su quinta se marchaba."
+      },
+      "lote": 19
+    },
+    {
+      "id": "ciudad_zulo_alquiler",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "El Estudio con Encanto",
+      "texto": "El anuncio decía «acogedor loft céntrico». Son veintidós metros cuadrados sin ventana exterior y la ducha está pegada a la nevera.",
+      "condiciones": {
+        "requiere_flags": [
+          "ciudad"
+        ]
+      },
+      "izquierda": {
+        "texto": "Alquilar en el centro",
+        "efectos": {
+          "vinculos": 10,
+          "dinero": -15
+        },
+        "hito_biografico": "Pagó media nómina por un piso donde podía freír huevos desde la cama."
+      },
+      "derecha": {
+        "texto": "Irte al extrarradio",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "ciudad_atasco_diario",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Circunvalación",
+      "texto": "Llevas cuarenta minutos parad{o/a} en la autovía de entrada. Calculas que pasarás tres años de tu vida mirando las luces de freno del coche de delante.",
+      "condiciones": {
+        "requiere_flags": [
+          "ciudad"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pasarte al metro",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": -10,
+            "cordura": -10
+          },
+          "mensaje": "Avería en la línea 4. Llegas una hora tarde y sin cobertura."
+        }
+      },
+      "derecha": {
+        "texto": "Escuchar podcasts",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Se formó culturalmente en los atascos de las ocho de la mañana."
+      },
+      "lote": 19
+    },
+    {
+      "id": "ciudad_vecino_ascensor",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Desconocido del Cuarto",
+      "texto": "Llevas doce años viviendo puerta con puerta con tu vecino y no sabes su nombre. Hoy os quedáis atrapados juntos en el ascensor.",
+      "condiciones": {
+        "requiere_flags": [
+          "ciudad"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sacar conversación",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "derecha": {
+        "texto": "Mirar el techo",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Mantuvo el anonimato con sus vecinos incluso atrapado en un ascensor."
+      },
+      "lote": 19
+    },
+    {
+      "id": "ciudad_gentrificacion",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Barrio de Moda",
+      "texto": "Han cerrado la ferretería de toda la vida para abrir una cafetería de especialidad donde un croissant cuesta cinco euros y nadie habla español.",
+      "condiciones": {
+        "requiere_flags": [
+          "ciudad"
+        ]
+      },
+      "izquierda": {
+        "texto": "Cambiar de barrio",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Fue expulsad{o/a} de su propio barrio por las cafeterías de especialidad."
+      },
+      "derecha": {
+        "texto": "Resistir en tu piso",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "ciudad_soledad_millones",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Parque del Ensanche",
+      "texto": "Vives rodead{o/a} de dos millones de personas, pero hoy llevas cuatro días sin pronunciar una palabra en voz alta salvo «bolsa no, gracias».",
+      "condiciones": {
+        "requiere_flags": [
+          "ciudad"
+        ]
+      },
+      "izquierda": {
+        "texto": "Apuntarte a talleres",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Venció la soledad urbana apuntándose a pintura en un centro cívico."
+      },
+      "derecha": {
+        "texto": "Hablar con la tele",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "pueblo_chisme",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Crónica del Pueblo",
+      "texto": "Te han visto salir de una consulta en la capital y, antes de que aparques en casa, medio pueblo ya ha decidido de qué vas a morir.",
+      "condiciones": {
+        "requiere_flags": [
+          "pueblo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Alimentar el rumor",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Inventó enfermedades falsas para entretener a las vecinas de su pueblo."
+      },
+      "derecha": {
+        "texto": "Dar explicaciones",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "pueblo_fiestas",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "Las Fiestas Patronales",
+      "texto": "La comisión de fiestas te pide cincuenta euros y que ayudes a montar la barra. Si dices que no, te lo recordarán hasta el siglo siguiente.",
+      "condiciones": {
+        "requiere_flags": [
+          "pueblo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Pagar y montar barra",
+        "efectos": {
+          "vinculos": 15,
+          "salud": -10
+        },
+        "hito_biografico": "No falló a un solo turno de barra en las fiestas patronales."
+      },
+      "derecha": {
+        "texto": "Escaparte esa semana",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -15
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "pueblo_bar_universo",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Único Bar",
+      "texto": "El bar de la plaza es ayuntamiento, juzgado y sala de espera. Si llevas tres días sin pasarte, mandan a alguien a comprobar si respiras.",
+      "condiciones": {
+        "requiere_flags": [
+          "pueblo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Bajar a la partida",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Tuvo silla propia en la mesa de cartas del bar del pueblo."
+      },
+      "derecha": {
+        "texto": "Quedarte en tu huerta",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "pueblo_cierre_banco",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Último Cajero",
+      "texto": "Cierran la única sucursal del pueblo y ahora el cajero más cercano está a treinta kilómetros por una carretera comarcal llena de curvas.",
+      "condiciones": {
+        "requiere_flags": [
+          "pueblo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Guardar efectivo en casa",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "dinero": -15,
+            "cordura": -10
+          },
+          "mensaje": "Olvidas dónde escondiste el sobre y aparece dos años después en la leñera."
+        }
+      },
+      "derecha": {
+        "texto": "Hacer el viaje mensual",
+        "efectos": {
+          "dinero": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Recorrió sesenta kilómetros al mes solo para sacar pensión en efectivo."
+      },
+      "lote": 19
+    },
+    {
+      "id": "pueblo_medico_martes",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Médico de los Martes",
+      "texto": "Te duele el pecho un miércoles, pero el médico solo pasa consulta en el pueblo los martes y jueves de nueve a once.",
+      "condiciones": {
+        "requiere_flags": [
+          "pueblo"
+        ]
+      },
+      "izquierda": {
+        "texto": "Aguantar hasta el jueves",
+        "efectos": {
+          "cordura": 10,
+          "salud": -15
+        },
+        "hito_biografico": "Sincronizó sus achaques con el horario del consultorio rural."
+      },
+      "derecha": {
+        "texto": "Pedir taxi a urgencias",
+        "efectos": {
+          "salud": 15,
+          "dinero": -15
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "fumador_oxigeno",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Último Cigarro",
+      "texto": "Te cuesta subir un tramo de escaleras y llevas un inhalador en cada bolsillo, pero el olor del tabaco en la terraza te sigue llamando.",
+      "condiciones": {
+        "requiere_flags": [
+          "fumador"
+        ]
+      },
+      "izquierda": {
+        "texto": "Encender uno a escondidas",
+        "efectos": {
+          "cordura": 10,
+          "salud": -15
+        },
+        "hito_biografico": "Fumó a escondidas en el balcón hasta pasados los setenta."
+      },
+      "derecha": {
+        "texto": "Masticar un chicle",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
+      "id": "fumador_estanco_70",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Cuenta del Estanco",
+      "texto": "El estanquero te calcula por pura maldad lo que te has gastado en tabaco desde los veinte años: sale un apartamento en la costa.",
+      "condiciones": {
+        "requiere_flags": [
+          "fumador"
+        ]
+      },
+      "izquierda": {
+        "texto": "Comprar otro cartón",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -15
+        },
+        "hito_biografico": "Se fumó el equivalente a un apartamento en la playa sin remordimientos."
+      },
+      "derecha": {
+        "texto": "Dejarlo por tacañería",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "remove_flags": [
+          "fumador"
+        ]
+      },
+      "lote": 19
+    }
+  ]
+}

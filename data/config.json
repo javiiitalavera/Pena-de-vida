@@ -48,6 +48,10 @@
       "casado",
       "divorciado",
       "viudo"
+    ],
+    "lugar": [
+      "pueblo",
+      "ciudad"
     ]
   },
   "dificultad": {
@@ -176,6 +180,7 @@
     "12_estados.json",
     "13_arcos.json",
     "14_asimetricas.json",
+    "15_bifurcaciones.json",
     "90_rasgos.json",
     "99_final.json"
   ],
