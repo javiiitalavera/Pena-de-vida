@@ -294,7 +294,7 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Agarrar las llaves y seguir",
+        "texto": "Usar las llaves como arma",
         "efectos": {
           "cordura": 10,
           "salud": -10
