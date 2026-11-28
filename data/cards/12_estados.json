@@ -548,7 +548,7 @@
         }
       },
       "derecha": {
-        "texto": "Quedarte en la cama y que arda todo",
+        "texto": "Quedarte en cama y que arda todo",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -569,7 +569,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Ponerte tres jerseys sin calefacción",
+        "texto": "Apagar la calefacción",
         "efectos": {
           "dinero": 10,
           "salud": -10

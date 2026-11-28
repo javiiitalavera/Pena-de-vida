@@ -272,7 +272,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Jugar al solitario hasta las tres",
+        "texto": "Hacer solitarios hasta las tres",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -736,7 +736,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Ir al buffet y recetar su pastilla",
+        "texto": "Ir al buffet y recetarla",
         "efectos": {
           "salud": 10,
           "cordura": -10
