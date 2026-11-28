@@ -9,7 +9,7 @@
       "personaje": "muerte",
       "texto": "Se sienta a los pies de tu cama, mira el reloj y te pregunta si de verdad hace falta alargar esto hasta los 100.",
       "izquierda": {
-        "texto": "Cinco minutos más",
+        "texto": "Pedir cinco minutos más",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -71,7 +71,7 @@
         }
       },
       "derecha": {
-        "texto": "Bandeja al suelo",
+        "texto": "Tirar la bandeja al suelo",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -150,7 +150,7 @@
       "personaje": "bisnieto",
       "texto": "Te enfoca con el móvil mientras duermes la siesta para subir un TikTok con música triste y el texto 'disfrutad de vuestros abuelos'.",
       "izquierda": {
-        "texto": "Peineta a cámara",
+        "texto": "Hacer una peineta a cámara",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -197,7 +197,7 @@
       "personaje": "cura",
       "texto": "Cada vez que pasas por el pasillo te mira con una sonrisa profesional y te pregunta si 'ya estás en paz con el Señor'.",
       "izquierda": {
-        "texto": "Ateísmo y ahorros al ataúd",
+        "texto": "Llevarte los ahorros al ataúd",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -227,7 +227,7 @@
         }
       },
       "derecha": {
-        "texto": "Merluza hervida",
+        "texto": "Conformarte con merluza hervida",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -273,7 +273,7 @@
         }
       },
       "derecha": {
-        "texto": "Más pastillas para dormir",
+        "texto": "Pedir más pastillas para dormir",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -296,7 +296,7 @@
         }
       },
       "derecha": {
-        "texto": "Coñac en vez de tarta",
+        "texto": "Pedir coñac en vez de tarta",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -319,7 +319,7 @@
         }
       },
       "derecha": {
-        "texto": "50 € a cada una",
+        "texto": "Subastárselo a las dos",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -342,7 +342,7 @@
         }
       },
       "derecha": {
-        "texto": "Sin paraguas, por ciencia",
+        "texto": "Salir sin paraguas",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -358,14 +358,14 @@
       "personaje": "brasero",
       "texto": "Hace 28 grados en la habitación, pero tienes los pies helados y la calefacción está apagada por orden de dirección.",
       "izquierda": {
-        "texto": "Tres batas y gorro",
+        "texto": "Ponerte tres batas y gorro",
         "efectos": {
           "salud": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Brasero ilegal de 1982",
+        "texto": "Enchufar el brasero de 1982",
         "efectos": {
           "salud": -15,
           "cordura": 10

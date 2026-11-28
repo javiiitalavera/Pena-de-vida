@@ -26,7 +26,7 @@
         "fin_id": "condena_prorrogada"
       },
       "derecha": {
-        "texto": "Prórroga, por maldad",
+        "texto": "Pedir prórroga por maldad",
         "efectos": {},
         "fin": "centenario",
         "hito_biografico": "Pidió prórroga y la Seguridad Social le devolvió a la guardería.",

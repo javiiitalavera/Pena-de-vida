@@ -98,7 +98,7 @@
         "prioridad": "alta"
       },
       "izquierda": {
-        "texto": "Dosis de caballo",
+        "texto": "Pedir dosis de caballo",
         "efectos": {
           "salud": 10,
           "cordura": 5,
@@ -112,7 +112,7 @@
         ]
       },
       "derecha": {
-        "texto": "Al natural, maldiciendo",
+        "texto": "Parir al natural, maldiciendo",
         "efectos": {
           "salud": -10,
           "cordura": -10,

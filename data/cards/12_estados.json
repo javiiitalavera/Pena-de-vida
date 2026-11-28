@@ -45,14 +45,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Uno con el café",
+        "texto": "Fumar uno con el café",
         "efectos": {
           "salud": -10,
           "cordura": 10
         }
       },
       "derecha": {
-        "texto": "Vapeador de fresa",
+        "texto": "Pasarte al vapeador de fresa",
         "efectos": {
           "vinculos": -5,
           "dinero": -10
@@ -142,14 +142,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Lámpara y albóndigas",
+        "texto": "Comprar lámpara y albóndigas",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Salida de emergencia",
+        "texto": "Huir por la salida de emergencia",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -198,7 +198,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Una caña, por desesperación",
+        "texto": "Tomar una caña por desesperación",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -206,7 +206,7 @@
         "hito_biografico": "Sobrevivió a una cita de Tinder tras su divorcio."
       },
       "derecha": {
-        "texto": "Borrar la app; un gato",
+        "texto": "Borrar la app y adoptar un gato",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -227,14 +227,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Muebles de verdad",
+        "texto": "Comprar muebles de verdad",
         "efectos": {
           "dinero": -15,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Pasta fría de la olla",
+        "texto": "Comer pasta fría de la olla",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -306,7 +306,7 @@
         }
       },
       "derecha": {
-        "texto": "Carajillo enfrente",
+        "texto": "Escaparte a por un carajillo",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -327,14 +327,14 @@
         ]
       },
       "izquierda": {
-        "texto": "50 € para el finde",
+        "texto": "Darle 50 € para el finde",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
         }
       },
       "derecha": {
-        "texto": "Maleta al portal",
+        "texto": "Dejarle la maleta en el portal",
         "efectos": {
           "dinero": 10,
           "vinculos": -15
@@ -363,7 +363,7 @@
         }
       },
       "derecha": {
-        "texto": "Gastroenteritis fulminante",
+        "texto": "Fingir gastroenteritis",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -448,7 +448,7 @@
         }
       },
       "derecha": {
-        "texto": "Mudanza en negro",
+        "texto": "Hacer una mudanza en negro",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -492,7 +492,7 @@
         ]
       },
       "derecha": {
-        "texto": "Un año más con tu jefe",
+        "texto": "Aguantar un año más al jefe",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -513,7 +513,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Arroz blanco hasta noviembre",
+        "texto": "Comer arroz hasta noviembre",
         "efectos": {
           "dinero": -10,
           "salud": -10
@@ -541,14 +541,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Dos ibuprofenos y a trabajar",
+        "texto": "Tomar ibuprofenos y trabajar",
         "efectos": {
           "dinero": 10,
           "salud": -15
         }
       },
       "derecha": {
-        "texto": "A la cama, que arda todo",
+        "texto": "Quedarte en la cama y que arda todo",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -569,7 +569,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Tres jerseys y sin calefacción",
+        "texto": "Ponerte tres jerseys sin calefacción",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -636,7 +636,7 @@
         ]
       },
       "derecha": {
-        "texto": "Lumbago preventivo",
+        "texto": "Fingir lumbago preventivo",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -657,7 +657,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Fisio privado",
+        "texto": "Pagar un fisio privado",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -717,14 +717,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Chapa de blockchain",
+        "texto": "Darle la chapa de blockchain",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Otro gin-tonic y callar",
+        "texto": "Pedir otro gin-tonic y callar",
         "efectos": {
           "vinculos": 10,
           "salud": -5

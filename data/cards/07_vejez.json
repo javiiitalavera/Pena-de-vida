@@ -213,7 +213,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Todo a 90 grados",
+        "texto": "Poner todo a 90 grados",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -242,7 +242,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Bailes y cruceros",
+        "texto": "Irte de bailes y cruceros",
         "efectos": {
           "dinero": -15,
           "cordura": 15
@@ -250,7 +250,7 @@
         "hito_biografico": "Vivió su mejor juventud entre los 75 y los 85 años."
       },
       "derecha": {
-        "texto": "Telenovelas y luto",
+        "texto": "Ver telenovelas de luto",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -269,7 +269,7 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Despacito, por las paredes",
+        "texto": "Ir pegada a la pared",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -315,7 +315,7 @@
       "personaje": "empleado_banco",
       "texto": "Han cerrado tu oficina de toda la vida y un chico con corbata te dice que 'para sacar efectivo tienes que usar la app y el código QR'.",
       "izquierda": {
-        "texto": "Sentada en el banco",
+        "texto": "Hacer una sentada en el banco",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -323,7 +323,7 @@
         "hito_biografico": "Protagonizó una sentada en un cajero automático contra la digitalización."
       },
       "derecha": {
-        "texto": "Ahorros al colchón",
+        "texto": "Meter los ahorros al colchón",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -385,7 +385,7 @@
         }
       },
       "derecha": {
-        "texto": "Al contenedor gris",
+        "texto": "Cancelarlo y al contenedor",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -409,7 +409,7 @@
         }
       },
       "derecha": {
-        "texto": "Audio de seis minutos",
+        "texto": "Mandar un audio de 6 minutos",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -425,14 +425,14 @@
       "personaje": "ministerio",
       "texto": "Te llega una carta del Ministerio anunciando con orgullo que tu pensión sube 11 euros al mes. El aceite de oliva acaba de subir 4 euros la botella.",
       "izquierda": {
-        "texto": "Pan con tomate",
+        "texto": "Pasarte al pan con tomate",
         "efectos": {
           "dinero": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Aceite del bueno",
+        "texto": "Comprar aceite del bueno",
         "efectos": {
           "dinero": -10,
           "salud": 10
@@ -448,7 +448,7 @@
       "personaje": "chorizo",
       "texto": "Tienes el colesterol por las nubes y te han prohibido el embutido, pero hay un trozo de chorizo ibérico en la despensa mirándote fijamente.",
       "izquierda": {
-        "texto": "Chorizo en el baño",
+        "texto": "Comerlo en el baño",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -463,7 +463,7 @@
         }
       },
       "derecha": {
-        "texto": "Yogur desnatado",
+        "texto": "Cenar yogur desnatado",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -479,7 +479,7 @@
       "personaje": "senora_albacete",
       "texto": "En el buffet libre del barco hay langostinos, pero una señora de Albacete con codos de acero acaba de bloquear la bandeja.",
       "izquierda": {
-        "texto": "Bandeja contra la señora",
+        "texto": "Pelear por los langostinos",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -487,7 +487,7 @@
         "hito_biografico": "Inició una reyerta en un buffet libre por unos langostinos."
       },
       "derecha": {
-        "texto": "Ensalada de pasta tibia",
+        "texto": "Comer ensalada tibia",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -503,7 +503,7 @@
       "personaje": "hijos",
       "texto": "Tus hijos te sugieren con mucha delicadeza que 'esta casa es demasiado grande para ti' y que estarías mejor en un estudio de 30 metros sin ascensor.",
       "izquierda": {
-        "texto": "Con los pies por delante",
+        "texto": "Salir con los pies por delante",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -549,7 +549,7 @@
       "personaje": "pareja_baile",
       "texto": "El centro de mayores parece una discoteca de Ibiza pero con olor a Vicks VapoRub. Alguien muy insistente te saca a bailar un bolero.",
       "izquierda": {
-        "texto": "Amor geriátrico",
+        "texto": "Bailar y ligar",
         "efectos": {
           "vinculos": 10,
           "salud": -10
@@ -596,7 +596,7 @@
       "personaje": "ascensor",
       "texto": "Vives en un cuarto piso, vienes cargad{o/a} con la compra y el ascensor tiene un cartel que pone 'Fuera de servicio hasta el lunes'.",
       "izquierda": {
-        "texto": "Escaleras, como en el Everest",
+        "texto": "Subir por las escaleras",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -611,7 +611,7 @@
         }
       },
       "derecha": {
-        "texto": "Hotel y bolsas en el portal",
+        "texto": "Irte a un hotel",
         "efectos": {
           "dinero": -15,
           "salud": 10
@@ -634,7 +634,7 @@
         }
       },
       "derecha": {
-        "texto": "5 € y un sermón",
+        "texto": "Darle 5 € y un sermón",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
@@ -688,7 +688,7 @@
         }
       },
       "derecha": {
-        "texto": "Otra copa de vino",
+        "texto": "Servirte otra copa de vino",
         "efectos": {
           "salud": -10,
           "cordura": 10
@@ -704,14 +704,14 @@
       "personaje": "estudiante_reggaeton",
       "texto": "El estudiante del piso de arriba pone reguetón a las once de la noche. Tienes una escoba y mucha rabia acumulada.",
       "izquierda": {
-        "texto": "Escobazos al techo",
+        "texto": "Dar escobazos al techo",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Radio de misa a las siete",
+        "texto": "Poner la misa a las siete",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -751,14 +751,14 @@
       "personaje": "sala_espera",
       "texto": "Te duele un poco la espalda desde el martes, pero decides ir a urgencias hoy domingo a las cinco de la tarde porque en la tele no echan nada.",
       "izquierda": {
-        "texto": "Seis horas haciendo amigos",
+        "texto": "Ir y echar seis horas",
         "efectos": {
           "vinculos": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Manta eléctrica en casa",
+        "texto": "Quedarte con manta eléctrica",
         "efectos": {
           "salud": 5,
           "vinculos": -10
@@ -781,7 +781,7 @@
         }
       },
       "derecha": {
-        "texto": "Viv{o/a} aunque sea con batería",
+        "texto": "Seguir viv{o/a} con batería",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -840,7 +840,7 @@
         }
       },
       "derecha": {
-        "texto": "Aire a 22 y concursos",
+        "texto": "Poner el aire y ver concursos",
         "efectos": {
           "salud": 10,
           "dinero": -10
@@ -856,7 +856,7 @@
       "personaje": "batamanta",
       "texto": "Cumples 85. Tus familiares te regalan una batamanta y unas zapatillas antideslizantes porque ya no saben qué comprarle a alguien que no sale de casa.",
       "izquierda": {
-        "texto": "Sonrisa resignada",
+        "texto": "Sonreír con resignación",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -885,14 +885,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Calefacción a escondidas",
+        "texto": "Subirla a escondidas",
         "efectos": {
           "salud": 10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Gorro de lana y callar",
+        "texto": "Ponerte gorro y callar",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -920,7 +920,7 @@
         }
       },
       "derecha": {
-        "texto": "Mejor en un sobre",
+        "texto": "Pedir el dinero en un sobre",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
