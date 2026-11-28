@@ -462,3 +462,14 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   align-self: flex-start; margin: 20px 0 8px; min-height: 44px; padding: 0;
   background: transparent; border: 0; color: var(--tinta-suave); font: 1rem var(--sans); cursor: pointer;
 }
+
+/* ---------- elegir rasgo y comodín (mismas filas que el sexo, con detalle) ---------- */
+.pantalla.eleccion-sexo { overflow-y: auto; }
+.eleccion-sexo .ayuda { margin-top: 10px; font-size: 0.9rem; }
+.eleccion-sexo .ayuda:empty { display: none; }
+.opciones-detalle button { align-items: center; gap: 16px; padding: 16px 0; }
+.op-texto { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.op-nombre { font-size: clamp(1.6rem, 7vw, 2.1rem); line-height: 1.1; display: flex; align-items: center; gap: 10px; }
+.op-nombre .icono { width: 26px; height: 26px; flex: none; }
+.op-linea { font: 0.92rem/1.4 var(--sans); letter-spacing: 0; color: var(--tinta-suave); }
+.op-linea .contra { color: #d79a8b; }

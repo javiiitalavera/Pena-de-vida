@@ -15,6 +15,7 @@ let datos;
 let progreso = cargarProgreso();
 let partida = null;
 let eleccion = {};
+let tiradaRasgos = null; // se mantiene al volver atrás; se renueva al empezar otra vida desde la portada
 let marcado = null;
 let ocupado = false;
 let swipe;
@@ -94,14 +95,15 @@ function elegirSexo(valor) {
 }
 
 function pintarRasgos() {
-  const opciones = draftRasgos(datos, progreso.desbloqueados, 3);
+  tiradaRasgos ??= draftRasgos(datos, progreso.desbloqueados, 3);
+  const opciones = tiradaRasgos;
   const total = rasgosDisponibles(datos, progreso.desbloqueados).length;
   if (opciones.length === 1) {
     eleccion.rasgoId = opciones[0].id;
     return pintarComodines();
   }
   $('ayuda-rasgo').textContent =
-    total < 3 ? `Tienes ${total} de ${datos.rasgos.length} rasgos desbloqueados. Muere de formas nuevas para conseguir más.` : 'Sin repetir tirada.';
+    total < 3 ? `${total} de ${datos.rasgos.length} desbloqueados. Muere de formas nuevas para conseguir más.` : '';
   $('lista-rasgos').replaceChildren(
     ...opciones.map((r) =>
       tarjetaEleccion(aplicarGenero(r.nombre, eleccion.sexo), [r.descripcion && aplicarGenero(r.descripcion, eleccion.sexo), r.ventaja, r.contrapartida && `<em class="contra">${escapar(r.contrapartida)}</em>`], () => {
@@ -136,12 +138,13 @@ function pintarComodines() {
 }
 
 function tarjetaEleccion(titulo, lineas, alElegir, iconoHtml = '') {
+  // Misma fila que la pantalla de sexo: nombre grande, detalle debajo y flecha a la derecha.
   const b = document.createElement('button');
-  b.className = 'eleccion';
-  b.innerHTML = `<strong>${iconoHtml}${escapar(titulo)}</strong>${lineas
+  const detalle = lineas
     .filter(Boolean)
-    .map((l) => `<span>${l.startsWith('<em') ? l : escapar(l)}</span>`)
-    .join('')}`;
+    .map((l) => `<span class="op-linea">${l.startsWith('<em') ? l : escapar(l)}</span>`)
+    .join('');
+  b.innerHTML = `<span class="op-texto"><span class="op-nombre">${iconoHtml}${escapar(titulo)}</span>${detalle}</span><span class="flecha" aria-hidden="true">→</span>`;
   b.addEventListener('click', alElegir);
   return b;
 }
@@ -464,11 +467,16 @@ function conectarEventos() {
   pintarSelectorNivel();
   for (const b of document.querySelectorAll('[data-ajustes]')) b.addEventListener('click', describirNivel);
   prepararAudio();
-  $('btn-nueva').addEventListener('click', () => mostrar('pantalla-sexo'));
+  $('btn-nueva').addEventListener('click', () => {
+    tiradaRasgos = null;
+    mostrar('pantalla-sexo');
+  });
   $('btn-continuar').addEventListener('click', continuar);
   for (const b of document.querySelectorAll('[data-sexo]')) b.addEventListener('click', () => elegirSexo(b.dataset.sexo));
   $('btn-otra').addEventListener('click', pintarInicio);
   $('btn-volver-sexo').addEventListener('click', pintarInicio);
+  // Volver sin repetir la tirada de rasgos: solo se cambia de pantalla.
+  for (const b of document.querySelectorAll('[data-volver]')) b.addEventListener('click', () => mostrar(b.dataset.volver));
   $('btn-comodin').addEventListener('click', abrirComodin);
   $('dlg-cancelar').addEventListener('click', () => $('dialogo-comodin').close());
   $('dlg-usar').addEventListener('click', usarComodin);
