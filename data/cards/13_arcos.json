@@ -285,6 +285,206 @@
         }
       },
       "lote": 16
+    },
+    {
+      "id": "deuda_materna_libreta",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Libreta de Mamá",
+      "texto": "Vaciando un cajón antiguo encuentras la libreta donde tu madre apuntó, desde el día que le reclamaste el sobre de la Comunión, cada euro que gastó en ti con intereses.",
+      "condiciones": {
+        "requiere_flags": [
+          "deuda_materna"
+        ]
+      },
+      "izquierda": {
+        "texto": "Enmarcar la última hoja",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Enmarcó la libreta de agravios contables que su madre le dejó al morir."
+      },
+      "derecha": {
+        "texto": "Romperla y pasar página",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 20
+    },
+    {
+      "id": "amigo_descampado_brindis",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "Las Latas de Siempre",
+      "texto": "Tu amigo del descampado aparece en tu casa con dos latas de cerveza caliente de marca blanca y vuelve a contar la tarde de los catorce años como si hubiera sido ayer.",
+      "condiciones": {
+        "requiere_flags": [
+          "amigo_descampado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Beberlas por nostalgia",
+        "efectos": {
+          "vinculos": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Brindó con cerveza barata pasados los cincuenta por una gamberrada de instituto."
+      },
+      "derecha": {
+        "texto": "Servirle agua y despedirle",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 20
+    },
+    {
+      "id": "amigo_moroso_funeral",
+      "tipo": "etapa",
+      "etapa": "80-99",
+      "nombre": "El Sobre del Tanatorio",
+      "texto": "En el funeral de tu amigo de las empanadas, su viuda se acerca al final y te entrega un sobre arrugado: dentro hay un billete de cincuenta euros y una nota que dice «a cuenta».",
+      "condiciones": {
+        "requiere_flags": [
+          "amigo_moroso"
+        ]
+      },
+      "izquierda": {
+        "texto": "Quedarte los cincuenta euros",
+        "efectos": {
+          "dinero": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Recuperó cincuenta euros de una deuda de tres mil en el tanatorio."
+      },
+      "derecha": {
+        "texto": "Devolvérselo para flores",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        }
+      },
+      "lote": 20
+    },
+    {
+      "id": "enemigo_descampado_comunidad",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Presidente de la Comunidad",
+      "texto": "El chaval al que delataste a los catorce años acaba de salir elegido presidente de tu comunidad de vecinos. Su primera medida es medir con metro si tu coche pisa la raya del garaje.",
+      "condiciones": {
+        "requiere_flags": [
+          "enemigo_descampado"
+        ]
+      },
+      "izquierda": {
+        "texto": "Impugnar cada acta",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -15
+        },
+        "hito_biografico": "Mantuvo una guerra de juntas de vecinos por un chivatazo de adolescencia."
+      },
+      "derecha": {
+        "texto": "Alquilar otra plaza fuera",
+        "efectos": {
+          "dinero": -15,
+          "vinculos": 10
+        }
+      },
+      "lote": 20
+    },
+    {
+      "id": "jefe_sumiso_cardiologo",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "La Sala de Espera",
+      "texto": "Coincides con tu primer jefe en la consulta del cardiólogo. Nada más reconocerte te tiende su abrigo y te pide que le saques el número en el mostrador, por pura costumbre.",
+      "condiciones": {
+        "requiere_flags": [
+          "jefe_sumiso"
+        ]
+      },
+      "izquierda": {
+        "texto": "Sacarle el número sin hablar",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -15
+        },
+        "hito_biografico": "Siguió haciendo recados a su primer jefe incluso jubilado en el cardiólogo."
+      },
+      "derecha": {
+        "texto": "Dejar caer su abrigo",
+        "efectos": {
+          "cordura": 15,
+          "vinculos": -10
+        },
+        "hito_biografico": "Se rebeló contra su primer jefe cincuenta años demasiado tarde."
+      },
+      "lote": 20
+    },
+    {
+      "id": "jefe_rebelde_parque",
+      "tipo": "etapa",
+      "etapa": "70-89",
+      "nombre": "El Paseo del Parque",
+      "texto": "Te cruzas con tu primer jefe empujando su andador por el parque. No te saluda, pero comenta en voz alta a su acompañante que «desde hace décadas nadie tiene cultura del esfuerzo».",
+      "condiciones": {
+        "requiere_flags": [
+          "jefe_rebelde"
+        ]
+      },
+      "izquierda": {
+        "texto": "Adelantarle a paso ligero",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Disfrutó hasta la vejez del rencor intacto de su primer jefe."
+      },
+      "derecha": {
+        "texto": "Saludarle con educación",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 20
+    },
+    {
+      "id": "sobre_comunion_pesetas",
+      "tipo": "etapa",
+      "etapa": "50-69",
+      "nombre": "El Cajón de la Cómoda",
+      "texto": "Vaciando la casa de tus padres encuentras el sobre de tu Comunión sin abrir, sujeto con una goma reseca. Dentro están los billetes antiguos, ya fuera de curso legal desde hace años.",
+      "condiciones": {
+        "requiere_flags": [
+          "sobre_comunion"
+        ],
+        "excluye_flags": [
+          "deuda_materna"
+        ]
+      },
+      "izquierda": {
+        "texto": "Venderlos a un coleccionista",
+        "efectos": {
+          "dinero": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Guardar el sobre de recuerdo",
+        "efectos": {
+          "cordura": 10,
+          "dinero": -10
+        },
+        "hito_biografico": "Recuperó el sobre de su Comunión cuando la moneda ya no valía nada."
+      },
+      "lote": 20
     }
   ]
 }
