@@ -39,7 +39,7 @@
         ]
       },
       "derecha": {
-        "texto": "Bótox en Marbella",
+        "texto": "Poner bótox en Marbella",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -64,14 +64,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Paciencia infinita",
+        "texto": "Atenderle con paciencia",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
         }
       },
       "derecha": {
-        "texto": "Paracetamol y desprecio",
+        "texto": "Recetar paracetamol y desprecio",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
@@ -103,7 +103,7 @@
         }
       },
       "derecha": {
-        "texto": "Veinte minutos de gases",
+        "texto": "Explicarle que son gases",
         "efectos": {
           "cordura": -10,
           "salud": 5
@@ -167,7 +167,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Tres años y la plaza",
+        "texto": "Encerrarte tres años y aprobar",
         "efectos": {
           "dinero": 10,
           "cordura": -15
@@ -272,7 +272,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Solitario hasta las tres",
+        "texto": "Jugar al solitario hasta las tres",
         "efectos": {
           "salud": 5,
           "cordura": -10
@@ -414,14 +414,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Baja por nódulos",
+        "texto": "Pedir la baja por nódulos",
         "efectos": {
           "salud": 10,
           "dinero": -10
         }
       },
       "derecha": {
-        "texto": "Micro de Britney",
+        "texto": "Usar micro de Britney",
         "efectos": {
           "dinero": 5,
           "vinculos": -10
@@ -490,7 +490,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Garrafón a precio de oro",
+        "texto": "Servir garrafón a precio de oro",
         "efectos": {
           "dinero": 10,
           "cordura": 5
@@ -555,7 +555,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Medias de compresión",
+        "texto": "Ponerte medias de compresión",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -668,7 +668,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Tres horas gratis",
+        "texto": "Echar tres horas gratis",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -708,7 +708,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Camisa sí, pantalón no",
+        "texto": "Ponerte solo camisa",
         "efectos": {
           "cordura": 10,
           "salud": -5
@@ -736,7 +736,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Buffet y su pastilla",
+        "texto": "Ir al buffet y recetar su pastilla",
         "efectos": {
           "salud": 10,
           "cordura": -10
@@ -744,7 +744,7 @@
         "hito_biografico": "Asistió a un congreso médico en Tenerife sin pisar una sola ponencia."
       },
       "derecha": {
-        "texto": "Ética y consulta",
+        "texto": "Quedarte en consulta por ética",
         "efectos": {
           "cordura": 10,
           "salud": -5
@@ -800,7 +800,7 @@
         }
       },
       "derecha": {
-        "texto": "Cita privada a 120 €",
+        "texto": "Darle cita privada a 120 €",
         "efectos": {
           "dinero": 10,
           "vinculos": -10
@@ -877,7 +877,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Boicot por triplicado",
+        "texto": "Hacer boicot por triplicado",
         "efectos": {
           "cordura": 10,
           "dinero": -10
@@ -885,7 +885,7 @@
         "hito_biografico": "Frenó la transformación digital de su ministerio durante una década."
       },
       "derecha": {
-        "texto": "Cursillo de 40 horas",
+        "texto": "Hacer el cursillo de 40 horas",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -913,7 +913,7 @@
         }
       },
       "derecha": {
-        "texto": "Tapones y que venga la policía",
+        "texto": "Ponerte tapones y pasar",
         "efectos": {
           "salud": 10,
           "vinculos": -10
@@ -934,14 +934,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Cartel en mayúsculas",
+        "texto": "Poner un cartel en mayúsculas",
         "efectos": {
           "cordura": 10,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Termo propio y silencio",
+        "texto": "Traer termo propio y callar",
         "efectos": {
           "dinero": -10,
           "cordura": 10
@@ -1026,7 +1026,7 @@
         "hito_biografico": "Se negó a aceptar 'visibilidad' como moneda de curso legal."
       },
       "derecha": {
-        "texto": "Croquetas congeladas",
+        "texto": "Invitarle a croquetas congeladas",
         "efectos": {
           "dinero": -10,
           "vinculos": 10
@@ -1047,7 +1047,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Dieciséis horas de odio",
+        "texto": "Hacer doble turno con odio",
         "efectos": {
           "dinero": 15,
           "salud": -10
@@ -1075,7 +1075,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Cámara encendida y asentir",
+        "texto": "Dejar la cámara y asentir",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
@@ -1103,14 +1103,14 @@
         ]
       },
       "izquierda": {
-        "texto": "Silla de nave espacial",
+        "texto": "Comprar la silla de 1.100 €",
         "efectos": {
           "dinero": -15,
           "salud": 10
         }
       },
       "derecha": {
-        "texto": "Cojín del sofá",
+        "texto": "Usar un cojín del sofá",
         "efectos": {
           "dinero": 10,
           "salud": -10
@@ -1138,7 +1138,7 @@
         }
       },
       "derecha": {
-        "texto": "Parche con celo",
+        "texto": "Poner un parche con celo",
         "efectos": {
           "salud": 10,
           "cordura": -10
