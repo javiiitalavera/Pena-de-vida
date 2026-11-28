@@ -117,3 +117,32 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
   const t=new Partida(datos,{sexo:'M',nivel:'facil',comodinId:datos.comodines.find(c=>c.accion==='invertir').id}); t.carta=gim;
   t.usarComodin(); t.usarComodin(); const r=Partida.restaurar(datos,t.exportar()); r.carta=gim;
   assert(r.comodinesRestantes===1 && r.usarComodin() && !r.puedeUsarComodin(),'fácil: tres usos del comodín, también tras restaurar'); }
+
+// Los relatos originales y los nuevos comparten el sorteo por pilar y extremo.
+{
+  for (const pilar of datos.config.pilares) {
+    for (const extremo of [0, 100]) {
+      const entrada = datos.muertes[pilar.id][extremo];
+      const relatos = [entrada, ...entrada.alternativas];
+      const causa = { tipo: 'muerte', pilar: pilar.id, extremo };
+      assert(relatos.length === 3, 'tres relatos para ' + pilar.id + ' ' + extremo);
+      for (const sexo of ['M', 'F']) {
+        for (const [i, relato] of relatos.entries()) {
+          const partida = new Partida(datos, { sexo, rng: rngSemilla(1) });
+          partida.fin = { causa, anio: 42, pilares: partida.pilares };
+          partida.rng = () => (i + 0.5) / relatos.length;
+          const necrologia = construirNecrologia(partida);
+          assert(necrologia.titulo === aplicarGenero(relato.titulo, sexo)
+            && necrologia.texto === aplicarGenero(relato.texto, sexo),
+          'relato completo para ' + pilar.id + ' ' + extremo + ' (' + sexo + ', ' + i + ')');
+        }
+      }
+      const partida = new Partida(datos, { sexo: 'F', rng: rngSemilla(1) });
+      partida.fin = { causa, anio: 12, pilares: partida.pilares };
+      partida.rng = () => 0.99;
+      const textoInfancia = entrada.variantes?.[0]?.texto ?? entrada.texto;
+      assert(construirNecrologia(partida).texto === aplicarGenero(textoInfancia, 'F'),
+        'relato de infancia para ' + pilar.id + ' ' + extremo);
+    }
+  }
+}

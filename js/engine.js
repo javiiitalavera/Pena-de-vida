@@ -553,7 +553,17 @@ export function construirNecrologia(partida) {
   else entrada = datos.muertes[causa.tipo];
   entrada = entrada || { titulo: 'Causa desconocida', texto: '' };
   const variante = (entrada.variantes || []).find((v) => anio <= (v.edad_max ?? Infinity) && anio >= (v.edad_min ?? 0));
-  const textoCausa = causa.texto ?? variante?.texto ?? entrada.texto;
+  let relato = entrada;
+  if (causa.tipo === 'muerte' && !variante && causa.texto == null && causa.titulo == null) {
+    const alternativas = (entrada.alternativas || []).filter(
+      (a) => anio >= (a.edad_min ?? 0) && anio <= (a.edad_max ?? Infinity),
+    );
+    if (alternativas.length) {
+      const relatos = [entrada, ...alternativas];
+      relato = relatos[Math.floor(partida.rng() * relatos.length)];
+    }
+  }
+  const textoCausa = causa.texto ?? variante?.texto ?? relato.texto;
 
   // Remates: todos los condicionales que encajen (en el orden del archivo) + uno aleatorio.
   const R = datos.remates || {};
@@ -580,7 +590,7 @@ export function construirNecrologia(partida) {
     sexo,
     centenario: causa.tipo === 'centenario',
     causa,
-    titulo: aplicarGenero(causa.titulo || entrada.titulo || '', sexo),
+    titulo: aplicarGenero(causa.titulo || relato.titulo || '', sexo),
     texto: aplicarGenero(textoCausa || '', sexo),
     hitos: seleccionarHitos(partida.hitos, datos.config.hitos_max ?? 6),
     remates: remates.map((t) => aplicarGenero(t, sexo)),
