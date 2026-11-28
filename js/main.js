@@ -47,7 +47,6 @@ function pintarPortada() {
   const img = new Image();
   img.alt = '';
   img.decoding = 'async';
-  img.onload = () => requestAnimationFrame(() => img.classList.add('lista'));
   img.src = datos.config.imagenes.cartas.replace('{id}', id);
   marco.replaceChildren(img);
 }

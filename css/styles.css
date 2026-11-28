@@ -46,23 +46,73 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .enlace-discreto { color: var(--tinta-suave); font-size: 0.8rem; text-align: center; opacity: 0.6; }
 
 /* ---------- portada ---------- */
-.pantalla.portada { padding-left: 0; padding-right: 0; align-items: center; }
-.portada-cabecera { text-align: center; padding: 0 16px; }
-.portada .titulo { font-size: clamp(2.6rem, 12vw, 3.8rem); line-height: 1.05; }
-.portada .subtitulo { margin: 8px 0 0; }
+.pantalla.portada {
+  --margen-portada: clamp(18px, 6vw, 34px);
+  background: var(--papel);
+  color: var(--papel-tinta);
+  padding-inline: var(--margen-portada);
+}
+.portada-cabecera { padding: 4px 0 12px; border-top: 3px solid currentColor; }
+.portada .titulo {
+  font-size: clamp(2.65rem, 12vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.065em;
+  margin-top: 10px;
+}
+.portada .subtitulo {
+  margin: 7px 0 0;
+  color: #625342;
+  font: italic 1rem/1.2 var(--serif);
+  letter-spacing: 0;
+  text-transform: none;
+}
 .portada-arte {
-  margin: 20px 0; width: 100%; flex: 1; min-height: 0; max-height: 520px;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  margin: 14px 0 12px;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 96px;
+  max-height: min(470px, calc(100vw - 2 * var(--margen-portada)));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 .portada-arte img {
-  /* Cuadrada y tan grande como permita el hueco: todo el ancho en móviles altos. */
-  height: 100%; max-height: 100vw; max-width: 100%; aspect-ratio: 1; object-fit: cover; display: block;
-  opacity: 0; transition: opacity 0.6s ease;
+  height: 100%;
+  max-height: calc(100vw - 2 * var(--margen-portada));
+  max-width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  display: block;
 }
-.portada-arte img.lista { opacity: 1; }
-.portada-botones { display: flex; flex-direction: column; align-items: center; gap: 10px; width: min(100%, 260px); padding: 0 16px; }
-.portada-botones .btn { width: 100%; min-width: 0; padding: 12px 20px; }
-.portada-pie { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 16px; text-align: center; }
+.portada-botones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  padding-top: 12px;
+  border-top: 1px solid currentColor;
+}
+.portada-botones .btn, .portada-ajustes {
+  min-height: 44px;
+  min-width: 0;
+  border-radius: 0;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.portada-botones .btn.primario {
+  background: var(--papel-tinta);
+  color: var(--papel);
+  border-color: var(--papel-tinta);
+}
+.portada-botones .btn:not(.primario), .portada-ajustes { padding-inline: 0; }
+.portada-ajustes { margin-left: auto; }
+.portada-botones .btn:hover, .portada-ajustes:hover { text-decoration: underline; }
+.portada-pie { margin-top: 8px; }
+.portada-pie .stats { color: #625342; font-size: 0.78rem; }
+.portada-pie:has(.stats:empty) { display: none; }
 
 .btn {
   border: 1px solid var(--linea);
@@ -257,14 +307,6 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   font-size: 0.72rem; font-weight: 700; line-height: 20px;
 }
 
-.dialogo {
-  border: 1px solid var(--linea); border-radius: var(--radio);
-  background: var(--fondo-2); color: var(--tinta);
-  max-width: min(90vw, 360px); padding: 20px; text-align: center;
-}
-.dialogo::backdrop { background: rgba(0, 0, 0, 0.6); }
-.dialogo h3 { font-family: var(--serif); margin: 0 0 8px; }
-.dialogo p { color: var(--tinta-suave); margin: 0 0 16px; }
 
 /* ---------- necrológica ---------- */
 
@@ -320,30 +362,29 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   width: min(92vw, 360px); max-height: 92dvh; overflow-y: auto;
   padding: 22px 22px 18px; margin: auto;
   background: var(--papel); color: var(--papel-tinta);
-  border: 3px double var(--papel-tinta); border-radius: 2px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--papel-tinta); border-radius: 0;
   font-family: var(--serif);
 }
 .impreso::backdrop { background: rgba(0, 0, 0, 0.7); }
 .impreso form { display: flex; flex-direction: column; }
-.impreso-membrete {
-  margin: 0; font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(29, 26, 20, 0.55); text-align: center;
-}
 .impreso h3 {
-  margin: 4px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--papel-tinta);
-  font-size: 1.7rem; font-weight: normal; text-align: center; letter-spacing: 0.02em;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--papel-tinta);
+  font-size: 1.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 .impreso fieldset { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
 .impreso legend {
-  padding: 0; margin-bottom: 6px; font-variant: small-caps; letter-spacing: 0.06em; font-size: 1.05rem;
+  padding: 0; margin-bottom: 6px; font: 600 0.83rem/1.3 var(--sans);
 }
 .impreso legend span { font-variant: normal; font-style: italic; font-size: 0.8rem; letter-spacing: 0; color: rgba(29, 26, 20, 0.6); }
 
 .niveles { display: flex; flex-direction: column; }
 .nivel {
-  display: flex; align-items: center; gap: 12px; padding: 9px 2px;
-  border-bottom: 1px dotted rgba(29, 26, 20, 0.45); cursor: pointer;
+  display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 6px 2px;
+  border-bottom: 1px solid #bfb29d; cursor: pointer;
 }
 .nivel input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .casilla {
@@ -365,7 +406,7 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .sonido label { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; font-size: 1rem; }
 .sonido output { font-family: var(--sans); font-size: 0.8rem; font-variant-numeric: tabular-nums; color: rgba(29, 26, 20, 0.6); }
 .sonido input[type=range] {
-  -webkit-appearance: none; appearance: none; width: 100%; height: 26px; margin: 2px 0 0; background: transparent; cursor: pointer;
+  -webkit-appearance: none; appearance: none; width: 100%; height: 32px; margin: 2px 0 0; background: transparent; cursor: pointer;
 }
 .sonido input[type=range]::-webkit-slider-runnable-track { height: 1.5px; background: var(--papel-tinta); }
 .sonido input[type=range]::-moz-range-track { height: 1.5px; background: var(--papel-tinta); }
@@ -379,8 +420,18 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .sonido input[type=range]:focus-visible { outline: 2px solid var(--peligro); outline-offset: 2px; }
 
 .impreso-cerrar {
-  align-self: center; margin-top: 4px; padding: 8px 28px;
-  font-family: var(--serif); font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--papel-tinta); background: transparent; border: 1.5px solid var(--papel-tinta); border-radius: 0; cursor: pointer;
+  align-self: flex-end;
+  min-height: 44px;
+  padding: 8px 14px;
+  color: var(--papel-tinta);
+  background: transparent;
+  border: 1px solid var(--papel-tinta);
+  border-radius: 0;
+  cursor: pointer;
 }
-.impreso-cerrar:hover { background: var(--papel-tinta); color: var(--papel); }
+.impreso-cerrar:hover, .impreso-cerrar.confirmar {
+  background: var(--papel-tinta);
+  color: var(--papel);
+}
+.contexto-comodin p { margin: 0 0 18px; line-height: 1.45; }
+.contexto-acciones { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
