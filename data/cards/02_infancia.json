@@ -8,14 +8,14 @@
       "personaje": "tio_pueblo",
       "texto": "Llevas un traje de almirante que pica como el demonio, pero tu tío el del pueblo te acaba de dar un sobre muy gordo.",
       "izquierda": {
-        "texto": "Sobre al calcetín",
+        "texto": "Esconderlo en el calcetín",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
         }
       },
       "derecha": {
-        "texto": "Dárselo a tus padres",
+        "texto": "Que lo guarden tus padres",
         "efectos": {
           "dinero": -5,
           "vinculos": 10
