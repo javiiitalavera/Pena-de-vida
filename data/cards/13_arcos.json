@@ -281,7 +281,7 @@
         "texto": "«Ya le llamaremos»",
         "efectos": {
           "vinculos": 10,
-          "dinero": -5
+          "cordura": -10
         }
       },
       "lote": 16

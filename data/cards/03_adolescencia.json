@@ -69,8 +69,8 @@
       "izquierda": {
         "texto": "Correr el test de Cooper",
         "efectos": {
-          "salud": -10,
-          "cordura": -10
+          "cordura": -15,
+          "vinculos": 10
         }
       },
       "derecha": {
@@ -102,8 +102,8 @@
       "derecha": {
         "texto": "Encerrarte hasta el cierre",
         "efectos": {
-          "salud": -5,
-          "cordura": -10
+          "cordura": -10,
+          "vinculos": 10
         }
       },
       "lote": 2
@@ -118,8 +118,8 @@
       "izquierda": {
         "texto": "Escribir poesía oscura",
         "efectos": {
-          "cordura": -10,
-          "salud": 5
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "derecha": {
@@ -172,15 +172,15 @@
       "izquierda": {
         "texto": "Salir encorvado",
         "efectos": {
-          "cordura": 10,
-          "vinculos": -10
+          "cordura": -10,
+          "vinculos": 10
         }
       },
       "derecha": {
         "texto": "Negarte y comerte el parte",
         "efectos": {
-          "cordura": -10,
-          "vinculos": 5
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "lote": 3
@@ -198,14 +198,14 @@
       "izquierda": {
         "texto": "Aguantar en silencio",
         "efectos": {
-          "salud": -10,
-          "cordura": 5
+          "cordura": -10,
+          "vinculos": 10
         }
       },
       "derecha": {
         "texto": "Arrancarlo en el baño",
         "efectos": {
-          "salud": 5,
+          "salud": 10,
           "vinculos": -10
         }
       },
@@ -322,8 +322,8 @@
       "derecha": {
         "texto": "Insultar a desconocidos",
         "efectos": {
-          "salud": -10,
-          "vinculos": 10
+          "cordura": 10,
+          "salud": -10
         }
       },
       "lote": 14

@@ -11,7 +11,7 @@
         "texto": "Llorar con fuerza",
         "efectos": {
           "salud": 10,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {
@@ -42,7 +42,7 @@
         "texto": "Patalear nivel exorcista",
         "efectos": {
           "salud": -10,
-          "vinculos": 5
+          "cordura": 10
         }
       },
       "lote": 2,
@@ -60,13 +60,13 @@
         "texto": "Meter el tenedor",
         "efectos": {
           "salud": -15,
-          "vinculos": 10
+          "cordura": 10
         }
       },
       "derecha": {
         "texto": "Llorar sin motivo",
         "efectos": {
-          "salud": 5,
+          "salud": 10,
           "cordura": -10
         },
         "sorpresa": {
@@ -98,7 +98,7 @@
       "derecha": {
         "texto": "Escupírselo en el ojo",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -122,7 +122,7 @@
         "texto": "Darle tu galleta",
         "efectos": {
           "vinculos": 10,
-          "salud": 5
+          "cordura": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -152,7 +152,7 @@
       "derecha": {
         "texto": "Empujarle a las colchonetas",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -466,7 +466,7 @@
         "texto": "Chupar una bola",
         "efectos": {
           "salud": -10,
-          "cordura": 10
+          "vinculos": 10
         }
       },
       "lote": 16
@@ -511,15 +511,15 @@
       "izquierda": {
         "texto": "Llorar hasta ahogarte",
         "efectos": {
-          "cordura": 10,
-          "vinculos": -10
+          "salud": -10,
+          "vinculos": 10
         }
       },
       "derecha": {
         "texto": "Mearle la sotana",
         "efectos": {
           "cordura": 10,
-          "dinero": -10
+          "vinculos": -10
         },
         "hito_biografico": "Bautizó al cura antes de que el cura le bautizara.",
         "sorpresa": {
@@ -648,8 +648,8 @@
       "derecha": {
         "texto": "Aguantar hasta el coche",
         "efectos": {
-          "salud": -5,
-          "vinculos": 10
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "lote": 18
@@ -664,7 +664,7 @@
         "texto": "Chupar el llavero",
         "efectos": {
           "salud": -10,
-          "cordura": 10
+          "vinculos": 10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -767,7 +767,7 @@
         "texto": "Seguir a otra señora",
         "efectos": {
           "salud": -10,
-          "cordura": 10
+          "vinculos": 10
         },
         "sorpresa": {
           "probabilidad": 0.25,

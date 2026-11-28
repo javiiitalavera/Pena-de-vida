@@ -15,7 +15,7 @@
       "id": "hijo_de_papa",
       "nombre": "Hij{o/a} de Papá",
       "ventaja": "Empiezas con Dinero a 80 y las pérdidas de Dinero se reducen a la mitad.",
-      "contrapartida": "Las pérdidas de Cordura te afectan el doble.",
+      "contrapartida": "Las pérdidas de Paz mental te afectan el doble.",
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "dinero",
@@ -42,7 +42,7 @@
     {
       "id": "psicopata_funcional",
       "nombre": "Psicópata Funcional",
-      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Cordura, y ganas un 20% más de Dinero.",
+      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Paz mental, y ganas un 20% más de Dinero.",
       "contrapartida": "Las subidas de Vínculos se reducen un 25%.",
       "desbloqueo": {
         "tipo": "muerte",
@@ -104,11 +104,11 @@
       "id": "sindrome_del_impostor",
       "nombre": "Síndrome del Impostor",
       "ventaja": "Ganas un 50% más de Dinero y Vínculos.",
-      "contrapartida": "Cada 5 años pierdes 5 de Cordura.",
+      "contrapartida": "Cada 5 años pierdes 5 de Paz mental.",
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "cordura",
-        "texto": "Morir por Cordura (a 0 o a 100)"
+        "texto": "Morir por Paz mental (a 0 o a 100)"
       },
       "reglas": [
         {
@@ -138,7 +138,7 @@
       "nombre": "{Viejo Rencoroso/Vieja Rencorosa}",
       "descripcion": "Has llegado a los 100 a base de odio puro.",
       "ventaja": "Cada vez que una decisión te baje Vínculos, recuperas +5 de Salud.",
-      "contrapartida": "Empiezas con Salud al 35 y Cordura al 65.",
+      "contrapartida": "Empiezas con Salud al 35 y Paz mental al 65.",
       "desbloqueo": {
         "tipo": "centenario",
         "texto": "Llegar al año 100"

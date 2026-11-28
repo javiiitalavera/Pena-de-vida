@@ -77,7 +77,7 @@
         "texto": "Huir en calzoncillos",
         "efectos": {
           "salud": -10,
-          "dinero": 5
+          "cordura": 10
         }
       },
       "lote": 1
@@ -101,7 +101,7 @@
         "texto": "Contarle tu vesícula",
         "efectos": {
           "cordura": 10,
-          "dinero": 5
+          "vinculos": -5
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -129,8 +129,8 @@
       "izquierda": {
         "texto": "Cobrar y montar un bar",
         "efectos": {
-          "dinero": -15,
-          "salud": -10
+          "cordura": 15,
+          "dinero": -15
         },
         "hito_biografico": "Perdió su indemnización montando un bar sin clientes."
       },
@@ -267,15 +267,15 @@
       "izquierda": {
         "texto": "Mear a oscuras",
         "efectos": {
-          "cordura": 10,
-          "vinculos": -10
+          "salud": -10,
+          "vinculos": 10
         }
       },
       "derecha": {
         "texto": "Encender la luz",
         "efectos": {
-          "salud": -10,
-          "vinculos": 5
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "lote": 3
@@ -316,15 +316,15 @@
       "izquierda": {
         "texto": "Comprar gafas de farmacia",
         "efectos": {
-          "salud": 5,
-          "vinculos": -10
+          "salud": 10,
+          "cordura": -10
         }
       },
       "derecha": {
         "texto": "Pedir lo del de al lado",
         "efectos": {
-          "vinculos": 10,
-          "cordura": -10
+          "cordura": 10,
+          "vinculos": -5
         }
       },
       "lote": 9
@@ -363,8 +363,8 @@
       "izquierda": {
         "texto": "Firmar por pereza",
         "efectos": {
-          "dinero": -5,
-          "cordura": 10
+          "dinero": 10,
+          "cordura": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -394,7 +394,7 @@
       "izquierda": {
         "texto": "Ir a ver quién está peor",
         "efectos": {
-          "cordura": 10,
+          "vinculos": 10,
           "dinero": -10
         },
         "hito_biografico": "Acudió a una cena de antiguos alumnos movido únicamente por el morbo.",
@@ -457,7 +457,7 @@
         "texto": "Pelearte con la app",
         "efectos": {
           "dinero": 5,
-          "salud": -5
+          "cordura": -10
         }
       },
       "lote": 9
@@ -549,8 +549,8 @@
       "derecha": {
         "texto": "Aceptar que eres un dinosaurio",
         "efectos": {
-          "salud": 5,
-          "vinculos": -10
+          "cordura": -10,
+          "salud": 5
         }
       },
       "lote": 9
@@ -657,7 +657,7 @@
       "derecha": {
         "texto": "Irte antes del reguetón",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -703,7 +703,7 @@
       "derecha": {
         "texto": "Fingir que te encanta",
         "efectos": {
-          "dinero": -10,
+          "vinculos": 10,
           "cordura": -10
         }
       },
@@ -719,8 +719,8 @@
       "izquierda": {
         "texto": "Teñirte de negro betún",
         "efectos": {
-          "dinero": -10,
-          "vinculos": -10
+          "cordura": 10,
+          "dinero": -10
         },
         "hito_biografico": "Llevó un tinte negro azulado sospechoso durante media década."
       },
@@ -728,7 +728,7 @@
         "texto": "Lucir las canas",
         "efectos": {
           "dinero": 5,
-          "cordura": 10
+          "vinculos": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -841,7 +841,7 @@
       "derecha": {
         "texto": "Poner un alquiler justo",
         "efectos": {
-          "cordura": 10,
+          "vinculos": 10,
           "dinero": -5
         }
       },
@@ -904,13 +904,13 @@
         "texto": "Facturar humo",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {
         "texto": "Negarte a firmarlo",
         "efectos": {
-          "cordura": 10,
+          "vinculos": 10,
           "dinero": -5
         }
       },
@@ -927,15 +927,15 @@
         "texto": "Venderlo en la trastienda",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         },
         "hito_biografico": "Vendió un décimo premiado en la trastienda de un bar."
       },
       "derecha": {
         "texto": "Pagar a Hacienda",
         "efectos": {
-          "cordura": 10,
-          "dinero": -5
+          "dinero": 5,
+          "cordura": -10
         }
       },
       "lote": 15
@@ -951,7 +951,7 @@
         "texto": "Cobrar sin preguntar",
         "efectos": {
           "dinero": 10,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {

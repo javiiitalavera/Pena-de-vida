@@ -14,7 +14,7 @@
     {
       "id": "orfidal",
       "nombre": "Orfidal",
-      "descripcion": "Congela la Cordura en 50 durante 5 años.",
+      "descripcion": "Congela la Paz mental en 50 durante 5 años.",
       "accion": "congelar",
       "parametros": {
         "pilar": "cordura",

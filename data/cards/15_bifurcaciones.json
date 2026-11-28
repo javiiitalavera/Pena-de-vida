@@ -1139,14 +1139,14 @@
       "izquierda": {
         "texto": "Dejarlo todo atado",
         "efectos": {
-          "cordura": 10,
-          "dinero": -10
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "derecha": {
         "texto": "Gastar tus ahorros",
         "efectos": {
-          "salud": 10,
+          "cordura": 15,
           "vinculos": -15
         },
         "hito_biografico": "Decidió disfrutar de sus ahorros y dejar a sus hijos solo los muebles."

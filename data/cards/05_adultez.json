@@ -18,7 +18,7 @@
       "derecha": {
         "texto": "Decadencia en el sofá",
         "efectos": {
-          "dinero": 5,
+          "cordura": 10,
           "salud": -10
         }
       },
@@ -103,8 +103,8 @@
       "izquierda": {
         "texto": "Pagar 20 € y silenciar un año",
         "efectos": {
-          "dinero": -5,
-          "cordura": 10
+          "dinero": -10,
+          "vinculos": 10
         }
       },
       "derecha": {
@@ -248,7 +248,7 @@
         "texto": "Seguir pagando, por si acaso",
         "efectos": {
           "dinero": -10,
-          "salud": -5
+          "cordura": 10
         }
       },
       "lote": 2
@@ -566,7 +566,7 @@
         "texto": "Pagar a otro el doble",
         "efectos": {
           "dinero": -15,
-          "cordura": 10
+          "salud": 10
         },
         "hito_biografico": "Pagó dos veces la misma reforma para poder volver a cocinar.",
         "sorpresa": {
@@ -590,14 +590,14 @@
       "izquierda": {
         "texto": "Aguantar con cerveza a 9 €",
         "efectos": {
-          "salud": -10,
-          "dinero": -10
+          "dinero": -10,
+          "vinculos": 10
         }
       },
       "derecha": {
         "texto": "Irte al hotel",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -637,7 +637,7 @@
       "izquierda": {
         "texto": "Fraccionar y maldecir",
         "efectos": {
-          "dinero": -10,
+          "dinero": 5,
           "cordura": -10
         }
       },
@@ -801,14 +801,14 @@
         "texto": "El SUV a ocho años",
         "efectos": {
           "dinero": -15,
-          "vinculos": 10
+          "cordura": 10
         }
       },
       "derecha": {
         "texto": "Utilitario beige",
         "efectos": {
           "dinero": 10,
-          "vinculos": -10
+          "cordura": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -854,8 +854,8 @@
       "izquierda": {
         "texto": "Sonrisa pasivo-agresiva",
         "efectos": {
-          "cordura": 10,
-          "vinculos": -10
+          "cordura": -10,
+          "vinculos": 10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -886,15 +886,15 @@
       "izquierda": {
         "texto": "Sushi y peli a solas",
         "efectos": {
-          "dinero": 5,
-          "cordura": 10
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "derecha": {
         "texto": "Fingir alegría",
         "efectos": {
-          "dinero": -10,
-          "vinculos": 10
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "lote": 10
@@ -957,7 +957,7 @@
         "texto": "Fingir collarín por 2.500 €",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         },
         "hito_biografico": "Fingió un latigazo cervical por un toque a cinco por hora.",
         "sorpresa": {
@@ -1076,7 +1076,7 @@
         "texto": "Colársela al perito",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {
@@ -1129,7 +1129,7 @@
       "derecha": {
         "texto": "Mandarles a Cuenca",
         "efectos": {
-          "vinculos": 10,
+          "cordura": 10,
           "dinero": -5
         }
       },
@@ -1152,8 +1152,8 @@
       "derecha": {
         "texto": "Tragar saliva",
         "efectos": {
-          "vinculos": 10,
-          "dinero": -5
+          "cordura": -10,
+          "vinculos": 10
         }
       },
       "lote": 13
@@ -1246,14 +1246,14 @@
         "texto": "Alargar la baja",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {
         "texto": "Pedir el alta",
         "efectos": {
           "vinculos": 10,
-          "salud": -5
+          "cordura": -10
         }
       },
       "lote": 13
@@ -1269,7 +1269,7 @@
         "texto": "Pagar tus vacaciones con ella",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {
@@ -1292,14 +1292,14 @@
         "texto": "Coger los billetes",
         "efectos": {
           "dinero": 15,
-          "cordura": -10
+          "vinculos": -10
         }
       },
       "derecha": {
         "texto": "Llevarlo al desguace legal",
         "efectos": {
-          "cordura": 10,
-          "dinero": -5
+          "dinero": -5,
+          "vinculos": 10
         }
       },
       "lote": 13

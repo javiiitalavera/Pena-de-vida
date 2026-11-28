@@ -91,7 +91,7 @@
         "texto": "Tomártelas todas",
         "efectos": {
           "salud": 10,
-          "dinero": -10
+          "cordura": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -128,8 +128,8 @@
       "derecha": {
         "texto": "«Nunca me caíste bien»",
         "efectos": {
-          "dinero": 5,
-          "cordura": 10
+          "cordura": 10,
+          "vinculos": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -186,8 +186,8 @@
       "izquierda": {
         "texto": "Seguir gritando «¿QUÉ?»",
         "efectos": {
-          "dinero": 5,
-          "vinculos": -15
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "derecha": {
@@ -349,8 +349,8 @@
       "izquierda": {
         "texto": "Opinar del cemento",
         "efectos": {
-          "vinculos": 5,
-          "cordura": 5
+          "cordura": 10,
+          "salud": -5
         }
       },
       "derecha": {
@@ -481,7 +481,7 @@
       "izquierda": {
         "texto": "Pelear por los langostinos",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         },
         "hito_biografico": "Inició una reyerta en un buffet libre por unos langostinos."
@@ -559,7 +559,7 @@
       "derecha": {
         "texto": "Fingir un tirón",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -691,7 +691,7 @@
         "texto": "Servirte otra copa de vino",
         "efectos": {
           "salud": -10,
-          "cordura": 10
+          "vinculos": 10
         }
       },
       "lote": 11
@@ -713,7 +713,7 @@
       "derecha": {
         "texto": "Poner la misa a las siete",
         "efectos": {
-          "cordura": 10,
+          "cordura": 5,
           "salud": -10
         },
         "hito_biografico": "Libró una guerra acústica contra un estudiante universitario."
@@ -730,15 +730,15 @@
       "izquierda": {
         "texto": "Coger un trozo de queso",
         "efectos": {
-          "salud": 5,
-          "cordura": -10
+          "cordura": 10,
+          "salud": -5
         }
       },
       "derecha": {
         "texto": "Fingir que paseabas",
         "efectos": {
-          "cordura": 5,
-          "salud": -5
+          "cordura": -10,
+          "vinculos": 5
         }
       },
       "lote": 11
@@ -777,7 +777,7 @@
         "texto": "«Sin jamón, desenchufadme»",
         "efectos": {
           "cordura": 10,
-          "dinero": 5
+          "vinculos": -10
         }
       },
       "derecha": {
@@ -953,7 +953,7 @@
         "texto": "Darle las llaves",
         "efectos": {
           "vinculos": 10,
-          "salud": -5
+          "cordura": -10
         }
       },
       "lote": 15

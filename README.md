@@ -1,6 +1,6 @@
 # Pena de vida
 
-Juego de cartas narrativo para móvil y ordenador. Vives del año 0 al 100 equilibrando cuatro barras (Salud, Dinero, Cordura, Vínculos). Si una llega a 0 o a 100, mueres y recibes tu necrológica.
+Juego de cartas narrativo para móvil y ordenador. Vives del año 0 al 100 equilibrando cuatro barras (Salud, Dinero, Paz mental, Vínculos). Si una llega a 0 o a 100, mueres y recibes tu necrológica.
 
 Hecho con HTML, CSS y JavaScript, sin frameworks ni instalación. Todo el contenido (cartas, rasgos, muertes, comodines) está en archivos `.json` dentro de `data/`, separado del motor.
 

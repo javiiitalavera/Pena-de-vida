@@ -85,8 +85,8 @@
       "derecha": {
         "texto": "Adoptar un «perrhijo»",
         "efectos": {
-          "dinero": 5,
-          "cordura": 10
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "lote": 6

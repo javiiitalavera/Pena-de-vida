@@ -39,7 +39,7 @@
         "texto": "Subir la tarifa del diente",
         "efectos": {
           "dinero": 10,
-          "cordura": -10
+          "vinculos": -10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -77,7 +77,7 @@
       "derecha": {
         "texto": "Chivarte",
         "efectos": {
-          "cordura": 10,
+          "salud": 10,
           "vinculos": -15
         },
         "sorpresa": {
@@ -109,7 +109,7 @@
       "derecha": {
         "texto": "Fingir un desmayo",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -126,7 +126,7 @@
         "texto": "Llorar en silencio",
         "efectos": {
           "cordura": -10,
-          "vinculos": -5
+          "vinculos": 5
         }
       },
       "derecha": {
@@ -210,8 +210,8 @@
       "derecha": {
         "texto": "Comértelo llorando",
         "efectos": {
-          "salud": -10,
-          "vinculos": 10
+          "salud": 10,
+          "cordura": -10
         }
       },
       "lote": 12
@@ -234,7 +234,7 @@
         "texto": "Rascarte en secreto",
         "efectos": {
           "salud": -10,
-          "vinculos": 10
+          "cordura": 10
         },
         "hito_biografico": "Fue {el/la} paciente cero de un brote de piojos en el colegio.",
         "sorpresa": {
@@ -313,7 +313,7 @@
       "izquierda": {
         "texto": "Dejarte meter el gol",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -390,15 +390,15 @@
       "izquierda": {
         "texto": "Aguantar sudando",
         "efectos": {
-          "salud": 10,
-          "vinculos": -10
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "derecha": {
         "texto": "Quitártela",
         "efectos": {
-          "salud": -10,
-          "vinculos": 10
+          "cordura": 10,
+          "salud": -10
         }
       },
       "lote": 14
@@ -571,7 +571,7 @@
         "texto": "Quedarte quiet{o/a}",
         "efectos": {
           "dinero": 10,
-          "vinculos": -10
+          "cordura": -10
         },
         "hito_biografico": "Lució un corte de pelo casero en todas las fotos de Primaria."
       },
@@ -654,7 +654,7 @@
         "texto": "Morderte el carrillo",
         "efectos": {
           "vinculos": 10,
-          "salud": -5
+          "cordura": -10
         }
       },
       "derecha": {

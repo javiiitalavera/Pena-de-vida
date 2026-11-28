@@ -83,7 +83,7 @@
     },
     "cordura": {
       "0": {
-        "titulo": "Cordura a cero",
+        "titulo": "Paz mental a cero",
         "texto": "Desconexión total. Te quedas mirando girar el plato del microondas hasta que te mueres de deshidratación.",
         "alternativas": [
           {
@@ -99,7 +99,7 @@
         ]
       },
       "100": {
-        "titulo": "Cordura al cien",
+        "titulo": "Paz mental al cien",
         "texto": "Alcanzas la hiperlucidez estoica: te convences de que el hambre y el dolor son construcciones mentales y dejas de beber agua.",
         "alternativas": [
           {

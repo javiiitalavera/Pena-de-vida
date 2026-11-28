@@ -54,7 +54,7 @@
       "derecha": {
         "texto": "Pasarte al vapeador de fresa",
         "efectos": {
-          "vinculos": -5,
+          "salud": 5,
           "dinero": -10
         },
         "hito_biografico": "Sustituyó el tabaco por vapor con olor a gominola a los 40."
@@ -287,8 +287,8 @@
       "derecha": {
         "texto": "Dormir diez horas",
         "efectos": {
-          "dinero": 5,
-          "cordura": 10
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "lote": 8
@@ -527,14 +527,14 @@
       "izquierda": {
         "texto": "Comer arroz hasta noviembre",
         "efectos": {
-          "dinero": -10,
+          "cordura": 10,
           "salud": -10
         }
       },
       "derecha": {
         "texto": "Aplazar con intereses",
         "efectos": {
-          "dinero": -10,
+          "dinero": 5,
           "cordura": -10
         }
       },
@@ -590,8 +590,8 @@
       "derecha": {
         "texto": "Renegociar con seguro y alarma",
         "efectos": {
-          "dinero": -10,
-          "cordura": -10
+          "dinero": 5,
+          "cordura": -15
         }
       },
       "lote": 8
@@ -651,7 +651,7 @@
       "derecha": {
         "texto": "Fingir lumbago preventivo",
         "efectos": {
-          "salud": 5,
+          "cordura": 10,
           "vinculos": -10
         }
       },
@@ -701,15 +701,15 @@
         "texto": "Comprar más, en rebajas",
         "efectos": {
           "dinero": -15,
-          "cordura": -10
+          "cordura": 10
         },
         "hito_biografico": "Promedió a la baja una estafa piramidal hasta la ruina."
       },
       "derecha": {
         "texto": "Asumir la pérdida",
         "efectos": {
-          "cordura": 10,
-          "dinero": -10
+          "cordura": -10,
+          "dinero": 5
         },
         "remove_flags": [
           "criptobro"
@@ -740,7 +740,7 @@
         "texto": "Pedir otro gin-tonic y callar",
         "efectos": {
           "vinculos": 10,
-          "salud": -5
+          "cordura": -10
         }
       },
       "lote": 8

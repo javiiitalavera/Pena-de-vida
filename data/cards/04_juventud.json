@@ -88,7 +88,7 @@
         "texto": "Pagarle el vuelo",
         "efectos": {
           "dinero": -15,
-          "cordura": -10
+          "vinculos": 10
         }
       },
       "derecha": {
@@ -114,7 +114,7 @@
       "izquierda": {
         "texto": "Volver a España",
         "efectos": {
-          "salud": -15,
+          "cordura": -10,
           "vinculos": 10
         },
         "sorpresa": {
@@ -239,7 +239,7 @@
         "texto": "Pagar la luz callad{o/a}",
         "efectos": {
           "dinero": -10,
-          "cordura": -10
+          "vinculos": 10
         },
         "sorpresa": {
           "probabilidad": 0.25,
@@ -310,7 +310,7 @@
         "texto": "Raparte al cero",
         "efectos": {
           "dinero": 5,
-          "vinculos": -10
+          "cordura": -10
         }
       },
       "derecha": {
@@ -466,15 +466,15 @@
       "izquierda": {
         "texto": "Comprar los libros",
         "efectos": {
-          "cordura": 10,
-          "dinero": -5
+          "dinero": 10,
+          "cordura": -10
         }
       },
       "derecha": {
         "texto": "Fundírtela en ocio",
         "efectos": {
-          "dinero": 15,
-          "salud": -10
+          "cordura": 15,
+          "dinero": -10
         },
         "hito_biografico": "Financió su vida nocturna con una beca del Ministerio de Educación."
       },

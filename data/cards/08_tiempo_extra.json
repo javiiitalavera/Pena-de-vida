@@ -43,7 +43,7 @@
         "texto": "«Aceite y no casarse»",
         "efectos": {
           "vinculos": 10,
-          "cordura": 5
+          "cordura": -10
         }
       },
       "derecha": {
@@ -276,7 +276,7 @@
         "texto": "Pedir más pastillas para dormir",
         "efectos": {
           "salud": 10,
-          "dinero": -10
+          "cordura": -10
         }
       },
       "lote": 7
@@ -345,7 +345,7 @@
         "texto": "Salir sin paraguas",
         "efectos": {
           "salud": -10,
-          "cordura": 10
+          "cordura": 5
         }
       },
       "lote": 7
