@@ -169,7 +169,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Discurso corporativo",
+        "texto": "Soltar discurso corporativo",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -274,7 +274,7 @@
         }
       },
       "derecha": {
-        "texto": "Préstamo y a Turquía",
+        "texto": "Pedir préstamo y a Turquía",
         "efectos": {
           "dinero": -15,
           "cordura": 10
@@ -294,14 +294,14 @@
         "requiere_sexo": "F"
       },
       "izquierda": {
-        "texto": "Llaves entre los nudillos",
+        "texto": "Agarrar las llaves y seguir",
         "efectos": {
           "cordura": 10,
           "salud": -10
         }
       },
       "derecha": {
-        "texto": "Taxi de cinco minutos",
+        "texto": "Pedir un taxi",
         "efectos": {
           "dinero": -10,
           "salud": 10
@@ -387,7 +387,7 @@
       "personaje": "nino_rico",
       "texto": "Los padres de un niño rico te pagan 25€ la hora en negro por darle clases de Matemáticas de 2º de la ESO. No te acuerdas de hacer una ecuación de segundo grado.",
       "izquierda": {
-        "texto": "Tutoriales en el baño",
+        "texto": "Ver tutoriales en el baño",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -480,7 +480,7 @@
       "personaje": "rodaje",
       "texto": "Buscan extras para rodar un anuncio de una aseguradora a las cinco de la mañana bajo la lluvia artificial. Pagan 120€ y un bocadillo de chóped.",
       "izquierda": {
-        "texto": "Doce horas calad{o/a}",
+        "texto": "Aguantar doce horas calad{o/a}",
         "efectos": {
           "dinero": 10,
           "salud": -10
