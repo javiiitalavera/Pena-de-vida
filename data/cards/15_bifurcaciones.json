@@ -914,6 +914,34 @@
       "lote": 19
     },
     {
+      "id": "hijos_fiebre_madrugada",
+      "tipo": "etapa",
+      "etapa": "30-49",
+      "nombre": "La Fiebre de las Tres",
+      "texto": "Son las tres de la madrugada, tu hijo arde a 39 y no sabes si esperar o ir a urgencias. En cinco horas tienes que estar presentable en el trabajo.",
+      "condiciones": {
+        "requiere_flags": [
+          "con_hijos"
+        ]
+      },
+      "izquierda": {
+        "texto": "Ir a urgencias",
+        "efectos": {
+          "cordura": 10,
+          "salud": -10
+        },
+        "hito_biografico": "Pasó media madrugada en urgencias pediátricas para que le recetaran jarabe."
+      },
+      "derecha": {
+        "texto": "Dar jarabe y vigilar",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 19
+    },
+    {
       "id": "hijos_ortodoncia",
       "tipo": "etapa",
       "etapa": "30-49",
