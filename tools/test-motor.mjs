@@ -80,7 +80,10 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
   assert(n.texto.includes('guardería') && n.rango==='Edad oficial: 00 años' && n.cabecera==='Fe de vida' && !n.remates.some(r=>/funeral|Epitafio|forense/.test(r)),'la prórroga: fe de vida, edad 00 y sin remates de funeral'); }
 // anclas alternativas y arcos
 { const vistos={}; for(let s=1;s<=300;s++){ const p=new Partida(datos,{sexo:'M',rng:rngSemilla(s)}); const c0=p.siguienteCarta(); p.elegir('izquierda'); const c1=p.siguienteCarta(); vistos[c0.id]=(vistos[c0.id]||0)+1; vistos[c1.id]=(vistos[c1.id]||0)+1; if(c0.anio!==0||c1.anio!==1) vistos.mal=(vistos.mal||0)+1; }
-  assert(!vistos.mal && ['obstetra','parto_festivo','el_parecido','pediatra_vacunas','primera_palabra','parque_bolas'].every(id=>vistos[id]>50),'años 0 y 1: una carta al azar de cada grupo '+JSON.stringify(vistos)); }
+  // Cada carta de un grupo debe salir al menos la mitad de lo que le tocaría por reparto uniforme.
+  const grupos={}; for(const c of datos.cartas) if(c.tipo==='ancla'&&c.grupo&&c.anio<=1) (grupos[c.grupo]??=[]).push(c.id);
+  const bienRepartido=Object.values(grupos).every(ids=>ids.every(id=>(vistos[id]||0)>300/ids.length/2));
+  assert(!vistos.mal && bienRepartido,'años 0 y 1: una carta al azar de cada grupo '+JSON.stringify(vistos)); }
 { const p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('comunion'); p.elegir('derecha'); assert(p.flags.has('sobre_comunion'),'la Comunión activa el arco del sobre'); }
 { const a=new Partida(datos,{sexo:'F'}); a.avanzarHasta(100); a.siguienteCarta(); a.elegir('derecha'); const r=construirNecrologia(a).remates;
   assert(r.some(x=>x.includes('COBOL')&&x.includes('derrotada')) && !r.some(x=>x.includes('Héroe nacional')),'error del sistema: remate COBOL, sin héroe nacional'); }
