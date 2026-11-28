@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-title" content="Pena de vida">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="css/styles.css?v=20c4b5fe">
+  <link rel="stylesheet" href="css/styles.css?v=317e54bb">
 </head>
 <body>
   <main id="app">
@@ -45,8 +45,6 @@
 
     <section id="pantalla-juego" class="pantalla">
       <header class="barras" id="barras"></header>
-      <div class="mods" id="mods"></div>
-      <p class="mods-detalle" id="mods-detalle" hidden></p>
       <div class="escena">
       <div class="cabecera-carta">
         <p class="linea-anio"><span id="edad-anio">Año 0</span><span class="separador" aria-hidden="true">·</span><span id="carta-nombre"></span></p>
@@ -64,7 +62,7 @@
       <p class="pista" id="pista" hidden>← Desliza la carta para decidir →</p>
       </div>
       <footer class="pie-juego">
-        <span></span>
+        <button class="icono-btn mods-btn" id="btn-mods" aria-label="Tu vida" title="Tu vida"></button>
         <button class="icono-btn comodin" id="btn-comodin"></button>
         <button class="icono-btn ajustes" data-ajustes aria-label="Ajustes" title="Ajustes"></button>
         <span class="debug" id="debug" hidden></span>
@@ -108,6 +106,14 @@
       </form>
     </dialog>
 
+    <dialog id="dialogo-mods" class="impreso" aria-labelledby="titulo-mods">
+      <form method="dialog">
+        <h3 id="titulo-mods">Tu vida</h3>
+        <ul class="lista-mods" id="lista-mods"></ul>
+        <button class="impreso-cerrar">Cerrar</button>
+      </form>
+    </dialog>
+
     <dialog id="dialogo-comodin" class="impreso contexto-comodin" aria-labelledby="dlg-nombre" aria-describedby="dlg-desc">
       <div class="dlg-icono" id="dlg-icono"></div>
       <h3 id="dlg-nombre"></h3>
@@ -123,21 +129,21 @@
   <script type="importmap">
   {
     "imports": {
-      "./js/audio.js": "./js/audio.js?v=20c4b5fe",
-      "./js/data.js": "./js/data.js?v=20c4b5fe",
-      "./js/engine.js": "./js/engine.js?v=20c4b5fe",
-      "./js/iconos.js": "./js/iconos.js?v=20c4b5fe",
-      "./js/images.js": "./js/images.js?v=20c4b5fe",
-      "./js/main.js": "./js/main.js?v=20c4b5fe",
-      "./js/revisor.js": "./js/revisor.js?v=20c4b5fe",
-      "./js/simulate.js": "./js/simulate.js?v=20c4b5fe",
-      "./js/storage.js": "./js/storage.js?v=20c4b5fe",
-      "./js/swipe.js": "./js/swipe.js?v=20c4b5fe",
-      "./js/text.js": "./js/text.js?v=20c4b5fe",
-      "./js/validate.js": "./js/validate.js?v=20c4b5fe"
+      "./js/audio.js": "./js/audio.js?v=317e54bb",
+      "./js/data.js": "./js/data.js?v=317e54bb",
+      "./js/engine.js": "./js/engine.js?v=317e54bb",
+      "./js/iconos.js": "./js/iconos.js?v=317e54bb",
+      "./js/images.js": "./js/images.js?v=317e54bb",
+      "./js/main.js": "./js/main.js?v=317e54bb",
+      "./js/revisor.js": "./js/revisor.js?v=317e54bb",
+      "./js/simulate.js": "./js/simulate.js?v=317e54bb",
+      "./js/storage.js": "./js/storage.js?v=317e54bb",
+      "./js/swipe.js": "./js/swipe.js?v=317e54bb",
+      "./js/text.js": "./js/text.js?v=317e54bb",
+      "./js/validate.js": "./js/validate.js?v=317e54bb"
     }
   }
   </script>
-  <script type="module" src="js/main.js?v=20c4b5fe"></script>
+  <script type="module" src="js/main.js?v=317e54bb"></script>
 </body>
 </html>

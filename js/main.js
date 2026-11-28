@@ -507,40 +507,31 @@ function describirRegla(r) {
   return '';
 }
 
-// Distintivos bajo las barras: rasgo, estados de vida y comodín activo. Al tocarlos, qué hacen.
-function pintarModificadores() {
+// Rasgo, estados de vida y comodín activo: qué está modificando los números de esta vida.
+function modificadoresActuales() {
   const mods = [];
   const anadir = (nombre, reglas) => {
     const textos = reglas.map(describirRegla).filter(Boolean);
-    if (textos.length) mods.push({ nombre, detalle: textos.join(' · ') });
+    if (textos.length) mods.push({ nombre, detalle: textos });
   };
   if (partida.rasgo) anadir(aplicarGenero(partida.rasgo.nombre, partida.sexo), partida.rasgo.reglas || []);
   const ef = datos.config.efectos_flags || {};
   for (const f of partida.flags) if (Array.isArray(ef[f])) anadir(aplicarGenero(ef._nombres?.[f] || f, partida.sexo), ef[f]);
-  if (partida.congelado) mods.push({ nombre: partida.comodin?.nombre || 'Comodín', detalle: `${nombrePilar(partida.congelado.pilar)} congelada` });
-  const clave = mods.map((m) => m.nombre).join('|');
-  if ($('mods').dataset.clave === clave) return;
-  $('mods').dataset.clave = clave;
-  $('mods-detalle').hidden = true;
-  $('mods').replaceChildren(
-    ...mods.map((m) => {
-      const b = document.createElement('button');
-      b.className = 'mod';
-      b.textContent = m.nombre;
-      b.addEventListener('click', () => {
-        const det = $('mods-detalle');
-        const abierto = !det.hidden && det.dataset.mod === m.nombre;
-        for (const otro of $('mods').children) otro.classList.toggle('activo', otro === b && !abierto);
-        det.dataset.mod = m.nombre;
-        det.textContent = m.detalle;
-        det.style.top = `${$('mods').getBoundingClientRect().bottom - $('pantalla-juego').getBoundingClientRect().top + 6}px`;
-        det.hidden = abierto;
-        clearTimeout(det._t);
-        if (!abierto) det._t = setTimeout(() => { det.hidden = true; b.classList.remove('activo'); }, 3500);
-      });
-      return b;
-    }),
-  );
+  if (partida.congelado) mods.push({ nombre: partida.comodin?.nombre || 'Comodín', detalle: [`${nombrePilar(partida.congelado.pilar)} congelada`] });
+  return mods;
+}
+
+// El icono solo se ve si hay algo que mostrar; el hueco se mantiene para que nada se mueva.
+function pintarModificadores() {
+  $('btn-mods').style.visibility = modificadoresActuales().length ? '' : 'hidden';
+}
+
+function abrirModificadores() {
+  if (ocupado) return;
+  $('lista-mods').innerHTML = modificadoresActuales()
+    .map((m) => `<li><b>${escapar(m.nombre)}</b>${m.detalle.map((d) => `<span>${escapar(d)}</span>`).join('')}</li>`)
+    .join('');
+  $('dialogo-mods').showModal();
 }
 
 function describirNivel() {
@@ -696,6 +687,8 @@ function conectarEventos() {
   $('stats-inicio').addEventListener('click', pintarArchivo);
   $('btn-volver-archivo').addEventListener('click', pintarInicio);
   $('btn-comodin').addEventListener('click', abrirComodin);
+  $('btn-mods').innerHTML = icono('ficha');
+  $('btn-mods').addEventListener('click', abrirModificadores);
   $('dlg-cancelar').addEventListener('click', () => $('dialogo-comodin').close());
   $('dlg-usar').addEventListener('click', usarComodin);
 
