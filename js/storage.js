@@ -29,6 +29,11 @@ export function registrarPartida(progreso, fin, nuevos) {
   return p;
 }
 
+// Las últimas vidas, para el archivo de difuntos (la más reciente primero).
+export function archivarVida(progreso, ficha, max = 30) {
+  return { ...progreso, archivo: [ficha, ...(progreso.archivo || [])].slice(0, max) };
+}
+
 // Nivel de dificultad elegido en Ajustes.
 const CLAVE_NIVEL = 'muerte-subita:nivel';
 

@@ -15,7 +15,7 @@
       "id": "hijo_de_papa",
       "nombre": "Hij{o/a} de Papá",
       "ventaja": "Empiezas con Dinero a 80 y las pérdidas de Dinero se reducen a la mitad.",
-      "contrapartida": "Las pérdidas de Paz mental te afectan el doble.",
+      "contrapartida": "Las pérdidas de Paz mental te afectan un 50% más.",
       "desbloqueo": {
         "tipo": "muerte",
         "pilar": "dinero",
@@ -35,14 +35,14 @@
           "tipo": "multiplicador",
           "pilar": "cordura",
           "signo": "negativo",
-          "mult": 2
+          "mult": 1.5
         }
       ]
     },
     {
       "id": "psicopata_funcional",
       "nombre": "Psicópata Funcional",
-      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Paz mental, y ganas un 20% más de Dinero.",
+      "ventaja": "Las decisiones que bajan Vínculos nunca te bajan Paz mental, pierdes un 30% menos de Vínculos y ganas un 20% más de Dinero.",
       "contrapartida": "Las subidas de Vínculos se reducen un 25%.",
       "desbloqueo": {
         "tipo": "muerte",
@@ -60,6 +60,12 @@
             "pilar": "cordura",
             "signo": "negativo"
           }
+        },
+        {
+          "tipo": "multiplicador",
+          "pilar": "vinculos",
+          "signo": "negativo",
+          "mult": 0.7
         },
         {
           "tipo": "multiplicador",

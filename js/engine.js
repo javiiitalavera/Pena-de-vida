@@ -127,8 +127,10 @@ export class Partida {
     return { sexo: this.sexo, rasgo: this.rasgo?.id ?? null, flags: this.flags };
   }
 
+  // Reglas activas: las del rasgo y las de cada estado de vida (config.efectos_flags).
   reglas(tipo) {
-    return (this.rasgo?.reglas || []).filter((r) => r.tipo === tipo);
+    const porFlags = Object.entries(this.config.efectos_flags || {}).flatMap(([f, rs]) => (this.flags.has(f) && Array.isArray(rs) ? rs : []));
+    return [...(this.rasgo?.reglas || []), ...porFlags].filter((r) => r.tipo === tipo);
   }
 
   texto(t) {
@@ -517,6 +519,13 @@ export class Partida {
         this.pilares[pilar] = valor;
         this.congelado = { pilar, hasta: this.edad + anios };
         return { accion };
+      }
+      case 'equilibrar': {
+        // La barra más cerca de un extremo vuelve hacia el centro.
+        const cantidad = parametros.cantidad ?? 25;
+        const [pilar, valor] = Object.entries(this.pilares).sort((a, b) => Math.abs(b[1] - 50) - Math.abs(a[1] - 50))[0];
+        const deltas = this.aplicarDeltas({ [pilar]: Math.sign(50 - valor) * Math.min(cantidad, Math.abs(50 - valor)) });
+        return { accion, deltas };
       }
       case 'efecto_directo': {
         const deltas = this.aplicarDeltas(parametros.efectos || {});

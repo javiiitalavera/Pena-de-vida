@@ -469,3 +469,25 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .dorso-nacimiento { display: flex; flex-direction: column; gap: 10px; }
 .dorso-nacimiento b { font-weight: normal; font-size: 1.7em; letter-spacing: -0.02em; }
 .dorso-nacimiento span { font-style: italic; }
+
+/* ---------- azar en una opción ---------- */
+.carta-eleccion .azar { display: inline-flex; vertical-align: -0.15em; opacity: 0.75; }
+.carta-eleccion .azar .icono { width: 0.95em; height: 0.95em; }
+
+/* ---------- necrológica: acciones ---------- */
+.necro-acciones { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.necro-acciones .btn { border-radius: 0; }
+
+/* ---------- archivo de difuntos ---------- */
+.enlace-archivo { background: none; border: 0; padding: 6px 0; cursor: pointer; font: inherit; color: var(--tinta-suave); text-decoration: underline; text-decoration-color: var(--linea); text-underline-offset: 4px; }
+.archivo { display: flex; flex-direction: column; gap: 22px; margin-top: 14px; }
+.archivo-cifras { margin: 0; font-family: var(--serif); font-size: 1.15rem; }
+.archivo h3 { margin: 0 0 8px; font: 600 0.83rem/1.3 var(--sans); color: var(--tinta-suave); text-transform: uppercase; letter-spacing: 0.08em; }
+.archivo ul { list-style: none; margin: 0; padding: 0; }
+.archivo-causas { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.archivo-causas li { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--linea); font-family: var(--serif); }
+.archivo-causas li.pendiente { color: var(--tinta-suave); opacity: 0.6; }
+.archivo-causas b { font: 600 0.95rem var(--sans); font-variant-numeric: tabular-nums; }
+.archivo-lista li { display: flex; flex-direction: column; gap: 2px; padding: 9px 0; border-bottom: 1px solid var(--linea); }
+.archivo-lista b { font-family: var(--serif); font-weight: normal; font-size: 1.1rem; }
+.archivo-lista span { font: 0.85rem/1.35 var(--sans); color: var(--tinta-suave); }

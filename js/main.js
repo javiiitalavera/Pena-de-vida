@@ -2,7 +2,7 @@
 import { prepararAudio, reproducirEfecto } from './audio.js';
 import { cargarDatos } from './data.js';
 import { Partida, construirNecrologia, evaluarDesbloqueos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad, nivelesDificultad, nivelDificultad } from './engine.js';
-import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida, cargarNivel, guardarNivel } from './storage.js';
+import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida, cargarNivel, guardarNivel, archivarVida } from './storage.js';
 import { montarImagen } from './images.js';
 import { aplicarGenero } from './text.js';
 import { icono } from './iconos.js';
@@ -94,6 +94,7 @@ function pintarInicio() {
   $('stats-inicio').textContent = p.partidas
     ? `${p.partidas} ${p.partidas === 1 ? 'vida' : 'vidas'} · récord: ${p.record} años${p.centenarios ? ` · ${p.centenarios} centenari${p.centenarios === 1 ? 'o' : 'os'}` : ''}`
     : '';
+  $('stats-inicio').hidden = !p.partidas;
   mostrar('pantalla-inicio');
 }
 
@@ -246,7 +247,9 @@ function vistaPrevia(lado) {
   }
   const etiqueta = $('carta-eleccion');
   if (lado) {
-    etiqueta.textContent = partida.texto(partida.carta[lado].texto);
+    // Un dado discreto si esa opción puede salir mal (o bien) por azar.
+    const conAzar = partida.carta[lado].sorpresa && partida.dif.sorpresas !== 0;
+    etiqueta.innerHTML = escapar(partida.texto(partida.carta[lado].texto)) + (conAzar ? ` <span class="azar" title="Puede salir distinto">${icono('dado')}</span>` : '');
     etiqueta.className = `carta-eleccion visible ${lado}`;
   } else {
     etiqueta.className = 'carta-eleccion';
@@ -428,7 +431,17 @@ function acabar() {
   const n = construirNecrologia(partida);
   const nuevos = evaluarDesbloqueos(datos, partida.fin, progreso.desbloqueados);
   progreso = registrarPartida(progreso, partida.fin, nuevos);
+  progreso = archivarVida(progreso, {
+    anio: partida.fin.anio,
+    titulo: n.titulo,
+    barra: n.barra,
+    sexo: partida.sexo,
+    rasgo: n.rasgo,
+    centenario: n.centenario,
+    fecha: new Date().toISOString().slice(0, 10),
+  });
   guardarProgreso(progreso);
+  ultimaNecrologia = n;
 
   const art = $('necrologica');
   art.classList.toggle('centenario', n.centenario);
@@ -482,6 +495,138 @@ function describirNivel() {
   $('nivel-nota').hidden = !enCurso;
 }
 
+// ---------- archivo de difuntos ----------
+
+let ultimaNecrologia = null;
+
+function pintarArchivo() {
+  const p = progreso;
+  const sexo = p.archivo?.[0]?.sexo || 'M';
+  // Las ocho muertes posibles más el centenario: cuántas veces, o «—» si aún no.
+  const causas = [];
+  for (const pilar of datos.config.pilares) {
+    for (const extremo of [0, 100]) {
+      const veces = p.muertes[`${pilar.id}_${extremo}`] || 0;
+      causas.push(`<li class="${veces ? '' : 'pendiente'}"><span>${escapar(pilar.nombre)}: ${extremo}</span><b>${veces || '—'}</b></li>`);
+    }
+  }
+  causas.push(`<li class="${p.centenarios ? '' : 'pendiente'}"><span>Año 100</span><b>${p.centenarios || '—'}</b></li>`);
+  const bloqueados = [
+    ...datos.rasgos.map((r) => ({ ...r, clase: 'Rasgo' })),
+    ...datos.comodines.map((c) => ({ ...c, clase: 'Comodín' })),
+  ].filter((x) => x.desbloqueo && x.desbloqueo.tipo !== 'inicial' && !p.desbloqueados.includes(x.id));
+  const vidas = (p.archivo || []).map(
+    (v) => `<li><b>${v.anio} ${v.anio === 1 ? 'año' : 'años'}</b><span>${escapar(v.titulo || '')}${v.rasgo ? ` · ${escapar(v.rasgo)}` : ''}</span></li>`,
+  );
+  $('archivo').innerHTML = `
+    <p class="archivo-cifras">${p.partidas} ${p.partidas === 1 ? 'vida' : 'vidas'} · récord ${p.record} años${p.centenarios ? ` · ${p.centenarios} centenari${p.centenarios === 1 ? 'o' : 'os'}` : ''}</p>
+    <section><h3>Causas</h3><ul class="archivo-causas">${causas.join('')}</ul></section>
+    ${bloqueados.length ? `<section><h3>Por desbloquear</h3><ul class="archivo-lista">${bloqueados.map((x) => `<li><b>${escapar(aplicarGenero(x.nombre, sexo))}</b><span>${x.clase} · ${escapar(x.desbloqueo.texto || '')}</span></li>`).join('')}</ul></section>` : ''}
+    ${vidas.length ? `<section><h3>Últimas vidas</h3><ul class="archivo-lista">${vidas.join('')}</ul></section>` : ''}`;
+  mostrar('pantalla-archivo');
+  $('pantalla-archivo').scrollTop = 0;
+}
+
+// ---------- compartir la necrológica como imagen ----------
+
+function lineasDeTexto(ctx, texto, ancho) {
+  const lineas = [];
+  let linea = '';
+  for (const palabra of texto.split(/\s+/)) {
+    const prueba = linea ? `${linea} ${palabra}` : palabra;
+    if (ctx.measureText(prueba).width > ancho && linea) {
+      lineas.push(linea);
+      linea = palabra;
+    } else linea = prueba;
+  }
+  if (linea) lineas.push(linea);
+  return lineas;
+}
+
+function dibujarNecrologia(n) {
+  const W = 1080, M = 90, P = 70, anchoTexto = W - 2 * M - 2 * P;
+  const c = document.createElement('canvas');
+  const ctx = c.getContext('2d');
+  const serif = 'Georgia, "Times New Roman", serif';
+  const sans = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+  // Primero se mide, luego se pinta: el alto depende del texto.
+  const bloques = [];
+  const anadir = (texto, fuente, alto, color, espacio = 0) => {
+    ctx.font = fuente;
+    for (const l of lineasDeTexto(ctx, texto, anchoTexto)) bloques.push({ l, fuente, alto, color });
+    if (espacio) bloques.push({ espacio });
+  };
+  const tinta = '#1d1a14', suave = 'rgba(29,26,20,0.7)', rojo = '#c4553f';
+  anadir(n.cabecera, `600 30px ${sans}`, 44, tinta);
+  anadir(n.centenario ? '✶' : '†', `48px ${serif}`, 60, tinta);
+  anadir(n.rango, `bold 78px ${serif}`, 92, tinta);
+  bloques.push({ raya: 4 });
+  anadir([n.sexo === 'F' ? 'Mujer' : 'Hombre', n.rasgo].filter(Boolean).join(' · '), `italic 34px ${serif}`, 50, suave, 24);
+  bloques.push({ raya: 1 });
+  anadir(n.titulo || 'Causa de la muerte', `600 32px ${sans}`, 48, tinta);
+  if (n.barra) anadir(n.barra, `600 28px ${sans}`, 42, rojo);
+  anadir(n.texto, `38px ${serif}`, 56, tinta, 24);
+  if (n.hitos.length) {
+    bloques.push({ raya: 1 });
+    anadir('Hitos biográficos', `600 32px ${sans}`, 52, tinta);
+    for (const h of n.hitos) anadir(`Año ${h.anio} · ${h.texto}`, `34px ${serif}`, 50, tinta, 10);
+  }
+  const altoPapel = P * 2 + bloques.reduce((s, b) => s + (b.alto || b.espacio || (b.raya ? 36 : 0)), 0);
+  const H = M * 2 + altoPapel + 120;
+  c.width = W;
+  c.height = H;
+  ctx.fillStyle = '#16140f';
+  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = '#efe6d2';
+  ctx.fillRect(M, M, W - 2 * M, altoPapel);
+  ctx.strokeStyle = tinta;
+  ctx.lineWidth = 2;
+  ctx.strokeRect(M, M, W - 2 * M, altoPapel);
+  let y = M + P;
+  ctx.textBaseline = 'top';
+  for (const b of bloques) {
+    if (b.espacio) { y += b.espacio; continue; }
+    if (b.raya) {
+      ctx.fillStyle = b.raya > 1 ? tinta : '#bfb29d';
+      ctx.fillRect(M + P, y + 14, anchoTexto, b.raya);
+      y += 36;
+      continue;
+    }
+    ctx.font = b.fuente;
+    ctx.fillStyle = b.color;
+    ctx.fillText(b.l, M + P, y);
+    y += b.alto;
+  }
+  ctx.font = `bold 44px ${serif}`;
+  ctx.fillStyle = '#ece4d2';
+  ctx.fillText('Pena de vida', M, M + altoPapel + 40);
+  ctx.font = `26px ${sans}`;
+  ctx.fillStyle = '#a59c88';
+  ctx.textAlign = 'right';
+  ctx.fillText('javiiitalavera.github.io/Pena-de-vida', W - M, M + altoPapel + 52);
+  return c;
+}
+
+async function compartirNecrologia(n) {
+  if (!n) return;
+  const blob = await new Promise((r) => dibujarNecrologia(n).toBlob(r, 'image/png'));
+  const archivo = new File([blob], 'necrologica.png', { type: 'image/png' });
+  try {
+    if (navigator.canShare?.({ files: [archivo] })) {
+      await navigator.share({ files: [archivo], title: 'Pena de vida' });
+      return;
+    }
+  } catch (e) {
+    if (e?.name === 'AbortError') return;
+  }
+  // Sin menú de compartir (ordenador): se descarga la imagen.
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'necrologica.png';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
 // ---------- arranque ----------
 
 function conectarEventos() {
@@ -492,6 +637,9 @@ function conectarEventos() {
   $('btn-nueva').addEventListener('click', nacer);
   $('btn-continuar').addEventListener('click', continuar);
   $('btn-otra').addEventListener('click', nacer);
+  $('btn-compartir').addEventListener('click', () => compartirNecrologia(ultimaNecrologia));
+  $('stats-inicio').addEventListener('click', pintarArchivo);
+  $('btn-volver-archivo').addEventListener('click', pintarInicio);
   $('btn-comodin').addEventListener('click', abrirComodin);
   $('dlg-cancelar').addEventListener('click', () => $('dialogo-comodin').close());
   $('dlg-usar').addEventListener('click', usarComodin);

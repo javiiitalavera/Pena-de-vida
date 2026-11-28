@@ -31,13 +31,10 @@
     {
       "id": "llamar_contacto",
       "nombre": "Llamar a un contacto",
-      "descripcion": "+25 Dinero, −25 Vínculos al instante.",
-      "accion": "efecto_directo",
+      "descripcion": "Alguien te debe un favor: tu barra más desesperada vuelve 25 puntos hacia el centro.",
+      "accion": "equilibrar",
       "parametros": {
-        "efectos": {
-          "dinero": 25,
-          "vinculos": -25
-        }
+        "cantidad": 25
       },
       "desbloqueo": {
         "tipo": "edad",

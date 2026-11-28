@@ -16,6 +16,12 @@
             "texto": "Tu cuerpo decidió declararse en quiebra técnica tras décadas de sueño deficiente, cenas a base de embutido y cero estiramientos. Te fuiste sin hacer ruido, exactamente como te gustaba evitar el gimnasio.",
             "edad_min": 18
           }
+        ],
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "Tus padres deciden que la fiebre se cura con un vaso de leche con miel y un «ya se le pasará». No se te pasa."
+          }
         ]
       },
       "100": {
@@ -31,6 +37,12 @@
             "titulo": "Muerte por disciplina",
             "texto": "Te levantaste a las cinco de la mañana para correr diez kilómetros en ayunas y darte una ducha de agua helada. Tu corazón, harto de que lo trataras como a un marine, presentó su dimisión irrevocable en el kilómetro cuatro.",
             "edad_min": 18
+          }
+        ],
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "Tu madre lee un blog de crianza natural y te cría a base de espirulina y paseos descalzos por la nieve. Mueres de una pulmonía muy orgánica."
           }
         ]
       }
@@ -96,6 +108,12 @@
             "texto": "Dejaste de distinguir entre las reuniones de trabajo, los sueños febriles y las discusiones de Twitter. Acabaste viviendo en una cabaña sin Wi-Fi convencid{o/a} de que las palomas trabajan para el catastro.",
             "edad_min": 18
           }
+        ],
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "Te apuntan a nueve extraescolares y a chino los sábados. A los once años te apagas como una tableta sin batería."
+          }
         ]
       },
       "100": {
@@ -111,6 +129,12 @@
             "titulo": "Paz insoportable",
             "texto": "Te volviste tan seren{o/a}, equilibrad{o/a} y zen que nada lograba alterarte ni un milímetro. Un día dejaste de preocuparte incluso por respirar, y te fuiste con una sonrisa que puso muy nervioso al forense.",
             "edad_min": 18
+          }
+        ],
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "Alcanzas una calma tan absoluta que dejas de llorar, de pedir y de comer. Tus padres presumen de lo buen{o/a} que eres hasta el funeral."
           }
         ]
       }
@@ -130,6 +154,12 @@
             "texto": "Borraste todos los grupos de WhatsApp, dejaste de coger llamadas de números desconocidos y te mudaste a un quinto sin vecinos. Conseguiste la paz absoluta, aunque tardaron cuatro meses en encontrar las llaves.",
             "edad_min": 18
           }
+        ],
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "Te dejan olvidad{o/a} en una gasolinera al volver de vacaciones. Nadie nota tu ausencia hasta septiembre."
+          }
         ]
       },
       "100": {
@@ -145,6 +175,12 @@
             "titulo": "Asfixia afectiva",
             "texto": "Eras tan querid{o/a} y accesible que tu teléfono no dejó de sonar ni un minuto durante diecisiete años. Te fuiste rodead{o/a} de cuarenta personas discutiendo a gritos sobre quién era tu mejor amigo.",
             "edad_min": 18
+          }
+        ],
+        "variantes": [
+          {
+            "edad_max": 14,
+            "texto": "Te invitan a todos los cumpleaños de la clase el mismo sábado. Mueres de un empacho de gusanitos en el séptimo parque de bolas."
           }
         ]
       }

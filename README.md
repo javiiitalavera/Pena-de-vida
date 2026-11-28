@@ -181,4 +181,12 @@ Se definen en `data/traits.json` con reglas genéricas, así que un rasgo nuevo 
 
 No hay pantallas de elección: «Nueva vida» empieza en el año 0 con sexo, rasgo y comodín al azar entre los desbloqueados. La primera carta llega boca abajo con lo que ha tocado (p. ej. «Mujer · Hija de Papá») y se da la vuelta al tocar.
 
-Los comodines están en `data/jokers.json` con cuatro acciones: `descartar`, `invertir`, `congelar` y `efecto_directo`. También se desbloquean: `inicial`, `edad` (`min`: edad alcanzada), `muerte` (pilar y extremo opcionales) o `centenario`.
+Los comodines están en `data/jokers.json` con cinco acciones: `descartar`, `invertir`, `congelar`, `efecto_directo` y `equilibrar` (la barra más alejada de 50 vuelve `cantidad` puntos hacia el centro). También se desbloquean: `inicial`, `edad` (`min`: edad alcanzada), `muerte` (pilar y extremo opcionales) o `centenario`.
+
+## Estados de vida con efecto
+
+`config.json → efectos_flags` da a algunos estados (profesión, pueblo o ciudad, hijos, tabaco, hernia) reglas como las de los rasgos mientras estén activos. Son sutiles (±10-20 %): por ejemplo, de médico ganas un 15 % más de dinero y pierdes un 10 % más de Paz mental.
+
+## Archivo y compartir
+
+Tocar las estadísticas de la portada abre el archivo: muertes por causa, lo que falta por desbloquear y las últimas 30 vidas. En la necrológica, «Compartir» genera una imagen PNG; en el móvil abre el menú de compartir y en el ordenador la descarga.

@@ -25,15 +25,19 @@ assert(uroF===0,'urólogo nunca sale a mujeres'); assert(reglaM===0,'regla nunca
 const {vistas}=jugar('M','ciudadano_estandar',7); for(const id in anclas) assert(vistas.some(v=>v[0]===id), 'ancla vista '+id);
 // trait hijo de papá
 let p=new Partida(datos,{sexo:'M',rasgoId:'hijo_de_papa'}); assert(p.pilares.dinero===80,'hijo de papá empieza en 80');
-p.carta={tags:[]}; let e=p.calcularEfectos({dinero:-15,cordura:-10}); assert(e.dinero===-8&&e.cordura===-20,'hijo de papá x0.5 dinero(−7.5→−8) y x2 cordura '+JSON.stringify(e));
-p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); e=p.calcularEfectos({vinculos:-10,cordura:-10}); assert(!e.cordura&&e.vinculos===-10,'psicópata anula cordura');
+p.carta={tags:[]}; let e=p.calcularEfectos({dinero:-15,cordura:-10}); assert(e.dinero===-8&&e.cordura===-15,'hijo de papá x0.5 dinero(−7.5→−8) y x1,5 cordura '+JSON.stringify(e));
+p=new Partida(datos,{sexo:'M',rasgoId:'psicopata_funcional'}); e=p.calcularEfectos({vinculos:-10,cordura:-10}); assert(!e.cordura&&e.vinculos===-7,'psicópata anula cordura y pierde 30% menos de vínculos');
 e=p.calcularEfectos({vinculos:10}); assert(e.vinculos===8,'psicópata sube vínculos x0.75 (7.5→8)');
 p=new Partida(datos,{sexo:'M',rasgoId:'sindrome_del_impostor'}); p.avanzarHasta(11); assert(p.pilares.cordura===40,'impostor −5 a los 5 y 10: '+p.pilares.cordura);
 // comodines
 p=new Partida(datos,{sexo:'M',comodinId:'segunda_opinion'}); p.carta=p.porId.get('obstetra'); p.usarComodin(); assert(JSON.stringify(p.vistaPrevia('izquierda'))==='{"salud":-10,"vinculos":10}','segunda opinión invierte');
 p=new Partida(datos,{sexo:'M',comodinId:'orfidal'}); p.siguienteCarta(); p.pilares.cordura=20; p.usarComodin(); p.elegir('izquierda'); assert(p.pilares.cordura===50,'orfidal congela'); p.avanzarHasta(6); assert(!p.congelado,'orfidal caduca');
 p=new Partida(datos,{sexo:'M',comodinId:'bomba_humo'}); const c1=p.siguienteCarta(); p.usarComodin(); assert(p.pilares.salud===50 && p.siguienteCarta().id!==c1.id,'bomba de humo descarta');
-p=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); p.siguienteCarta(); p.usarComodin(); assert(p.pilares.dinero===75&&p.pilares.vinculos===25,'contacto +25/−25');
+p=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); p.siguienteCarta(); p.pilares.salud=12; p.pilares.dinero=70; p.usarComodin(); assert(p.pilares.salud===37&&p.pilares.dinero===70,'contacto: la barra más extrema vuelve 25 hacia el centro');
+{ const q=new Partida(datos,{sexo:'M',comodinId:'llamar_contacto'}); q.siguienteCarta(); q.pilares.cordura=60; q.usarComodin(); assert(q.pilares.cordura===50,'contacto: no se pasa del centro'); }
+{ const q=new Partida(datos,{sexo:'M'}); q.carta={tags:[]}; q.flags.add('medico'); const e1=q.calcularEfectos({dinero:20}); q.flags.delete('medico'); q.flags.add('funcionario'); const e2=q.calcularEfectos({dinero:-20});
+  assert(e1.dinero===23&&e2.dinero===-17,'estados de vida: médico gana más, funcionario pierde menos '+JSON.stringify([e1,e2])); }
+{ const q=new Partida(datos,{sexo:'F'}); q.fin={causa:{tipo:'muerte',pilar:'vinculos',extremo:100},anio:9,pilares:q.pilares}; assert(construirNecrologia(q).texto.includes('gusanitos'),'muerte infantil por vínculos al 100'); }
 assert(aplicarGenero('maj{o/a} {el/la} señor{/a}','F')==='maja la señora','género F'); assert(aplicarGenero('maj{o/a}','M')==='majo','género M');
 // muerte y necrológica
 p=new Partida(datos,{sexo:'F'}); p.carta=p.porId.get('obstetra'); p.pilares.salud=5; p.elegir('derecha'); assert(p.fin?.causa.pilar==='salud','muerte por salud 0');

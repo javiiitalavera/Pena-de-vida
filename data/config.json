@@ -54,6 +54,179 @@
       "ciudad"
     ]
   },
+  "efectos_flags": {
+    "_nota": "Modificadores sutiles mientras el estado de vida esté activo (mismas reglas que los rasgos).",
+    "ciudad": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "positivo",
+        "mult": 1.1
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "vinculos",
+        "signo": "positivo",
+        "mult": 0.9
+      }
+    ],
+    "pueblo": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "vinculos",
+        "signo": "positivo",
+        "mult": 1.1
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "positivo",
+        "mult": 0.9
+      }
+    ],
+    "medico": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "positivo",
+        "mult": 1.15
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "cordura",
+        "signo": "negativo",
+        "mult": 1.1
+      }
+    ],
+    "funcionario": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "negativo",
+        "mult": 0.85
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "cordura",
+        "signo": "positivo",
+        "mult": 0.9
+      }
+    ],
+    "profesor": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "vinculos",
+        "signo": "positivo",
+        "mult": 1.15
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "salud",
+        "signo": "negativo",
+        "mult": 1.1
+      }
+    ],
+    "hosteleria": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "positivo",
+        "mult": 1.1
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "salud",
+        "signo": "negativo",
+        "mult": 1.15
+      }
+    ],
+    "informatico": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "positivo",
+        "mult": 1.15
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "vinculos",
+        "signo": "positivo",
+        "mult": 0.9
+      }
+    ],
+    "oficinista": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "negativo",
+        "mult": 0.9
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "cordura",
+        "signo": "negativo",
+        "mult": 1.1
+      }
+    ],
+    "autonomo": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "ambos",
+        "mult": 1.2
+      }
+    ],
+    "desempleado": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "positivo",
+        "mult": 0.85
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "cordura",
+        "signo": "positivo",
+        "mult": 1.1
+      }
+    ],
+    "con_hijos": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "vinculos",
+        "signo": "positivo",
+        "mult": 1.1
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "dinero",
+        "signo": "negativo",
+        "mult": 1.1
+      }
+    ],
+    "fumador": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "salud",
+        "signo": "negativo",
+        "mult": 1.1
+      },
+      {
+        "tipo": "multiplicador",
+        "pilar": "cordura",
+        "signo": "positivo",
+        "mult": 1.1
+      }
+    ],
+    "hernia_discal": [
+      {
+        "tipo": "multiplicador",
+        "pilar": "salud",
+        "signo": "negativo",
+        "mult": 1.1
+      }
+    ]
+  },
   "dificultad": {
     "_nota": "volatilidad: multiplica todos los efectos de las decisiones desde volatilidad_desde. castigo_edad: multiplica las pérdidas desde cierta edad. puntos_por_magnitud: false = todos los puntos de vista previa del mismo tamaño. vista_previa_barras: false = sin puntos sobre las barras al arrastrar.",
     "volatilidad": 1.6,

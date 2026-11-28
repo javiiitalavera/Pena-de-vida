@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-title" content="Pena de vida">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="css/styles.css?v=526c019d">
+  <link rel="stylesheet" href="css/styles.css?v=50ec19d2">
 </head>
 <body>
   <main id="app">
@@ -39,7 +39,7 @@
         <button class="portada-ajustes" data-ajustes aria-label="Ajustes" title="Ajustes"></button>
       </div>
       <footer class="portada-pie">
-        <p class="stats" id="stats-inicio"></p>
+        <button class="stats enlace-archivo" id="stats-inicio" hidden></button>
       </footer>
     </section>
 
@@ -73,7 +73,18 @@
     <section id="pantalla-necrologica" class="pantalla">
       <article class="necrologica" id="necrologica"></article>
       <div class="desbloqueos" id="desbloqueos"></div>
-      <button class="btn primario" id="btn-otra">Volver a empezar</button>
+      <div class="necro-acciones">
+        <button class="btn primario" id="btn-otra">Volver a empezar</button>
+        <button class="btn secundario" id="btn-compartir">Compartir</button>
+      </div>
+    </section>
+
+    <section id="pantalla-archivo" class="pantalla eleccion-sexo">
+      <header class="portada-cabecera">
+        <h2 class="titulo">Archivo</h2>
+      </header>
+      <div class="archivo" id="archivo"></div>
+      <button class="volver" id="btn-volver-archivo">← Volver</button>
     </section>
 
     <dialog id="ajustes" class="impreso" aria-labelledby="titulo-ajustes">
@@ -110,21 +121,21 @@
   <script type="importmap">
   {
     "imports": {
-      "./js/audio.js": "./js/audio.js?v=526c019d",
-      "./js/data.js": "./js/data.js?v=526c019d",
-      "./js/engine.js": "./js/engine.js?v=526c019d",
-      "./js/iconos.js": "./js/iconos.js?v=526c019d",
-      "./js/images.js": "./js/images.js?v=526c019d",
-      "./js/main.js": "./js/main.js?v=526c019d",
-      "./js/revisor.js": "./js/revisor.js?v=526c019d",
-      "./js/simulate.js": "./js/simulate.js?v=526c019d",
-      "./js/storage.js": "./js/storage.js?v=526c019d",
-      "./js/swipe.js": "./js/swipe.js?v=526c019d",
-      "./js/text.js": "./js/text.js?v=526c019d",
-      "./js/validate.js": "./js/validate.js?v=526c019d"
+      "./js/audio.js": "./js/audio.js?v=50ec19d2",
+      "./js/data.js": "./js/data.js?v=50ec19d2",
+      "./js/engine.js": "./js/engine.js?v=50ec19d2",
+      "./js/iconos.js": "./js/iconos.js?v=50ec19d2",
+      "./js/images.js": "./js/images.js?v=50ec19d2",
+      "./js/main.js": "./js/main.js?v=50ec19d2",
+      "./js/revisor.js": "./js/revisor.js?v=50ec19d2",
+      "./js/simulate.js": "./js/simulate.js?v=50ec19d2",
+      "./js/storage.js": "./js/storage.js?v=50ec19d2",
+      "./js/swipe.js": "./js/swipe.js?v=50ec19d2",
+      "./js/text.js": "./js/text.js?v=50ec19d2",
+      "./js/validate.js": "./js/validate.js?v=50ec19d2"
     }
   }
   </script>
-  <script type="module" src="js/main.js?v=526c019d"></script>
+  <script type="module" src="js/main.js?v=50ec19d2"></script>
 </body>
 </html>
