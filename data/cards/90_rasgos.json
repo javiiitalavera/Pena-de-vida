@@ -72,7 +72,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Notables sin abrir un libro",
+        "texto": "Aprobar sin abrir un libro",
         "efectos": {
           "dinero": 10,
           "cordura": -10
@@ -108,7 +108,7 @@
         "hito_biografico": "Se encontró a sí mismo en Australia con la Visa de su madre."
       },
       "derecha": {
-        "texto": "Vicepresidencia familiar",
+        "texto": "Aceptar la vicepresidencia",
         "efectos": {
           "dinero": 15,
           "cordura": -10
@@ -158,7 +158,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Sociedad en Luxemburgo",
+        "texto": "Montar sociedad en Luxemburgo",
         "efectos": {
           "dinero": 15,
           "vinculos": -10
@@ -221,7 +221,7 @@
         }
       },
       "derecha": {
-        "texto": "Frase de serie triste",
+        "texto": "Soltar frase de serie triste",
         "efectos": {
           "vinculos": 5,
           "cordura": 5
@@ -250,7 +250,7 @@
         "hito_biografico": "Solicitó el despacho de un compañero mientras este iba en ambulancia."
       },
       "derecha": {
-        "texto": "Bombones al hospital",
+        "texto": "Llevarle bombones al hospital",
         "efectos": {
           "vinculos": 10,
           "dinero": -10
@@ -271,7 +271,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Todo a las palomas",
+        "texto": "Dejar todo a las palomas",
         "efectos": {
           "cordura": 10,
           "vinculos": -15
@@ -279,7 +279,7 @@
         "hito_biografico": "Desheredó a toda su familia por pura diversión."
       },
       "derecha": {
-        "texto": "La casa, a tres a la vez",
+        "texto": "Prometer la casa a tres",
         "efectos": {
           "vinculos": 10,
           "cordura": 5
@@ -336,7 +336,7 @@
         }
       },
       "derecha": {
-        "texto": "Kebab frío de desayuno",
+        "texto": "Desayunar kebab frío",
         "efectos": {
           "cordura": 10,
           "salud": -10
@@ -357,7 +357,7 @@
         ]
       },
       "izquierda": {
-        "texto": "Hielo y a seguir",
+        "texto": "Ponerte hielo y seguir",
         "efectos": {
           "dinero": 5,
           "salud": -10
@@ -506,7 +506,7 @@
         "hito_biografico": "Confesó ser un fraude al recoger un premio a su trayectoria."
       },
       "derecha": {
-        "texto": "Sonrisa tensa",
+        "texto": "Sonreír con tensión",
         "efectos": {
           "vinculos": 10,
           "cordura": -10
