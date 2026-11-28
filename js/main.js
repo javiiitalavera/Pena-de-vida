@@ -63,6 +63,22 @@ const SUBTITULOS_INICIO = [
   'Sin punto de guardado',
   'Breve e innecesaria',
   'Un lunes tras otro',
+  'Con fecha de caducidad',
+  'Sin manual de instrucciones',
+  'Todo es provisional',
+  'Cuesta abajo desde el día uno',
+  'Un día más, un día menos',
+  'Una costumbre pasajera',
+  'Al final todos empatamos',
+  'El tiempo pasa igual',
+  'Demasiado largo para lo que es',
+  'Un paréntesis incómodo',
+  'Irreversible',
+  'Suerte con la genética',
+  'Puro relleno cósmico',
+  'Materia prestada',
+  'Accidente termodinámico',
+  'Un suspiro en el vacío',
 ];
 
 function pintarInicio() {
