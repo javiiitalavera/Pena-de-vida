@@ -201,7 +201,7 @@ function guardar() {
   if (partida && !partida.fin) guardarPartida(partida.exportar());
 }
 
-function pintarBarras({ conEdad = true } = {}) {
+function pintarBarras() {
   for (const el of $('barras').children) {
     const id = el.dataset.pilar;
     const v = partida.pilares[id];
@@ -211,10 +211,8 @@ function pintarBarras({ conEdad = true } = {}) {
     el.title = DEBUG ? `${el.getAttribute('aria-label')}: ${v}` : el.getAttribute('aria-label');
   }
   const y = partida.anio;
-  if (conEdad) {
-    $('edad-anio').textContent = `Año ${y}`;
-    $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
-  }
+  $('edad-anio').textContent = `Año ${y}`;
+  $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
   pintarComodinBoton();
   if (DEBUG) {
     $('debug').hidden = false;
@@ -300,14 +298,22 @@ async function decidir(lado) {
   await lanzar($('carta'), lado);
   const resultado = partida.elegir(lado);
   anunciarDesbloqueosPorEdad();
-  // El año no cambia hasta que llega la carta nueva: la sorpresa pertenece a la carta que se acaba de decidir.
-  pintarBarras({ conEdad: !resultado?.sorpresa && !resultado?.consecuencia });
-  // La sorpresa ocupa el sitio de la carta y la siguiente espera a que se lea.
-  if (resultado?.sorpresa) await mostrarSorpresa(resultado.sorpresa);
-  if (resultado?.consecuencia) await mostrarSorpresa(resultado.consecuencia);
+  pintarBarras();
   procesarEventos();
-  if (partida.fin) return setTimeout(acabar, 350);
+  const mensajes = [resultado?.sorpresa, resultado?.consecuencia].filter(Boolean);
+  if (partida.fin) {
+    for (const m of mensajes) await mostrarSorpresa(m);
+    return setTimeout(acabar, 350);
+  }
   siguiente();
+  if (!mensajes.length) return;
+  // La carta nueva ya está en la mesa; el mensaje tapa su texto hasta que se lee.
+  ocupado = true;
+  swipe.bloquear(true);
+  for (const m of mensajes) await mostrarSorpresa(m);
+  ocupado = false;
+  swipe.bloquear(false);
+  pintarComodinBoton();
 }
 
 // Comodines que se ganan al cumplir cierta edad: se anuncian en el momento y se guardan ya,

@@ -207,16 +207,17 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 }
 
 .mesa { position: relative; display: flex; justify-content: center; perspective: 900px; }
+.zona-texto { position: relative; }
 .sorpresa {
-  /* El mismo papel que Ajustes y la necrológica: recto, borde fino, sin sombra. */
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: calc(var(--carta) * 0.88); padding: 20px 22px;
-  background: var(--papel); color: var(--papel-tinta);
+  /* Tapa el texto de la carta nueva, sin tocar la ilustración. */
+  position: absolute; inset: 0; z-index: 4;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8px 16px; background: var(--papel); color: var(--papel-tinta);
   border: 1px solid var(--papel-tinta); border-radius: 0;
-  font-family: var(--serif); font-size: 1.12rem; line-height: 1.45; text-align: left;
-  z-index: 4; cursor: pointer; animation: sorpresa-entra 0.25s ease-out;
+  font-family: var(--serif); font-size: clamp(1rem, 4.2vw, 1.1rem); line-height: 1.4; text-align: center;
+  cursor: pointer; animation: sorpresa-entra 0.25s ease-out;
 }
-@keyframes sorpresa-entra { from { opacity: 0; transform: translate(-50%, -46%); } }
+@keyframes sorpresa-entra { from { opacity: 0; } }
 .carta {
   width: var(--carta); height: var(--carta);
   background: var(--papel);
