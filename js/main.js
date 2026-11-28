@@ -183,6 +183,7 @@ function pintarBarras({ conEdad = true } = {}) {
     $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
   }
   pintarComodinBoton();
+  pintarModificadores();
   if (DEBUG) {
     $('debug').hidden = false;
     $('debug').textContent = `${partida.carta?.id || '—'} · edad ${partida.edad.toFixed(2)} · ${Object.entries(partida.pilares).map(([k, v]) => `${k[0]}${v}`).join(' ')} · flags: ${[...partida.flags].join(',') || '—'}`;
@@ -506,28 +507,43 @@ function describirRegla(r) {
   return '';
 }
 
+// Distintivos bajo las barras: rasgo, estados de vida y comodín activo. Al tocarlos, qué hacen.
 function pintarModificadores() {
-  const enJuego = partida && !partida.fin && $('pantalla-juego').classList.contains('activa');
-  $('tu-vida').hidden = !enJuego;
-  if (!enJuego) return;
-  const filas = [];
-  const fila = (titulo, reglas) => {
+  const mods = [];
+  const anadir = (nombre, reglas) => {
     const textos = reglas.map(describirRegla).filter(Boolean);
-    if (textos.length) filas.push(`<li><b>${escapar(titulo)}</b><span>${textos.map(escapar).join(' · ')}</span></li>`);
+    if (textos.length) mods.push({ nombre, detalle: textos.join(' · ') });
   };
-  if (partida.rasgo) fila(aplicarGenero(partida.rasgo.nombre, partida.sexo), partida.rasgo.reglas || []);
+  if (partida.rasgo) anadir(aplicarGenero(partida.rasgo.nombre, partida.sexo), partida.rasgo.reglas || []);
   const ef = datos.config.efectos_flags || {};
-  for (const f of partida.flags) if (Array.isArray(ef[f])) fila(aplicarGenero(ef._nombres?.[f] || f, partida.sexo), ef[f]);
-  const d = partida.dif;
-  const nivel = [`Efectos ×${String(d.volatilidad ?? 1).replace('.', ',')}`];
-  if (d.castigo_edad) nivel.push(`desde los ${d.castigo_edad.desde}, pérdidas ×${String(d.castigo_edad.mult).replace('.', ',')}`);
-  filas.push(`<li><b>${escapar(nivelDificultad(datos.config, partida.nivel)?.nombre || 'Nivel')}</b><span>${escapar(nivel.join(' · '))}</span></li>`);
-  if (partida.congelado) filas.push(`<li><b>${escapar(partida.comodin?.nombre || 'Comodín')}</b><span>${escapar(nombrePilar(partida.congelado.pilar))} congelada</span></li>`);
-  $('modificadores').innerHTML = filas.join('');
+  for (const f of partida.flags) if (Array.isArray(ef[f])) anadir(aplicarGenero(ef._nombres?.[f] || f, partida.sexo), ef[f]);
+  if (partida.congelado) mods.push({ nombre: partida.comodin?.nombre || 'Comodín', detalle: `${nombrePilar(partida.congelado.pilar)} congelada` });
+  const clave = mods.map((m) => m.nombre).join('|');
+  if ($('mods').dataset.clave === clave) return;
+  $('mods').dataset.clave = clave;
+  $('mods-detalle').hidden = true;
+  $('mods').replaceChildren(
+    ...mods.map((m) => {
+      const b = document.createElement('button');
+      b.className = 'mod';
+      b.textContent = m.nombre;
+      b.addEventListener('click', () => {
+        const det = $('mods-detalle');
+        const abierto = !det.hidden && det.dataset.mod === m.nombre;
+        for (const otro of $('mods').children) otro.classList.toggle('activo', otro === b && !abierto);
+        det.dataset.mod = m.nombre;
+        det.textContent = m.detalle;
+        det.style.top = `${$('mods').getBoundingClientRect().bottom - $('pantalla-juego').getBoundingClientRect().top + 6}px`;
+        det.hidden = abierto;
+        clearTimeout(det._t);
+        if (!abierto) det._t = setTimeout(() => { det.hidden = true; b.classList.remove('activo'); }, 3500);
+      });
+      return b;
+    }),
+  );
 }
 
 function describirNivel() {
-  pintarModificadores();
   const n = nivelActual();
   // Una partida en curso conserva su nivel; el cambio vale para la siguiente.
   const enCurso = partida && !partida.fin && partida.nivel !== n?.id && $('pantalla-juego').classList.contains('activa');
