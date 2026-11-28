@@ -52,6 +52,20 @@ function pintarPortada() {
   marco.replaceChildren(img);
 }
 
+const SUBTITULOS_INICIO = [
+  'Polvo eres.',
+  'La vida que nadie pidió.',
+  'Solo de ida.',
+  'No se admiten devoluciones.',
+  'Un parpadeo entre dos nadas.',
+  'Ya queda menos.',
+  'Un trámite biológico.',
+  'Todo acabará pronto.',
+  'Sin punto de guardado.',
+  'Breve e innecesaria.',
+  'Un lunes tras otro.',
+];
+
 function pintarInicio() {
   pintarPortada();
   const p = progreso;
@@ -492,6 +506,8 @@ async function arrancar() {
     return;
   }
   conectarEventos();
+  // Un subtítulo al azar en cada carga de la página.
+  $('subtitulo-inicio').textContent = SUBTITULOS_INICIO[Math.floor(Math.random() * SUBTITULOS_INICIO.length)];
   await cargarIlustraciones();
   pintarInicio();
 }
