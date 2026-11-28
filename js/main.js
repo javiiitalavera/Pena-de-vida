@@ -152,6 +152,7 @@ function tarjetaEleccion(titulo, lineas, alElegir, iconoHtml = '') {
 // ---------- partida ----------
 
 function empezar() {
+  desbloqueadosEnPartida = [];
   partida = new Partida(datos, eleccion);
   montarJuego();
   siguiente();
@@ -298,6 +299,7 @@ async function decidir(lado) {
   reproducirEfecto('carta');
   await lanzar($('carta'), lado);
   const resultado = partida.elegir(lado);
+  anunciarDesbloqueosPorEdad();
   // El año no cambia hasta que llega la carta nueva: la sorpresa pertenece a la carta que se acaba de decidir.
   pintarBarras({ conEdad: !resultado?.sorpresa });
   // La sorpresa ocupa el sitio de la carta y la siguiente espera a que se lea.
@@ -305,6 +307,18 @@ async function decidir(lado) {
   procesarEventos();
   if (partida.fin) return setTimeout(acabar, 350);
   siguiente();
+}
+
+// Comodines que se ganan al cumplir cierta edad: se anuncian en el momento y se guardan ya,
+// aunque la partida no llegue a terminarse.
+let desbloqueadosEnPartida = [];
+function anunciarDesbloqueosPorEdad() {
+  const nuevos = evaluarDesbloqueos(datos, { anio: partida.anio, causa: { tipo: 'en_curso' } }, progreso.desbloqueados);
+  if (!nuevos.length) return;
+  progreso = { ...progreso, desbloqueados: [...progreso.desbloqueados, ...nuevos.map((x) => x.id)] };
+  guardarProgreso(progreso);
+  desbloqueadosEnPartida.push(...nuevos);
+  for (const x of nuevos) avisar(`${x._clase === 'rasgo' ? 'Rasgo' : 'Comodín'} desbloqueado: ${aplicarGenero(x.nombre, partida.sexo)}`, 3200);
 }
 
 function procesarEventos() {
@@ -345,7 +359,7 @@ function siguienteAviso() {
 // Se cierra al tocar la pantalla o pulsar una tecla, o sola a los 3,5 s.
 function mostrarSorpresa(texto) {
   const el = $('sorpresa');
-  el.textContent = texto;
+  el.innerHTML = `<span class="sorpresa-titulo">Sorpresa</span>${escapar(texto)}`;
   el.hidden = false;
   return new Promise((resolver) => {
     const cerrar = () => {
@@ -423,10 +437,13 @@ function acabar() {
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>`;
   const nombres = (clase) => nuevos.filter((x) => x._clase === clase).map((x) => aplicarGenero(x.nombre, partida.sexo)).join(', ');
-  $('desbloqueos').textContent = [
-    nombres('rasgo') && `Nuevo rasgo desbloqueado: ${nombres('rasgo')}`,
-    nombres('comodin') && `Nuevo comodín desbloqueado: ${nombres('comodin')}`,
-  ].filter(Boolean).join(' · ');
+  // Desbloqueos de esta vida: los de edad se anunciaron durante la partida; aquí van todos juntos.
+  const todos = [...desbloqueadosEnPartida, ...nuevos];
+  $('desbloqueos').innerHTML = todos.length
+    ? `<h4>Desbloqueado</h4>${todos
+        .map((x) => `<p><b>${escapar(aplicarGenero(x.nombre, partida.sexo))}</b><span>${x._clase === 'rasgo' ? 'Rasgo' : 'Comodín'} · ${escapar(aplicarGenero(x.descripcion || x.ventaja || '', partida.sexo))}</span></p>`)
+        .join('')}`
+    : '';
   mostrar('pantalla-necrologica');
   $('pantalla-necrologica').scrollTop = 0;
 }
