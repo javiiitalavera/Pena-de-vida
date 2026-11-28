@@ -585,7 +585,7 @@ export function construirNecrologia(partida) {
 
   return {
     edad: anio,
-    rango: causa.rango ? aplicarGenero(causa.rango, sexo) : `0 – ${anio} años`,
+    rango: causa.rango ? aplicarGenero(causa.rango, sexo) : `${anio} ${anio === 1 ? "año" : "años"}`,
     // Si llegas a los 100 no hay necrológica: hay fe de vida.
     cabecera: causa.tipo === 'centenario' ? 'Fe de vida' : 'Necrológica',
     tituloInforme: causa.tipo === 'centenario' ? 'Informe de la Seguridad Social' : 'Informe forense',

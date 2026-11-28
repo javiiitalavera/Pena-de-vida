@@ -72,6 +72,16 @@ const SUBTITULOS_INICIO = [
   'Materia prestada',
   'Accidente termodinámico',
   'Un suspiro en el vacío',
+  'Solo malas decisiones',
+  'Improvisando',
+  'Tu peor enemigo',
+  'Da igual lo que elijas',
+  'El final es el mismo',
+  'Sin moraleja',
+  'Nadie lleva la cuenta',
+  'Esfuerzo inútil',
+  'Nada al otro lado',
+  'Haciendo tiempo',
 ];
 
 function pintarInicio() {
