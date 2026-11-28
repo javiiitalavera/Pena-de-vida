@@ -53,17 +53,17 @@ function pintarPortada() {
 }
 
 const SUBTITULOS_INICIO = [
-  'Polvo eres.',
-  'La vida que nadie pidió.',
-  'Solo de ida.',
-  'No se admiten devoluciones.',
-  'Un parpadeo entre dos nadas.',
-  'Ya queda menos.',
-  'Un trámite biológico.',
-  'Todo acabará pronto.',
-  'Sin punto de guardado.',
-  'Breve e innecesaria.',
-  'Un lunes tras otro.',
+  'Polvo eres',
+  'La vida que nadie pidió',
+  'Solo de ida',
+  'No se admiten devoluciones',
+  'Un parpadeo entre dos nadas',
+  'Ya queda menos',
+  'Un trámite biológico',
+  'Todo acabará pronto',
+  'Sin punto de guardado',
+  'Breve e innecesaria',
+  'Un lunes tras otro',
 ];
 
 function pintarInicio() {
