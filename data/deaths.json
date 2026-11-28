@@ -1,14 +1,38 @@
 {
-  "_nota": "Causas de muerte por pilar y extremo (0 o 100). 'variantes' permite otro texto según la edad (edad_min / edad_max).",
+  "_nota": "Causas de muerte por pilar y extremo (0 o 100). 'variantes' permite otro texto según la edad (edad_min / edad_max). 'alternativas' se sortean junto al texto base, salvo cuando encaja una variante de edad.",
   "muertes": {
     "salud": {
       "0": {
         "titulo": "Salud a cero",
-        "texto": "Te llega el SMS con la cita para la resonancia tres semanas después de tu entierro."
+        "texto": "Te llega el SMS con la cita para la resonancia tres semanas después de tu entierro.",
+        "alternativas": [
+          {
+            "titulo": "Diagnóstico tardío",
+            "texto": "Llevabas tres semanas diciendo que «eso se pasa solo con un ibuprofeno». Resultó que no se pasaba solo. El médico de urgencias dejó constancia en el informe de tu admirable tolerancia al dolor y tu pésimo criterio.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Colapso de mantenimiento",
+            "texto": "Tu cuerpo decidió declararse en quiebra técnica tras décadas de sueño deficiente, cenas a base de embutido y cero estiramientos. Te fuiste sin hacer ruido, exactamente como te gustaba evitar el gimnasio.",
+            "edad_min": 18
+          }
+        ]
       },
       "100": {
         "titulo": "Salud al cien",
-        "texto": "Te vuelves un fanático del biohacking: mueres de fallo hepático por tomar 40 suplementos al día y hacer ayuno de 72 horas."
+        "texto": "Te vuelves un fanático del biohacking: mueres de fallo hepático por tomar 40 suplementos al día y hacer ayuno de 72 horas.",
+        "alternativas": [
+          {
+            "titulo": "Víctima del bienestar",
+            "texto": "Alcanzaste tal nivel de pureza biológica, ayuno intermitente y suplementación que tu organismo dejó de tolerar el aire de la ciudad. Falleciste al inhalar por accidente el humo de una churrería.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Muerte por disciplina",
+            "texto": "Te levantaste a las cinco de la mañana para correr diez kilómetros en ayunas y darte una ducha de agua helada. Tu corazón, harto de que lo trataras como a un marine, presentó su dimisión irrevocable en el kilómetro cuatro.",
+            "edad_min": 18
+          }
+        ]
       }
     },
     "dinero": {
@@ -20,6 +44,18 @@
             "edad_max": 14,
             "texto": "Desahucian a tu familia y te mandan a vivir con tu tío el del pueblo, que cree que los antibióticos son un invento masónico. Mueres de una infección de oído tonta."
           }
+        ],
+        "alternativas": [
+          {
+            "titulo": "Saldo insuficiente",
+            "texto": "Tu cuenta bancaria entró en números rojos tan profundos que el cajero automático te escupió la tarjeta con un mensaje de condolencias. Pasaste tus últimos días intentando pagar el alquiler con puntos de la gasolinera.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Desahucio administrativo",
+            "texto": "Te quedaste sin un euro y sin cobertura. Nadie sabe exactamente dónde acabaste, pero Hacienda siguió mandándote cartas certificadas a tu antiguo buzón durante doce años más.",
+            "edad_min": 18
+          }
         ]
       },
       "100": {
@@ -30,27 +66,87 @@
             "edad_max": 14,
             "texto": "Tus padres se hacen obscenamente ricos y te internan en un colegio suizo de élite. Mueres atragantad{o/a} con caviar beluga durante una clase de equitación."
           }
+        ],
+        "alternativas": [
+          {
+            "titulo": "Aplastad{o/a} por el patrimonio",
+            "texto": "Acumulaste tanto dinero que dejaste de fiarte de los bancos, de tus parientes y de la gravedad. Moriste de un infarto leve intentando recordar la contraseña de tu cuarta cuenta en Suiza.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Impuesto definitivo",
+            "texto": "Llegaste a un nivel de riqueza en el que solo te relacionabas con gestores, notarios y vendedores de yates. Tu funeral fue un éxito de asistencia: acudieron tres abogados y nadie que supiera tu fecha de nacimiento.",
+            "edad_min": 18
+          }
         ]
       }
     },
     "cordura": {
       "0": {
         "titulo": "Cordura a cero",
-        "texto": "Desconexión total. Te quedas mirando girar el plato del microondas hasta que te mueres de deshidratación."
+        "texto": "Desconexión total. Te quedas mirando girar el plato del microondas hasta que te mueres de deshidratación.",
+        "alternativas": [
+          {
+            "titulo": "Baja por realidad",
+            "texto": "Tu cerebro decidió que ya había visto suficiente y cerró la persiana sin avisar. Te encontraron en una rotonda explicándole a un semáforo las ventajas fiscales de mudarse a Andorra.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Desconexión total",
+            "texto": "Dejaste de distinguir entre las reuniones de trabajo, los sueños febriles y las discusiones de Twitter. Acabaste viviendo en una cabaña sin Wi-Fi convencid{o/a} de que las palomas trabajan para el catastro.",
+            "edad_min": 18
+          }
+        ]
       },
       "100": {
         "titulo": "Cordura al cien",
-        "texto": "Alcanzas la hiperlucidez estoica: te convences de que el hambre y el dolor son construcciones mentales y dejas de beber agua."
+        "texto": "Alcanzas la hiperlucidez estoica: te convences de que el hambre y el dolor son construcciones mentales y dejas de beber agua.",
+        "alternativas": [
+          {
+            "titulo": "Lucidez terminal",
+            "texto": "Alcanzaste una claridad mental tan absoluta que entendiste de golpe cómo funciona el mundo, el mercado inmobiliario y tu propia familia. La comprensión fue tan nítida que decidiste tumbarte en la cama y no volver a levantarte.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Paz insoportable",
+            "texto": "Te volviste tan seren{o/a}, equilibrad{o/a} y zen que nada lograba alterarte ni un milímetro. Un día dejaste de preocuparte incluso por respirar, y te fuiste con una sonrisa que puso muy nervioso al forense.",
+            "edad_min": 18
+          }
+        ]
       }
     },
     "vinculos": {
       "0": {
         "titulo": "Vínculos a cero",
-        "texto": "Te atragantas con una aceituna solo en casa. Te encuentran a los dos meses porque el vecino de abajo se queja de una mancha en el techo."
+        "texto": "Te atragantas con una aceituna solo en casa. Te encuentran a los dos meses porque el vecino de abajo se queja de una mancha en el techo.",
+        "alternativas": [
+          {
+            "titulo": "Baja en el padrón",
+            "texto": "Llevabas tanto tiempo sin contestar mensajes ni abrir la puerta que el repartidor de Amazon fue el único en notar tu ausencia. En tu lápida pusieron «Persona reservada» porque nadie encontró a nadie para redactar otra cosa.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Silencio administrativo",
+            "texto": "Borraste todos los grupos de WhatsApp, dejaste de coger llamadas de números desconocidos y te mudaste a un quinto sin vecinos. Conseguiste la paz absoluta, aunque tardaron cuatro meses en encontrar las llaves.",
+            "edad_min": 18
+          }
+        ]
       },
       "100": {
         "titulo": "Vínculos al cien",
-        "texto": "No sabes decir que no. Mueres de un ictus intentando cuadrar tres bodas, una mudanza y dos cenas de empresa en el mismo fin de semana."
+        "texto": "No sabes decir que no. Mueres de un ictus intentando cuadrar tres bodas, una mudanza y dos cenas de empresa en el mismo fin de semana.",
+        "alternativas": [
+          {
+            "titulo": "Muerte por compromiso",
+            "texto": "Dijiste que sí a tantas bodas, mudanzas, cenas de empresa y favores de domingo que tu agenda colapsó sobre sí misma. Falleciste de agotamiento intentando llegar a la vez a un bautizo y a una despedida de soltero.",
+            "edad_min": 18
+          },
+          {
+            "titulo": "Asfixia afectiva",
+            "texto": "Eras tan querid{o/a} y accesible que tu teléfono no dejó de sonar ni un minuto durante diecisiete años. Te fuiste rodead{o/a} de cuarenta personas discutiendo a gritos sobre quién era tu mejor amigo.",
+            "edad_min": 18
+          }
+        ]
       }
     },
     "centenario": {
