@@ -402,8 +402,7 @@ function acabar() {
     <p class="necro-rango">${n.rango}</p>
     <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}${partida.nivel && partida.nivel !== 'normal' ? ` · ${escapar(nivelDificultad(datos.config, partida.nivel).nombre)}` : ''}</p>
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
-    <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>
-    ${n.remates.length ? `<section class="necro-seccion"><h4>${escapar(n.tituloInforme)}</h4>${n.remates.map((r) => `<p class="necro-remate">${escapar(r)}</p>`).join('')}</section>` : ''}`;
+    <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>`;
   const nombres = (clase) => nuevos.filter((x) => x._clase === clase).map((x) => aplicarGenero(x.nombre, partida.sexo)).join(', ');
   $('desbloqueos').textContent = [
     nombres('rasgo') && `Nuevo rasgo desbloqueado: ${nombres('rasgo')}`,
