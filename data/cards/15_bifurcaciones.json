@@ -914,34 +914,6 @@
       "lote": 19
     },
     {
-      "id": "hijos_grupo_padres",
-      "tipo": "etapa",
-      "etapa": "30-49",
-      "nombre": "El Grupo del Colegio",
-      "texto": "Hay 184 mensajes sin leer en el WhatsApp de padres sobre si la cartulina de mañana es azul cielo o azul turquesa.",
-      "condiciones": {
-        "requiere_flags": [
-          "con_hijos"
-        ]
-      },
-      "izquierda": {
-        "texto": "Silenciarlo para siempre",
-        "efectos": {
-          "cordura": 10,
-          "vinculos": -10
-        },
-        "hito_biografico": "Silenció el grupo de WhatsApp del colegio durante toda la primaria."
-      },
-      "derecha": {
-        "texto": "Participar en el debate",
-        "efectos": {
-          "vinculos": 10,
-          "cordura": -10
-        }
-      },
-      "lote": 19
-    },
-    {
       "id": "hijos_ortodoncia",
       "tipo": "etapa",
       "etapa": "30-49",
