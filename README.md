@@ -180,6 +180,6 @@ Se definen en `data/traits.json` con reglas genéricas, así que un rasgo nuevo 
 - `inicio`: valores de partida distintos de 50.
 - `desbloqueo`: `inicial`, `muerte` (pilar; `extremo` 0 o 100 es opcional: sin él vale morir por esa barra en cualquiera de los dos extremos) o `centenario`.
 
-La primera partida empieza directamente en el año 0 como rasgo inicial y con el primer comodín, sin pantallas de elección. Si solo hay un rasgo disponible, también se salta la elección de rasgo.
+No hay pantallas de elección: «Nueva vida» empieza en el año 0 con sexo, rasgo y comodín al azar entre los desbloqueados. Bajo la primera carta se indica con qué se nace (p. ej. «Mujer · Hija de Papá»).
 
 Los comodines están en `data/jokers.json` con cuatro acciones: `descartar`, `invertir`, `congelar` y `efecto_directo`. También se desbloquean: `inicial`, `edad` (`min`: edad alcanzada), `muerte` (pilar y extremo opcionales) o `centenario`.

@@ -1,7 +1,7 @@
 // Interfaz: pantallas, carta, barras y necrológica. La lógica está en engine.js.
 import { prepararAudio, reproducirEfecto } from './audio.js';
 import { cargarDatos } from './data.js';
-import { Partida, construirNecrologia, evaluarDesbloqueos, draftRasgos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad, nivelesDificultad, nivelDificultad } from './engine.js';
+import { Partida, construirNecrologia, evaluarDesbloqueos, rasgosDisponibles, comodinesDisponibles, etapaDeEdad, nivelesDificultad, nivelDificultad } from './engine.js';
 import { cargarProgreso, guardarProgreso, registrarPartida, guardarPartida, cargarPartida, borrarPartida, cargarNivel, guardarNivel } from './storage.js';
 import { montarImagen } from './images.js';
 import { aplicarGenero } from './text.js';
@@ -15,7 +15,6 @@ let datos;
 let progreso = cargarProgreso();
 let partida = null;
 let eleccion = {};
-let tiradaRasgos = null; // se mantiene al volver atrás; se renueva al empezar otra vida desde la portada
 let marcado = null;
 let ocupado = false;
 let swipe;
@@ -83,70 +82,16 @@ function nivelActual() {
   return nivelDificultad(datos.config, cargarNivel());
 }
 
-function elegirSexo(valor) {
-  eleccion = { sexo: valor === 'azar' ? (Math.random() < 0.5 ? 'M' : 'F') : valor, nivel: nivelActual()?.id };
-  // Primera partida: sin elegir rasgo ni comodín, directo al año 0.
-  if (progreso.partidas === 0) {
-    eleccion.rasgoId = rasgosDisponibles(datos, progreso.desbloqueados)[0]?.id;
-    eleccion.comodinId = comodinesDisponibles(datos, progreso.desbloqueados)[0]?.id;
-    return empezar();
-  }
-  pintarRasgos();
-}
-
-function pintarRasgos() {
-  tiradaRasgos ??= draftRasgos(datos, progreso.desbloqueados, 3);
-  const opciones = tiradaRasgos;
-  const total = rasgosDisponibles(datos, progreso.desbloqueados).length;
-  if (opciones.length === 1) {
-    eleccion.rasgoId = opciones[0].id;
-    return pintarComodines();
-  }
-  $('ayuda-rasgo').textContent =
-    total < 3 ? `${total} de ${datos.rasgos.length} desbloqueados. Muere de formas nuevas para conseguir más.` : '';
-  $('lista-rasgos').replaceChildren(
-    ...opciones.map((r) =>
-      tarjetaEleccion(aplicarGenero(r.nombre, eleccion.sexo), [r.descripcion && aplicarGenero(r.descripcion, eleccion.sexo), r.ventaja, r.contrapartida && `<em class="contra">${escapar(r.contrapartida)}</em>`], () => {
-        eleccion.rasgoId = r.id;
-        pintarComodines();
-      }),
-    ),
-  );
-  mostrar('pantalla-rasgo');
-}
-
-function pintarComodines() {
-  const lista = comodinesDisponibles(datos, progreso.desbloqueados);
-  // En Difícil y Modo dios no hay comodín: no se pregunta.
-  if ((nivelActual()?.comodines ?? 1) === 0) {
-    eleccion.comodinId = null;
-    return empezar();
-  }
-  if (lista.length === 1) {
-    eleccion.comodinId = lista[0].id;
-    return empezar();
-  }
-  $('lista-comodines').replaceChildren(
-    ...lista.map((c) =>
-      tarjetaEleccion(c.nombre, [c.descripcion], () => {
-        eleccion.comodinId = c.id;
-        empezar();
-      }, icono(c.icono)),
-    ),
-  );
-  mostrar('pantalla-comodin');
-}
-
-function tarjetaEleccion(titulo, lineas, alElegir, iconoHtml = '') {
-  // Misma fila que la pantalla de sexo: nombre grande, detalle debajo y flecha a la derecha.
-  const b = document.createElement('button');
-  const detalle = lineas
-    .filter(Boolean)
-    .map((l) => `<span class="op-linea">${l.startsWith('<em') ? l : escapar(l)}</span>`)
-    .join('');
-  b.innerHTML = `<span class="op-texto"><span class="op-nombre">${iconoHtml}${escapar(titulo)}</span>${detalle}</span><span class="flecha" aria-hidden="true">→</span>`;
-  b.addEventListener('click', alElegir);
-  return b;
+// Nadie elige cómo nace: sexo, rasgo y comodín salen al azar entre lo desbloqueado.
+function nacer() {
+  const azar = (lista) => lista[Math.floor(Math.random() * lista.length)];
+  eleccion = {
+    sexo: Math.random() < 0.5 ? 'M' : 'F',
+    nivel: nivelActual()?.id,
+    rasgoId: azar(rasgosDisponibles(datos, progreso.desbloqueados))?.id,
+    comodinId: azar(comodinesDisponibles(datos, progreso.desbloqueados))?.id,
+  };
+  empezar();
 }
 
 // ---------- partida ----------
@@ -214,7 +159,9 @@ function pintarBarras({ conEdad = true } = {}) {
   // Mientras se lee el dorso, la cabecera sigue siendo la de la carta decidida.
   if (conEdad) {
     $('edad-anio').textContent = `Año ${y}`;
-    $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
+    // En la primera carta, en lugar de la etapa: con qué naces.
+  const nacimiento = partida.historial.length === 0 && [partida.sexo === 'F' ? 'Mujer' : 'Hombre', partida.rasgo && aplicarGenero(partida.rasgo.nombre, partida.sexo)].filter(Boolean).join(' · ');
+  $('edad-etapa').textContent = nacimiento || etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
   }
   pintarComodinBoton();
   if (DEBUG) {
@@ -503,16 +450,9 @@ function conectarEventos() {
   pintarSelectorNivel();
   for (const b of document.querySelectorAll('[data-ajustes]')) b.addEventListener('click', describirNivel);
   prepararAudio();
-  $('btn-nueva').addEventListener('click', () => {
-    tiradaRasgos = null;
-    mostrar('pantalla-sexo');
-  });
+  $('btn-nueva').addEventListener('click', nacer);
   $('btn-continuar').addEventListener('click', continuar);
-  for (const b of document.querySelectorAll('[data-sexo]')) b.addEventListener('click', () => elegirSexo(b.dataset.sexo));
   $('btn-otra').addEventListener('click', pintarInicio);
-  $('btn-volver-sexo').addEventListener('click', pintarInicio);
-  // Volver sin repetir la tirada de rasgos: solo se cambia de pantalla.
-  for (const b of document.querySelectorAll('[data-volver]')) b.addEventListener('click', () => mostrar(b.dataset.volver));
   $('btn-comodin').addEventListener('click', abrirComodin);
   $('dlg-cancelar').addEventListener('click', () => $('dialogo-comodin').close());
   $('dlg-usar').addEventListener('click', usarComodin);
