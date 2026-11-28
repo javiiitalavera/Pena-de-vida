@@ -464,3 +464,7 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   background: transparent; border: 0; color: var(--tinta-suave); font: 1rem var(--sans); cursor: pointer;
 }
 
+
+.dorso-nacimiento { display: flex; flex-direction: column; gap: 10px; }
+.dorso-nacimiento b { font-weight: normal; font-size: 1.7em; letter-spacing: -0.02em; }
+.dorso-nacimiento span { font-style: italic; }

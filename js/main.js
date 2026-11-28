@@ -101,6 +101,7 @@ function empezar() {
   partida = new Partida(datos, eleccion);
   montarJuego();
   siguiente();
+  revelarNacimiento();
 }
 
 function continuar() {
@@ -159,9 +160,7 @@ function pintarBarras({ conEdad = true } = {}) {
   // Mientras se lee el dorso, la cabecera sigue siendo la de la carta decidida.
   if (conEdad) {
     $('edad-anio').textContent = `Año ${y}`;
-    // En la primera carta, en lugar de la etapa: con qué naces.
-  const nacimiento = partida.historial.length === 0 && [partida.sexo === 'F' ? 'Mujer' : 'Hombre', partida.rasgo && aplicarGenero(partida.rasgo.nombre, partida.sexo)].filter(Boolean).join(' · ');
-  $('edad-etapa').textContent = nacimiento || etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
+    $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
   }
   pintarComodinBoton();
   if (DEBUG) {
@@ -330,19 +329,40 @@ async function girarCarta(alDorso, texto) {
 // Se cierra al tocar la pantalla o pulsar una tecla, o sola a los 4 s.
 async function leerDorso(texto) {
   await girarCarta(true, texto);
-  await new Promise((resolver) => {
+  await esperarToque();
+}
+
+// Se sigue al tocar la pantalla o pulsar una tecla, o solo a los 4 s.
+function esperarToque(ms = 4000) {
+  return new Promise((resolver) => {
     const cerrar = () => {
       clearTimeout(t);
       document.removeEventListener('pointerdown', cerrar, true);
       document.removeEventListener('keydown', cerrar, true);
       resolver();
     };
-    const t = setTimeout(cerrar, 4000);
+    const t = setTimeout(cerrar, ms);
     setTimeout(() => {
       document.addEventListener('pointerdown', cerrar, true);
       document.addEventListener('keydown', cerrar, true);
     }, 300);
   });
+}
+
+// La primera carta llega boca abajo: por detrás, con qué has nacido.
+async function revelarNacimiento() {
+  ocupado = true;
+  swipe.bloquear(true);
+  const dorso = $('carta-dorso');
+  const rasgo = partida.rasgo ? aplicarGenero(partida.rasgo.nombre, partida.sexo) : '';
+  dorso.innerHTML = `<span class="dorso-nacimiento"><b>${partida.sexo === 'F' ? 'Mujer' : 'Hombre'}</b>${rasgo ? `<span>${escapar(rasgo)}</span>` : ''}</span>`;
+  dorso.hidden = false;
+  $('carta-texto').style.visibility = 'hidden';
+  await esperarToque();
+  await girarCarta(false);
+  $('carta-texto').style.visibility = '';
+  ocupado = false;
+  swipe.bloquear(false);
 }
 
 // ---------- comodín ----------
