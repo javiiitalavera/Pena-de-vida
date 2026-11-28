@@ -466,7 +466,7 @@ export class Partida {
     const anio = this.anio;
     for (const fuente of [carta, op]) {
       if (fuente.hito_biografico) {
-        this.hitos.push({ anio, texto: this.texto(fuente.hito_biografico), peso: fuente.peso_hito ?? 1, carta: carta.id });
+        this.hitos.push({ anio, texto: this.texto(fuente.hito_biografico), carta: carta.id });
       }
     }
     this.historial.push({ id: carta.id, lado, anio, deltas, invertida: this.invertida, sorpresa: !!sorpresa });
@@ -534,17 +534,8 @@ export class Partida {
 
 function seleccionarHitos(hitos, max) {
   if (hitos.length <= max) return [...hitos];
-  // Los de más peso primero; dentro del mismo peso, repartidos a lo largo de la vida.
-  const pesos = [...new Set(hitos.map((h) => h.peso))].sort((a, b) => b - a);
-  const elegidos = [];
-  for (const p of pesos) {
-    const grupo = hitos.filter((h) => h.peso === p);
-    const hueco = max - elegidos.length;
-    if (hueco <= 0) break;
-    if (grupo.length <= hueco) elegidos.push(...grupo);
-    else for (let i = 0; i < hueco; i++) elegidos.push(grupo[Math.round((i * (grupo.length - 1)) / Math.max(1, hueco - 1))]);
-  }
-  return elegidos.sort((a, b) => a.anio - b.anio);
+  // Repartidos a lo largo de la vida: el primero, el último y los de en medio a intervalos regulares.
+  return Array.from({ length: max }, (_, i) => hitos[Math.round((i * (hitos.length - 1)) / Math.max(1, max - 1))]);
 }
 
 export function construirNecrologia(partida) {
@@ -596,6 +587,8 @@ export function construirNecrologia(partida) {
     texto: aplicarGenero(textoCausa || '', sexo),
     hitos: seleccionarHitos(partida.hitos, datos.config.hitos_max ?? 6),
     remates: remates.map((t) => aplicarGenero(t, sexo)),
+    // Qué barra mató y en qué extremo: «Paz mental: 100».
+    barra: causa.tipo === 'muerte' ? `${datos.config.pilares.find((p) => p.id === causa.pilar)?.nombre ?? causa.pilar}: ${causa.extremo}` : null,
     rasgo: partida.rasgo ? aplicarGenero(partida.rasgo.nombre, sexo) : null,
     pilares,
   };

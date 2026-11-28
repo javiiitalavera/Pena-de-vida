@@ -12,10 +12,6 @@
       "nombre": "El Examen MIR",
       "personaje": "opositor_mir",
       "texto": "Llevas seis años estudiando medicina y ahora te encierras once meses en una habitación sin luz natural para competir por un sueldo de mileurista con guardias.",
-      "tags": [
-        "trabajo",
-        "medico"
-      ],
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -59,10 +55,6 @@
       "nombre": "La Guardia de 24 Horas",
       "personaje": "paciente_urgencias",
       "texto": "Son las cuatro de la madrugada. Entra un señor a urgencias por un dolor en el dedo gordo del pie que tiene 'desde hace tres semanas'.",
-      "tags": [
-        "trabajo",
-        "medico"
-      ],
       "condiciones": {
         "requiere_flags": [
           "medico"
@@ -91,10 +83,6 @@
       "nombre": "El Paciente de Google",
       "personaje": "paciente_google",
       "texto": "Ha buscado sus síntomas en internet y te exige una resonancia magnética de cuerpo entero porque 'está seguro de que tiene un parásito tropical'.",
-      "tags": [
-        "trabajo",
-        "medico"
-      ],
       "condiciones": {
         "requiere_flags": [
           "medico"
@@ -123,10 +111,6 @@
       "nombre": "La Gerencia del Hospital",
       "personaje": "gerente_hospital",
       "texto": "Un director con un máster en gestión que nunca ha visto un paciente te felicita por tu 'vocación' mientras te recorta el presupuesto y te añade diez citas al día.",
-      "tags": [
-        "trabajo",
-        "medico"
-      ],
       "condiciones": {
         "requiere_flags": [
           "medico"
@@ -160,10 +144,6 @@
       "nombre": "La Oposición",
       "personaje": "madre",
       "texto": "Tu madre insiste en que te saques una plaza fija. El temario son 140 temas de Derecho Administrativo redactados por alguien que odia la alegría.",
-      "tags": [
-        "trabajo",
-        "funcionario"
-      ],
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -208,10 +188,6 @@
       "nombre": "El Café de las 10:30",
       "personaje": "cola_ventanilla",
       "texto": "Hay doce personas haciendo cola en tu ventanilla, pero en tu reloj acaban de dar las diez y media en punto.",
-      "tags": [
-        "trabajo",
-        "funcionario"
-      ],
       "condiciones": {
         "requiere_flags": [
           "funcionario"
@@ -240,10 +216,6 @@
       "nombre": "El Nuevo Interino",
       "personaje": "interino",
       "texto": "Ha llegado un chaval con ganas de trabajar que despacha expedientes al triple de velocidad y está dejando en evidencia a toda la planta.",
-      "tags": [
-        "trabajo",
-        "funcionario"
-      ],
       "condiciones": {
         "requiere_flags": [
           "funcionario"
@@ -272,10 +244,6 @@
       "nombre": "El Trienio",
       "personaje": "ordenador_oficina",
       "texto": "Te cae un aumento de 38 euros al mes por seguir vivo y respirando en la misma silla. El sistema informático lleva caído desde el martes.",
-      "tags": [
-        "trabajo",
-        "funcionario"
-      ],
       "condiciones": {
         "requiere_flags": [
           "funcionario"
@@ -308,10 +276,6 @@
       "nombre": "El Máster de Profesorado",
       "personaje": "instituto",
       "texto": "Tu carrera no tiene salidas, así que decides dar clase en un instituto. Te esperan dos meses de vacaciones al año y treinta adolescentes con déficit de atención.",
-      "tags": [
-        "trabajo",
-        "profesor"
-      ],
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -354,10 +318,6 @@
       "nombre": "La Tutoría con los Padres",
       "personaje": "padres_alumno",
       "texto": "Su hijo ha sacado un 1,5 porque entregó el examen dibujando un pene gigante, pero los padres dicen que 'le tienes manía' y amenazan con ir a Inspección.",
-      "tags": [
-        "trabajo",
-        "profesor"
-      ],
       "condiciones": {
         "requiere_flags": [
           "profesor"
@@ -387,10 +347,6 @@
       "nombre": "El Móvil en Clase",
       "personaje": "alumno_tiktok",
       "texto": "Un alumno de 3º de la ESO está grabando un baile de TikTok en última fila mientras explicas la Revolución Industrial.",
-      "tags": [
-        "trabajo",
-        "profesor"
-      ],
       "condiciones": {
         "requiere_flags": [
           "profesor"
@@ -419,10 +375,6 @@
       "nombre": "La Afonía Crónica",
       "personaje": "aula",
       "texto": "Llevas veinticinco años gritando por encima del ruido de un aula. Tu voz suena como si hubieras desayunado grava.",
-      "tags": [
-        "trabajo",
-        "profesor"
-      ],
       "condiciones": {
         "requiere_flags": [
           "profesor"
@@ -455,10 +407,6 @@
       "nombre": "La Temporada de Verano",
       "personaje": "dueno_bar",
       "texto": "El dueño de un bar te ofrece 'un contrato de 20 horas' en el que trabajarás 60, con horario partido y media paga en un sobre marrón.",
-      "tags": [
-        "trabajo",
-        "hosteleria"
-      ],
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -500,10 +448,6 @@
       "nombre": "La Despedida de Soltero",
       "personaje": "despedida_soltero",
       "texto": "Entran catorce tíos disfrazados de bebé a las dos de la mañana pidiendo chupitos gratis y gritando '¡camarero, que nos morimos de sed!'.",
-      "tags": [
-        "trabajo",
-        "hosteleria"
-      ],
       "condiciones": {
         "requiere_flags": [
           "hosteleria"
@@ -533,10 +477,6 @@
       "nombre": "El Cliente Entendido",
       "personaje": "cliente_vino",
       "texto": "Te devuelve un vino de 12 euros diciendo que 'tiene notas de corcho' y te amenaza con ponerte una estrella en Google.",
-      "tags": [
-        "trabajo",
-        "hosteleria"
-      ],
       "condiciones": {
         "requiere_flags": [
           "hosteleria"
@@ -565,10 +505,6 @@
       "nombre": "Las Varices",
       "personaje": "barra_bar",
       "texto": "Llevas treinta años de pie detrás de una barra. Tus piernas parecen un mapa de carreteras secundarias.",
-      "tags": [
-        "trabajo",
-        "hosteleria"
-      ],
       "condiciones": {
         "requiere_flags": [
           "hosteleria"
@@ -604,10 +540,6 @@
       "nombre": "El Bootcamp",
       "personaje": "bootcamp",
       "texto": "Te prometen que en doce semanas programarás en Python y cobrarás 60.000€ desde una playa en Bali.",
-      "tags": [
-        "trabajo",
-        "informatico"
-      ],
       "condiciones": {
         "excluye_flags": [
           "medico",
@@ -650,10 +582,6 @@
       "nombre": "Despliegue en Viernes",
       "personaje": "jefe_producto",
       "texto": "Son las 17:45 del viernes. El jefe de producto dice que es 'un cambiecito de nada' y te pide subirlo a producción antes de irte.",
-      "tags": [
-        "trabajo",
-        "informatico"
-      ],
       "condiciones": {
         "requiere_flags": [
           "informatico"
@@ -683,10 +611,6 @@
       "nombre": "La Impresora de tu Tía",
       "personaje": "tia",
       "texto": "En la comida familiar te sacan una impresora de 2009 y un portátil lleno de barras de herramientas rusas porque 'tú que sabes de ordenadores, míramelo un momento'.",
-      "tags": [
-        "trabajo",
-        "informatico"
-      ],
       "condiciones": {
         "requiere_flags": [
           "informatico"
@@ -723,10 +647,6 @@
       "nombre": "El Teletrabajo en Pijama",
       "personaje": "videollamada",
       "texto": "Llevas cuatro días sin salir de casa ni ducharte. Tienes una videollamada con el cliente en cinco minutos.",
-      "tags": [
-        "trabajo",
-        "informatico"
-      ],
       "condiciones": {
         "requiere_flags": [
           "informatico"

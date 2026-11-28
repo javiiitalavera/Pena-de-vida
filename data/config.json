@@ -74,7 +74,7 @@
         "nombre": "Fácil",
         "descripcion": "Ves qué barras cambia cada decisión, sin sorpresas y con tres usos del comodín.",
         "vista_previa_barras": true,
-        "puntos_por_magnitud": false,
+        "puntos_por_magnitud": true,
         "sorpresas": 0,
         "comodines": 3
       },
@@ -87,7 +87,7 @@
       {
         "id": "dificil",
         "nombre": "Difícil",
-        "descripcion": "Todo pesa ×1,5 y la vejez castiga ×1,5. La mitad de las decisiones con sorpresa la sufren. Sin comodín.",
+        "descripcion": "Efectos ×1,85 y la vejez castiga las pérdidas ×1,5. Las sorpresas saltan la mitad de las veces. Sin comodín.",
         "volatilidad": 1.85,
         "castigo_edad": {
           "desde": 65,
@@ -99,7 +99,7 @@
       {
         "id": "dios",
         "nombre": "Modo dios",
-        "descripcion": "Como Difícil, pero a ciegas: no ves cómo están tus barras. Solo te enteras al morir.",
+        "descripcion": "Como Difícil (efectos ×1,85, vejez ×1,5, sorpresas al 50 %), pero a ciegas: no ves cómo están tus barras.",
         "volatilidad": 1.85,
         "castigo_edad": {
           "desde": 65,

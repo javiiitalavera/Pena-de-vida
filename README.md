@@ -22,7 +22,7 @@ Cada carta son dos años de vida: unas 50 cartas del año 0 al 100 (`cartas_por_
 
 ## Revisor de cartas (control de calidad)
 
-`revisor.html` (enlace al pie de la pantalla de inicio) sirve para revisar el contenido sin terminal:
+`revisor.html` (sin enlace en el juego: se abre escribiendo la dirección, `…/revisor.html`) sirve para revisar el contenido sin terminal:
 
 - **Resumen**: cartas por etapa frente a las necesarias y equilibrio de cada barra.
 - **Avisos**: errores que rompen el juego y problemas de diseño (falsos dilemas, opciones "todo ventaja" o "todo castigo", flags que nadie activa, textos demasiado largos…).
@@ -76,7 +76,6 @@ En el móvil la carta se dibuja a unos 290-360 px, que en pantallas de alta dens
   "nombre": "La Abuela",
   "personaje": "abuela",
   "texto": "Insiste en mojar tu chupete en anís…",
-  "tags": ["familia"],
   "condiciones": {
     "requiere_sexo": "F",
     "requiere_rasgo": ["hijo_de_papa"],
@@ -109,7 +108,7 @@ Solo son obligatorios `id`, `tipo`, `nombre`, `texto` y las dos opciones con `te
 | `personaje` | Id de personaje para reutilizar la misma imagen en varias cartas. |
 | `condiciones` | Filtros: sexo, rasgo, flags. Las cartas con `requiere_flags` o `requiere_rasgo` tienen prioridad alta por defecto. |
 | `condiciones.probabilidad` | Entre 0 y 1: en qué proporción de partidas puede salir. Sin ella, una carta disponible sale casi siempre (el juego intenta usar todas las cartas de cada etapa). Ej.: el Divorcio tiene 0.4. |
-| `hito_biografico` | Frase para la necrológica si se elige esa opción. Admite `peso_hito` (más alto = más relevante). |
+| `hito_biografico` | Frase para la necrológica si se elige esa opción. |
 | `add_flags_por_sexo` | Flags extra según el sexo: `{ "F": ["embarazada"] }`. |
 | `add_flags` / `remove_flags` | Cambian el estado vital (casado, oficinista, con_hijos…). Los flags de un mismo grupo de `config.json → grupos_flags` se excluyen entre sí: al hacerte funcionario dejas de ser oficinista sin tener que escribirlo. |
 | `fin` | En la carta del año 100: `"fin": "centenario"` termina la partida. |
@@ -160,7 +159,7 @@ Además hay cuatro niveles, elegibles en Ajustes (`config.json → niveles_dific
 
 | Nivel | Puntos al arrastrar | Efectos | Sorpresas | Comodín |
 |---|---|---|---|---|
-| Fácil | sí, sin tamaño | ×1,6 | no | 3 usos |
+| Fácil | sí, con tamaño según el efecto | ×1,6 | no | 3 usos |
 | Normal | no | ×1,6 | 25 % | 1 uso |
 | Difícil | no | ×1,85 (vejez ×1,5) | 50 % | no |
 | Modo dios | no, y barras ocultas | ×1,85 (vejez ×1,5) | 50 % | no |
@@ -173,7 +172,7 @@ El revisor (pestaña Simular) y `node tools/revisar.mjs` permiten medir el efect
 
 Se definen en `data/traits.json` con reglas genéricas, así que un rasgo nuevo no necesita tocar el código:
 
-- `multiplicador`: `{ "pilar": "dinero", "signo": "negativo", "mult": 0.5 }`. `signo` puede ser `positivo`, `negativo` o `ambos`; `pilar` puede ser `*` para todos; admite `tags` para afectar solo a cartas con esas etiquetas.
+- `multiplicador`: `{ "pilar": "dinero", "signo": "negativo", "mult": 0.5 }`. `signo` puede ser `positivo`, `negativo` o `ambos`; `pilar` puede ser `*` para todos.
 - `anula`: si una opción baja X, no baja Y.
 - `periodico`: efecto automático cada N años.
 - `transferencia`: si una decisión baja X, suma un efecto extra (p. ej. Viejo Rencoroso: bajar Vínculos da +5 Salud).

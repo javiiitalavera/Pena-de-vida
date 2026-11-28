@@ -171,7 +171,7 @@ function pintarBarras({ conEdad = true } = {}) {
     const id = el.dataset.pilar;
     const v = partida.pilares[id];
     el.querySelector('.relleno').style.height = `${Math.max(0, Math.min(100, v))}%`;
-    el.classList.toggle('peligro', v <= 15 || v >= 85);
+    el.classList.toggle('peligro', v <= 20 || v >= 80);
     el.classList.toggle('congelado', partida.congelado?.pilar === id);
     el.title = DEBUG ? `${el.getAttribute('aria-label')}: ${v}` : el.getAttribute('aria-label');
   }
@@ -440,7 +440,7 @@ function acabar() {
     <p class="necro-cruz">${n.centenario ? '✶' : '†'}</p>
     <p class="necro-rango">${n.rango}</p>
     <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}${partida.nivel && partida.nivel !== 'normal' ? ` · ${escapar(nivelDificultad(datos.config, partida.nivel).nombre)}` : ''}</p>
-    <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
+    <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4>${n.barra ? `<p class="necro-barra">${escapar(n.barra)}</p>` : ''}<p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>`;
   // Desbloqueos de esta vida: los de edad se anunciaron durante la partida; aquí van todos juntos.
   const todos = [...desbloqueadosEnPartida, ...nuevos];
@@ -491,7 +491,7 @@ function conectarEventos() {
   prepararAudio();
   $('btn-nueva').addEventListener('click', nacer);
   $('btn-continuar').addEventListener('click', continuar);
-  $('btn-otra').addEventListener('click', pintarInicio);
+  $('btn-otra').addEventListener('click', nacer);
   $('btn-comodin').addEventListener('click', abrirComodin);
   $('dlg-cancelar').addEventListener('click', () => $('dialogo-comodin').close());
   $('dlg-usar').addEventListener('click', usarComodin);

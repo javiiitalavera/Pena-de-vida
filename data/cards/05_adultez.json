@@ -535,15 +535,15 @@
       "izquierda": {
         "texto": "Quedar hoy mismo",
         "efectos": {
-          "cordura": 5,
-          "vinculos": -10
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "derecha": {
         "texto": "Votar en el Doodle",
         "efectos": {
-          "vinculos": 10,
-          "cordura": -10
+          "cordura": 10,
+          "vinculos": -10
         }
       },
       "lote": 10
