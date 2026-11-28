@@ -225,7 +225,22 @@
         "signo": "negativo",
         "mult": 1.1
       }
-    ]
+    ],
+    "_nombres": {
+      "ciudad": "Ciudad",
+      "pueblo": "Pueblo",
+      "medico": "Médic{o/a}",
+      "funcionario": "Funcionari{o/a}",
+      "profesor": "Profesor{/a}",
+      "hosteleria": "Hostelería",
+      "informatico": "Informátic{o/a}",
+      "oficinista": "Oficinista",
+      "autonomo": "Autónom{o/a}",
+      "desempleado": "En paro",
+      "con_hijos": "Con hijos",
+      "fumador": "Fumador{/a}",
+      "hernia_discal": "Hernia discal"
+    }
   },
   "dificultad": {
     "_nota": "volatilidad: multiplica todos los efectos de las decisiones desde volatilidad_desde. castigo_edad: multiplica las pérdidas desde cierta edad. puntos_por_magnitud: false = todos los puntos de vista previa del mismo tamaño. vista_previa_barras: false = sin puntos sobre las barras al arrastrar.",

@@ -491,3 +491,9 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 .archivo-lista li { display: flex; flex-direction: column; gap: 2px; padding: 9px 0; border-bottom: 1px solid var(--linea); }
 .archivo-lista b { font-family: var(--serif); font-weight: normal; font-size: 1.1rem; }
 .archivo-lista span { font: 0.85rem/1.35 var(--sans); color: var(--tinta-suave); }
+
+/* ---------- Ajustes: modificadores de la vida en curso ---------- */
+.tu-vida ul { list-style: none; margin: 0; padding: 0; }
+.tu-vida li { display: flex; flex-direction: column; gap: 1px; padding: 6px 0; border-bottom: 1px solid #bfb29d; }
+.tu-vida b { font-size: 1rem; }
+.tu-vida span { font: 0.8rem/1.35 var(--sans); color: rgba(29, 26, 20, 0.7); }

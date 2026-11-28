@@ -488,7 +488,46 @@ function pintarSelectorNivel() {
   describirNivel();
 }
 
+// Qué modifica los números de esta vida: rasgo, estados de vida, nivel y comodín activo.
+function porcentaje(mult) {
+  const p = Math.round((mult - 1) * 100);
+  return `${p > 0 ? '+' : '−'}${Math.abs(p)} %`;
+}
+
+function describirRegla(r) {
+  const nombre = (id) => nombrePilar(id);
+  if (r.tipo === 'multiplicador') {
+    if (r.signo === 'ambos') return `${nombre(r.pilar)} ×${String(r.mult).replace('.', ',')}`;
+    return `${r.signo === 'positivo' ? 'Ganancias' : 'Pérdidas'} de ${nombre(r.pilar)} ${porcentaje(r.mult)}`;
+  }
+  if (r.tipo === 'anula') return `Bajar ${nombre(r.si.pilar)} no baja ${nombre(r.anula.pilar)}`;
+  if (r.tipo === 'transferencia') return `Bajar ${nombre(r.si.pilar)}: ${Object.entries(r.efectos).map(([p, v]) => `${v > 0 ? '+' : '−'}${Math.abs(v)} ${nombre(p)}`).join(', ')}`;
+  if (r.tipo === 'periodico') return `Cada ${r.cada_anios} años: ${Object.entries(r.efectos).map(([p, v]) => `${v > 0 ? '+' : '−'}${Math.abs(v)} ${nombre(p)}`).join(', ')}`;
+  return '';
+}
+
+function pintarModificadores() {
+  const enJuego = partida && !partida.fin && $('pantalla-juego').classList.contains('activa');
+  $('tu-vida').hidden = !enJuego;
+  if (!enJuego) return;
+  const filas = [];
+  const fila = (titulo, reglas) => {
+    const textos = reglas.map(describirRegla).filter(Boolean);
+    if (textos.length) filas.push(`<li><b>${escapar(titulo)}</b><span>${textos.map(escapar).join(' · ')}</span></li>`);
+  };
+  if (partida.rasgo) fila(aplicarGenero(partida.rasgo.nombre, partida.sexo), partida.rasgo.reglas || []);
+  const ef = datos.config.efectos_flags || {};
+  for (const f of partida.flags) if (Array.isArray(ef[f])) fila(aplicarGenero(ef._nombres?.[f] || f, partida.sexo), ef[f]);
+  const d = partida.dif;
+  const nivel = [`Efectos ×${String(d.volatilidad ?? 1).replace('.', ',')}`];
+  if (d.castigo_edad) nivel.push(`desde los ${d.castigo_edad.desde}, pérdidas ×${String(d.castigo_edad.mult).replace('.', ',')}`);
+  filas.push(`<li><b>${escapar(nivelDificultad(datos.config, partida.nivel)?.nombre || 'Nivel')}</b><span>${escapar(nivel.join(' · '))}</span></li>`);
+  if (partida.congelado) filas.push(`<li><b>${escapar(partida.comodin?.nombre || 'Comodín')}</b><span>${escapar(nombrePilar(partida.congelado.pilar))} congelada</span></li>`);
+  $('modificadores').innerHTML = filas.join('');
+}
+
 function describirNivel() {
+  pintarModificadores();
   const n = nivelActual();
   // Una partida en curso conserva su nivel; el cambio vale para la siguiente.
   const enCurso = partida && !partida.fin && partida.nivel !== n?.id && $('pantalla-juego').classList.contains('activa');
