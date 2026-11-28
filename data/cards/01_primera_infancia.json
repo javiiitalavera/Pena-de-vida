@@ -15,7 +15,7 @@
         }
       },
       "derecha": {
-        "texto": "Quedarte morado, a ver",
+        "texto": "Quedarte morad{o/a}, a ver",
         "efectos": {
           "salud": -15,
           "vinculos": 10
@@ -39,7 +39,7 @@
         }
       },
       "derecha": {
-        "texto": "Pataleo nivel exorcista",
+        "texto": "Patalear nivel exorcista",
         "efectos": {
           "salud": -10,
           "vinculos": 5
@@ -75,7 +75,7 @@
             "vinculos": -10,
             "cordura": -10
           },
-          "mensaje": "Dejan de discutir de fútbol y empiezan a discutir de quién te ha hecho llorar."
+          "mensaje": "Dejan de discutir por la luz y empiezan a discutir de quién te ha hecho llorar."
         }
       },
       "lote": 1
@@ -204,7 +204,7 @@
         }
       },
       "derecha": {
-        "texto": "Rotulador permanente en la pared",
+        "texto": "Pintar la pared con rotulador",
         "efectos": {
           "cordura": 10,
           "dinero": -5
@@ -383,7 +383,7 @@
       "id": "guarderia",
       "tipo": "etapa",
       "etapa": "0-3",
-      "nombre": "La Guardería",
+      "nombre": "El Primer Día de Guardería",
       "texto": "Te dejan en una sala con veinte desconocidos que tosen sin taparse la boca. Una monitora sonríe demasiado.",
       "izquierda": {
         "texto": "Chupar un bloque de plástico",
@@ -469,7 +469,7 @@
         }
       },
       "derecha": {
-        "texto": "Jugar sol{o/a} con la caja",
+        "texto": "Quedarte con la caja",
         "efectos": {
           "vinculos": 10,
           "cordura": -5
