@@ -208,14 +208,15 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 
 .mesa { position: relative; display: flex; justify-content: center; perspective: 900px; }
 .sorpresa {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-1.5deg);
-  width: calc(var(--carta) * 0.86); padding: 22px 20px;
+  /* El mismo papel que Ajustes y la necrológica: recto, borde fino, sin sombra. */
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: calc(var(--carta) * 0.88); padding: 20px 22px;
   background: var(--papel); color: var(--papel-tinta);
-  border: 1px solid var(--papel-tinta); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.4; text-align: center;
-  z-index: 4; cursor: pointer; animation: sorpresa-entra 0.3s ease-out;
+  border: 1px solid var(--papel-tinta); border-radius: 0;
+  font-family: var(--serif); font-size: 1.12rem; line-height: 1.45; text-align: left;
+  z-index: 4; cursor: pointer; animation: sorpresa-entra 0.25s ease-out;
 }
-@keyframes sorpresa-entra { from { opacity: 0; transform: translate(-50%, -46%) rotate(-4deg); } }
+@keyframes sorpresa-entra { from { opacity: 0; transform: translate(-50%, -46%); } }
 .carta {
   width: var(--carta); height: var(--carta);
   background: var(--papel);
@@ -297,8 +298,8 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   width: max-content; max-width: min(86%, 380px);
   background: var(--papel); color: var(--papel-tinta);
   border: 1px solid var(--papel-tinta); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  padding: 10px 16px; border-radius: 12px;
-  font-family: var(--serif); font-style: italic; font-size: 0.95rem; line-height: 1.35; text-align: center;
+  padding: 10px 16px; border-radius: 0; box-shadow: none;
+  font-family: var(--serif); font-size: 0.95rem; line-height: 1.35; text-align: left;
   z-index: 5; pointer-events: none; animation: aviso-entra 0.25s ease-out;
 }
 @keyframes aviso-entra { from { opacity: 0; transform: translate(-50%, -6px); } }
@@ -442,3 +443,22 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 }
 .contexto-comodin p { margin: 0 0 18px; line-height: 1.45; }
 .contexto-acciones { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- elegir sexo ---------- */
+.pantalla.eleccion-sexo { --margen-portada: clamp(18px, 6vw, 34px); padding-inline: var(--margen-portada); }
+.eleccion-sexo .titulo { font-size: clamp(2.65rem, 12vw, 4rem); line-height: 1; letter-spacing: -0.065em; margin-top: 10px; }
+.opciones-sexo { margin-top: auto; display: flex; flex-direction: column; border-top: 1px solid var(--tinta); }
+.opciones-sexo button {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 18px 0; background: transparent; border: 0; border-bottom: 1px solid var(--linea);
+  color: var(--tinta); font: clamp(1.9rem, 9vw, 2.6rem)/1.1 var(--serif); letter-spacing: -0.02em;
+  text-align: left; cursor: pointer;
+}
+.opciones-sexo .flecha { font-size: 0.7em; color: var(--tinta-suave); transition: transform 0.2s; }
+.opciones-sexo button:hover .flecha, .opciones-sexo button:focus-visible .flecha { transform: translateX(4px); color: var(--tinta); }
+.opciones-sexo button:active { color: var(--acento); }
+.opciones-sexo button:focus-visible { outline: none; }
+.volver {
+  align-self: flex-start; margin: 20px 0 8px; min-height: 44px; padding: 0;
+  background: transparent; border: 0; color: var(--tinta-suave); font: 1rem var(--sans); cursor: pointer;
+}

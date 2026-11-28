@@ -197,7 +197,7 @@ function guardar() {
   if (partida && !partida.fin) guardarPartida(partida.exportar());
 }
 
-function pintarBarras() {
+function pintarBarras({ conEdad = true } = {}) {
   for (const el of $('barras').children) {
     const id = el.dataset.pilar;
     const v = partida.pilares[id];
@@ -207,8 +207,10 @@ function pintarBarras() {
     el.title = DEBUG ? `${el.getAttribute('aria-label')}: ${v}` : el.getAttribute('aria-label');
   }
   const y = partida.anio;
-  $('edad-anio').textContent = `Año ${y}`;
-  $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
+  if (conEdad) {
+    $('edad-anio').textContent = `Año ${y}`;
+    $('edad-etapa').textContent = etapaDeEdad(datos.config, Math.min(y, 99))?.nombre || '';
+  }
   pintarComodinBoton();
   if (DEBUG) {
     $('debug').hidden = false;
@@ -293,7 +295,8 @@ async function decidir(lado) {
   reproducirEfecto('carta');
   await lanzar($('carta'), lado);
   const resultado = partida.elegir(lado);
-  pintarBarras();
+  // El año no cambia hasta que llega la carta nueva: la sorpresa pertenece a la carta que se acaba de decidir.
+  pintarBarras({ conEdad: !resultado?.sorpresa });
   // La sorpresa ocupa el sitio de la carta y la siguiente espera a que se lea.
   if (resultado?.sorpresa) await mostrarSorpresa(resultado.sorpresa);
   procesarEventos();
@@ -465,6 +468,7 @@ function conectarEventos() {
   $('btn-continuar').addEventListener('click', continuar);
   for (const b of document.querySelectorAll('[data-sexo]')) b.addEventListener('click', () => elegirSexo(b.dataset.sexo));
   $('btn-otra').addEventListener('click', pintarInicio);
+  $('btn-volver-sexo').addEventListener('click', pintarInicio);
   $('btn-comodin').addEventListener('click', abrirComodin);
   $('dlg-cancelar').addEventListener('click', () => $('dialogo-comodin').close());
   $('dlg-usar').addEventListener('click', usarComodin);
