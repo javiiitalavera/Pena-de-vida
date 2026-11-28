@@ -895,8 +895,8 @@
       "derecha": {
         "texto": "Ponerte gorro y callar",
         "efectos": {
-          "dinero": 5,
-          "salud": -10
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "lote": 15

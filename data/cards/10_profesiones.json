@@ -545,8 +545,8 @@
       "izquierda": {
         "texto": "Cambiarle por otra igual",
         "efectos": {
-          "dinero": 5,
-          "cordura": -5
+          "vinculos": 10,
+          "cordura": -10
         }
       },
       "derecha": {
@@ -933,8 +933,8 @@
       "izquierda": {
         "texto": "Patrullar hasta el amanecer",
         "efectos": {
-          "salud": -10,
-          "dinero": 10
+          "vinculos": 10,
+          "salud": -10
         }
       },
       "derecha": {

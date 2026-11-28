@@ -147,7 +147,7 @@ Música («Vals de papel») y tres efectos (carta, comodín y final) en `assets/
 
 En `config.json → dificultad`:
 
-- `volatilidad` y `volatilidad_desde`: multiplica todos los efectos de las decisiones a partir de esa edad (ahora ×1,7 desde el año 0, para compensar que cada carta son dos años).
+- `volatilidad` y `volatilidad_desde`: multiplica todos los efectos de las decisiones a partir de esa edad (ahora ×1,6 desde el año 0, para compensar que cada carta son dos años).
 - `castigo_edad`: a partir de `desde`, las pérdidas se multiplican por `mult` (ahora ×1,3 desde los 65: de viejo cada golpe pesa más).
 - `vista_previa_barras`: con `false` no aparece ningún punto sobre las barras al arrastrar; solo se ve el texto de la opción.
 - `puntos_por_magnitud`: con `false`, los puntos de vista previa son todos del mismo tamaño; sabes qué barra cambia, pero no cuánto.
@@ -160,10 +160,10 @@ Además hay cuatro niveles, elegibles en Ajustes (`config.json → niveles_dific
 
 | Nivel | Puntos al arrastrar | Efectos | Sorpresas | Comodín |
 |---|---|---|---|---|
-| Fácil | sí, sin tamaño | ×1,7 | no | 3 usos |
-| Normal | no | ×1,7 | 25 % | 1 uso |
-| Difícil | no | ×1,95 (vejez ×1,5) | 50 % | no |
-| Modo dios | no, y barras ocultas | ×1,95 (vejez ×1,5) | 50 % | no |
+| Fácil | sí, sin tamaño | ×1,6 | no | 3 usos |
+| Normal | no | ×1,6 | 25 % | 1 uso |
+| Difícil | no | ×1,85 (vejez ×1,5) | 50 % | no |
+| Modo dios | no, y barras ocultas | ×1,85 (vejez ×1,5) | 50 % | no |
 
 Una partida guarda su nivel: si se cambia en Ajustes a mitad de una vida, vale para la siguiente.
 

@@ -56,7 +56,7 @@
   },
   "dificultad": {
     "_nota": "volatilidad: multiplica todos los efectos de las decisiones desde volatilidad_desde. castigo_edad: multiplica las pérdidas desde cierta edad. puntos_por_magnitud: false = todos los puntos de vista previa del mismo tamaño. vista_previa_barras: false = sin puntos sobre las barras al arrastrar.",
-    "volatilidad": 1.7,
+    "volatilidad": 1.6,
     "volatilidad_desde": 0,
     "castigo_edad": {
       "desde": 65,
@@ -88,7 +88,7 @@
         "id": "dificil",
         "nombre": "Difícil",
         "descripcion": "Todo pesa ×1,5 y la vejez castiga ×1,5. La mitad de las decisiones con sorpresa la sufren. Sin comodín.",
-        "volatilidad": 1.95,
+        "volatilidad": 1.85,
         "castigo_edad": {
           "desde": 65,
           "mult": 1.5
@@ -100,7 +100,7 @@
         "id": "dios",
         "nombre": "Modo dios",
         "descripcion": "Como Difícil, pero a ciegas: no ves cómo están tus barras. Solo te enteras al morir.",
-        "volatilidad": 1.95,
+        "volatilidad": 1.85,
         "castigo_edad": {
           "desde": 65,
           "mult": 1.5

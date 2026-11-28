@@ -466,7 +466,7 @@
       "izquierda": {
         "texto": "Comprar los libros",
         "efectos": {
-          "dinero": 10,
+          "vinculos": 10,
           "cordura": -10
         }
       },

@@ -751,7 +751,7 @@
         }
       },
       "derecha": {
-        "texto": "Tragar con la subida",
+        "texto": "Pagar y olvidarte",
         "efectos": {
           "dinero": -10,
           "cordura": 5
