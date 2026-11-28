@@ -476,6 +476,309 @@
         }
       },
       "lote": 17
+    },
+    {
+      "id": "panal_restaurante",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Pañal en el Restaurante",
+      "texto": "Tus padres intentan cenar en un sitio caro fingiendo que siguen siendo personas elegantes. Decides que es el momento perfecto para una catástrofe biológica.",
+      "izquierda": {
+        "texto": "Arruinar el primer plato",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Desalojó la terraza de un restaurante antes de cumplir dos años."
+      },
+      "derecha": {
+        "texto": "Aguantar hasta el coche",
+        "efectos": {
+          "salud": -5,
+          "vinculos": 10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "llaves_coche",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "Las Llaves del Coche",
+      "texto": "Tus padres te dan el manojo de llaves para que te calles en la cola del súper. Llevan diez años tocando suelos y bolsillos, y brillan muchísimo.",
+      "izquierda": {
+        "texto": "Chupar el llavero",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "salud": 10,
+            "cordura": 5
+          },
+          "mensaje": "Adquieres inmunidad contra doce cepas desconocidas."
+        }
+      },
+      "derecha": {
+        "texto": "Tirarlas debajo de la caja",
+        "efectos": {
+          "cordura": 5,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "cortar_unas",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "Las Tijeras de Uñas",
+      "texto": "Tu madre te agarra la mano con unas tijeras diminutas y la concentración de quien desactiva una bomba.",
+      "izquierda": {
+        "texto": "Retorcerte como una anguila",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Dejarte hacer",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "rey_mago_comercial",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Rey Mago del Centro Comercial",
+      "texto": "Te sientan en las rodillas de un señor sudoroso con barba de algodón que huele a tabaco y desesperación laboral.",
+      "izquierda": {
+        "texto": "Tirarle de la barba",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Posar llorando",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "supositorio",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Supositorio",
+      "texto": "Tienes 38,5 de fiebre y tu padre entra en tu cuarto con cara de circunstancias y algo plateado escondido en la mano.",
+      "izquierda": {
+        "texto": "Pelear por tu dignidad",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Aceptar la derrota",
+        "efectos": {
+          "salud": 15,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "pasillo_congelados",
+      "tipo": "etapa",
+      "etapa": "0-3",
+      "nombre": "El Pasillo de los Congelados",
+      "texto": "Te sueltas de la mano de tu madre en el súper para mirar una pirámide de latas de atún. Cuando te giras, solo hay desconocidos.",
+      "izquierda": {
+        "texto": "Aullar hasta megafonía",
+        "efectos": {
+          "vinculos": -5,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Seguir a otra señora",
+        "efectos": {
+          "salud": -10,
+          "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "vinculos": 10,
+            "cordura": 5
+          },
+          "mensaje": "La otra señora te compra un bollo mientras localizan a tu madre."
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "nombre_antiguo",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "El Nombre del Abuelo",
+      "personaje": "abuela",
+      "texto": "Tu abuela insiste en que te pongan el nombre de un antepasado que suena a notario de 1940. Tus padres no se atreven a llevarle la contraria.",
+      "izquierda": {
+        "texto": "Llorar al oírlo",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        }
+      },
+      "derecha": {
+        "texto": "Aceptar el nombre de 1940",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        },
+        "hito_biografico": "Nació con un nombre que ya sonaba viejo en la posguerra."
+      },
+      "lote": 18
+    },
+    {
+      "id": "habitacion_compartida",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "La Habitación Compartida",
+      "personaje": "padres",
+      "texto": "En la maternidad pública compartes cuarto con otra familia que ha traído a dieciocho primos y una fiambrera de croquetas.",
+      "izquierda": {
+        "texto": "Llorar más fuerte que ellos",
+        "efectos": {
+          "salud": -5,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Dormir entre el jaleo",
+        "efectos": {
+          "salud": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "test_apgar",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "El Test de Apgar",
+      "personaje": "obstetra",
+      "texto": "Te ponen un 9 sobre 10 al nacer. Tu padre ya está preguntando al médico qué ha faltado para el 10.",
+      "izquierda": {
+        "texto": "Mear al médico",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "sorpresa": {
+          "probabilidad": 0.25,
+          "efectos": {
+            "cordura": -5,
+            "vinculos": -10
+          },
+          "mensaje": "El médico te baja a un 8. Tu padre suspira en silencio."
+        }
+      },
+      "derecha": {
+        "texto": "Dar buena impresión",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "corte_cordon",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "El Corte del Cordón",
+      "personaje": "padre",
+      "texto": "La matrona le ofrece las tijeras a tu padre para cortar el cordón umbilical. Está más blanco que la bata del médico y le tiembla el pulso.",
+      "izquierda": {
+        "texto": "Patalear en el momento clave",
+        "efectos": {
+          "salud": -10,
+          "cordura": 10
+        }
+      },
+      "derecha": {
+        "texto": "Quedarte quiet{o/a}",
+        "efectos": {
+          "salud": 10,
+          "cordura": -5
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "primera_foto",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "La Primera Foto",
+      "personaje": "padres",
+      "texto": "Llevas cuatro minutos fuera y pareces una patata arrugada, pero tus padres ya están mandando tu foto al grupo de WhatsApp familiar.",
+      "izquierda": {
+        "texto": "Sacar la lengua",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -5
+        }
+      },
+      "derecha": {
+        "texto": "Cerrar los ojos y dormir",
+        "efectos": {
+          "salud": 10,
+          "vinculos": -10
+        }
+      },
+      "lote": 18
+    },
+    {
+      "id": "carnet_equipo",
+      "tipo": "ancla",
+      "anio": 0,
+      "grupo": "nacimiento",
+      "nombre": "El Carnet de Socio",
+      "personaje": "tio",
+      "texto": "Tu tío aparece en el hospital con el carnet de socio de su equipo de fútbol antes de que tengas siquiera DNI.",
+      "izquierda": {
+        "texto": "Vomitar sobre la bufanda",
+        "efectos": {
+          "cordura": 10,
+          "vinculos": -10
+        },
+        "hito_biografico": "Rechazó el fútbol a los veinte minutos de nacer."
+      },
+      "derecha": {
+        "texto": "Agarrar el carnet",
+        "efectos": {
+          "vinculos": 10,
+          "cordura": -10
+        }
+      },
+      "lote": 18
     }
   ]
 }
