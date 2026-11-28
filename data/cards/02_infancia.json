@@ -20,6 +20,7 @@
           "dinero": -5,
           "vinculos": 10
         },
+        "consecuencia": "Tus padres guardan el sobre en un cajón que nunca volverás a ver abierto.",
         "add_flags": [
           "sobre_comunion"
         ]

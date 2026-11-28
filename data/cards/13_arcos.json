@@ -20,6 +20,7 @@
           "dinero": 10,
           "vinculos": -10
         },
+        "consecuencia": "Tu madre no dice nada, pero acaba de guardarte rencor para décadas.",
         "remove_flags": [
           "sobre_comunion"
         ],
@@ -81,6 +82,7 @@
           "salud": -10,
           "vinculos": 10
         },
+        "consecuencia": "Os hacéis amigos para siempre, con todo lo que eso implica.",
         "add_flags": [
           "amigo_descampado"
         ]
@@ -91,6 +93,7 @@
           "salud": 5,
           "vinculos": -10
         },
+        "consecuencia": "Acabas de fabricarte un enemigo con muy buena memoria.",
         "add_flags": [
           "enemigo_descampado"
         ]
@@ -115,6 +118,7 @@
           "dinero": -15,
           "vinculos": 10
         },
+        "consecuencia": "Ahora te debe dinero, que es la forma más rápida de no volver a verle.",
         "add_flags": [
           "amigo_moroso"
         ]
@@ -203,6 +207,7 @@
           "dinero": 10,
           "salud": -10
         },
+        "consecuencia": "Tu jefe entiende enseguida que contigo puede apretar sin consecuencias.",
         "add_flags": [
           "jefe_sumiso"
         ]
@@ -213,6 +218,7 @@
           "salud": 10,
           "dinero": -10
         },
+        "consecuencia": "Tu jefe te apunta el nombre y no volverá a olvidarlo.",
         "add_flags": [
           "jefe_rebelde"
         ]

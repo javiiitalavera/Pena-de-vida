@@ -815,6 +815,7 @@
           "dinero": 10,
           "vinculos": -10
         },
+        "consecuencia": "Al final no eran cosas de la edad: te quedas viud{o/a} y con la casa vacía.",
         "hito_biografico": "Respetó la cabezonería médica de su pareja hasta las últimas consecuencias.",
         "remove_flags": [
           "casado"

@@ -114,6 +114,7 @@
           "dinero": -15,
           "vinculos": 10
         },
+        "consecuencia": "Ya estás casad{o/a}: ahora el aburrimiento es oficial ante notario.",
         "add_flags": [
           "casado"
         ],
@@ -127,6 +128,7 @@
           "dinero": 10,
           "vinculos": -10
         },
+        "consecuencia": "Sigues solter{o/a} y confirmas que la soledad sale bastante más barata.",
         "add_flags": [
           "soltero"
         ]
@@ -265,6 +267,7 @@
           "dinero": -15,
           "vinculos": 10
         },
+        "consecuencia": "Vas a tener un hijo y ya es demasiado tarde para arrepentirse.",
         "hito_biografico": "Tuvo descendencia por presión social.",
         "add_flags": [
           "con_hijos"
@@ -490,6 +493,7 @@
           "cordura": 10,
           "dinero": -15
         },
+        "consecuencia": "Ya eres autónom{o/a}: trabajas para ti, pero cobras después de Hacienda.",
         "hito_biografico": "Se hizo autónom{o/a} en España por voluntad propia.",
         "add_flags": [
           "autonomo"
@@ -639,6 +643,7 @@
           "salud": -10,
           "vinculos": 10
         },
+        "consecuencia": "Te llevas una hernia discal que te acompañará el resto de tu vida.",
         "add_flags": [
           "hernia_discal"
         ]

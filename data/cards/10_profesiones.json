@@ -33,6 +33,7 @@
           "dinero": 10,
           "salud": -10
         },
+        "consecuencia": "Ya eres médic{o/a}: te esperan décadas de guardias y familiares enfadados.",
         "hito_biografico": "Sobrevivió al MIR para acabar haciendo guardias de 24 horas.",
         "add_flags": [
           "medico"
@@ -180,6 +181,7 @@
           "dinero": 10,
           "cordura": -15
         },
+        "consecuencia": "Ya eres funcionari{o/a}: tienes el sueldo asegurado y el tedio también.",
         "hito_biografico": "Aprobó una oposición y dejó de mirar el reloj a las 14:30.",
         "add_flags": [
           "funcionario"
@@ -327,6 +329,7 @@
           "dinero": 10,
           "cordura": -10
         },
+        "consecuencia": "Ya eres profesor{/a} de instituto; tu voz no volverá a ser la misma.",
         "add_flags": [
           "profesor"
         ],
@@ -473,6 +476,7 @@
           "dinero": 10,
           "salud": -10
         },
+        "consecuencia": "Empiezas en la hostelería y te despides de los fines de semana.",
         "add_flags": [
           "hosteleria"
         ],
@@ -621,6 +625,7 @@
           "dinero": 10,
           "cordura": -10
         },
+        "consecuencia": "Ya eres informátic{o/a}: pasarás el resto de tu vida mirando una pantalla.",
         "add_flags": [
           "informatico"
         ],

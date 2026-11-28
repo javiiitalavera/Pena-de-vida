@@ -38,6 +38,7 @@
           "vinculos": 10,
           "dinero": -15
         },
+        "consecuencia": "Ya tienes hipoteca: el piso es del banco, pero las derramas son tuyas.",
         "add_flags": [
           "hipoteca"
         ]
@@ -65,6 +66,7 @@
           "dinero": -15,
           "vinculos": 10
         },
+        "consecuencia": "Metes tus ahorros en criptomonedas y empiezas a dormir peor que antes.",
         "add_flags": [
           "criptobro"
         ],
@@ -196,6 +198,7 @@
           "dinero": -10,
           "cordura": 10
         },
+        "consecuencia": "Te divorcias tras meses de facturas, pero conservas la Thermomix.",
         "add_flags": [
           "divorciado"
         ],
@@ -209,6 +212,7 @@
           "dinero": -15,
           "salud": 10
         },
+        "consecuencia": "Firmas el divorcio y te quedas con una casa demasiado silenciosa.",
         "add_flags": [
           "divorciado"
         ],

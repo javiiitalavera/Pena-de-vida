@@ -479,7 +479,9 @@ export class Partida {
       if (Number.isFinite(op.fin_anio)) this.fin.anio = op.fin_anio;
     }
     if (!this.fin) this.avanzar();
-    return { deltas, sorpresa: sorpresa ? this.texto(sorpresa.mensaje) : null };
+    // La consecuencia narra un cambio de vida (flags). No sale si la sorpresa trae sus propios flags.
+    const consecuencia = op.consecuencia && !sorpresa?.add_flags ? this.texto(op.consecuencia) : null;
+    return { deltas, sorpresa: sorpresa ? this.texto(sorpresa.mensaje) : null, consecuencia };
   }
 
   // ---------- comodín ----------

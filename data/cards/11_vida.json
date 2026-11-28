@@ -23,6 +23,7 @@
           "dinero": -15,
           "vinculos": 10
         },
+        "consecuencia": "Ya estás casad{o/a}, con los papeles en regla y la rutina compartida.",
         "hito_biografico": "Se casó para no perder la señal del banquete.",
         "add_flags": [
           "casado"
@@ -37,6 +38,7 @@
           "dinero": 10,
           "vinculos": -15
         },
+        "consecuencia": "Sigues solter{o/a}, con el banquete sin pagar y media familia sin hablarte.",
         "hito_biografico": "Dejó plantada a su pareja en el altar.",
         "add_flags": [
           "soltero"
@@ -63,6 +65,7 @@
           "dinero": -15,
           "vinculos": 10
         },
+        "consecuencia": "Vais a tener un hijo; tu vida acaba de pasar a segundo plano.",
         "hito_biografico": "Decidió reproducirse a pesar de conocer el precio de la vivienda.",
         "add_flags": [
           "con_hijos"
@@ -108,6 +111,7 @@
           "cordura": 5,
           "vinculos": -10
         },
+        "consecuencia": "Nace tu hijo y descubres que a partir de hoy nunca volverás a descansar.",
         "add_flags": [
           "con_hijos"
         ],
@@ -122,6 +126,7 @@
           "cordura": -10,
           "vinculos": 10
         },
+        "consecuencia": "Nace tu hijo tras horas de dolor que nadie te va a agradecer nunca.",
         "hito_biografico": "Llamó 'escoria' a un anestesista durante un parto natural.",
         "add_flags": [
           "con_hijos"

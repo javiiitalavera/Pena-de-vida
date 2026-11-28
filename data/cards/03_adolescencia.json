@@ -128,6 +128,7 @@
           "salud": -10,
           "vinculos": 10
         },
+        "consecuencia": "Toses en el primer cigarro, pero ya tienes algo que hacer para los próximos treinta años.",
         "add_flags": [
           "fumador"
         ]

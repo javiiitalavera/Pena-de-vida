@@ -149,3 +149,7 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
     }
   }
 }
+// consecuencias: frase al ganar un estado de vida
+{ const c=datos.cartas.find(x=>x.id==='oposicion'); const p=new Partida(datos,{sexo:'F',rng:()=>0.99}); p.carta=c; const r=p.elegir('izquierda');
+  assert(r.consecuencia==='Ya eres funcionaria: tienes el sueldo asegurado y el tedio también.' && p.flags.has('funcionario'),'consecuencia con género al hacerse funcionaria');
+  const q=new Partida(datos,{sexo:'M',rng:()=>0.99}); q.carta=c; assert(!q.elegir('derecha').consecuencia,'sin consecuencia en la otra opción'); }

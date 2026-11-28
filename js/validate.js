@@ -88,6 +88,7 @@ export function validar(datos) {
         if (!cartas.some((x) => x.id === e.id)) err(c, `${lado}: encola "${e.id}", que no existe`);
       }
       if (op.fin && op.fin !== true && op.fin !== 'centenario') err(c, `${lado}: "fin" debe ser "centenario"`);
+      if (op.consecuencia && !(op.add_flags?.length || op.add_flags_por_sexo)) av(c, `${lado}: consecuencia sin flags que cambien`);
       if (op.sorpresa) {
         const s = op.sorpresa;
         if (!(s.probabilidad > 0 && s.probabilidad <= 1)) err(c, `${lado}: sorpresa.probabilidad debe estar entre 0 y 1`);

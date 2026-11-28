@@ -198,6 +198,7 @@
           "dinero": 15,
           "cordura": -10
         },
+        "consecuencia": "Te dan una tarjeta de acceso y un sitio fijo bajo un tubo fluorescente.",
         "add_flags": [
           "oficinista"
         ]
@@ -208,6 +209,7 @@
           "dinero": -10,
           "cordura": 10
         },
+        "consecuencia": "Vuelves a la cola del paro con la conciencia limpia y el bolsillo vacío.",
         "add_flags": [
           "desempleado"
         ]
@@ -269,6 +271,7 @@
           "dinero": -15,
           "vinculos": 15
         },
+        "consecuencia": "Empiezas el embarazo sola, con nueve meses por delante y nadie al otro lado.",
         "add_flags": [
           "embarazada"
         ],
@@ -400,6 +403,7 @@
           "dinero": 15,
           "cordura": -10
         },
+        "consecuencia": "Firmas el contrato y te conviertes oficialmente en un número de emplead{o/a}.",
         "add_flags": [
           "oficinista"
         ],
@@ -413,6 +417,7 @@
           "cordura": 10,
           "dinero": -10
         },
+        "consecuencia": "Te quedas en el paro, con todo el tiempo del mundo y nada que hacer.",
         "add_flags": [
           "desempleado"
         ]

@@ -301,9 +301,10 @@ async function decidir(lado) {
   const resultado = partida.elegir(lado);
   anunciarDesbloqueosPorEdad();
   // El año no cambia hasta que llega la carta nueva: la sorpresa pertenece a la carta que se acaba de decidir.
-  pintarBarras({ conEdad: !resultado?.sorpresa });
+  pintarBarras({ conEdad: !resultado?.sorpresa && !resultado?.consecuencia });
   // La sorpresa ocupa el sitio de la carta y la siguiente espera a que se lea.
   if (resultado?.sorpresa) await mostrarSorpresa(resultado.sorpresa);
+  if (resultado?.consecuencia) await mostrarSorpresa(resultado.consecuencia);
   procesarEventos();
   if (partida.fin) return setTimeout(acabar, 350);
   siguiente();
