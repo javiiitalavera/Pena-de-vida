@@ -315,30 +315,34 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
 
 #pantalla-necrologica { gap: 16px; align-items: center; }
 .necrologica {
+  /* Mismo papel que Ajustes y el comodín: borde fino, esquinas rectas, alineado a la izquierda. */
   background: var(--papel);
   color: var(--papel-tinta);
   font-family: var(--serif);
   width: 100%;
-  padding: 24px 20px;
-  border: 3px double var(--papel-tinta);
-  outline: 6px solid var(--papel);
-  text-align: center;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--papel-tinta);
+  border-radius: 0;
+  text-align: left;
   margin-top: 8px;
 }
 .necrologica.centenario { border-color: #8a6d1f; }
-.necro-cabecera { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; margin: 0 0 12px; }
-.necro-cruz { font-size: 1.6rem; margin: 0; }
-.necro-rango { font-size: 2rem; margin: 4px 0 2px; }
-.necro-sub { font-style: italic; font-size: 0.9rem; margin: 0 0 16px; }
-.necro-seccion { border-top: 1px solid rgba(29, 26, 20, 0.35); padding-top: 12px; margin-top: 12px; }
-.necro-seccion h4 { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; margin: 0 0 8px; font-weight: normal; }
+.necro-cabecera { font: 600 0.83rem/1.3 var(--sans); margin: 0 0 6px; }
+.necro-cruz { font-size: 1.4rem; line-height: 1; margin: 0 0 4px; }
+.necro-rango {
+  font-size: 1.75rem; font-weight: bold; line-height: 1.1; letter-spacing: -0.025em;
+  margin: 0; padding-bottom: 10px; border-bottom: 2px solid var(--papel-tinta);
+}
+.necro-sub { font-style: italic; font-size: 0.95rem; margin: 10px 0 4px; color: rgba(29, 26, 20, 0.75); }
+.necro-seccion { border-top: 1px solid #bfb29d; padding-top: 12px; margin-top: 14px; }
+.necro-seccion h4 { font: 600 0.83rem/1.3 var(--sans); margin: 0 0 8px; }
 .necro-causa { font-size: 1rem; line-height: 1.45; margin: 0; }
-.necro-hitos { list-style: none; padding: 0; margin: 0; text-align: left; font-size: 0.92rem; line-height: 1.4; }
-.necro-hitos li { display: grid; grid-template-columns: 4.3em 1fr; gap: 6px; margin-bottom: 6px; }
-.necro-hitos b { font-weight: normal; font-variant-numeric: tabular-nums; opacity: 0.7; }
+.necro-hitos { list-style: none; padding: 0; margin: 0; font-size: 0.95rem; line-height: 1.4; }
+.necro-hitos li { display: grid; grid-template-columns: 4.3em 1fr; gap: 6px; padding: 6px 0; border-bottom: 1px solid #bfb29d; }
+.necro-hitos li:last-child { border-bottom: 0; padding-bottom: 0; }
+.necro-hitos b { font: 600 0.8rem/1.6 var(--sans); font-variant-numeric: tabular-nums; }
 .necro-vacio { font-style: italic; opacity: 0.7; margin: 0; }
-.necro-remate { font-style: italic; font-size: 0.95rem; line-height: 1.4; margin: 0 0 8px; }
-.necro-remate:last-child { margin-bottom: 0; }
+#btn-otra { border-radius: 0; }
 .desbloqueos { text-align: center; color: var(--acento); font-size: 0.95rem; }
 .desbloqueos:empty { display: none; }
 

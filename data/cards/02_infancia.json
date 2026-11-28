@@ -235,7 +235,7 @@
           "salud": -10,
           "vinculos": 10
         },
-        "hito_biografico": "Fue {el/la} paciente cero de un brote de piojos en 3º de Primaria.",
+        "hito_biografico": "Fue {el/la} paciente cero de un brote de piojos en el colegio.",
         "sorpresa": {
           "probabilidad": 0.25,
           "efectos": {
@@ -497,7 +497,7 @@
           "cordura": 10,
           "vinculos": -5
         },
-        "hito_biografico": "Falsificó su primera firma a los nueve años.",
+        "hito_biografico": "Falsificó su primera firma antes de saber dividir.",
         "sorpresa": {
           "probabilidad": 0.25,
           "efectos": {
