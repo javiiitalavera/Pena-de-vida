@@ -359,7 +359,7 @@ function siguienteAviso() {
 // Se cierra al tocar la pantalla o pulsar una tecla, o sola a los 3,5 s.
 function mostrarSorpresa(texto) {
   const el = $('sorpresa');
-  el.innerHTML = `<span class="sorpresa-titulo">Sorpresa</span>${escapar(texto)}`;
+  el.textContent = texto;
   el.hidden = false;
   return new Promise((resolver) => {
     const cerrar = () => {
@@ -436,14 +436,13 @@ function acabar() {
     <p class="necro-sub">${n.sexo === 'F' ? 'Mujer' : 'Hombre'}${n.rasgo ? ` · ${escapar(n.rasgo)}` : ''}${partida.nivel && partida.nivel !== 'normal' ? ` · ${escapar(nivelDificultad(datos.config, partida.nivel).nombre)}` : ''}</p>
     <section class="necro-seccion"><h4>${escapar(n.titulo || 'Causa de la muerte')}</h4><p class="necro-causa">${escapar(n.texto)}</p></section>
     <section class="necro-seccion"><h4>Hitos biográficos</h4>${hitos}</section>`;
-  const nombres = (clase) => nuevos.filter((x) => x._clase === clase).map((x) => aplicarGenero(x.nombre, partida.sexo)).join(', ');
   // Desbloqueos de esta vida: los de edad se anunciaron durante la partida; aquí van todos juntos.
   const todos = [...desbloqueadosEnPartida, ...nuevos];
-  $('desbloqueos').innerHTML = todos.length
-    ? `<h4>Desbloqueado</h4>${todos
-        .map((x) => `<p><b>${escapar(aplicarGenero(x.nombre, partida.sexo))}</b><span>${x._clase === 'rasgo' ? 'Rasgo' : 'Comodín'} · ${escapar(aplicarGenero(x.descripcion || x.ventaja || '', partida.sexo))}</span></p>`)
-        .join('')}`
-    : '';
+  const nombres = (clase) => todos.filter((x) => x._clase === clase).map((x) => aplicarGenero(x.nombre, partida.sexo)).join(', ');
+  $('desbloqueos').textContent = [
+    nombres('rasgo') && `Nuevo rasgo desbloqueado: ${nombres('rasgo')}`,
+    nombres('comodin') && `Nuevo comodín desbloqueado: ${nombres('comodin')}`,
+  ].filter(Boolean).join(' · ');
   mostrar('pantalla-necrologica');
   $('pantalla-necrologica').scrollTop = 0;
 }
