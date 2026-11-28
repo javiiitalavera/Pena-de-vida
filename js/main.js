@@ -71,7 +71,7 @@ function pintarInicio() {
   const guardada = cargarPartida();
   $('btn-continuar').hidden = !guardada;
   $('btn-nueva').classList.toggle('primario', !guardada);
-  if (guardada) $('btn-continuar').textContent = `Continuar vida · Año ${Math.floor(guardada.edad)}`;
+  if (guardada) $('btn-continuar').textContent = `Continuar · Año ${Math.floor(guardada.edad)}`;
   $('stats-inicio').textContent = p.partidas
     ? `${p.partidas} ${p.partidas === 1 ? 'vida' : 'vidas'} · récord: ${p.record} años${p.centenarios ? ` · ${p.centenarios} centenari${p.centenarios === 1 ? 'o' : 'os'}` : ''}`
     : '';
@@ -457,7 +457,7 @@ function describirNivel() {
 // ---------- arranque ----------
 
 function conectarEventos() {
-  for (const b of document.querySelectorAll('.icono-btn.ajustes')) b.innerHTML = icono('ajustes');
+  for (const b of document.querySelectorAll('.icono-btn.ajustes, .portada-ajustes')) b.innerHTML = icono('ajustes');
   pintarSelectorNivel();
   for (const b of document.querySelectorAll('[data-ajustes]')) b.addEventListener('click', describirNivel);
   prepararAudio();

@@ -67,28 +67,29 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   text-transform: none;
 }
 .portada-arte {
-  margin: 14px 0 12px;
-  width: 100%;
+  /* La ilustración sale de borde a borde, sin los márgenes de la portada. */
+  margin: 14px calc(-1 * var(--margen-portada)) 12px;
+  width: calc(100% + 2 * var(--margen-portada));
   flex: 1 1 auto;
   min-height: 96px;
-  max-height: min(470px, calc(100vw - 2 * var(--margen-portada)));
+  max-height: min(520px, 100vw);
   display: grid;
   place-items: center;
   overflow: hidden;
 }
 .portada-arte img {
   height: 100%;
-  max-height: calc(100vw - 2 * var(--margen-portada));
+  max-height: 100vw;
   max-width: 100%;
   aspect-ratio: 1;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 .portada-botones {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 4px 16px;
+  gap: clamp(8px, 3vw, 16px);
   padding-top: 12px;
   border-top: 1px solid currentColor;
 }
@@ -108,7 +109,9 @@ h2 { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; margin: 
   border-color: var(--tinta);
 }
 .portada-botones .btn:not(.primario), .portada-ajustes { padding-inline: 0; }
-.portada-ajustes { margin-left: auto; }
+.portada-ajustes { margin-left: auto; display: inline-flex; align-items: center; justify-content: center; width: 44px; padding: 0 !important; }
+.portada-ajustes .icono { width: 24px; height: 24px; }
+.portada-botones .btn { white-space: nowrap; font-size: clamp(0.82rem, 3.9vw, 1rem); }
 .portada-botones .btn:hover, .portada-ajustes:hover { text-decoration: underline; }
 .portada-pie { margin-top: 8px; }
 .portada-pie .stats { color: var(--tinta-suave); font-size: 0.78rem; }
