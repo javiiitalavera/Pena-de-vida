@@ -203,6 +203,10 @@
       "id": "herencia_padres",
       "tipo": "etapa",
       "etapa": "50-69",
+      "edad": [
+        56,
+        69
+      ],
       "nombre": "La Herencia de tus Padres",
       "personaje": "hermano",
       "texto": "Tu hermano dice que el piso de la playa debería ser suyo porque él les llevaba al médico, aunque tú pagaste la caldera.",
@@ -764,7 +768,11 @@
     {
       "id": "cuidador_padres",
       "tipo": "etapa",
-      "etapa": "50-69",
+      "etapa": "30-69",
+      "edad": [
+        44,
+        56
+      ],
       "nombre": "{El Cuidador/La Cuidadora}",
       "personaje": "padres",
       "texto": "Tus padres ya no pueden solos y te toca llevarles al médico, hacerles la compra y escuchar que 'antes los jóvenes tenían más paciencia'.",

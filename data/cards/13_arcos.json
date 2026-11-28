@@ -43,7 +43,11 @@
     {
       "id": "herencia_mama",
       "tipo": "etapa",
-      "etapa": "55-69",
+      "etapa": "50-69",
+      "edad": [
+        50,
+        60
+      ],
       "nombre": "La Herencia de Mamá",
       "personaje": "madre",
       "texto": "Tu madre reparte sus cosas en vida. A ti te deja un juego de café descascarillado y una nota: 'Para que no digas que no te guardo las cosas'.",
