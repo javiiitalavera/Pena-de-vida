@@ -5,6 +5,10 @@
       "id": "examen_mir",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        24,
+        29
+      ],
       "nombre": "El Examen MIR",
       "personaje": "opositor_mir",
       "texto": "Llevas seis años estudiando medicina y ahora te encierras once meses en una habitación sin luz natural para competir por un sueldo de mileurista con guardias.",
@@ -148,6 +152,10 @@
       "id": "oposicion",
       "tipo": "etapa",
       "etapa": "18-49",
+      "edad": [
+        21,
+        49
+      ],
       "nombre": "La Oposición",
       "personaje": "madre",
       "texto": "Tu madre insiste en que te saques una plaza fija. El temario son 140 temas de Derecho Administrativo redactados por alguien que odia la alegría.",
@@ -291,6 +299,10 @@
       "id": "master_profesorado",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        22,
+        29
+      ],
       "nombre": "El Máster de Profesorado",
       "personaje": "instituto",
       "texto": "Tu carrera no tiene salidas, así que decides dar clase en un instituto. Te esperan dos meses de vacaciones al año y treinta adolescentes con déficit de atención.",
@@ -433,6 +445,10 @@
       "id": "temporada_verano",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        18,
+        26
+      ],
       "nombre": "La Temporada de Verano",
       "personaje": "dueno_bar",
       "texto": "El dueño de un bar te ofrece 'un contrato de 20 horas' en el que trabajarás 60, con horario partido y media paga en un sobre marrón.",
@@ -577,6 +593,10 @@
       "id": "bootcamp",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        21,
+        29
+      ],
       "nombre": "El Bootcamp",
       "personaje": "bootcamp",
       "texto": "Te prometen que en doce semanas programarás en Python y cobrarás 60.000€ desde una playa en Bali.",

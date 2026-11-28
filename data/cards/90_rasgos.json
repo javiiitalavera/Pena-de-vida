@@ -91,6 +91,10 @@
       "id": "ano_sabatico",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        21,
+        23
+      ],
       "nombre": "El Año Sabático",
       "personaje": "madre",
       "texto": "Tienes 22 años y todavía no sabes qué hacer con tu vida, así que decides irte seis meses a Australia 'a encontrarte' con la tarjeta de tu madre.",

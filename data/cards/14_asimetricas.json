@@ -51,6 +51,10 @@
       "id": "gripe_noviembre",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        22,
+        29
+      ],
       "nombre": "La Gripe de Noviembre",
       "personaje": "termometro",
       "texto": "Tienes 38,5 de fiebre, te duele hasta el pelo y mañana entregas un proyecto clave en el trabajo.",
@@ -97,6 +101,10 @@
       "id": "subida_alquiler",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        23,
+        29
+      ],
       "nombre": "La Subida del Alquiler",
       "personaje": "casero",
       "texto": "El casero te sube el alquiler un 40% porque 'el barrio se está poniendo de moda'. Tienes quince días para decidir.",

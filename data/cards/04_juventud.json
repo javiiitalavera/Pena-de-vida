@@ -4,6 +4,10 @@
       "id": "casero_humedades",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        20,
+        29
+      ],
       "edad_sugerida": 21,
       "nombre": "El Casero",
       "personaje": "casero",
@@ -36,6 +40,10 @@
       "id": "rrhh_junior_senior",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        22,
+        29
+      ],
       "edad_sugerida": 26,
       "nombre": "Recursos Humanos",
       "personaje": "rrhh",
@@ -68,6 +76,10 @@
       "id": "pareja_bali",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        24,
+        29
+      ],
       "edad_sugerida": 28,
       "nombre": "Tu Pareja",
       "personaje": "pareja",
@@ -92,6 +104,10 @@
       "id": "erasmus",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        19,
+        24
+      ],
       "nombre": "La Beca Erasmus",
       "personaje": "erasmus",
       "texto": "Llevas seis meses en Polonia. No has pisado la facultad, pero hablas polaco fluido solo para pedir cerveza y kebab.",
@@ -124,6 +140,10 @@
       "id": "amigo_emprendedor",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        23,
+        29
+      ],
       "nombre": "El Amigo Emprendedor",
       "personaje": "amigo_emprendedor",
       "texto": "Ha dejado el trabajo para montar una app que es 'como Uber, pero para pasear iguanas'. Necesita 3.000€ tuyos.",
@@ -155,6 +175,10 @@
       "id": "entrevista_trabajo",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        21,
+        29
+      ],
       "nombre": "La Entrevista de Trabajo",
       "personaje": "entrevistador",
       "texto": "Te preguntan 'dónde te ves dentro de cinco años'. Tienes ganas de contestar 'en un puente, si sigo cobrando esto'.",
@@ -194,6 +218,10 @@
       "id": "piso_compartido",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        20,
+        29
+      ],
       "nombre": "El Piso Compartido",
       "personaje": "companero_piso",
       "texto": "Tu compañero de piso ha traído a su pareja a vivir 'solo unos días'. Llevan cuatro meses y no pagan la luz.",
@@ -225,6 +253,10 @@
       "id": "test_embarazo",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        20,
+        29
+      ],
       "nombre": "El Test de Embarazo",
       "personaje": "test_embarazo",
       "texto": "Han salido dos rayas. Tu pareja acaba de decir que 'va a bajar a por tabaco' y ni siquiera fuma.",
@@ -260,6 +292,10 @@
       "id": "coronilla",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        22,
+        29
+      ],
       "nombre": "La Coronilla",
       "personaje": "mejor_amigo",
       "texto": "Te haces una foto de espaldas en la playa y descubres un claro preocupante en la nuca. Tu amigo ya te ha pasado el contacto de una clínica en Estambul.",
@@ -313,6 +349,10 @@
       "id": "entrevista_trabajo_f",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        24,
+        29
+      ],
       "nombre": "La Entrevista de Trabajo",
       "personaje": "rrhh",
       "texto": "El director de Recursos Humanos mira tu edad en el currículum y te pregunta con una sonrisa paternalista si 'tienes planes de formar una familia pronto'.",
@@ -383,6 +423,10 @@
       "id": "clases_particulares",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        18,
+        24
+      ],
       "nombre": "Clases Particulares",
       "personaje": "nino_rico",
       "texto": "Los padres de un niño rico te pagan 25€ la hora en negro por darle clases de Matemáticas de 2º de la ESO. No te acuerdas de hacer una ecuación de segundo grado.",
@@ -406,6 +450,10 @@
       "id": "chollo_beca",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        18,
+        24
+      ],
       "nombre": "El Chollo de la Beca",
       "personaje": "ministerio",
       "texto": "Te conceden 1.800€ de beca para material universitario y transporte. Puedes comprar los libros o irte de festival y renovar la consola.",
@@ -453,6 +501,10 @@
       "id": "apuntes_oro",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        18,
+        24
+      ],
       "nombre": "Apuntes a Precio de Oro",
       "personaje": "facultad",
       "texto": "Tienes los exámenes filtrados de los últimos cinco años de una asignatura imposible. La mitad de la facultad te ofrece dinero por el PDF.",
@@ -476,6 +528,10 @@
       "id": "figurante",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        18,
+        26
+      ],
       "nombre": "El Figurante",
       "personaje": "rodaje",
       "texto": "Buscan extras para rodar un anuncio de una aseguradora a las cinco de la mañana bajo la lluvia artificial. Pagan 120€ y un bocadillo de chóped.",

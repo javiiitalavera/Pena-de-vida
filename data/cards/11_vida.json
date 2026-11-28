@@ -5,6 +5,10 @@
       "id": "boda",
       "tipo": "etapa",
       "etapa": "18-49",
+      "edad": [
+        24,
+        49
+      ],
       "nombre": "La Boda",
       "personaje": "suegra",
       "texto": "Llevas seis meses discutiendo por las flores, tu suegra ha invitado a cuarenta primos del pueblo y el cura parece tener más resaca que tú.",

@@ -96,6 +96,10 @@
       "id": "proposicion",
       "tipo": "etapa",
       "etapa": "18-49",
+      "edad": [
+        24,
+        49
+      ],
       "nombre": "La Proposición",
       "personaje": "pareja",
       "texto": "Lleváis cinco años juntos y te saca el tema de la boda 'por los papeles y porque hace ilusión'. Tus padres ya están mirando restaurantes.",
@@ -463,6 +467,10 @@
       "id": "alta_autonomo",
       "tipo": "etapa",
       "etapa": "18-49",
+      "edad": [
+        24,
+        49
+      ],
       "nombre": "Darse de Alta",
       "personaje": "gestor",
       "texto": "Estás hart{o/a} de tener jefes y decides trabajar por tu cuenta. Tu gestor te mira con la misma pena que un veterinario antes de sacrificar un perro.",

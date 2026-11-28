@@ -190,6 +190,10 @@
       "id": "primer_jefe",
       "tipo": "etapa",
       "etapa": "18-29",
+      "edad": [
+        21,
+        29
+      ],
       "nombre": "El Primer Jefe",
       "personaje": "primer_jefe",
       "texto": "Tu primer jefe te da una palmada en la espalda y dice que 'aquí somos una familia', justo antes de pedirte que te quedes sin cobrar hasta las diez.",
