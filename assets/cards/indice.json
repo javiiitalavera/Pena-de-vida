@@ -4,6 +4,7 @@
     "acne",
     "amigo_emprendedor",
     "apuntes_oro",
+    "banco_hipoteca",
     "bici_ruedines",
     "bocadillo_pavo",
     "botellon",
@@ -14,7 +15,9 @@
     "comedor_colegio",
     "comunion",
     "coronilla",
+    "crisis_40",
     "cumple_parque_bolas",
+    "cunado_cripto",
     "dentista_aparato",
     "dormir_ocho_horas",
     "el_parecido",
@@ -24,6 +27,7 @@
     "erasmus",
     "excursion_autobus",
     "extraescolares",
+    "figurante",
     "guarderia_plastilina",
     "jarabe_fresa",
     "licor_melocoton",
@@ -55,6 +59,7 @@
     "test_embarazo",
     "tio_cubata",
     "vestuario",
-    "vuelta_a_casa"
+    "vuelta_a_casa",
+    "whatsapp_colegio"
   ]
 }

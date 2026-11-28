@@ -336,6 +336,8 @@ export class Partida {
     let nueva = this.edad + this.calcularPaso();
     const corte = this.primerEventoEntre(antes, Math.floor(nueva + EPS));
     if (corte !== null) nueva = corte;
+    // Una consecuencia que debía salir este año (pero le ganó un ancla) no espera al salto completo.
+    if (this.cola.some((item) => item.anio <= antes)) nueva = Math.min(nueva, antes + 1);
     this.avanzarHasta(nueva);
   }
 

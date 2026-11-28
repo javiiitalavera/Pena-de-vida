@@ -108,7 +108,8 @@ assert(datos.cartas.find(c=>c.id==='curso_inem').etapa==='18-49','curso del INEM
   const d=new Partida(datos,{sexo:'M',nivel:'dificil',comodinId,rng:()=>0.4}); d.carta=gim; const rd=d.elegir('izquierda');
   assert(rd.sorpresa && !d.comodin && !d.puedeUsarComodin(),'difícil: sorpresa al 50 % y sin comodín');
   const e=new Partida(datos,{sexo:'M',nivel:'dificil'}); e.carta={tags:[]};
-  assert(JSON.stringify(e.calcularEfectos({salud:-10,dinero:10}))==='{"salud":-15,"dinero":15}','difícil: efectos ×1,5');
+  const vd=e.dif.volatilidad, redo=(v)=>Math.sign(v)*Math.round(Math.abs(v));
+  assert(JSON.stringify(e.calcularEfectos({salud:-10,dinero:10}))===JSON.stringify({salud:redo(-10*vd),dinero:redo(10*vd)}) && vd>dificultadReal.volatilidad,'difícil: efectos más fuertes que normal (×'+vd+')');
   const n=new Partida(datos,{sexo:'M',rng:()=>0.4}); n.carta=gim; const rn=n.elegir('izquierda');
   assert(n.nivel==='normal' && !rn.sorpresa && n.maxComodin===1,'normal por defecto: sorpresa con la probabilidad de la carta');
   const g=new Partida(datos,{sexo:'F',nivel:'dios',comodinId}); const q=Partida.restaurar(datos,g.exportar());
